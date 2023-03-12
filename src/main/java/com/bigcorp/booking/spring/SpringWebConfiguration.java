@@ -51,16 +51,15 @@ public class SpringWebConfiguration implements WebMvcConfigurer, ApplicationCont
 	 */
 	@Bean
 	public SpringResourceTemplateResolver templateResolver() {
-		// SpringResourceTemplateResolver automatically integrates with Spring's own
-		// resource resolution infrastructure, which is highly recommended.
+		// SpringResourceTemplateResolver permet de gérer les templates et est configuré ici
 		SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
 		templateResolver.setApplicationContext(this.applicationContext);
 		templateResolver.setPrefix("/WEB-INF/templates/");
 		templateResolver.setSuffix(".html");
-		// HTML is the default value, added here for the sake of clarity.
+		// HTML est la valeur par défaut, mais ajouté ici pour l'expliciter
 		templateResolver.setTemplateMode(TemplateMode.HTML);
-		// Template cache is true by default. Set to false if you want
-		// templates to be automatically updated when modified.
+		// Template cache est à true par défaut
+		// Mettez le à false si vous voulez que les templates soient modifiés automatiquement
 		templateResolver.setCacheable(true);
 		return templateResolver;
 	}
@@ -73,15 +72,8 @@ public class SpringWebConfiguration implements WebMvcConfigurer, ApplicationCont
 	 */
 	@Bean
 	public SpringTemplateEngine templateEngine() {
-		// SpringTemplateEngine automatically applies SpringStandardDialect and
-		// enables Spring's own MessageSource message resolution mechanisms.
 		SpringTemplateEngine templateEngine = new SpringTemplateEngine();
 		templateEngine.setEnableSpringELCompiler(true);
-		// Enabling the SpringEL compiler with Spring 4.2.4 or newer can
-		// speed up execution in most scenarios, but might be incompatible
-		// with specific cases when expressions in one template are reused
-		// across different data types, so this flag is "false" by default
-		// for safer backwards compatibility.
 		templateEngine.setTemplateResolver(templateResolver());
 		return templateEngine;
 	}
@@ -103,7 +95,7 @@ public class SpringWebConfiguration implements WebMvcConfigurer, ApplicationCont
 
 	
 	/*
-	 * Dispatcher configuration for serving static resources
+	 * Configure le Dispatcher pour servir les ressources statiques
 	 */
 	@Override
 	public void addResourceHandlers(final ResourceHandlerRegistry registry) {
