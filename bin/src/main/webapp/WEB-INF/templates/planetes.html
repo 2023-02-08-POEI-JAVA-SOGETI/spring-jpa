@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" >
+
+  <head>
+    <title>Ma première page Thymeleaf !</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+
+    <h1>Salut les gens</h1>
+    <p th:text="${caRoule}">Ça marche pas mal ici !</p>
+    <p th:if="${doitAfficherDiv}">Je m'affiche</p>
+    <p th:if="${!doitAfficherDiv && true}">Je m'affiche</p>
+
+    <ul>
+      <li th:each="planete : ${listePlanetes}" th:text="${planete}">Terre</li>
+    </ul>
+    
+    <ul>
+      <li th:each="planete,iterStat : ${listePlanetes}"><a href="planete.html" th:href="@{/planete(id=${iterStat.index})}" th:text="${'Lien vers la planète' + planete }">Lien vers ma planète</a></li>
+    </ul>
+
+  </body>
+</html>
