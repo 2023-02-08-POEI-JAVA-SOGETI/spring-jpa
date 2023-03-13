@@ -10,7 +10,7 @@ public class Calculette {
 	 * @param a
 	 * @param b
 	 * @return
-	 */
+	 */	
 	public int additionne(int a, int b) {
 		return a + b;
 	}
