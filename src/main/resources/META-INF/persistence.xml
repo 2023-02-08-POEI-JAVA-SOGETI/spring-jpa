@@ -6,7 +6,7 @@
     	<class>com.bigcorp.booking.model.Fournisseurs</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306?useSSl=false/poei" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/poei?useSSl=false" />
             <!--property name="javax.persistence.jdbc.url" value="jdbc:h2:file:~/java-dev/h2-data/sample" /-->
             <property name="javax.persistence.jdbc.user" value="root" />
             <property name="javax.persistence.jdbc.password" value="root" />
