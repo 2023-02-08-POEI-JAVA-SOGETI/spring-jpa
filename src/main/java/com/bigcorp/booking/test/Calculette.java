@@ -22,7 +22,7 @@ public class Calculette {
 	 * @return
 	 */
 	public int multiplie(int a, int b) {
-		return a + b;
+		return a * b;
 	}
 
 	/**
@@ -36,6 +36,15 @@ public class Calculette {
 			throw new IllegalArgumentException("Can not divide by zero");
 		}
 		return a / b;
+	}
+	
+	/**
+	 * Calcule la racine carre de a.
+	 * @param a
+	 * @return
+	 */
+	public double racineCarre(int a) {
+		return Math.sqrt(a);
 	}
 
 }
