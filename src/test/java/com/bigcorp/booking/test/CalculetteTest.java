@@ -34,6 +34,15 @@ public class CalculetteTest {
 		double resultat1 = calculette.divise(a,b);
 		Assertions.assertEquals(0.428, resultat1, 0.01);
 	}
+	
+	@Test
+	public void testMultiplieZero() {
+		Calculette calculette = new Calculette();
+		int a = 3;
+		int b = 0;
+		double resultat1 = calculette.multiplie(a,b);
+		Assertions.assertEquals(0, resultat1);
+	}
 
 	@Test
 	public void testDiviseParZero() {
