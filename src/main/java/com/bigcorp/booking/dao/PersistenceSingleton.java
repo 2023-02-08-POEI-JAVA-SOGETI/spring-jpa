@@ -18,7 +18,8 @@ public class PersistenceSingleton {
 
 	// On s'assure ici que seule une instance de la classe sera créée
 	private PersistenceSingleton() {
-		this.entityManagerFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT);
+		this.entityManagerFactory 
+			= Persistence.createEntityManagerFactory(PERSISTENCE_UNIT);
 	}
 
 	// Méthode utile pour créer une entityManager
