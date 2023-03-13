@@ -1,0 +1,17 @@
+Ce code est une implémentation d'un DAO (Data Access Object) pour l'entité Example, qui est une classe du modèle de données.
+
+Le DAO fournit des méthodes pour interagir avec l'entité Example dans la base de données. Les trois méthodes principales sont:
+
+merge: cette méthode permet de fusionner les modifications d'un objet Example avec l'état persistant de la base de données. Elle crée une nouvelle instance de l'objet Example ou met à jour l'objet existant si une instance de l'objet avec la même clé primaire existe déjà dans la base de données. La méthode retourne l'objet Example fusionné ou mis à jour.
+
+findById: cette méthode permet de rechercher un objet Example dans la base de données à partir de son identifiant. La méthode prend un argument Long qui représente l'identifiant de l'objet Example recherché et retourne l'objet Example correspondant s'il est trouvé dans la base de données.
+
+remove: cette méthode permet de supprimer un objet Example de la base de données. La méthode prend un argument Long qui représente l'identifiant de l'objet Example à supprimer et supprime l'objet correspondant de la base de données.
+
+Les trois méthodes utilisent la classe EntityManager de JPA (Java Persistence API) pour interagir avec la base de données. L'objet EntityManager représente une session de travail avec la base de données et est créé en utilisant un singleton appelé PersistenceSingleton. La méthode createEntityManager() de PersistenceSingleton crée et retourne une nouvelle instance d'EntityManager à chaque appel.
+
+Les méthodes merge et remove commencent une transaction avec la base de données en créant un objet EntityTransaction et en appelant sa méthode begin(). Les modifications apportées à la base de données par ces méthodes sont enregistrées en appelant la méthode commit() de l'objet EntityTransaction.
+
+Enfin, les trois méthodes ferment l'objet EntityManager en appelant sa méthode close() pour libérer les ressources et éviter les fuites de mémoire.
+
+En résumé, ce code implémente un DAO pour l'entité Example et fournit des méthodes pour interagir avec la base de données en utilisant JPA et l'objet EntityManager.
