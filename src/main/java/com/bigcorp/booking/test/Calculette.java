@@ -22,7 +22,7 @@ public class Calculette {
 	 * @return
 	 */
 	public int multiplie(int a, int b) {
-		return a + b;
+		return a * b;
 	}
 
 	/**
