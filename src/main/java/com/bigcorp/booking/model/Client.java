@@ -6,37 +6,35 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity // Décrit une entité persistable
-@Table(name = "fournisseur") // Optionnel : explicite la Table en BDD
-public class Fournisseur  {
-
-	@Id // Décrit l’attribut servant d'identifiant et la clé primaire
-	@GeneratedValue(strategy = GenerationType.IDENTITY) // optionnel
-	// décrit la méthode de génération de l’identifiant
+@Entity
+@Table(name="client")
+public class Client {
 	
-	private Integer id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
+    private Integer id;
     private String nom;
+    private String prenom;
     private Integer num;
     private String email;
     private String adresse;
 
-    public Fournisseur() {
+    public Client() {
         super();
     }
 
-    public Fournisseur(Integer id, String nom, Integer num, String email, String adresse) {
-        super();
-        this.id = id;
+    public Client(String nom, String prenom, Integer num, String email, String adresse) {
         this.nom = nom;
+        this.prenom = prenom;
         this.num = num;
         this.email = email;
         this.adresse = adresse;
     }
 
     public Integer getId() {
-        return this.id;
+        return id;
     }
-
     public void setId(Integer id) {
         this.id = id;
     }
@@ -44,15 +42,20 @@ public class Fournisseur  {
     public String getNom() {
         return this.nom;
     }
-
     public void setNom(String nom) {
         this.nom = nom;
+    }
+
+    public String getPrenom() {
+        return this.prenom;
+    }
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
     }
 
     public Integer getNum() {
         return this.num;
     }
-
     public void setNum(Integer num) {
         this.num = num;
     }
@@ -60,7 +63,6 @@ public class Fournisseur  {
     public String getEmail() {
         return this.email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
@@ -68,7 +70,6 @@ public class Fournisseur  {
     public String getAdresse() {
         return this.adresse;
     }
-
     public void setAdresse(String adresse) {
         this.adresse = adresse;
     }
