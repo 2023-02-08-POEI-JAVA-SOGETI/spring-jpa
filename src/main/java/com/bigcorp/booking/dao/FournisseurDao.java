@@ -17,7 +17,7 @@ public class FournisseurDao {
 		return merged;
 	}
 	
-	public Fournisseur findById(long id) {
+	public Fournisseur findById(Integer id) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
 		return em.find(Fournisseur.class, id);
 	}
