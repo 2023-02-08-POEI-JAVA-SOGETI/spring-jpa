@@ -2,7 +2,6 @@ package com.bigcorp.booking.test;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -10,30 +9,22 @@ import org.junit.jupiter.api.Test;
  */
 public class CalculetteTest {
 	
-<<<<<<< HEAD
 	static Calculette calculette;
 	
-	@BeforeAll
-	public static void initCalculette() {
-		calculette = new Calculette();
-=======
+	
 	@AfterEach
 	public void init() {
 		System.out.println("coucou");
->>>>>>> d01f27ac9ee71da897ce61bb393ded48020be017
 	}
 
 	@Test
 	public void testAdditionne() {
-<<<<<<< HEAD
-=======
 		//Arrange : Arrangement
 		Calculette calculette = new Calculette();
->>>>>>> d01f27ac9ee71da897ce61bb393ded48020be017
 		int a = 3;
 		int b = 7;
 		
-		//Act : Agissement
+		//Act : Action
 		int resultat1 = calculette.additionne(a,b);
 		
 		//Assert : Assertion

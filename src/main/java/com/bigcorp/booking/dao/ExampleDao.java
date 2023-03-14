@@ -19,7 +19,9 @@ public class ExampleDao {
 
 	public Example findById(Long id) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
-		return em.find(Example.class, id);
+		Example example = em.find(Example.class, id);
+		em.close();
+		return example;
 	}
 	
 

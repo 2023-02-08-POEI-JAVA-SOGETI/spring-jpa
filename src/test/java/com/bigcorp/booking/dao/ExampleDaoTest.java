@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import com.bigcorp.booking.model.Example;
+import com.bigcorp.booking.model.Severite;
 
 public class ExampleDaoTest {
 	  
@@ -14,6 +15,7 @@ public class ExampleDaoTest {
     	ExampleDao exampleDao = new ExampleDao();
     	Example example = new Example();
 		example.setNom(nom);
+		example.setSeverite(Severite.PAS_GRAVE);
     	
 		Example savedExample = exampleDao.merge(example);
 		
@@ -22,6 +24,8 @@ public class ExampleDaoTest {
 		Example exampleDeLaBaseDeDonnees = exampleDao.findById(savedExample.getId());
 		
 		Assertions.assertEquals(nom, exampleDeLaBaseDeDonnees.getNom());
+		
+		
 		
     }
 	  
@@ -37,7 +41,6 @@ public class ExampleDaoTest {
 		Example savedExample = exampleDao.merge(example);
 		
 		Assertions.assertNotNull(savedExample.getId());
-		
 		
     }
 }
