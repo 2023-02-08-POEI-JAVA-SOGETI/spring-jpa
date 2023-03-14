@@ -19,7 +19,7 @@ public abstract class AbstractDao<T> {
 	 * @see EntityManager#find(Class, Object)
 	 * @param entity
 	 */
-	public T findById(Class<T> clazz, Long id) {
+	public T findById(Class<T> clazz, Integer id) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
 		return em.find(clazz, id);
 	}
