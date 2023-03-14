@@ -17,7 +17,7 @@ public class ArticleDaoTest {
     	String description = "ca creuse";
     	
     	ArticleDao articleDao = new ArticleDao();
-    	Article a = new Article(num_article, Etat.etat.INUTILISABLE.name(), nom, description);
+    	Article a = new Article(num_article, Etat.INUTILISABLE.name(), nom, description);
     	
     	Article savedArticle = articleDao.merge(a);
 		

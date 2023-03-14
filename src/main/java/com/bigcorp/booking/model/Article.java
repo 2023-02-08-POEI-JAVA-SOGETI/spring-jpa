@@ -36,7 +36,7 @@ public class Article implements Serializable {
  public Article() {
      this.id = 0;
      this.numero = 0;
-     this.etat = Etat.etat.NEUF.name();
+     this.etat = Etat.NEUF.name();
      this.nom = "NOM";
      this.description = "DESCRIPTION";
  }
