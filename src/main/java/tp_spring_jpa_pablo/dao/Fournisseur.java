@@ -11,18 +11,18 @@ import javax.persistence.Table;
 public class Fournisseur {
 	
 	@Id // Décrit l’attribut servant d'identifiant et la clé primaire
-	@GeneratedValue(strategy = GenerationType.TABLE) // optionnel
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // optionnel
 	// décrit la méthode de génération de l’identifiant
-	private int id;	
-	private String nom;
-    private String email;
-    private String adresse; 
+	private Integer id;	
+	private String nom = "Test";
+    private String email = "test@java_jpa.com";
+    private String adresse = "Anywhere near ORM"; 
    
-    public int getId() {
+    public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
     

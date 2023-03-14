@@ -16,12 +16,12 @@ public class FournisseurDao {
 		return merged;
 	}
 
-	public Fournisseur findById(int id) {
+	public Fournisseur findById(Integer id) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
 		return em.find(Fournisseur.class, id);
 	}
 
-	public void remove(Long id) {
+	public void remove(Integer id) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
 		EntityTransaction transaction = em.getTransaction();
 		transaction.begin();
