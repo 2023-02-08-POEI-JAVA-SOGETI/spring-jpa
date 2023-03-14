@@ -39,6 +39,14 @@ public class Fournisseur {
 
 
 
+	@Override
+	public String toString() {
+		return "Fournisseur [id=" + id + ", nom=" + nom + ", num=" + num + ", email=" + email + ", adresse=" + adresse
+				+ "]";
+	}
+
+
+
 	public Integer getId() {
 		return id;
 	}

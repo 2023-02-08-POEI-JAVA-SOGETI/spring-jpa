@@ -12,7 +12,11 @@ public class Main {
 													"Mon Email", 
 													"Mon Adresse");
 		
-		entity.merge(fournisseur);
+//		entity.merge(fournisseur);
+		Fournisseur findbyId = entity.findbyId(1);
+		System.out.println(findbyId);
+		
+		
 
 	}
 

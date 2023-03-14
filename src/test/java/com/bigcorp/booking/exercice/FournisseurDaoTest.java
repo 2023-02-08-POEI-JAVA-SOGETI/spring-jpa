@@ -1,9 +1,19 @@
 package com.bigcorp.booking.exercice;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 public class FournisseurDaoTest {
+	
+	
+	static FournisseurDao dao;
+	
+	@BeforeAll
+	public static void initDao()
+	{
+		 dao = new FournisseurDao();
+	}
 	
 	
 	@Test
@@ -20,7 +30,7 @@ public class FournisseurDaoTest {
 												ADRESSE
 														);
 		
-		FournisseurDao dao = new FournisseurDao();
+		
 		
 		Fournisseur testFournisseur = dao.merge(fournisseur);
 		
@@ -31,6 +41,19 @@ public class FournisseurDaoTest {
 		Assertions.assertEquals(EMAIL, testFournisseur.getEmail());
 		Assertions.assertEquals(ADRESSE, testFournisseur.getAdresse());
 		
+		
+	}
+	
+	@Test
+	public void findByIdTest()
+	{
+		Fournisseur fournisseurTest = new Fournisseur();
+		fournisseurTest.setNom("TEST");
+		dao.merge(fournisseurTest);
+		
+		Fournisseur resultTest = dao.findbyId(1);
+		
+		Assertions.assertEquals("TEST", resultTest.getNom());
 		
 	}
 

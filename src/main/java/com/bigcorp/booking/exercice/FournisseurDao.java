@@ -34,5 +34,12 @@ public class FournisseurDao {
 			return myNewFournisseur;
 			
 		}
+		
+		
+		public Fournisseur findbyId(Integer id)
+		{
+			EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
+			return em.find(Fournisseur.class, id);
+		}
 
 }
