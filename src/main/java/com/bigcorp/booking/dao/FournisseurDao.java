@@ -21,7 +21,7 @@ public class FournisseurDao {
 		String nom = "Mon Fournisseur Prefere";
 		
     	FournisseurDao fd = new FournisseurDao();
-    	Fournisseur f = new Fournisseur(10, 10, nom, "Fournisseur test", "mon adresse test");
+    	Fournisseur f = new Fournisseur(77, nom, "Fournisseur test", "mon adresse test");
 
 		Fournisseur savedFournisseur = fd.merge(f);
 	}

@@ -4,6 +4,8 @@ package com.bigcorp.booking.model;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -18,6 +20,7 @@ public class Fournisseur implements Serializable {
  private static final long serialVersionUID = -1912226135224432621L;
  
  @Id
+ @GeneratedValue(strategy = GenerationType.IDENTITY) // optionnel
  private Integer id;
  private Integer numero;
  private String nom;

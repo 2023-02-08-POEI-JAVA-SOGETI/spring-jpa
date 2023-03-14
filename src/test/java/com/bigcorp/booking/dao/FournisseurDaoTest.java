@@ -11,16 +11,18 @@ public class FournisseurDaoTest {
     public void testSave() {
     	
     	String nom = "Jean-Jacques";
+    	String email = "Email de Jean-Jacques";
+    	String adresse = "Adresse de Jean-Jacques";
+    	Integer numero = 1;
+    	
     	FournisseurDao fournisseurDao = new FournisseurDao();
-    	Fournisseur f = new Fournisseur(1, 1, nom, "Fournisseur JJ", "mon adresse");
-    	f.setNom(nom);
+    	Fournisseur f = new Fournisseur(numero, nom, email, adresse);
     	
 		Fournisseur savedFournisseur = fournisseurDao.merge(f);
 		
 		Assertions.assertNotNull(savedFournisseur.getId());
 		
 		Fournisseur exampleDeLaBaseDeDonnees = fournisseurDao.findById(savedFournisseur.getId());
-		
 		Assertions.assertEquals(nom, exampleDeLaBaseDeDonnees.getNom());
 		
     }
@@ -30,8 +32,11 @@ public class FournisseurDaoTest {
     	
     	String nom = "Jean-Paul";
     	FournisseurDao fournisseurDao = new FournisseurDao();
-    	Fournisseur f = new Fournisseur(2, 2, nom, "Fournisseur JP", "mon adresse de JP");
+    	Fournisseur f = new Fournisseur();
+    	f.setNom(nom);
 		f.setAdresse("ma nouvelle adresse");
+		f.setEmail("jp email");
+		f.setNumero(99);
 
 		Fournisseur savedFournisseur = fournisseurDao.merge(f);
 		
