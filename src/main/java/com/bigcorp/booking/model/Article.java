@@ -1,147 +1,76 @@
 package com.bigcorp.booking.model;
 
-// Import de Serializable pour creer un JavaBean
-import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-/**
- * JavaBean d'un Article
- * @author Twixy
- */
-public class Article implements Serializable {
-    // Proprietes
-    private static final long serialVersionUID = -1912226135224432621L;
-    private Integer id;
-    private Integer numero;
-    private String fc;
-    private String nom;
-    private String description;
+@Entity
+@Table(name="Articles")
+public class Article { 
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	private Integer numero;
+	private String fc;
+	private String nom;
+	private String description;
+	
+	@Enumerated(EnumType.STRING)
+	private EtatArticle etatArticle;
 
-    
-    /**
-     * Constructeur sans param�tre
-     */
-    public Article() {
-        this.id = 0;
-        this.numero = 0;
-        this.fc = "";
-        this.nom = "NOM";
-        this.description = "DESCRIPTION";
-    }
+	public Integer getId() {
+		return id;
+	}
 
-    /**
-     * Constructeur avec param�tres sauf Id
-     * @param numero : numero d'un article
-     * @param fc : artcile vendu � un client ou acheter � un fournisseur
-     * @param nom : nom d'un article
-     * @param description : description d'un article
-     */
-    public Article(Integer numero, String fc, String nom, String description) {
-        this.id = 0;
-        this.numero = numero;
-        this.fc = fc;
-        this.nom = nom;
-        this.description = description;
-    }
-    
-    /**
-     * Constructeur avec tous les param�tres
-     * @param id : num�ro de l'enregistrement dans la table
-     * @param numero : numero d'un article
-     * @param fc : artcile vendu � un client ou acheter � un fournisseur
-     * @param nom : nom d'un article
-     * @param description : description d'un article
-     */
-    public Article(Integer id, Integer numero, String fc, String nom, String description) {
-        this.id = id;
-        this.numero = numero;
-        this.fc = fc;
-        this.nom = nom;
-        this.description = description;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    // Getters
+	public Integer getNumero() {
+		return numero;
+	}
 
-    /**
-     * Getter Id
-     * @return Id
-     */
-    public Integer getId() {
-        return id;
-    }
+	public void setNumero(Integer numero) {
+		this.numero = numero;
+	}
 
-    /**
-     * getter Numero
-     * @return Numero
-     */
-    public Integer getNumero() {
-        return numero;
-    }
-    
-    /**
-     * getter fc
-     * @return fc
-     */
-    public String getFC() {
-        return fc;
-    }
-    
-    /**
-     * getter Nom
-     * @return Nom
-     */
-    public String getNom() {
-        return nom;
-    }
+	public String getFc() {
+		return fc;
+	}
 
+	public void setFc(String fc) {
+		this.fc = fc;
+	}
 
-    /**
-     * Getter description
-     * @return description
-     */
-    public String getDescription() {
-        return description;
-    }
+	public String getNom() {
+		return nom;
+	}
 
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
 
-    // Setters
+	public String getDescription() {
+		return description;
+	}
 
-    /**
-     * Setter id
-     * @param id : num�ro de l'enregistrement dans la table
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
-    /**
-     * Setter numero
-     * @param numero : numero de l'article
-     */
-    public void setNumero(Integer numero) {
-        this.numero = numero;
-    }
+	public EtatArticle getEtatArticle() {
+		return etatArticle;
+	}
 
-    /**
-     * Setter fc
-     * @param fc : artcile vendu � un client ou acheter � un fournisseur
-     */
-    public void setFC(String fc) {
-        this.fc = fc;
-    }
-    
-    /**
-     * Setter nom
-     * @param nom : nom de l'article
-     */
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
+	public void setEtatArticle(EtatArticle etatArticle) {
+		this.etatArticle = etatArticle;
+	}
 
-    /**
-     * Setter description
-     * @param description : description de l'article
-     */
-    public void setDescription(String description) {
-        this.description = description;
-    }
+	
+
 }

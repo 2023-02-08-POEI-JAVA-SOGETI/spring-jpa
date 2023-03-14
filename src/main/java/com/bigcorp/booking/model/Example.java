@@ -24,7 +24,7 @@ public class Example  {
 	
 	@Enumerated(EnumType.STRING)
 	private Severite severite;
-
+	
 	public Long getId() {
 		return id;
 	}
