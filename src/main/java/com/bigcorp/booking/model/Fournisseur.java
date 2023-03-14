@@ -11,65 +11,65 @@ import javax.persistence.Table;
 public class Fournisseur  {
 
 	@Id // Décrit l’attribut servant d'identifiant et la clé primaire
-	@GeneratedValue(strategy = GenerationType.TABLE) // optionnel
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // optionnel
 	// décrit la méthode de génération de l’identifiant
 	
-	 private int id;
-	    private String nom;
-	    private int num;
-	    private String email;
-	    private String adresse;
+	 private Integer id;
+    private String nom;
+    private Integer num;
+    private String email;
+    private String adresse;
 
-	    public Fournisseur() {
-	        super();
-	    }
+    public Fournisseur() {
+        super();
+    }
 
-	    public Fournisseur(int id, String nom, int num, String email, String adresse) {
-	        super();
-	        this.id = id;
-	        this.nom = nom;
-	        this.num = num;
-	        this.email = email;
-	        this.adresse = adresse;
-	    }
+    public Fournisseur(Integer id, String nom, Integer num, String email, String adresse) {
+        super();
+        this.id = id;
+        this.nom = nom;
+        this.num = num;
+        this.email = email;
+        this.adresse = adresse;
+    }
 
-	    public int getId() {
-	        return this.id;
-	    }
+    public Integer getId() {
+        return this.id;
+    }
 
-	    public void setId(int id) {
-	        this.id = id;
-	    }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	    public String getNom() {
-	        return this.nom;
-	    }
+    public String getNom() {
+        return this.nom;
+    }
 
-	    public void setNom(String nom) {
-	        this.nom = nom;
-	    }
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 
-	    public int getNum() {
-	        return this.num;
-	    }
+    public Integer getNum() {
+        return this.num;
+    }
 
-	    public void setNum(int num) {
-	        this.num = num;
-	    }
+    public void setNum(Integer num) {
+        this.num = num;
+    }
 
-	    public String getEmail() {
-	        return this.email;
-	    }
+    public String getEmail() {
+        return this.email;
+    }
 
-	    public void setEmail(String email) {
-	        this.email = email;
-	    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	    public String getAdresse() {
-	        return this.adresse;
-	    }
+    public String getAdresse() {
+        return this.adresse;
+    }
 
-	    public void setAdresse(String adresse) {
-	        this.adresse = adresse;
-	    }
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
 }

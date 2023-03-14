@@ -3,7 +3,6 @@ package com.bigcorp.booking.dao;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
-import com.bigcorp.booking.model.Example;
 import com.bigcorp.booking.model.Fournisseur;
 
 public class FournisseurDao {
@@ -36,12 +35,19 @@ public class FournisseurDao {
 //	
 	
 	public static void main(String[] args) {
-		String nom = "Jean-Jacques";
+		String nom = "camille";
+    	int num = 123;
+    	String email = "camille@camille.com";
+    	String adresse = "1 rue de la Gare 75000 Paris";
     	FournisseurDao fournisseurDao = new FournisseurDao();
-    	Fournisseur example = new Fournisseur();
-		example.setNom(nom);
+    	Fournisseur fournisseur = new Fournisseur();
+		fournisseur.setNom(nom);
+		fournisseur.setNum(num);
+		fournisseur.setEmail(email);
+		fournisseur.setAdresse(adresse);
     	
-		Fournisseur savedExample = fournisseurDao.merge(example);
+		Fournisseur savedFournisseur = fournisseurDao.merge(fournisseur);
+		Fournisseur savedFournisseurId = fournisseurDao.findById(1);
 	}
 
 }
