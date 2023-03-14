@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class Example  {
 
 	@Id // Décrit l’attribut servant d'identifiant et la clé primaire
-	@GeneratedValue(strategy = GenerationType.TABLE) // optionnel
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // optionnel
 	// décrit la méthode de génération de l’identifiant
 	private Long id;
 	

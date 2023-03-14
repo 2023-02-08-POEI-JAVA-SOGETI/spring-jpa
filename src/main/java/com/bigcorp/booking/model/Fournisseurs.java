@@ -1,6 +1,8 @@
 package com.bigcorp.booking.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 //import javax.persistence.GeneratedValue;
 //import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -10,6 +12,7 @@ import javax.persistence.Table;
 @Table(name = "Fournisseurs")
 public class Fournisseurs {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer iD;
 	private Integer numeroUnique;
 	private String nom;
