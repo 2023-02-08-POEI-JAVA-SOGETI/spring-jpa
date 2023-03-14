@@ -1,24 +1,30 @@
 package com.bigcorp.booking.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity // Décrit une entité persistable
-@Table(name = "EXAMPLE") // Optionnel : explicite la Table en BDD
+@Table(name = "Example") // Optionnel : explicite la Table en BDD
 public class Example  {
 
 	@Id // Décrit l’attribut servant d'identifiant et la clé primaire
-	@GeneratedValue(strategy = GenerationType.TABLE) // optionnel
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	// optionnel
 	// décrit la méthode de génération de l’identifiant
 	private Long id;
 	
 	private String nom;
 	
 	private Float taille;
-
+	
+	@Enumerated(EnumType.STRING)
+	private Severite severite;
+	
 	public Long getId() {
 		return id;
 	}
@@ -42,8 +48,15 @@ public class Example  {
 	public void setTaille(Float taille) {
 		this.taille = taille;
 	}
-	
-	
+
+	public Severite getSeverite() {
+		return severite;
+	}
+
+	public void setSeverite(Severite severite) {
+		this.severite = severite;
+	}
+
 	
 
 }
