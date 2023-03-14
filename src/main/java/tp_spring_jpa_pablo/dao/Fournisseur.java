@@ -7,17 +7,25 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity // Décrit une entité persistable
-@Table(name = "EXAMPLE") // Optionnel : explicite la Table en BDD
+@Table(name = "fournisseur") // Optionnel : explicite la Table en BDD
 public class Fournisseur {
 	
 	@Id // Décrit l’attribut servant d'identifiant et la clé primaire
 	@GeneratedValue(strategy = GenerationType.TABLE) // optionnel
 	// décrit la méthode de génération de l’identifiant
-	
+	private int id;	
 	private String nom;
     private String email;
     private String adresse; 
    
+    public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+    
     public String getNom() {
         return nom;
     }

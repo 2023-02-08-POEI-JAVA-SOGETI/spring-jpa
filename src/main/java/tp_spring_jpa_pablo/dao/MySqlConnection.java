@@ -1,23 +1,23 @@
 package tp_spring_jpa_pablo.dao;
 
 public class MySqlConnection {
-	private static final String DATABASEURL = "jdbc:mysql://localhost:3306?useSSL=false";
-    private static final String DATABASEUSER = "root";
-    private static final String DATABASEPASWORD = "Pelicano3344!!";
-    private static final String ROWSETDATABASEURL = "jdbc:mysql://localhost:3306/a?useSSL=false";
+	private static final String DATABASE_URL = "jdbc:mysql://localhost:3306?useSSL=false";
+    private static final String DATABASE_USER = "root";
+    private static final String DATABASEP_ASSWORD = "Pelicano3344!!";
+    private static final String ROWSET_DATABASE_URL = "jdbc:mysql://localhost:3306/a?useSSL=false";
 
     public static final String getDatabaseUrl() {
-        return DATABASEURL;
+        return DATABASE_URL;
     }
     
     public static final String getDatabaseUser() {
-        return DATABASEUSER;
+        return DATABASE_USER;
     }
 
     public static final String getDatabasePasword() {
-        return DATABASEPASWORD;
+        return DATABASEP_ASSWORD;
     }
     public static final String getRowSetDatabaseUrl() {
-        return ROWSETDATABASEURL;
+        return ROWSET_DATABASE_URL;
     }
 }

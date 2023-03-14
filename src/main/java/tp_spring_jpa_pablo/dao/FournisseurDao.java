@@ -4,7 +4,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
 import com.bigcorp.booking.dao.PersistenceSingleton;
-import tp_spring_jpa_pablo.dao.Fournisseur;
 
 public class FournisseurDao {
 	public Fournisseur merge(Fournisseur object) {
@@ -17,7 +16,7 @@ public class FournisseurDao {
 		return merged;
 	}
 
-	public Fournisseur findById(Long id) {
+	public Fournisseur findById(int id) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
 		return em.find(Fournisseur.class, id);
 	}
