@@ -9,7 +9,7 @@ import javax.persistence.Persistence;
  */
 public class PersistenceSingleton {
 
-	private static final String PERSISTENCE_UNIT = "persistence-unit";
+	private static final String PERSISTENCE_UNIT = "persistence-unit-mysql";
 
 	// On s'assure ici que seule une instance de la classe sera créée
 	public static final PersistenceSingleton INSTANCE = new PersistenceSingleton();

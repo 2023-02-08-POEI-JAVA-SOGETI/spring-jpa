@@ -1,13 +1,14 @@
 package tp_spring_jpa_pablo.dao;
 
 
-public class FournisseurInstance {
+public class Main {
 
 	public static void main(String[] args) {
 		// Instantiating the Fournisseur class
         Fournisseur fournisseur = new Fournisseur();
         FournisseurDao fournisseurDao = new FournisseurDao();
-        
+        Article article = new Article();
+        ArticleDao articleDao = new ArticleDao();
 
         
         // Setting the values for the attributes
@@ -23,6 +24,12 @@ public class FournisseurInstance {
         System.out.println(fournisseur.getAdresse());
         
         fournisseurDao.merge(fournisseur);
+        
+        article.getNom();
+        article.getType();
+        article.getDescription();
+        
+        articleDao.merge(article);
 
 	}
 

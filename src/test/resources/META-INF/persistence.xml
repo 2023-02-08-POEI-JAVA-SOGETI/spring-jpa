@@ -3,6 +3,7 @@
     <persistence-unit name="persistence-unit-test">
     	<class>com.bigcorp.booking.model.Example</class>
     	<class>tp_spring_jpa_pablo.dao.Fournisseur</class>
+    	<class>tp_spring_jpa_pablo.dao.Article</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa" />
