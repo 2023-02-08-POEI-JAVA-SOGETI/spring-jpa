@@ -12,7 +12,9 @@ public class FournisseurDaoTest {
     public void testSave() {
     	FournisseurDao fournisseurDao = new FournisseurDao();
     	Fournisseur fournisseur = new Fournisseur();
+    	fournisseur.setNom("NGOM");
 		Fournisseur savedFournisseur = fournisseurDao.merge(fournisseur);
 		Assertions.assertNotNull(savedFournisseur.getId());
+		
     }
 }

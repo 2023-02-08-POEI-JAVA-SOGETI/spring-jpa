@@ -5,8 +5,15 @@ import javax.persistence.EntityTransaction;
 
 import com.bigcorp.booking.model.Fournisseur;
 
+
 public class FournisseurDao {
 
+	/*public void testSave() {
+		FournisseurDao fournisseurDao = new FournisseurDao();
+		Fournisseur fournisseur = new Fournisseur();
+		Fournisseur savedFournisseur = fournisseurDao.merge(fournisseur);
+		Assertions.assertNotNull(savedFournisseur.getId());
+	}*/
 
 	public Fournisseur merge(Fournisseur object) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
