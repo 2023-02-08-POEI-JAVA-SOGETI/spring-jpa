@@ -12,6 +12,7 @@ public class ExampleSpringDaoTest {
 	private ExampleService exampleService;
 
 //	@Test
+	@SuppressWarnings("unused")
 	private void dontrun() {
 		Example example = new Example();
 		exampleService.save(example);
