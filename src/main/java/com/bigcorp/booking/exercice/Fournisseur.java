@@ -11,12 +11,12 @@ import javax.persistence.Table;
 public class Fournisseur {
 	
 	@Id
-	@GeneratedValue(strategy= GenerationType.AUTO)
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Integer id;
 	
 	
 	private String nom;
-	private String num;
+	private Integer num;
 	private String email;
 	private String adresse;
 	
@@ -28,7 +28,7 @@ public class Fournisseur {
 	
 	
 	
-	public Fournisseur(String nom, String num, String email, String adresse) {
+	public Fournisseur(String nom, Integer num, String email, String adresse) {
 		super();
 		this.nom = nom;
 		this.num = num;
@@ -51,10 +51,10 @@ public class Fournisseur {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-	public String getNum() {
+	public Integer getNum() {
 		return num;
 	}
-	public void setNum(String num) {
+	public void setNum(Integer num) {
 		this.num = num;
 	}
 	public String getEmail() {
