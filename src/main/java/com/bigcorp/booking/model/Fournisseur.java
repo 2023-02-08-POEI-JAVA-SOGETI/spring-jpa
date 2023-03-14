@@ -18,8 +18,11 @@ import javax.persistence.Table;
 public class Fournisseur {
 
 	@Id // Décrit l’attribut servant d'identifiant et la clé primaire
-	@GeneratedValue(strategy = GenerationType.TABLE) // optionnel
+	
+	//@GeneratedValue(strategy = GenerationType.TABLE) // optionnel
 	// décrit la méthode de génération de l’identifiant
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
 	private Integer id;
     private Integer numero;
     private String nom;

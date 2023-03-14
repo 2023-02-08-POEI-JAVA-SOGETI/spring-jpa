@@ -3,6 +3,7 @@
     <persistence-unit name="persistence-unit">
     	<class>com.bigcorp.booking.model.Example</class>
     	<class>com.bigcorp.booking.model.Fournisseur</class>
+    	
         <properties>
             <!--<property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />-->
             
