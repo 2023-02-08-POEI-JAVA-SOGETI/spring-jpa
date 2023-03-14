@@ -1,5 +1,6 @@
 package com.bigcorp.booking.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,9 +15,10 @@ public class Fournisseurs {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer iD;
+	@Column(name = "numeroUnique")
 	private Integer numeroUnique;
 	private String nom;
-	private String mail;
+	private String email;
 	private String adresse;
 
 	// Getters
@@ -33,7 +35,7 @@ public class Fournisseurs {
 	}
 
 	public String getMail() {
-		return this.mail;
+		return this.email;
 	}
 
 	public String getAdresse() {
@@ -54,8 +56,8 @@ public class Fournisseurs {
 		this.nom = nom;
 	}
 
-	public void setMail(String mail) {
-		this.mail = mail;
+	public void setMail(String email) {
+		this.email = email;
 	}
 
 	public void setAdresse(String adresse) {
