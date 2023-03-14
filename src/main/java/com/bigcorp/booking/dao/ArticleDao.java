@@ -3,38 +3,37 @@ package com.bigcorp.booking.dao;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
-import com.bigcorp.booking.model.Fournisseur;
+import com.bigcorp.booking.model.Article;
 
-public class FournisseurDao extends AbstractDao<Fournisseur> {
-
+public class ArticleDao extends AbstractDao<Article> {
+	
 	@Override
-	public Fournisseur merge(Fournisseur fournisseur) {
+	public Article merge(Article article) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
 		EntityTransaction transaction = em.getTransaction();
 
 		transaction.begin();
 
-		Fournisseur merged = em.merge(fournisseur);
-		
+		Article merged = em.merge(article);
+
 		transaction.commit();
 		em.close();
 
 		return merged;
 	}
 	
-	public Fournisseur findById(Integer id) {
+	public Article findById(Integer id) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
-		
-		return em.find(Fournisseur.class, id);
+
+		return em.find(Article.class, id);
 	}
 	
 	public void remove(Integer id) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
 		EntityTransaction transaction = em.getTransaction();
-		
+
 		transaction.begin();
-		em.createQuery("DELETE FROM Fournisseur p WHERE p.id = :id", Fournisseur.class)
-				.executeUpdate();
+		em.createQuery("DELETE FROM Article p WHERE p.id = :id", Article.class).executeUpdate();
 		transaction.commit();
 		em.close();
 	}
