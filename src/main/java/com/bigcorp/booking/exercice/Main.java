@@ -8,7 +8,7 @@ public class Main {
 		
 		FournisseurDao entity = new FournisseurDao();
 		Fournisseur fournisseur = new Fournisseur("Silvio", 
-													"Mon Tel", 
+													05060304, 
 													"Mon Email", 
 													"Mon Adresse");
 		

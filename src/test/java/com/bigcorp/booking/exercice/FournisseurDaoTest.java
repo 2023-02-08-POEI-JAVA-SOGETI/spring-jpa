@@ -10,12 +10,12 @@ public class FournisseurDaoTest {
 	public void mergeTest()
 	{
 		final String NOM = "TEST nom";
-		final String TEL = "TEST tel";
+		final Integer NUM = 03030303;
 		final String EMAIL = "TEST email";
 		final String ADRESSE = "TEST adresse";
 		
 		Fournisseur fournisseur = new Fournisseur(NOM,
-												TEL,
+												NUM,
 												EMAIL,
 												ADRESSE
 														);
@@ -27,7 +27,7 @@ public class FournisseurDaoTest {
 		Assertions.assertNotNull(testFournisseur.getId());
 		
 		Assertions.assertEquals(NOM, testFournisseur.getNom());
-		Assertions.assertEquals(TEL, testFournisseur.getNum());
+		Assertions.assertEquals(NUM, testFournisseur.getNum());
 		Assertions.assertEquals(EMAIL, testFournisseur.getEmail());
 		Assertions.assertEquals(ADRESSE, testFournisseur.getAdresse());
 		
