@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>La page des planètes !</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+
+ <h1>Détail de la planète</h1>
+ <p th:if="${planete==null}">La planète est nulle</p>
+ <div th:if="${planete != null}">
+  <p>Id :</p>
+  <p th:text="${planete.id}">3</p>
+  <p>Nom :</p>
+  <p th:text="${planete.nom}">Terre</p>
+  <p>Masse :</p>
+  <p th:text="${planete.masse}">12</p>
+ </div>
+
+
+
+ <form action="planete" th:action="@{/planete}" method="post">
+  <p>Id :</p>
+  <p>
+   <input type="text" name="id" th:value="${planete.id}" />
+  </p>
+  <p>Nom :</p>
+  <p>
+   <input type="text" name="nom" th:value="${planete.nom}" />
+  </p>
+  <p>Masse :</p>
+  <p>
+   <input type="text" name="masse" th:value="${planete.masse}" />
+  </p>
+  <input type="submit" value="Sauvegarder" />
+ </form>
+
+</body>
+</html>

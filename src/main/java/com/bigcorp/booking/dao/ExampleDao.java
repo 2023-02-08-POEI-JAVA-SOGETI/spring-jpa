@@ -7,11 +7,11 @@ import com.bigcorp.booking.model.Example;
 
 public class ExampleDao {
 
-	public Example merge(Example object) {
+	public Example merge(Example example) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
 		EntityTransaction transaction = em.getTransaction();
 		transaction.begin();
-		Example merged = em.merge(object);
+		Example merged = em.merge(example);
 		transaction.commit();
 		em.close();
 		return merged;
@@ -21,6 +21,7 @@ public class ExampleDao {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
 		return em.find(Example.class, id);
 	}
+	
 
 	public void remove(Long id) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
@@ -30,6 +31,16 @@ public class ExampleDao {
 				.executeUpdate();
 		transaction.commit();
 		em.close();
+	}
+	
+	
+	public static void main(String[] args) {
+		String nom = "Jean-Jacques";
+    	ExampleDao exampleDao = new ExampleDao();
+    	Example example = new Example();
+		example.setNom(nom);
+    	
+		Example savedExample = exampleDao.merge(example);
 	}
 
 }
