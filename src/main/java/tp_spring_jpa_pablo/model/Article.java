@@ -1,10 +1,13 @@
-package tp_spring_jpa_pablo.dao;
+package tp_spring_jpa_pablo.model;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import tp_spring_jpa_pablo.dao.EtatArticle;
+
 import javax.persistence.Enumerated;
 
 @Entity

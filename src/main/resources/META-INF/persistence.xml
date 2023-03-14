@@ -2,8 +2,10 @@
      http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
     <persistence-unit name="persistence-unit-mysql">
     	<class>com.bigcorp.booking.model.Example</class>
-    	<class>tp_spring_jpa_pablo.dao.Fournisseur</class>
-    	<class>tp_spring_jpa_pablo.dao.Article</class>
+    	<class>tp_spring_jpa_pablo.model.Fournisseur</class>
+    	<class>tp_spring_jpa_pablo.model.Article</class>
+    	<class>tp_spring_jpa_pablo.model.Client</class>
+    	<class>tp_spring_jpa_pablo.model.Utilisateur</class>
         <properties>           
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/a?useSSL=false" />

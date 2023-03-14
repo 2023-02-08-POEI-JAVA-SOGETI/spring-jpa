@@ -1,10 +1,12 @@
-package tp_spring_jpa_pablo.dao;
+package tp_spring_jpa_pablo.test;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class FournisseurDaoTest {
+import tp_spring_jpa_pablo.dao.FournisseurDao;
+import tp_spring_jpa_pablo.model.Fournisseur;
 
+public class FournisseurDaoTest {
 	@Test
     public void testSave() {
 		FournisseurDao fournisseurDao = new FournisseurDao();

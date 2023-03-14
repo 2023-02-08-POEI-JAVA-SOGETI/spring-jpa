@@ -1,4 +1,4 @@
-package tp_spring_jpa_pablo.dao;
+package tp_spring_jpa_pablo.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

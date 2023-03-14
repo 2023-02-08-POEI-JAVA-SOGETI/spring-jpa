@@ -1,7 +1,10 @@
-package tp_spring_jpa_pablo.dao;
+package tp_spring_jpa_pablo.test;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import tp_spring_jpa_pablo.dao.ArticleDao;
+import tp_spring_jpa_pablo.model.Article;
 
 public class ArticleDaoTest {
 	@Test
@@ -10,6 +13,5 @@ public class ArticleDaoTest {
 		Article article = new Article();
 		Article savedArticle = articleDao.merge(article);
 		Assertions.assertNotNull(savedArticle.getId());		
-    }
-	
+    }	
 }
