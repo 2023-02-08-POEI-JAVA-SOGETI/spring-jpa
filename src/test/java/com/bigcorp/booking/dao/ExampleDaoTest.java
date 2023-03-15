@@ -24,9 +24,6 @@ public class ExampleDaoTest {
 		Example exampleDeLaBaseDeDonnees = exampleDao.findById(savedExample.getId());
 		
 		Assertions.assertEquals(nom, exampleDeLaBaseDeDonnees.getNom());
-		
-		
-		
     }
 	  
     @Test
@@ -42,5 +39,20 @@ public class ExampleDaoTest {
 		
 		Assertions.assertNotNull(savedExample.getId());
 		
+    }
+    
+    @Test
+    public void testFindByName() {
+    	ExampleDao exampleDao = new ExampleDao();
+
+    	Example example1 = new Example();
+		example1.setNom("Michel");
+		exampleDao.merge(example1);
+
+    	Example example2 = new Example();
+		example2.setNom("Michel");
+		exampleDao.merge(example2);
+    	
+    	
     }
 }

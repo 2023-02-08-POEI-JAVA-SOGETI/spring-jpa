@@ -10,6 +10,7 @@ public class UtilisateurDaoTest {
     @Test
     public void testSave() {
     	
+    	//Arrange
 		UtilisateurDao dao = new UtilisateurDao();
 		Utilisateur utilisateur = new Utilisateur();
 		String nomUtilisateur = "Dupont";
@@ -18,12 +19,17 @@ public class UtilisateurDaoTest {
 		utilisateur.setNom(nomUtilisateur);
 		utilisateur.setLogin(loginUtilisateur);
 		//Faire de même pour les autres attributs...
+		
+		//Act 
 		Utilisateur utilisateurSauvegarde = dao.merge(utilisateur);
 		
+		//Assert
 		Assertions.assertNotNull(utilisateurSauvegarde.getId());
 		
+		//Act
 		Utilisateur utilisateurLu = dao.findById(Utilisateur.class,utilisateurSauvegarde.getId());
 		
+		//Assert
 		Assertions.assertEquals(nomUtilisateur, utilisateurLu.getNom());
 		Assertions.assertEquals(loginUtilisateur, utilisateurLu.getLogin());
 		//Faire de même pour les autres attributs...
