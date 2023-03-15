@@ -7,6 +7,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity // Décrit une entité persistable
@@ -19,7 +21,18 @@ public class Article {
     private String fournOuClient;
     private String nom;
     private String description;
-    @Enumerated(EnumType.STRING)
+    @ManyToOne
+    @JoinColumn(name = "FOURNISSEUR_ID")
+    private Fournisseurs fournisseur;
+    public Fournisseurs getFournisseur() {
+		return this.fournisseur;
+	}
+
+	public void setFournisseur(Fournisseurs fournisseur) {
+		this.fournisseur = fournisseur;
+	}
+
+	@Enumerated(EnumType.STRING)
     private EtatArticle etat;
     
     
@@ -73,5 +86,6 @@ public class Article {
 		this.etat = etat;
 	}
 
+	
 
 }

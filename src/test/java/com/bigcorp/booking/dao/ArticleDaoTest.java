@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import com.bigcorp.booking.model.Article;
 import com.bigcorp.booking.model.EtatArticle;
+import com.bigcorp.booking.model.Fournisseurs;
 import com.bigcorp.booking.model.Article;
 
 public class ArticleDaoTest {
@@ -61,6 +62,23 @@ public class ArticleDaoTest {
     	
     	List<Article> clients = clientDao.getParNom("%test%");
     	Assertions.assertEquals(2, clients.size());
+    	
+    }
+    
+    @Test
+    public void testMergeAvecFournisseur() {
+    	ArticleDao articleDao = new ArticleDao();
+    	Article article1 = new Article();
+    	article1.setNom("DS3");
+    	Fournisseurs fournisseur = new Fournisseurs();
+    	fournisseur.setNom("Emile");
+    	FournisseursDao fournisseurDAO = new FournisseursDao();
+    	Fournisseurs savedFournisseur = fournisseurDAO.merge(fournisseur);
+    	
+    	article1.setFournisseur(savedFournisseur);
+    	Article savedArticle = articleDao.merge(article1);
+    	Assertions.assertNotNull(savedArticle.getiD());
+    	
     	
     }
 }
