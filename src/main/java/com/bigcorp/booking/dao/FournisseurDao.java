@@ -1,53 +1,37 @@
 package com.bigcorp.booking.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
 
 import com.bigcorp.booking.model.Fournisseur;
 
-public class FournisseurDao {
+public class FournisseurDao extends AbstractDao<Fournisseur> {
 
-	public Fournisseur merge(Fournisseur example) {
+	public List<Fournisseur> getByName(String nomFournisseur) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
-		EntityTransaction transaction = em.getTransaction();
-		transaction.begin();
-		Fournisseur merged = em.merge(example);
-		transaction.commit();
+		List<Fournisseur> listFournisseurWithName = em
+				.createQuery("from Fournisseur where nom = :nomFournisseur", Fournisseur.class)
+				.setParameter("nomFournisseur", nomFournisseur).getResultList();
 		em.close();
-		return merged;
+		return listFournisseurWithName;
 	}
-
-	public Fournisseur findById(int id) {
+	
+	public List<Fournisseur> getByPartOfName(String nomFournisseur) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
-		return em.find(Fournisseur.class, id);
+		List<Fournisseur> listFournWithPartOfName = em
+				.createQuery("from Fournisseur where nom like :nomFournisseur", Fournisseur.class)
+				.setParameter("nomFournisseur", "%" + nomFournisseur + "%").getResultList();
+		em.close();
+		return listFournWithPartOfName;
 	}
 	
-
-//	public void remove(Long id) {
-//		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
-//		EntityTransaction transaction = em.getTransaction();
-//		transaction.begin();
-//		em.createQuery("delete from Example e where e.id = :id", Example.class).setParameter("id", id)
-//				.executeUpdate();
-//		transaction.commit();
-//		em.close();
-//	}
-//	
-	
-	public static void main(String[] args) {
-		String nom = "camille";
-    	int num = 123;
-    	String email = "camille@camille.com";
-    	String adresse = "1 rue de la Gare 75000 Paris";
-    	FournisseurDao fournisseurDao = new FournisseurDao();
-    	Fournisseur fournisseur = new Fournisseur();
-		fournisseur.setNom(nom);
-		fournisseur.setNum(num);
-		fournisseur.setEmail(email);
-		fournisseur.setAdresse(adresse);
-    	
-		Fournisseur savedFournisseur = fournisseurDao.merge(fournisseur);
-		Fournisseur savedFournisseurId = fournisseurDao.findById(1);
+	public List<Fournisseur> getByPartOfNameNotCaseSensitive(String nomFournisseur) {
+		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
+		List<Fournisseur> listFournWithPartOfNameNotCaseSensitive = em
+				.createQuery("from Fournisseur where upper(nom) like :nomFournisseur", Fournisseur.class)
+				.setParameter("nomFournisseur", "%" + nomFournisseur.toUpperCase() + "%").getResultList();
+		em.close();
+		return listFournWithPartOfNameNotCaseSensitive;
 	}
-
 }

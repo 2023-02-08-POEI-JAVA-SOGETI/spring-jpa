@@ -6,6 +6,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,12 +26,10 @@ public class Article {
     @Enumerated(EnumType.STRING)
     private TypeArticle type;
     
-    public Article(int numArticle, TypeArticle type, String nom, String description) {
-        this.numArticle = numArticle;
-        this.type = type;
-        this.nom = nom;
-        this.description = description;
-    }
+    @ManyToOne  
+    @JoinColumn(name="fournisseur_id")
+    private Fournisseur fournisseur;
+    
     // Constructeur vide
     public Article() {}
     
@@ -62,5 +62,12 @@ public class Article {
     }
     public void setDescription(String description) {
         this.description = description;
+    }
+    
+    public Fournisseur getFournisseur() {
+    	return fournisseur;
+    }
+    public void setFournisseur(Fournisseur fournisseur) {
+    	this.fournisseur = fournisseur;
     }
 }

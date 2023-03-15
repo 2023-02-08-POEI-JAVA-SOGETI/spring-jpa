@@ -53,4 +53,5 @@ public class ClientDaoTest {
 		clientDao.persist(client);
 		Assertions.assertNotNull(client.getId());
 	}
+
 }

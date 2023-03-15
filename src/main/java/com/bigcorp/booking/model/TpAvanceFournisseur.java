@@ -6,9 +6,9 @@ public class TpAvanceFournisseur {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String nom = "camille";
+		String nom = "sacha";
     	Integer num = 789;
-    	String email = "camille@camille.com";
+    	String email = "sacha@sacha.com";
     	String adresse = "1 rue de la Gare 75000 Paris";
 		Fournisseur tpFournisseur = new Fournisseur();
 		FournisseurDao tpFournisseurDao = new FournisseurDao();
@@ -19,7 +19,7 @@ public class TpAvanceFournisseur {
 		tpFournisseur.setAdresse(adresse);
 		
 		Fournisseur savedTpFournisseur = tpFournisseurDao.merge(tpFournisseur);
-		tpFournisseurDao.findById(savedTpFournisseur.getId()); 
+		tpFournisseurDao.findById(Fournisseur.class, savedTpFournisseur.getId()); 
 	}
 
 }

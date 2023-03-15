@@ -9,7 +9,7 @@ public class UtilisateurDaoTest {
 
 	@Test
 	public void testSave() {
-				
+		//Arrange		
 		Utilisateur utilisateur = new Utilisateur();
 		UtilisateurDao utilisateurDao = new UtilisateurDao();
 
@@ -26,11 +26,13 @@ public class UtilisateurDaoTest {
 		utilisateur.setEmail(email);
 		utilisateur.setLogin(login);
 		utilisateur.setPassword(password);
-		
+		//Act
 		Utilisateur savedUtilisateur = utilisateurDao.merge(utilisateur);
+		//Assert
 		Assertions.assertNotNull(savedUtilisateur.getId());
-		
+		//Act
 		Utilisateur utilisateurBdd = utilisateurDao.findById(Utilisateur.class, savedUtilisateur.getId());
+		//Assert
 		Assertions.assertEquals(prenom, utilisateurBdd.getPrenom());
 	}
 	
