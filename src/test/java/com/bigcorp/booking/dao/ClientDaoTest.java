@@ -69,6 +69,46 @@ public class ClientDaoTest {
     	Assert.assertEquals(2, clients.size());
     	
     }
+    
+    @Test
+    public void testGetParNomLikeInsensibleALaCasse() {
+		ClientDao clientDao = new ClientDao();
+    	Client client1 = new Client();
+		client1.setNom("héoui, encoreUnNomRigolo, tiens");
+		clientDao.merge(client1);
+    	
+    	Client client2 = new Client();
+    	client2.setNom("encoreUnNomRigolo");
+    	clientDao.merge(client2);
+    	
+    	Client client3 = new Client();
+    	client3.setNom("unnomrigolo");
+    	clientDao.merge(client3);
+    	
+    	List<Client> clients = clientDao.getParNomLikeInsensibleALaCasse("UnNomRigolo");
+    	Assert.assertEquals(3, clients.size());
+    	
+    }
+    
+    @Test
+    public void testGetParNomLikeSensibleALaCasse() {
+    	ClientDao clientDao = new ClientDao();
+    	Client client1 = new Client();
+		client1.setNom("héoui, encoreUnNomMarrant, tiens");
+		clientDao.merge(client1);
+    	
+    	Client client2 = new Client();
+    	client2.setNom("encoreUnNomMarrant");
+    	clientDao.merge(client2);
+    	
+    	Client client3 = new Client();
+    	client3.setNom("encoreUnNommarrant");
+    	clientDao.merge(client3);
+    	
+    	List<Client> clients = clientDao.getParNomLikeSensibleALaCasse("UnNomMarrant");
+    	Assert.assertEquals(2, clients.size());
+    	
+    }
 	  
    
 }
