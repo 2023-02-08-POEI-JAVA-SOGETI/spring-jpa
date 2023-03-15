@@ -1,5 +1,7 @@
 package com.bigcorp.booking.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
@@ -29,5 +31,23 @@ public class FournisseurDao {
 	public Fournisseur findById(Integer id) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
 		return em.find(Fournisseur.class, id);
+	}
+	
+	public List<Fournisseur> getParNom(String nomFournisseur){
+		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
+		List<Fournisseur> list 
+			= em.createQuery("from Fournisseur where nom = :nomFournisseur", Fournisseur.class)
+			.setParameter("nomFournisseur", nomFournisseur).getResultList();
+		em.close();
+		return list;
+	}
+	
+	public List<Fournisseur> getParSousChaineNom(String sousChaineNom){
+		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
+		List<Fournisseur> list 
+			= em.createQuery("from Fournisseur where lower(nom) LIKE :nomF", Fournisseur.class)
+			.setParameter("nomF", "%" + sousChaineNom.toLowerCase() + "%").getResultList();
+		em.close();
+		return list;
 	}
 }

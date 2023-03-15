@@ -1,5 +1,7 @@
 package com.bigcorp.booking.dao;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -43,5 +45,42 @@ public class FournisseurDaoTest {
 		Assertions.assertNotNull(savedFournisseur.getId());
 		
 		
+    }
+    
+    @Test
+    public void testSave3() {
+    	
+    	String nom = "FournisseurTest";
+    	FournisseurDao fournisseurDao = new FournisseurDao();
+  
+    	Fournisseur f = new Fournisseur(100, nom, "email", "adresse");
+    	fournisseurDao.merge(f);
+    	
+    	List<Fournisseur> listFournisseur = fournisseurDao.getParNom(nom);
+    	
+    	Assertions.assertEquals(1, listFournisseur.size());
+    }    
+    
+    @Test
+    public void testSave4() {
+    	
+    	String nom = "FournisseurBiduleTest";
+    	FournisseurDao fournisseurDao = new FournisseurDao();
+  
+    	Fournisseur f = new Fournisseur(100, nom, "email", "adresse");
+    	fournisseurDao.merge(f);
+    	
+    	List<Fournisseur> listFournisseur = fournisseurDao.getParSousChaineNom("bidule");
+    	
+    	Assertions.assertEquals(1, listFournisseur.size());
+    }    
+    
+    @Test
+    public void testSave5() {
+    	
+    	FournisseurDao fournisseurDao = new FournisseurDao();
+    	List<Fournisseur> listFournisseur = fournisseurDao.getParSousChaineNom("Bidule");
+    	
+    	Assertions.assertEquals(1, listFournisseur.size());
     }
 }

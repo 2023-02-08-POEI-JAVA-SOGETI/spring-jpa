@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -27,6 +29,9 @@ public class Article implements Serializable {
  private String nom;
  private String etat;
  private String description;
+ @ManyToOne
+ @JoinColumn (name = "fournisseur_id")
+ private Fournisseur fournisseur;
 
 
  
@@ -157,4 +162,12 @@ public class Article implements Serializable {
  public void setDescription(String description) {
      this.description = description;
  }
+
+public Fournisseur getFournisseur() {
+	return fournisseur;
+}
+
+public void setFournisseur(Fournisseur fournisseur) {
+	this.fournisseur = fournisseur;
+}
 }
