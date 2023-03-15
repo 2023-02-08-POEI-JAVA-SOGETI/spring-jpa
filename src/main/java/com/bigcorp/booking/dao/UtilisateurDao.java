@@ -4,5 +4,4 @@ import com.bigcorp.booking.model.Utilisateur;
 
 public class UtilisateurDao extends AbstractDao<Utilisateur>{
 
-
 }

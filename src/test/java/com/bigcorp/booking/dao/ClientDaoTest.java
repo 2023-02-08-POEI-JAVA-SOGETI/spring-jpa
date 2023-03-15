@@ -1,9 +1,13 @@
 package com.bigcorp.booking.dao;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import com.bigcorp.booking.model.Client;
+
+import junit.framework.Assert;
 
 public class ClientDaoTest {
 	  
@@ -47,6 +51,63 @@ public class ClientDaoTest {
 		
 		
 		Assertions.assertNotNull(client.getId());
+    }
+    
+    @Test
+    public void testGetParNom() {
+		ClientDao clientDao = new ClientDao();
+    	Client client1 = new Client();
+    	String nomDurand = "leNomDurandDuTestGetParNom";
+		client1.setNom(nomDurand);
+		clientDao.merge(client1);
+    	
+    	Client client2 = new Client();
+    	client2.setNom(nomDurand);
+    	clientDao.merge(client2);
+    	
+    	List<Client> clients = clientDao.getParNom(nomDurand);
+    	Assert.assertEquals(2, clients.size());
+    	
+    }
+    
+    @Test
+    public void testGetParNomLikeInsensibleALaCasse() {
+		ClientDao clientDao = new ClientDao();
+    	Client client1 = new Client();
+		client1.setNom("héoui, encoreUnNomRigolo, tiens");
+		clientDao.merge(client1);
+    	
+    	Client client2 = new Client();
+    	client2.setNom("encoreUnNomRigolo");
+    	clientDao.merge(client2);
+    	
+    	Client client3 = new Client();
+    	client3.setNom("unnomrigolo");
+    	clientDao.merge(client3);
+    	
+    	List<Client> clients = clientDao.getParNomLikeInsensibleALaCasse("UnNomRigolo");
+    	Assert.assertEquals(3, clients.size());
+    	
+    }
+    
+    @Test
+    public void testGetParNomLikeSensibleALaCasse() {
+    	ClientDao clientDao = new ClientDao();
+    	Client client1 = new Client();
+		client1.setNom("héoui, encoreUnNomMarrant, tiens");
+		clientDao.merge(client1);
+    	
+    	Client client2 = new Client();
+    	client2.setNom("encoreUnNomMarrant");
+    	clientDao.merge(client2);
+    	
+    	Client client3 = new Client();
+    	client3.setNom("encoreUnNommarrant");
+    	clientDao.merge(client3);
+    	
+    	List<Client> clients = clientDao.getParNomLikeSensibleALaCasse("UnNomMarrant");
+    	Assert.assertEquals(2, clients.size());
+    	
     }
 	  
    

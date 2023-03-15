@@ -24,7 +24,6 @@ public class ExampleDao {
 		return example;
 	}
 	
-
 	public void remove(Long id) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
 		EntityTransaction transaction = em.getTransaction();
@@ -34,7 +33,6 @@ public class ExampleDao {
 		transaction.commit();
 		em.close();
 	}
-	
 	
 	public static void main(String[] args) {
 		String nom = "Jean-Jacques";
