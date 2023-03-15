@@ -6,6 +6,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity // Décrit une entité persistable
@@ -24,6 +26,10 @@ public class Example  {
 	
 	@Enumerated(EnumType.STRING)
 	private Severite severite;
+	
+	@ManyToOne
+	@JoinColumn(name="LECON_ID")
+	private Lecon lecon;
 	
 	public Long getId() {
 		return id;
@@ -57,6 +63,20 @@ public class Example  {
 		this.severite = severite;
 	}
 
+	public Lecon getLecon() {
+		return lecon;
+	}
+
+	public void setLecon(Lecon lecon) {
+		this.lecon = lecon;
+	}
 	
+	public static void main(String[] args) {
+		Example example = new Example();
+		
+		
+	}
+
+
 
 }

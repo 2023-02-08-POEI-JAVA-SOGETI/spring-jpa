@@ -13,6 +13,7 @@ public class ClientDao extends AbstractDao<Client>{
 	/**
 	 * Récupère tous les clients dont le nom est passé en 
 	 * paramètre.
+	 * 
 	 * @param nomClient
 	 * @return une liste, not null
 	 */
