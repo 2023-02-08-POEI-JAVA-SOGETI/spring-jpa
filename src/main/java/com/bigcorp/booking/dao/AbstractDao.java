@@ -4,6 +4,14 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceContext;
 
+/* Classe abstraite = classe qui ne peut pas être instanciée directement. càd on peut pas créer d'objets à partir
+ * de cette classe => On doit créer une s/classe qui étend la classe abstraite et implémente toutes les méthodes 
+ * abstraites de la classe abstraite.
+ * Une méthode abstraite ne contient pas de corps de méthode (càd la méthode n'a pas de code).
+ * Les s/classes qui étendent la classe abstraite doivent implémenter toutes les méthodes abstraites de la classe
+ * abstraite en fournissant le corps de la méthode.
+ */
+
 /**
  * Base Abstract DAO
  * @author bigcorp
@@ -12,7 +20,7 @@ import javax.persistence.PersistenceContext;
  */
 public abstract class AbstractDao<T> {
 
-	@PersistenceContext
+	@PersistenceContext  //injecter une instance d'EntityManager, utilisée pour interagir avec la BDD
 	protected EntityManager entityManager;
 
 	/**

@@ -1,6 +1,7 @@
 package com.bigcorp.booking.dao;
 
 import javax.persistence.EntityManager;
+
 import javax.persistence.EntityTransaction;
 
 import com.bigcorp.booking.model.Example;
@@ -20,8 +21,8 @@ public class ExampleDao {
 	public Example findById(Long id) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
 		return em.find(Example.class, id);
+		
 	}
-	
 
 	public void remove(Long id) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
