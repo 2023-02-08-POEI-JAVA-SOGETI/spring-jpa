@@ -1,0 +1,33 @@
+CREATE TABLE IF NOT EXISTS Utilisateurs (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+    numero INT(10) NOT NULL UNIQUE, 
+    nom VARCHAR(50) NOT NULL, 
+    prenom VARCHAR(50) NOT NULL, 
+    email VARCHAR(50) NOT NULL, 
+    login VARCHAR(50) NOT NULL, 
+    mdp VARCHAR(50) NOT NULL);
+            
+CREATE TABLE IF NOT EXISTS Articles (
+     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+     numero INT(10) NOT NULL UNIQUE, 
+     fc VARCHAR(1) NOT NULL, 
+     nom VARCHAR(50) NOT NULL, 
+     description VARCHAR(50) NOT NULL);
+             
+CREATE TABLE IF NOT EXISTS Clients (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+    numero INT(10) NOT NULL UNIQUE, 
+    nom VARCHAR(50) NOT NULL, 
+    prenom VARCHAR(50) NOT NULL, 
+    email VARCHAR(50) NOT NULL, 
+    adresse VARCHAR(50) NOT NULL);
+            
+            
+CREATE TABLE IF NOT EXISTS Fournisseurs (
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+	numero INT(10) NOT NULL UNIQUE, 
+	nom VARCHAR(50) NOT NULL, 
+	email VARCHAR(50) NOT NULL, 
+	adresse VARCHAR(50) NOT NULL);
+            
+      

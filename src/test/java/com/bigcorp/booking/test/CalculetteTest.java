@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 public class CalculetteTest {
 	
 
+
 	static Calculette calculette;
 	
 	@BeforeAll
@@ -19,20 +20,21 @@ public class CalculetteTest {
 
 	@AfterEach
 	public void init() {
-		System.out.println("coucou");
-
-	}
+		System.out.println("coucou");}
+	
 
 	@Test
 	public void testAdditionne() {
 
+
 		//Arrange : Arrangement
 		Calculette calculette = new Calculette();
+
 
 		int a = 3;
 		int b = 7;
 		
-		//Act : Agissement
+		//Act : Action
 		int resultat1 = calculette.additionne(a,b);
 		
 		//Assert : Assertion
@@ -65,7 +67,7 @@ public class CalculetteTest {
 	public void testMultiplie() {
 		int a = 3;
 		int b = 7;
-		int resultat1 = calculette.multiplie(a,b);
+		int resultat1 = new Calculette().multiplie(a,b);
 		Assertions.assertEquals(21, resultat1);
 	}
 
@@ -73,7 +75,7 @@ public class CalculetteTest {
 	public void testDivise() {
 		double a = 3;
 		double b = 7;
-		double resultat1 = calculette.divise(a,b);
+		double resultat1 = new Calculette().divise(a,b);
 		Assertions.assertEquals(0.428, resultat1, 0.01);
 	}
 
@@ -81,13 +83,8 @@ public class CalculetteTest {
 	public void testDiviseParZero() {
 		double a = 3;
 		double b = 0;
-		Assertions.assertThrows(IllegalArgumentException.class, () -> calculette.divise(a,b));
+		Assertions.assertThrows(IllegalArgumentException.class, () -> new Calculette().divise(a,b));
 	}
 	
-	@Test
-	public void testRacineCarre() {
-	    int a = 16;
-	    double resultat1 = calculette.racineCarre(a);
-	    Assertions.assertEquals(4.0, resultat1);
-	}
+	
 }

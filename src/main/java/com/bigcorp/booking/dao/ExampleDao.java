@@ -19,10 +19,11 @@ public class ExampleDao {
 
 	public Example findById(Long id) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
-		return em.find(Example.class, id);
+		Example example = em.find(Example.class, id);
+		em.close();
+		return example;
 	}
 	
-
 	public void remove(Long id) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
 		EntityTransaction transaction = em.getTransaction();
@@ -32,7 +33,6 @@ public class ExampleDao {
 		transaction.commit();
 		em.close();
 	}
-	
 	
 	public static void main(String[] args) {
 		String nom = "Jean-Jacques";
