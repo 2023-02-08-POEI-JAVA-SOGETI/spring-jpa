@@ -5,6 +5,8 @@ import javax.persistence.EnumType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import tp_spring_jpa_pablo.dao.EtatArticle;
 
@@ -22,8 +24,24 @@ public class Article {
     private String description = "Anywhere near ORM";    
     
     @Enumerated(EnumType.STRING)
-    private EtatArticle etat;  
+    private EtatArticle etat = EtatArticle.OCCASION;  
     
+    @ManyToOne
+    @JoinColumn(name="fournisseur")
+    private Fournisseur fournisseur;
+    
+	public EtatArticle getEtat() {
+		return etat;
+	}
+	public void setEtat(EtatArticle etat) {
+		this.etat = etat;
+	}
+	public Fournisseur getFournisseur() {
+		return fournisseur;
+	}
+	public void setFournisseur(Fournisseur fournisseur) {
+		this.fournisseur = fournisseur;
+	}
 	public Integer getId() {
 		return id;
 	}

@@ -1,4 +1,4 @@
-package tp_spring_jpa_pablo.test;
+package tp_spring_jpa_pablo;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

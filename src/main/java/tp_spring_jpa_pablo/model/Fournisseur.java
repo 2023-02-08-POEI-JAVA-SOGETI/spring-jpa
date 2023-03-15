@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity // Décrit une entité persistable
@@ -17,7 +19,7 @@ public class Fournisseur {
 	private String nom = "Test";
     private String email = "test@java_jpa.com";
     private String adresse = "Anywhere near ORM"; 
-   
+          
     public Integer getId() {
 		return id;
 	}
