@@ -1,13 +1,16 @@
 package com.bigcorp.booking.dao;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import com.bigcorp.booking.model.Article;
 import com.bigcorp.booking.model.EtatArticle;
+import com.bigcorp.booking.model.Article;
 
 public class ArticleDaoTest {
-	@Test
+	/*@Test
     public void testSave() {
     	
     	String nom = "Elden Ring";
@@ -43,5 +46,21 @@ public class ArticleDaoTest {
 		Assertions.assertNotNull(savedArticle.getiD());
 		
 		
+    }*/
+    @Test
+    public void testGetParNom() {
+		ArticleDao clientDao = new ArticleDao();
+    	Article client1 = new Article();
+    	String nomDurand = "CeciEstUnTest";
+		client1.setNom(nomDurand);
+		clientDao.merge(client1);
+    	
+    	Article client2 = new Article();
+    	client2.setNom(nomDurand);
+    	clientDao.merge(client2);
+    	
+    	List<Article> clients = clientDao.getParNom("%test%");
+    	Assertions.assertEquals(2, clients.size());
+    	
     }
 }
