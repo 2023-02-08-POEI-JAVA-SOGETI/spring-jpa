@@ -1,4 +1,4 @@
-package com.bigcorp.booking.exercice;
+package com.bigcorp.booking.exercice.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

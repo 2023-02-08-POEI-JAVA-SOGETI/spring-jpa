@@ -13,17 +13,17 @@ public class Example  {
 	@Id // Décrit l’attribut servant d'identifiant et la clé primaire
 	@GeneratedValue(strategy = GenerationType.TABLE) // optionnel
 	// décrit la méthode de génération de l’identifiant
-	private Long id;
+	private Integer id;
 	
 	private String nom;
 	
 	private Float taille;
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

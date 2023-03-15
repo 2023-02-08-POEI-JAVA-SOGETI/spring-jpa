@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import com.bigcorp.booking.exercice.dao.FournisseurDao;
+import com.bigcorp.booking.exercice.model.Fournisseur;
+
 public class FournisseurDaoTest {
 	
 	
@@ -51,7 +54,7 @@ public class FournisseurDaoTest {
 		fournisseurTest.setNom("TEST");
 		dao.merge(fournisseurTest);
 		
-		Fournisseur resultTest = dao.findbyId(1);
+		Fournisseur resultTest = dao.findById(Fournisseur.class, 1);
 		
 		Assertions.assertEquals("TEST", resultTest.getNom());
 		

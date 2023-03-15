@@ -17,13 +17,13 @@ public class ExampleDao {
 		return merged;
 	}
 
-	public Example findById(Long id) {
+	public Example findById(Integer id) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
 		return em.find(Example.class, id);
 	}
 	
 
-	public void remove(Long id) {
+	public void remove(Integer id) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
 		EntityTransaction transaction = em.getTransaction();
 		transaction.begin();
@@ -42,5 +42,7 @@ public class ExampleDao {
     	
 		Example savedExample = exampleDao.merge(example);
 	}
+
+
 
 }

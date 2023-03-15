@@ -1,8 +1,10 @@
-package com.bigcorp.booking.dao;
+package com.bigcorp.booking.exercice.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceContext;
+
+import com.bigcorp.booking.dao.PersistenceSingleton;
 
 /**
  * Base Abstract DAO
@@ -10,7 +12,7 @@ import javax.persistence.PersistenceContext;
  *
  * @param <T>
  */
-public abstract class AbstractDao<T> {
+public abstract class AbstractDaoClass<T> {
 
 	@PersistenceContext
 	protected EntityManager entityManager;

@@ -2,10 +2,11 @@
      http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
     <persistence-unit name="persistence-unit">
     	<class>com.bigcorp.booking.model.Example</class>
-    	<class>com.bigcorp.booking.exercice.Fournisseur</class>
+    	<class>com.bigcorp.booking.exercice.model.Fournisseur</class>
+    	<class>com.bigcorp.booking.exercice.model.Article</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:file:C:/bdd_H2/formation-spring-jpa" />
             <!--property name="javax.persistence.jdbc.url" value="jdbc:h2:file:~/java-dev/h2-data/sample" /-->
             <property name="javax.persistence.jdbc.user" value="test" />
             <property name="javax.persistence.jdbc.password" value="test" />
@@ -15,7 +16,7 @@
             <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.format_sql" value="true" />
             <property name="hibernate.use_sql_comments" value="true" />
-            <property name="hibernate.physical_naming_strategy" value="org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy" />
+            <!-- <property name="hibernate.physical_naming_strategy" value="org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy" /> -->
         </properties>
     </persistence-unit>
 </persistence>
