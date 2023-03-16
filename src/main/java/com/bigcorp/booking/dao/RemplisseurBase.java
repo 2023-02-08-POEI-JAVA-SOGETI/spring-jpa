@@ -12,16 +12,6 @@ public class RemplisseurBase {
 
 	public static void main(String[] args) {
 
-		Article article = new Article();
-		article.setDescription("Joli");
-		article.setEtatArticle(EtatArticle.INUTILISABLE);
-		article.setNom("Arbre");
-		article.setFc("F");
-		article.setNumero(new Random().nextInt());
-
-		ArticleDao articleDao = new ArticleDao();
-		articleDao.merge(article);
-
 		Fournisseur fournisseur = new Fournisseur();
 		fournisseur.setAdresse("13 rue tabaga");
 		fournisseur.setEmail("roberto@gmail.com");
@@ -29,7 +19,18 @@ public class RemplisseurBase {
 		fournisseur.setNumero(new Random().nextInt());
 
 		FournisseurDao fournisseurDao = new FournisseurDao();
-		fournisseurDao.merge(fournisseur);
+		Fournisseur fournisseurSauvegarde = fournisseurDao.merge(fournisseur);
+		
+		Article article = new Article();
+		article.setDescription("Joli");
+		article.setEtatArticle(EtatArticle.INUTILISABLE);
+		article.setNom("Arbre");
+		article.setFc("F");
+		article.setNumero(new Random().nextInt());
+		article.setFournisseur(fournisseurSauvegarde);
+
+		ArticleDao articleDao = new ArticleDao();
+		articleDao.merge(article);
 
 		Utilisateur utilisateur = new Utilisateur();
 		utilisateur.setLogin("admin");
