@@ -70,13 +70,10 @@ public class Example  {
 	public void setLecon(Lecon lecon) {
 		this.lecon = lecon;
 	}
-	
-	public static void main(String[] args) {
-		Example example = new Example();
-		
-		
+
+	public void associateWith(Lecon lecon) {
+		this.lecon = lecon;
+		lecon.getExamples().add(this);
 	}
-
-
 
 }
