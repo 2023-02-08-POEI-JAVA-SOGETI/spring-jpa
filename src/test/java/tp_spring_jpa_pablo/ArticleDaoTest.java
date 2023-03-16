@@ -45,11 +45,11 @@ public class ArticleDaoTest {
 
     	//Création de l'Article
     	Article article1 = new Article();
-		article1.setNom("Article Test FK");
+		article1.setNom("Article Test Bidi");
 
 		//Création du Fournisseur
 		Fournisseur fournisseur = new Fournisseur();
-		fournisseur.setNom("Fournisseur Test FK");
+		fournisseur.setNom("Fournisseur Test Bidi");
 
 		//Sauvegarde du Fournisseur
 		FournisseurDao fournisseurDao = new FournisseurDao();
@@ -61,7 +61,7 @@ public class ArticleDaoTest {
 		//Sauvegarde de la leçon
 		Article savedArticle = articleDao.merge(article1);
 
-		Assertions.assertNotNull(savedArticle.getId());
+		Assertions.assertNotNull(savedArticle.getId());		
 
     }
 	

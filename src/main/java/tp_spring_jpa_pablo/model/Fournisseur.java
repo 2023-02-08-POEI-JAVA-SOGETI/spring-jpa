@@ -1,11 +1,16 @@
 package tp_spring_jpa_pablo.model;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity // Décrit une entité persistable
@@ -18,9 +23,20 @@ public class Fournisseur {
 	private Integer id;	
 	private String nom = "Test";
     private String email = "test@java_jpa.com";
-    private String adresse = "Anywhere near ORM"; 
+    private String adresse = "Anywhere near ORM";
+    
+    @OneToMany(mappedBy = "fournisseur")
+    private Set<Article> articles = new HashSet<>();
           
-    public Integer getId() {
+    public Set<Article> getArticles() {
+		return articles;
+	}
+
+    public void setArticles(Set<Article> articles) {
+        this.articles = articles;
+    }
+
+	public Integer getId() {
 		return id;
 	}
 
