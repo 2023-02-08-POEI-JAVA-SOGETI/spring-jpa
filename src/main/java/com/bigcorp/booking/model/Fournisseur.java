@@ -1,9 +1,13 @@
 package com.bigcorp.booking.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,6 +21,9 @@ public class Fournisseur {
 	private String nom;
 	private String email;
 	private String adresse;
+	
+	@OneToMany(mappedBy="fournisseur")
+	private Set<Article> articles = new HashSet<>();
 	
 	public Integer getId() {
 		return id;
@@ -56,6 +63,14 @@ public class Fournisseur {
 
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
+	}
+
+	public Set<Article> getArticles() {
+		return articles;
+	}
+
+	public void setArticles(Set<Article> articles) {
+		this.articles = articles;
 	}
 
 }

@@ -52,10 +52,6 @@ public class RemplisseurBase {
 		ClientDao clientDao = new ClientDao();
 		clientDao.merge(client);
 		
-		
-		
-		
-		
 
 	}
 
