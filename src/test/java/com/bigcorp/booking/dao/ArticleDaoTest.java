@@ -99,12 +99,45 @@ public class ArticleDaoTest {
     	Article savedArticle = articleDao.merge(article1);
     	
     	Assertions.assertEquals(savedFourni.getId(), article1.getFournisseur().getId());
+
     	
-    	
-    	
-    	
-    	
-    	
-    	
+    }
+    ////////////////////////////A REPRENDRE
+    @Test
+    public void testGetByNameWithFournisseur(){
+    	//Sauvegarde fournisseur
+    	FournisseurDao fournisseurDao = new FournisseurDao();
+    	Fournisseur fournisseur = new Fournisseur();
+		String nomFournisseur = "Gentil fournisseur";
+		fournisseur.setNom(nomFournisseur);
+    	Fournisseur fournisseurSauvegarde = fournisseurDao.merge(fournisseur);
+
+    	//Sauvegarde article
+		ArticleDao articleDao = new ArticleDao();
+		Article nouvelArticle = new Article();
+		Article newArticle = new Article();
+		String nomArticle = "Bel article, bel ouvrage !";
+		nouvelArticle.setNom(nomArticle);
+		newArticle.setNom("another great article!");
+		
+		//Rattachement
+		nouvelArticle.setFournisseur(fournisseurSauvegarde);
+		newArticle.setFournisseur(fournisseurSauvegarde);
+
+		Article articleSauvegarde = articleDao.merge(nouvelArticle);
+		Article articleSauvegarde2 = articleDao.merge(newArticle);
+		
+		List<Article> articles = articleDao.getByNameWithFournisseur(nomArticle);
+    	for(Article articleLu : articles) {
+    		Assertions.assertEquals(nomFournisseur, articleLu.getFournisseur().getNom());
+    	}
+		List<Fournisseur> fournisseurs = fournisseurDao.getByNameWithArticles(nomFournisseur);
+		Assertions.assertFalse(fournisseurs.isEmpty());
+//    	for(Fournisseur fournisseurRecup : fournisseurs) {
+//    	}
+		Assertions.assertNotNull(fournisseurs);
+//		fournisseurs.get(0).getArticles().iterator().next().getId();
+		int numberOfArticles = fournisseurs.get(0).getArticles().size();
+		Assertions.assertEquals(2,numberOfArticles);
     }
 }

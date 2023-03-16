@@ -1,9 +1,15 @@
 package com.bigcorp.booking.model;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity // Décrit une entité persistable
@@ -19,6 +25,10 @@ public class Fournisseur  {
     private Integer num;
     private String email;
     private String adresse;
+    
+    @OneToMany(mappedBy="fournisseur")
+    private List<Article> articles = new ArrayList<>();
+//    private Set<Article> articles = new HashSet<>();
 
     public Fournisseur() {
         super();
@@ -71,5 +81,17 @@ public class Fournisseur  {
 
     public void setAdresse(String adresse) {
         this.adresse = adresse;
+    }
+    
+    public List<Article> getArticles(){
+    	return articles;
+    }
+    public void setArticles(List<Article> articles) {
+    	this.articles = articles;
+    }
+    
+    public void associateWith(Article article) {
+    	this.articles.add(article);
+    	article.setFournisseur(this);
     }
 }

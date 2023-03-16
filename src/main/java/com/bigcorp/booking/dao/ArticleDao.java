@@ -14,6 +14,16 @@ public class ArticleDao extends AbstractDao<Article> {
 				.setParameter("nomArticle", nomArticle).getResultList();
 		em.close();
 		return listArticleWithName;
-
+	}
+	
+	public List<Article> getByNameWithFournisseur(String nomArticle){
+		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
+		List<Article> articles =
+				em.createQuery("from Article art "
+						+ "left outer join fetch art.fournisseur "
+						+ "where art.nom = :nomArticle", Article.class)
+					.setParameter("nomArticle", nomArticle).getResultList();
+		em.close();
+		return articles;
 	}
 }

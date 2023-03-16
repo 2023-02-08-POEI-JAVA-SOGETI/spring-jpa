@@ -3,6 +3,7 @@ package com.bigcorp.booking.model;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,7 +27,7 @@ public class Article {
     @Enumerated(EnumType.STRING)
     private TypeArticle type;
     
-    @ManyToOne  
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="fournisseur_id")
     private Fournisseur fournisseur;
     
@@ -69,5 +70,10 @@ public class Article {
     }
     public void setFournisseur(Fournisseur fournisseur) {
     	this.fournisseur = fournisseur;
+    }
+    
+    public void associateWith(Fournisseur fournisseur) {
+    	this.fournisseur = fournisseur;
+    	fournisseur.getArticles().add(this);
     }
 }

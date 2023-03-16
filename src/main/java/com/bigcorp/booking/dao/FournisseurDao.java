@@ -34,4 +34,15 @@ public class FournisseurDao extends AbstractDao<Fournisseur> {
 		em.close();
 		return listFournWithPartOfNameNotCaseSensitive;
 	}
+	
+	public List<Fournisseur> getByNameWithArticles(String nomFournisseur){
+		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
+		List <Fournisseur> fournisseurs = em.createQuery("from Fournisseur fourni " 
+											+ "left outer join fetch fourni.articles "
+											+ "where fourni.nom = :nomFournisseur", Fournisseur.class)
+											.setParameter("nomFournisseur", nomFournisseur)
+											.getResultList();
+		em.close();
+		return fournisseurs;
+	}
 }
