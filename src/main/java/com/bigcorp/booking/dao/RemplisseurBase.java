@@ -51,6 +51,11 @@ public class RemplisseurBase {
 		client.setNumero(new Random().nextInt());
 		ClientDao clientDao = new ClientDao();
 		clientDao.merge(client);
+		
+		
+		
+		
+		
 
 	}
 
