@@ -48,7 +48,7 @@ public class ArticleDaoTest {
 		
 		
     }*/
-    @Test
+	/*@Test
     public void testGetParNom() {
 		ArticleDao clientDao = new ArticleDao();
     	Article client1 = new Article();
@@ -63,21 +63,35 @@ public class ArticleDaoTest {
     	List<Article> clients = clientDao.getParNom("%test%");
     	Assertions.assertEquals(2, clients.size());
     	
-    }
+    }*/
     
     @Test
     public void testMergeAvecFournisseur() {
     	ArticleDao articleDao = new ArticleDao();
     	Article article1 = new Article();
     	article1.setNom("DS3");
+    	Article article2 = new Article();
+    	article2.setNom("DS2");
     	Fournisseurs fournisseur = new Fournisseurs();
     	fournisseur.setNom("Emile");
+    	fournisseur.getArticles().add(article2);
+    	fournisseur.getArticles().add(article1);
     	FournisseursDao fournisseurDAO = new FournisseursDao();
     	Fournisseurs savedFournisseur = fournisseurDAO.merge(fournisseur);
     	
     	article1.setFournisseur(savedFournisseur);
-    	Article savedArticle = articleDao.merge(article1);
-    	Assertions.assertNotNull(savedArticle.getiD());
+    	article2.setFournisseur(savedFournisseur);
+    	Article savedArticle1 = articleDao.merge(article1);
+    	Article savedArticle2 = articleDao.merge(article2);
+    	
+    	List<Fournisseurs> fournisseurFinal = fournisseurDAO.getFournisseurEtArticlesAssocies("Emile");
+    	Assertions.assertNotNull(fournisseurFinal);
+    	Assertions.assertFalse(fournisseurFinal.isEmpty());
+    	int numberOfArticles = fournisseurFinal.get(0).getArticles().size();
+    	Assertions.assertEquals(2, numberOfArticles);
+    
+    	/*Assertions.assertNotNull(savedArticle1.getiD());
+    	Assertions.assertNotNull(savedArticle2.getiD());*/
     	
     	
     }

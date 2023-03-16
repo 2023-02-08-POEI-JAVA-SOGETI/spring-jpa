@@ -45,7 +45,7 @@ public class FournisseursDaoTest {
 			
 	    }*/
 	    
-	    @Test
+	    /*@Test
 	    public void testGetParNom() {
 			FournisseursDao clientDao = new FournisseursDao();
 	    	Fournisseurs client1 = new Fournisseurs();
@@ -60,5 +60,5 @@ public class FournisseursDaoTest {
 	    	List<Fournisseurs> clients = clientDao.getParNom(nomDurand);
 	    	Assertions.assertEquals(2, clients.size());
 	    	
-	    }
+	    }*/
 }

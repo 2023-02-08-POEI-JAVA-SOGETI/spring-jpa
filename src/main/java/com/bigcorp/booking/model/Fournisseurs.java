@@ -1,5 +1,8 @@
 package com.bigcorp.booking.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,6 +10,7 @@ import javax.persistence.GenerationType;
 //import javax.persistence.GeneratedValue;
 //import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +24,17 @@ public class Fournisseurs {
 	private String nom;
 	private String email;
 	private String adresse;
+	
+	@OneToMany(mappedBy = "fournisseur")
+	private List<Article> articles = new ArrayList<>();
+
+	public List<Article> getArticles() {
+		return this.articles;
+	}
+
+	public void setArticles(List<Article> articles) {
+		this.articles = articles;
+	}
 
 	// Getters
 	public Integer getiD() {
