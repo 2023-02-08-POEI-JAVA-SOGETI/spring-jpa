@@ -4,9 +4,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -25,6 +28,10 @@ public class Client {
 
 	@OneToMany(mappedBy = "client")
 	private Set<Utilisateur> utilisateurs = new HashSet<>();
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "FOURNISSEUR_ID")
+	private Fournisseur fournisseur;
 	
 	public Integer getId() {
 		return id;
@@ -80,6 +87,26 @@ public class Client {
 
 	public void setUtilisateurs(Set<Utilisateur> utilisateurs) {
 		this.utilisateurs = utilisateurs;
+	}
+
+	
+	public Fournisseur getFournisseur() {
+		return fournisseur;
+	}
+
+	public void setFournisseur(Fournisseur fournisseur) {
+		this.fournisseur = fournisseur;
+	}
+
+	/**
+	 * Associe this à fournisseur.
+	 * Modifie fournisseur.client pour rendre les deux
+	 * relations cohérentes
+	 * @param fournisseur not null
+	 */
+	public void associe(Fournisseur fournisseur) {
+		this.fournisseur = fournisseur;
+		this.fournisseur.getClients().add(this);
 	}
 
 }

@@ -25,6 +25,9 @@ public class Fournisseur {
 	@OneToMany(mappedBy="fournisseur")
 	private Set<Article> articles = new HashSet<>();
 	
+	@OneToMany(mappedBy = "fournisseur")
+	private Set<Client> clients = new HashSet<>();
+	
 	public Integer getId() {
 		return id;
 	}
@@ -71,6 +74,14 @@ public class Fournisseur {
 
 	public void setArticles(Set<Article> articles) {
 		this.articles = articles;
+	}
+
+	public Set<Client> getClients() {
+		return clients;
+	}
+
+	public void setClients(Set<Client> clients) {
+		this.clients = clients;
 	}
 
 }
