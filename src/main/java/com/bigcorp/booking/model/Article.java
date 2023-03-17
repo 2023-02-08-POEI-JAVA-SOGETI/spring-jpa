@@ -85,5 +85,16 @@ public class Article {
 	public void setFournisseur(Fournisseur fournisseur) {
 		this.fournisseur = fournisseur;
 	}
+	
+	/**
+	 * Associe this à fournisseur.
+	 * Modifie fournisseur.articles pour rendre les deux
+	 * relations cohérentes
+	 * @param fournisseur not null
+	 */
+	public void associe(Fournisseur fournisseur) {
+		this.fournisseur = fournisseur;
+		this.fournisseur.getArticles().add(this);
+	}
 
 }

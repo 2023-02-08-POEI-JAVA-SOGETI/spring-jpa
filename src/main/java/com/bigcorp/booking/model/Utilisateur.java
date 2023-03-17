@@ -1,9 +1,12 @@
 package com.bigcorp.booking.model;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +22,10 @@ public class Utilisateur {
 	private String email;
 	private String login;
 	private String mdp;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "CLIENT_ID")
+	private Client client;
 
 	public Integer getId() {
 		return id;
@@ -74,6 +81,25 @@ public class Utilisateur {
 
 	public void setMdp(String mdp) {
 		this.mdp = mdp;
+	}
+
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
+	
+	/**
+	 * Associe this à client.
+	 * Modifie client.utilisateur pour rendre les deux
+	 * relations cohérentes
+	 * @param client not null
+	 */
+	public void associe(Client client) {
+		this.client = client;
+		this.client.getUtilisateurs().add(this);
 	}
 
 }
