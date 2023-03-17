@@ -1,37 +1,38 @@
 package com.bigcorp.booking.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-@Entity   //@Entity": j'indique à JPA que cette classe = entité persistante
-@Table(name = "Articles")    //Je lui dis aussi que la table que j'utise c'est Articles
+@Entity
+@Table(name = "clients")
+public class Clients {
 
-public class Articles {  
-	@Id //Je dit JPA que cette variable est la PK de l'entité
-	@GeneratedValue(strategy = GenerationType.IDENTITY)  //et je lui dit comment la PK sera générée lors d'insertion d'un nouvel element dans la table. 
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private Integer numero;
-	private String fc;
 	private String nom;
-	private String description;
+	private String prenom;
+	private String email;
+	private String adresse;
 
-	@Enumerated(EnumType.STRING)
-	private EtatArticles etatArticle;
-
+	@OneToMany(mappedBy = "client")
+	private Set<Utilisateurs> utilisateurs = new HashSet<>();
+	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "FOURNISSEUR_ID")
 	private Fournisseurs fournisseur;
-
+	
 	public Integer getId() {
 		return id;
 	}
@@ -48,14 +49,6 @@ public class Articles {
 		this.numero = numero;
 	}
 
-	public String getFc() {
-		return fc;
-	}
-
-	public void setFc(String fc) {
-		this.fc = fc;
-	}
-
 	public String getNom() {
 		return nom;
 	}
@@ -64,22 +57,39 @@ public class Articles {
 		this.nom = nom;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getPrenom() {
+		return prenom;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
 	}
 
-	public EtatArticles getEtatArticle() {
-		return etatArticle;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setEtatArticle(EtatArticles etatArticle) {
-		this.etatArticle = etatArticle;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
+	public String getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
+
+	public Set<Utilisateurs> getUtilisateurs() {
+		return utilisateurs;
+	}
+
+	public void setUtilisateurs(Set<Utilisateurs> utilisateurs) {
+		this.utilisateurs = utilisateurs;
+	}
+
+	
 	public Fournisseurs getFournisseur() {
 		return fournisseur;
 	}
@@ -87,16 +97,16 @@ public class Articles {
 	public void setFournisseur(Fournisseurs fournisseur) {
 		this.fournisseur = fournisseur;
 	}
-	
+
 	/**
 	 * Associe this à fournisseur.
-	 * Modifie fournisseur.articles pour rendre les deux
+	 * Modifie fournisseur.client pour rendre les deux
 	 * relations cohérentes
 	 * @param fournisseur not null
 	 */
 	public void associe(Fournisseurs fournisseur) {
 		this.fournisseur = fournisseur;
-		this.fournisseur.getArticles().add(this);
+		this.fournisseur.getClients().add(this);
 	}
 
 }

@@ -9,6 +9,9 @@ import org.junit.jupiter.api.Test;
  */
 public class CalculetteTest {
 	
+	static Calculette calculette;
+	
+	
 	@AfterEach
 	public void init() {
 		System.out.println("coucou");
@@ -21,7 +24,7 @@ public class CalculetteTest {
 		int a = 3;
 		int b = 7;
 		
-		//Act : Agissement
+		//Act : Action
 		int resultat1 = calculette.additionne(a,b);
 		
 		//Assert : Assertion
@@ -52,31 +55,26 @@ public class CalculetteTest {
 
 	@Test
 	public void testMultiplie() {
-		Calculette calculette = new Calculette();
 		int a = 3;
 		int b = 7;
-		int resultat1 = calculette.multiplie(a,b);
+		int resultat1 = new Calculette().multiplie(a,b);
 		Assertions.assertEquals(21, resultat1);
 	}
 
 	@Test
 	public void testDivise() {
-		Calculette calculette = new Calculette();
 		double a = 3;
 		double b = 7;
-		double resultat1 = calculette.divise(a,b);
+		double resultat1 = new Calculette().divise(a,b);
 		Assertions.assertEquals(0.428, resultat1, 0.01);
 	}
 
 	@Test
 	public void testDiviseParZero() {
-		Calculette calculette = new Calculette();
 		double a = 3;
 		double b = 0;
-		Assertions.assertThrows(IllegalArgumentException.class, () -> calculette.divise(a,b));
+		Assertions.assertThrows(IllegalArgumentException.class, () -> new Calculette().divise(a,b));
 	}
-	 
-
-	  
-
+	
+	
 }

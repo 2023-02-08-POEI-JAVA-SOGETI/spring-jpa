@@ -114,5 +114,10 @@
 			<version>6.0.5</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>fr.edf</groupId>
+			<artifactId>poe-java-av-jdbc</artifactId>
+			<version>1.0.24-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 </project>

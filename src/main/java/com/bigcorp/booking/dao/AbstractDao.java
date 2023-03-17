@@ -20,16 +20,18 @@ import javax.persistence.PersistenceContext;
  */
 public abstract class AbstractDao<T> {
 
-	@PersistenceContext  //injecter une instance d'EntityManager, utilisée pour interagir avec la BDD
+	@PersistenceContext
 	protected EntityManager entityManager;
 
 	/**
 	 * @see EntityManager#find(Class, Object)
 	 * @param entity
 	 */
-	public T findById(Class<T> clazz, Long id) {
+	public T findById(Class<T> clazz, Integer id) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
-		return em.find(clazz, id);
+		T foundEntity = em.find(clazz, id);
+		em.close();
+		return foundEntity;
 	}
 
 	/**

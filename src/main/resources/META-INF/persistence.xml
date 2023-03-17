@@ -2,9 +2,16 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
      http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
     <persistence-unit name="persistence-unit">
-    	<class>com.bigcorp.booking.model.Fournisseurs</class>
+    	<class>com.bigcorp.booking.model.Example</class>
+    	<class>com.bigcorp.booking.model.Lecon</class>
     	<class>com.bigcorp.booking.model.Articles</class>
+    	<class>com.bigcorp.booking.model.Clients</class>
+    	<class>com.bigcorp.booking.model.Fournisseurs</class>
+    	<class>com.bigcorp.booking.model.Utilisateurs</class>    	    	
         <properties>
+        
+         <!--<property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />-->
+         
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/formationjava" />
             <!--property name="javax.persistence.jdbc.url" value="jdbc:h2:file:~/java-dev/h2-data/sample" /-->
