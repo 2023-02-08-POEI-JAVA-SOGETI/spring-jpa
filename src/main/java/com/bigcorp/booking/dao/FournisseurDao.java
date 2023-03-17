@@ -13,7 +13,7 @@ public class FournisseurDao extends AbstractDao<Fournisseur> {
 		List<Fournisseur> fournisseurs = em.createQuery("from Fournisseur fournisseur "
 				+ " left outer join fetch fournisseur.articles "
 				+ " where fournisseur.nom = :nomFournisseur "
-				+ "	order by fournisseur.nom desc, articles.id ", Fournisseur.class)
+				, Fournisseur.class)
 				.setParameter("nomFournisseur", nomFournisseur).getResultList();
 		em.close();
 		return fournisseurs;
