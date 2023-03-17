@@ -15,5 +15,4 @@ public class SpringApplication {
 			MonControleurWeb monControleur = appContext.getBean(MonControleurWeb.class);
 		}
 	}
-
 }
