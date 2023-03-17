@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="monControleurWeb" class="com.bigcorp.booking.MonControleurWeb">
+        <property name="monService" ref="monService" />
+    </bean>
+
+    <bean id="monService" class="com.bigcorp.booking.service.0MonService">
+        <property name="monDao" ref="monDao" />
+    </bean>
+
+    <bean id="monDao" class="com.bigcorp.booking.MonDao" />
+
+</beans>
