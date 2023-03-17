@@ -29,6 +29,7 @@ public class Article implements Serializable {
  private String nom;
  private String etat;
  private String description;
+ 
  @ManyToOne
  @JoinColumn (name = "fournisseur_id")
  private Fournisseur fournisseur;

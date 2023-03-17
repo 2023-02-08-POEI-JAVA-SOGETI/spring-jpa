@@ -32,7 +32,7 @@ public class ArticleDaoTest {
     @Test
     public void testSave2() {
     	
-    	Integer num_article = 1;
+    	Integer num_article = 2;
     	String nom = "brouette";
     	String description = "c'est bien pratique une brouette";
     	
@@ -53,5 +53,6 @@ public class ArticleDaoTest {
 		Article exempleBdd = articleDao.findById(Article.class, savedArticle.getId());
 		Assertions.assertEquals(f.getNom(), exempleBdd.getFournisseur().getNom());
 		
-    }
+    }    
+    
 }

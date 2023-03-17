@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
+import com.bigcorp.booking.model.Article;
 import com.bigcorp.booking.model.Fournisseur;
 
 public class FournisseurDao {
@@ -47,6 +48,16 @@ public class FournisseurDao {
 		List<Fournisseur> list 
 			= em.createQuery("from Fournisseur where lower(nom) LIKE :nomF", Fournisseur.class)
 			.setParameter("nomF", "%" + sousChaineNom.toLowerCase() + "%").getResultList();
+		em.close();
+		return list;
+	}	
+	
+	public List<Fournisseur> getArticlesByFournisseur(String fournisseur){
+		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
+		List<Fournisseur> list 
+			= em.createQuery("from Fournisseur f left join fetch f.articles "
+					+ " where f.nom = :nomFournisseur", Fournisseur.class)
+			.setParameter("nomFournisseur", fournisseur).getResultList();
 		em.close();
 		return list;
 	}

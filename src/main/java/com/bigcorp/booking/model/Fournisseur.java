@@ -2,11 +2,14 @@ package com.bigcorp.booking.model;
 
 //Import de Serializable pour creer un JavaBean
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -27,6 +30,9 @@ public class Fournisseur implements Serializable {
  private String email;
  private String adresse;
  
+ @OneToMany (mappedBy = "fournisseur")
+ private List<Article> articles;
+ 
  /**
   * Constructeur sans paramètre
   */
@@ -36,6 +42,7 @@ public class Fournisseur implements Serializable {
      this.nom = "NOM";
      this.email = "EMAIL";
      this.adresse = "ADRESSE";
+     this.articles = new ArrayList<>();
  }
 
  /**
@@ -51,6 +58,7 @@ public class Fournisseur implements Serializable {
      this.nom = nom;
      this.email = email;
      this.adresse = adresse;
+     this.articles = new ArrayList<>();
  }
  
  /**
@@ -67,6 +75,7 @@ public class Fournisseur implements Serializable {
      this.nom = nom;
      this.email = email;
      this.adresse = adresse;
+     this.articles = new ArrayList<>();
  }
  // Getters
 
@@ -151,4 +160,12 @@ public class Fournisseur implements Serializable {
  public void setAdresse(String adresse) {
      this.adresse = adresse;
  }
+
+public List<Article> getArticles() {
+	return articles;
+}
+
+public void setArticles(List<Article> articles) {
+	this.articles = articles;
+}
 }
