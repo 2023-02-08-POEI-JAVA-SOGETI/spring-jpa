@@ -3,16 +3,19 @@ package com.bigcorp.booking.model;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="CLIENT")
+@Table(name = "CLIENT")
 public class Client implements Serializable {
 	private static final long serialVersionUID = -1912226135224432621L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -21,6 +24,12 @@ public class Client implements Serializable {
 	private String prenom;
 	private String email;
 	private String adresse;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "utilisateurId")
+	private Utilisateur utilisateur;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "fournisseurId")
+	private Fournisseur fournisseur;
 
 	public Client() {
 		this.numero = 0;
@@ -71,6 +80,14 @@ public class Client implements Serializable {
 		return adresse;
 	}
 
+	public Utilisateur getUtilisateur() {
+		return utilisateur;
+	}
+	
+	public Fournisseur getFournisseur() {
+		return fournisseur;
+	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
@@ -93,5 +110,23 @@ public class Client implements Serializable {
 
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
+	}
+
+	public void setUtilisateur(Utilisateur utilisateur) {
+		this.utilisateur = utilisateur;
+	}
+
+	public void setFournisseur(Fournisseur fournisseur) {
+		this.fournisseur = fournisseur;
+	}
+
+	public void associateWithUtilisateur(Utilisateur utilisateur) {
+		this.utilisateur = utilisateur;
+		utilisateur.getClients().add(this);
+	}
+	
+	public void associateWithFournisseur(Fournisseur fournisseur) {
+		this.fournisseur = fournisseur;
+		fournisseur.getClients().add(this);
 	}
 }

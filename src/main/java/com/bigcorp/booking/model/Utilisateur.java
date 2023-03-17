@@ -1,11 +1,14 @@
 package com.bigcorp.booking.model;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -22,6 +25,8 @@ public class Utilisateur implements Serializable {
 	private String email;
 	private String login;
 	private String mdp;
+	@OneToMany(mappedBy = "utilisateur")
+	private Set<Client> clients;
 
 	public Utilisateur() {
 		this.numero = 0;
@@ -30,6 +35,7 @@ public class Utilisateur implements Serializable {
 		this.email = "EMAIL";
 		this.login = "LOGIN";
 		this.mdp = "MDP";
+		this.clients = new HashSet<Client>();
 	}
 
 	public Utilisateur(Integer numero, String nom, String prenom, String email, String login, String mdp) {
@@ -39,6 +45,7 @@ public class Utilisateur implements Serializable {
 		this.email = email;
 		this.login = login;
 		this.mdp = mdp;
+		this.clients = new HashSet<Client>();
 	}
 
 	public Utilisateur(Integer id, Integer numero, String nom, String prenom, String email, String login, String mdp) {
@@ -49,6 +56,7 @@ public class Utilisateur implements Serializable {
 		this.email = email;
 		this.login = login;
 		this.mdp = mdp;
+		this.clients = new HashSet<Client>();
 	}
 
 	public Integer getId() {
@@ -78,6 +86,10 @@ public class Utilisateur implements Serializable {
 	public String getMdp() {
 		return mdp;
 	}
+	
+	public Set<Client> getClients() {
+		return clients;
+	}
 
 	public void setId(Integer id) {
 		this.id = id;
@@ -105,5 +117,14 @@ public class Utilisateur implements Serializable {
 
 	public void setMdp(String mdp) {
 		this.mdp = mdp;
+	}
+	
+	public void setClients(Set<Client> clients) {
+		this.clients = clients;
+	}
+	
+	public void associateWith(Client client) {
+		this.clients.add(client);
+		client.setUtilisateur(this);
 	}
 }

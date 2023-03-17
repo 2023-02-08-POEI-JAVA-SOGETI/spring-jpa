@@ -1,9 +1,13 @@
 package com.bigcorp.booking.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -12,116 +16,107 @@ public class Fournisseur {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-    private Integer numero;
-    private String nom;
-    private String email;
-    private String adresse;
-    
-
-    public Fournisseur() {
-        this.numero = 0;
-        this.nom = "NOM";
-        this.email = "EMAIL";
-        this.adresse = "ADRESSE";
-    }
+	private Integer numero;
+	private String nom;
+	private String email;
+	private String adresse;
+	@OneToMany(mappedBy = "fournisseur")
+	private Set<Article> articles;
+	@OneToMany(mappedBy = "fournisseur")
+	private Set<Client> clients;
 
 
-    public Fournisseur(Integer numero, String nom, String email, String adresse) {
-        this.numero = numero;
-        this.nom = nom;
-        this.email = email;
-        this.adresse = adresse;
-    }
-    
+	public Fournisseur() {
+		this.numero = 0;
+		this.nom = "NOM";
+		this.email = "EMAIL";
+		this.adresse = "ADRESSE";
+		this.articles = new HashSet<Article>();
+		this.clients = new HashSet<Client>();
+	}
 
-    public Fournisseur(Integer id, Integer numero, String nom, String email, String adresse) {
-        this.id = id;
-        this.numero = numero;
-        this.nom = nom;
-        this.email = email;
-        this.adresse = adresse;
-    }
-    // Getters
+	public Fournisseur(Integer numero, String nom, String email, String adresse) {
+		this.numero = numero;
+		this.nom = nom;
+		this.email = email;
+		this.adresse = adresse;
+		this.articles = new HashSet<Article>();
+		this.clients = new HashSet<Client>();
+	}
 
-    /**
-     * Getter Id
-     * @return Id
-     */
-    public Integer getId() {
-        return id;
-    }
+	public Fournisseur(Integer id, Integer numero, String nom, String email, String adresse) {
+		this.id = id;
+		this.numero = numero;
+		this.nom = nom;
+		this.email = email;
+		this.adresse = adresse;
+		this.articles = new HashSet<Article>();
+		this.clients = new HashSet<Client>();
+	}
 
-    /**
-     * getter Numero
-     * @return Numero
-     */
-    public Integer getNumero() {
-        return numero;
-    }
+	public Integer getId() {
+		return id;
+	}
 
-    /**
-     * getter Nom
-     * @return Nom
-     */
-    public String getNom() {
-        return nom;
-    }
+	public Integer getNumero() {
+		return numero;
+	}
 
-    /**
-     * Getter Email
-     * @return Email
-     */
-    public String getEmail() {
-        return email;
-    }
+	public String getNom() {
+		return nom;
+	}
 
-    /**
-     * Getter Adresse
-     * @return Adresse
-     */
-    public String getAdresse() {
-        return adresse;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    // Setters
+	public String getAdresse() {
+		return adresse;
+	}
 
-    /**
-     * Setter id
-     * @param id : numéro de l'enregistrement dans la table
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
-    
-    /**
-     * Setter numero
-     * @param numero : numero du fournisseur
-     */
-    public void setNumero(Integer numero) {
-        this.numero = numero;
-    }
-    
-    /**
-     * Setter nom
-     * @param nom : nom du fournisseur
-     */
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
+	public Set<Article> getArticles() {
+		return articles;
+	}
+	
+	public Set<Client> getClients() {
+		return clients;
+	}
 
-    /**
-     * Setter email
-     * @param email : email du fournisseur
-     */
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    /**
-     * Setter adresse
-     * @param adresse : adresse du fournisseur
-     */
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
-    }
+	public void setNumero(Integer numero) {
+		this.numero = numero;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
+
+	public void setArticles(Set<Article> articles) {
+		this.articles = articles;
+	}
+	
+	public void setClients(Set<Client> clients) {
+		this.clients = clients;
+	}
+
+	public void associateWithArticle(Article article) {
+		this.articles.add(article);
+		article.setFournisseur(this);
+	}
+	
+	public void associateWithClient(Client client) {
+		this.clients.add(client);
+		client.setFournisseur(this);
+	}
 }

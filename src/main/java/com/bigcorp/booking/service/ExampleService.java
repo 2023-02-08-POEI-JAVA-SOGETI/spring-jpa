@@ -1,6 +1,7 @@
 package com.bigcorp.booking.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,6 +14,7 @@ import com.bigcorp.booking.model.Example;
  * pour illustrer les capacités de Spring Data JPA
  */
 @Service
+@Component
 public class ExampleService {
 
 	@Autowired

@@ -114,5 +114,10 @@
 			<version>6.0.5</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>java-tp</groupId>
+			<artifactId>jdbc-servlet-shop</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 </project>
