@@ -39,6 +39,8 @@ public class TpAvanceArticleFourniss {
 //		
 //		tpArticleDao.findById(Article.class, savedTpArticle.getId());
 
+		
+		
 		// CREATE article in mysql
     	Article tpArticle = new Article();
     	Article tpArticle2 = new Article();
@@ -59,8 +61,8 @@ public class TpAvanceArticleFourniss {
 		tpFournisseur.setNum(2365);		
 		tpFournisseur.setEmail("claviers@claviers.com");		
 		tpFournisseur.setAdresse("1 rue des claviers très biens 10000 claviertresbiensville");		
-		
-		//Sauvegarde du fournisseur
+//		
+//		//Sauvegarde du fournisseur
 		FournisseurDao tpFournisseurDao = new FournisseurDao();
 		Fournisseur savedTpFournisseur = tpFournisseurDao.merge(tpFournisseur);
 		
@@ -77,6 +79,24 @@ public class TpAvanceArticleFourniss {
 		
 		tpArticleDao.findById(Article.class, savedTpArticle.getId());
 		
+		//Liaison de 2 articles avec un fournisseur
+		//Récupérer les objets en base :
+		Article articleId8 = tpArticleDao.findById(Article.class, 8);
+		Article articleId9 = tpArticleDao.findById(Article.class, 9);
+		
+		//Modif valeur type (car articles enregistrés avec EnumType.ORDINAL (fait directement via sql) 
+		articleId8.setType(TypeArticle.OCCASION);
+		articleId8.setType(TypeArticle.OCCASION);
+		
+		//Récupération du fournisseur existant dans la BDD via ID
+		Fournisseur fournisseurId4 = tpFournisseurDao.findById(Fournisseur.class, 4);
+		
+		//Information du fournisseur à lier aux articles
+		articleId8.setFournisseur(fournisseurId4);
+		articleId9.setFournisseur(fournisseurId4);
+		
+		//Enregistrement des données modifiées dans la BDD
+		tpArticleDao.merge(articleId8);
+		tpArticleDao.merge(articleId9);
 	}
-
 }
