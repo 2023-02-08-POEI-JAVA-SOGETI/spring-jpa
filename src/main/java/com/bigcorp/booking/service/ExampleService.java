@@ -15,7 +15,7 @@ import com.bigcorp.booking.model.Example;
 @Service
 public class ExampleService {
 
-	@Autowired
+	
 	private ExampleSpringDao exampleSpringDao;
 
 	/**

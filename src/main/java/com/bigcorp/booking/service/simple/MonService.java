@@ -1,4 +1,4 @@
-package com.bigcorp.booking.service;
+package com.bigcorp.booking.service.simple;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

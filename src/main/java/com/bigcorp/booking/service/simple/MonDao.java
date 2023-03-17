@@ -1,4 +1,4 @@
-package com.bigcorp.booking.service;
+package com.bigcorp.booking.service.simple;
 
 import org.springframework.stereotype.Component;
 
