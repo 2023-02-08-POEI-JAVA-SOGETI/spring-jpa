@@ -1,17 +1,13 @@
 package tp_spring_jpa_pablo;
 
-import java.util.Arrays;
 import java.util.List;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import junit.framework.Assert;
 import tp_spring_jpa_pablo.dao.ArticleDao;
 import tp_spring_jpa_pablo.dao.FournisseurDao;
-import tp_spring_jpa_pablo.dao.FournisseurDao;
 import tp_spring_jpa_pablo.model.Article;
-import tp_spring_jpa_pablo.model.Fournisseur;
 import tp_spring_jpa_pablo.model.Fournisseur;
 
 public class FournisseurDaoTest {
@@ -40,33 +36,28 @@ public class FournisseurDaoTest {
 	
 	@Test
     public void testRelationBidirectionnelle() {
-    	ArticleDao articleDao = new ArticleDao();
-
-    	//Création des Articles
-    	Article article1 = new Article();
-    	Article article2 = new Article();
-    	Article article3 = new Article();
-		article1.setNom("Article Test Bidi");
-		article2.setNom("Article2 Test Bidi");
-		article3.setNom("Article3 Test Bidi");
-		
-		// List avec mes articles
-		List<Article> articles = Arrays.asList(article1, article2, article3);
-
-		//Création du Fournisseur
-		Fournisseur fournisseur = new Fournisseur();
-		fournisseur.setNom("Fournisseur Test Bidi");
-		fournisseur.getArticles().addAll(articles);
-
 		//Sauvegarde du Fournisseur
 		FournisseurDao fournisseurDao = new FournisseurDao();
-		Fournisseur savedFournisseur = fournisseurDao.merge(fournisseur);		
-				
-		// Liaison des deux entités
-		for (Article article : articles) {
-		    article.setFournisseur(savedFournisseur);
-		    Article savedArticle = articleDao.merge(article);
-		    Assertions.assertNotNull(savedArticle.getId(), "The saved article should have an ID.");
+		Fournisseur fournisseur = new Fournisseur();
+		String nomFournisseur = "Fournisseur Test Bidi";
+		fournisseur.setNom(nomFournisseur);		
+		Fournisseur savedFournisseur = fournisseurDao.merge(fournisseur);
+
+    	//Sauvegarde des Articles
+		ArticleDao articleDao = new ArticleDao();
+		Article newArticle = new Article();    	
+		newArticle.setNom("Article Test Bidi");
+		
+		// Rattachement
+		newArticle.setFournisseur(savedFournisseur);
+		savedFournisseur.getArticles().add(newArticle);
+		
+		// Sauvegarde
+		articleDao.merge(newArticle);
+		
+		List<Fournisseur> fournisseurs = fournisseurDao.getArticlesFournisseur(nomFournisseur);
+		for (Fournisseur fournisseurLu : fournisseurs) {
+			Assertions.assertEquals(1, fournisseurLu.getArticles().size());
 		}		
 
     }

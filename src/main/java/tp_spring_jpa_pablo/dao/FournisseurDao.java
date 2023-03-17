@@ -1,13 +1,10 @@
 package tp_spring_jpa_pablo.dao;
 
 import java.util.List;
-import java.util.Set;
-
 import javax.persistence.EntityManager;
 
 import com.bigcorp.booking.dao.PersistenceSingleton;
 
-import tp_spring_jpa_pablo.model.Article;
 import tp_spring_jpa_pablo.model.Fournisseur;
 
 public class FournisseurDao extends AbstractDao<Fournisseur> {
@@ -23,12 +20,12 @@ public class FournisseurDao extends AbstractDao<Fournisseur> {
 	}
 	
 	// JPQL requetes recuperer la liste des articles du fournisseur
-	public List<Fournisseur> getArticlesFournisseur(Fournisseur nomFournisseur) {
+	public List<Fournisseur> getArticlesFournisseur(String nomFournisseur) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
 		List<Fournisseur> articlesDuFournisseur = 
-	        em.createQuery("select f from Fournisseur f left join f.articles a where f.nom = :nomFournisseur", Fournisseur.class)
-	        .setParameter("nomFournisseur", nomFournisseur)
-	        .getResultList();
+	        em.createQuery("select f from Fournisseur f left outer join fetch f.articles a "
+	        		+ " where f.nom = :nomFournisseur", Fournisseur.class)
+	        .setParameter("nomFournisseur", nomFournisseur).getResultList();
 	    em.close();
 	    return articlesDuFournisseur;
 	}
