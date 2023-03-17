@@ -1,5 +1,10 @@
 package com.bigcorp.booking.dao;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+
+import java.util.List;
 import java.util.Random;
 
 import org.junit.jupiter.api.Assertions;
@@ -7,6 +12,9 @@ import org.junit.jupiter.api.Test;
 
 import com.bigcorp.booking.model.Article;
 import com.bigcorp.booking.model.Etat;
+import com.bigcorp.booking.model.Fournisseur;
+
+
 
 public class ArticleDaoTest {
 	
@@ -48,5 +56,6 @@ public class ArticleDaoTest {
 		Assertions.assertEquals(conteneur20.getDescription(), exampleDeLaBaseDeDonnees2.getDescription());
 		Assertions.assertEquals(conteneur20.getEtat(), exampleDeLaBaseDeDonnees2.getEtat());
 	}
+	
 	
 }

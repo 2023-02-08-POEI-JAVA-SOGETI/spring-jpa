@@ -1,14 +1,21 @@
 package com.bigcorp.booking.model;
 
-import java.util.Random;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.bigcorp.booking.dao.FournisseurDao;
+import org.hibernate.mapping.Array;
+
+
 
 @Entity
 @Table(name = "FOURNISSEURS")
@@ -22,6 +29,16 @@ public class Fournisseur {
 	private String email;
 	private String adresse;
 	
+	@OneToMany(mappedBy = "fournisseur")
+	private List<Article> articles = new ArrayList<>();
+	
+	
+	public List<Article> getArticles() {
+		return articles;
+	}
+	public void setArticles(List<Article> articles) {
+		this.articles = articles;
+	}
 	public Integer getId() {
 		return id;
 	}
@@ -56,25 +73,6 @@ public class Fournisseur {
 	
 	public static void main(String[] args){
 		
-		FournisseurDao daoFournisseur = new FournisseurDao();
-		Random random = new Random();
-		Fournisseur evergreen = new Fournisseur();
-		evergreen.setNom("Evergreen");
-		evergreen.setNumero_fournisseur(random.nextInt(100));
-		evergreen.setAdresse("Honk Kong");
-		evergreen.setEmail("contact@evergreen-shipping.com");
-		
-		Fournisseur cma = new Fournisseur();
-		cma.setNom("Cma Cgm");
-		cma.setNumero_fournisseur(random.nextInt(100));
-		cma.setAdresse("Marseille");
-		cma.setEmail("contact@cmacgm-shipping.com");
-		
-		Fournisseur evergreenBase = daoFournisseur.merge(evergreen);
-		Fournisseur cmaBase = daoFournisseur.merge(cma);
-	
-		daoFournisseur.findById(evergreenBase.getId());
-		daoFournisseur.findById(cmaBase.getId());
 	}
 }
 
