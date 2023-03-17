@@ -10,6 +10,4 @@ import com.bigcorp.booking.model.Example;
 public interface ExampleSpringDao extends CrudRepository<Example, Long>  {
 
 	
-	
-	
 }
