@@ -2,13 +2,14 @@ package com.bigcorp.booking.model;
 
 import java.util.HashSet;
 import java.util.Set;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.bigcorp.booking.tentative.Livre;
 
 @Entity
 @Table(name="fournisseurs")
@@ -27,6 +28,9 @@ public class Fournisseur {
 	
 	@OneToMany(mappedBy = "fournisseur")
 	private Set<Client> clients = new HashSet<>();
+
+	@OneToMany(mappedBy = "fournisseur")
+	private Set<Livre> livres = new HashSet<>();
 	
 	public Integer getId() {
 		return id;
@@ -84,4 +88,12 @@ public class Fournisseur {
 		this.clients = clients;
 	}
 
+	public Set<Livre> getLivres() {
+		return livres;
+	}
+
+	public void setLivres(Set<Livre> livres) {
+		this.livres = livres;
+	}
+	
 }

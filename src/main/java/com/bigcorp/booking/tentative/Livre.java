@@ -1,4 +1,4 @@
-package com.bigcorp.booking.model;
+package com.bigcorp.booking.tentative;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -11,90 +11,100 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.bigcorp.booking.model.Fournisseur;
+
+
 @Entity
-@Table(name = "ArticlesTest")
-public class ArticleTest {
+@Table(name = "Livres")
+public class Livre {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	private Integer numero;
-	private String fc;
-	private String nom;
+	private String titre;
+	private String auteur;
 	private String description;
+	private Integer anneeedition;
 
+	
 	@Enumerated(EnumType.STRING)
-	private EtatArticle etatArticle;
+	private EtatLivre etatLivre;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "FOURNISSEUR_ID")
 	private Fournisseur fournisseur;
 
+	
+	/*Getter Setter Id*/
 	public Integer getId() {
 		return id;
 	}
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
-	public Integer getNumero() {
-		return numero;
+	
+	/*Getter Setter Annee Edition*/
+	public Integer getAnneeEdition() {
+		return anneeedition;
+	}
+	public void setNumero(Integer anneeedition) {
+		this.anneeedition = anneeedition;
 	}
 
-	public void setNumero(Integer numero) {
-		this.numero = numero;
+
+	/*Getter Setter Titre*/
+	public String getTitre() {
+		return titre;
+	}
+	public void setTitre(String titre) {
+		this.titre = titre;
 	}
 
-	public String getFc() {
-		return fc;
+	
+	/*Getter Setter Auteur*/
+	public String getAuteur() {
+		return auteur;
+	}
+	public void setAuteur(String auteur) {
+		this.auteur = auteur;
 	}
 
-	public void setFc(String fc) {
-		this.fc = fc;
-	}
 
-	public String getNom() {
-		return nom;
-	}
-
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-
+	/*Getter Setter Description*/
 	public String getDescription() {
 		return description;
 	}
-
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
 
-	public EtatArticle getEtatArticle() {
-		return etatArticle;
+	/*Getter Setter Etat Livre*/
+	public EtatLivre getEtatLivre() {
+		return etatLivre;
+	}
+	public void setEtatLivre(EtatLivre etatLivre) {
+		this.etatLivre = etatLivre;
 	}
 
-	public void setEtatArticle(EtatArticle etatArticle) {
-		this.etatArticle = etatArticle;
-	}
-
+	/*Getter Setter Fournisseur*/
 	public Fournisseur getFournisseur() {
 		return fournisseur;
 	}
-
 	public void setFournisseur(Fournisseur fournisseur) {
 		this.fournisseur = fournisseur;
 	}
 	
 	/**
 	 * Associe this à fournisseur.
-	 * Modifie fournisseur.articles pour rendre les deux
+	 * Modifie fournisseur.livres pour rendre les deux
 	 * relations cohérentes
 	 * @param fournisseur not null
 	 */
+	
 	public void associe(Fournisseur fournisseur) {
 		this.fournisseur = fournisseur;
-		/* this.fournisseur.getArticles().add(this); - Commit pour recherche de l'erreur */
+		this.fournisseur.getLivres().add(this);
 	}
 
 }
