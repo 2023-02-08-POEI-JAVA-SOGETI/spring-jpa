@@ -20,11 +20,11 @@ public class Client {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-	private Integer numero;
+	private Integer iD;
+	private Integer numeroUnique;
 	private String nom;
 	private String prenom;
-	private String email;
+	private String mail;
 	private String adresse;
 
 	@OneToMany(mappedBy = "client")
@@ -35,19 +35,19 @@ public class Client {
 	private Fournisseurs fournisseur;
 	
 	public Integer getId() {
-		return id;
+		return iD;
 	}
 
 	public void setId(Integer id) {
-		this.id = id;
+		this.iD = id;
 	}
 
 	public Integer getNumero() {
-		return numero;
+		return numeroUnique;
 	}
 
-	public void setNumero(Integer numero) {
-		this.numero = numero;
+	public void setNumero(Integer numeroUnique) {
+		this.numeroUnique = numeroUnique;
 	}
 
 	public String getNom() {
@@ -67,11 +67,11 @@ public class Client {
 	}
 
 	public String getEmail() {
-		return email;
+		return mail;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmail(String mail) {
+		this.mail = mail;
 	}
 
 	public String getAdresse() {

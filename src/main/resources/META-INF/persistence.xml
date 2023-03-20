@@ -5,6 +5,10 @@
     	<class>com.bigcorp.booking.model.Example</class>
     	<class>com.bigcorp.booking.model.Fournisseurs</class>
     	<class>com.bigcorp.booking.model.Article</class>
+    	<class>com.bigcorp.booking.model.Client</class>
+    	<class>com.bigcorp.booking.model.Utilisateur</class>
+    	
+    
     	
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />

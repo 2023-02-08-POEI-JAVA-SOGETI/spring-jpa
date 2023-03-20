@@ -15,32 +15,32 @@ public class Utilisateur {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-	private Integer numero;
+	private Integer iD;
+	private Integer numeroEmploye;
 	private String nom;
 	private String prenom;
-	private String email;
+	private String mail;
 	private String login;
-	private String mdp;
+	private String password;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "CLIENT_ID")
 	private Client client;
 
 	public Integer getId() {
-		return id;
+		return iD;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setId(Integer iD) {
+		this.iD = iD;
 	}
 
 	public Integer getNumero() {
-		return numero;
+		return numeroEmploye;
 	}
 
-	public void setNumero(Integer numero) {
-		this.numero = numero;
+	public void setNumero(Integer numeroEmploye) {
+		this.numeroEmploye = numeroEmploye;
 	}
 
 	public String getNom() {
@@ -60,11 +60,11 @@ public class Utilisateur {
 	}
 
 	public String getEmail() {
-		return email;
+		return mail;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmail(String mail) {
+		this.mail = mail;
 	}
 
 	public String getLogin() {
@@ -76,11 +76,11 @@ public class Utilisateur {
 	}
 
 	public String getMdp() {
-		return mdp;
+		return password;
 	}
 
-	public void setMdp(String mdp) {
-		this.mdp = mdp;
+	public void setMdp(String password) {
+		this.password = password;
 	}
 
 	public Client getClient() {
