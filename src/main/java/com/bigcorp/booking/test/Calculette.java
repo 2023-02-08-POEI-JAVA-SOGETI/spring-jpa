@@ -37,5 +37,14 @@ public class Calculette {
 		}
 		return a / b;
 	}
+	
+	/**
+	 * Calcule la racine carre de a.
+	 * @param a
+	 * @return
+	 */
+	public double racineCarre(int a) {
+		return Math.sqrt(a);
+	}
 
 }
