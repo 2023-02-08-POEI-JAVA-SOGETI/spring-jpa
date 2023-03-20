@@ -1,9 +1,9 @@
-package com.bigcorp.booking.service;
+package com.bigcorp.booking.service.simple;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Controller;
 
-@Service
+@Controller
 public class ClasseC {
 	
 	@Autowired
