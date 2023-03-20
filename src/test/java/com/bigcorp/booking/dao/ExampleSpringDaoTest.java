@@ -22,8 +22,5 @@ public class ExampleSpringDaoTest {
 		Assertions.assertNotNull(example);
 		Assertions.assertNotNull(example.getId());
 	}
-	 
-
-	  
 
 }

@@ -1,4 +1,4 @@
-package com.bigcorp.booking.spring;
+package exercice1_spring.config;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -12,30 +12,29 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 //Déclare un bean de configuration
 //ce bean va créer d'autres instances
-@Configuration
+@Configuration 
 
 //Active les Repositories JPA trouvés
 //dans le package fourni en paramètre
-@EnableJpaRepositories("com.bigcorp.booking.dao.spring")
+//@EnableJpaRepositories("com.bigcorp.booking.dao.spring")
 
 //Scanne les composants trouvés dans le
 //package fourni en paramètre
-@ComponentScan("com.bigcorp.booking.service")
+@ComponentScan("import exercice1_spring")
 public class SpringConfiguration {
 //
 //	// Définit le nom de l'unité de persistence
-	private static final String PERSISTENCE_UNIT_NAME = "persistence-unit";
-
+//	private static final String PERSISTENCE_UNIT_NAME = "persistence-unit";
 //
 //	/**
 //	 * Crée une entityManagerFactory, utilisée pour créer des entityManagers
 //	 * 
 //	 * @return
 //	 */
-	@Bean
-	public EntityManagerFactory entityManagerFactory() {
-		return Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
-	}
+//	@Bean
+//	public EntityManagerFactory entityManagerFactory() {
+//		return Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+//	}
 //
 //	/**
 //	 * Crée un transactionManager, utilisé par Spring Data pour gérer les
@@ -44,11 +43,11 @@ public class SpringConfiguration {
 //	 * @param emf
 //	 * @return
 //	 */
-@Bean(name = "transactionManager")
-public PlatformTransactionManager dbTransactionManager(EntityManagerFactory emf) {
-	JpaTransactionManager transactionManager = new JpaTransactionManager();
-	transactionManager.setEntityManagerFactory(emf);
-	return transactionManager;
-	}
+//	@Bean(name = "transactionManager")
+//	public PlatformTransactionManager dbTransactionManager(EntityManagerFactory emf) {
+//		JpaTransactionManager transactionManager = new JpaTransactionManager();
+//		transactionManager.setEntityManagerFactory(emf);
+//		return transactionManager;
+//	}
 
 }

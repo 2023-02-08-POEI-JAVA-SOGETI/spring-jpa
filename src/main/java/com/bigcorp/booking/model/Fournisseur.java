@@ -1,17 +1,17 @@
 package com.bigcorp.booking.model;
 
-// Import de Serializable pour creer un JavaBean
-//import java.io.Serializable;
+
+
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-/**
- * JavaBean d'un Fournisseur
- * @author Twixy
- */
 
 @Entity // Décrit une entité persistable
 @Table(name = "FOURNISSEUR") // Optionnel : explicite la Table en BDD
@@ -29,7 +29,13 @@ public class Fournisseur {
     private String email;
     private String adresse;
     
+    private String titre;
     
+    
+    @OneToMany(mappedBy = "fournisseur")
+    private Set<Article> articles = new HashSet();
+    
+ 
 	public Integer getId() {
 		return id;
 	}
@@ -59,6 +65,27 @@ public class Fournisseur {
 	}
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
+	}
+	
+	public String getTitre() {
+		return titre;
+	}
+	
+	public void setTitre(String titre) {
+		this.titre = titre;
+	}
+	
+	public Set<Article> getArticles() {
+		return articles;
+	}
+
+	public void setArticles(Set<Article> articles) {
+		this.articles = articles;
+	}
+
+	public void associateWith(Article article) {
+		this.articles.add(article);
+		article.setFournisseur(this);
 	}
 	
     

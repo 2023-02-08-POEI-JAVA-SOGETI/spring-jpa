@@ -1,5 +1,7 @@
 package com.bigcorp.booking.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,7 +14,7 @@ import com.bigcorp.booking.model.Example;
  * Contient de nombreux appels passés au DAO
  * pour illustrer les capacités de Spring Data JPA
  */
-@Service
+//@Service
 public class ExampleService {
 
 	@Autowired
@@ -35,6 +37,11 @@ public class ExampleService {
 	 */
 	public Example findById(Long id) {
 		return this.exampleSpringDao.findById(id).orElse(null);
+	}
+	
+	
+	public List<Example> findByNom(String nom) {
+		return this.exampleSpringDao.MaMethodeDeRechercheAvecUneQueryExplicite("Elhadji");
 	}
 
 	/**

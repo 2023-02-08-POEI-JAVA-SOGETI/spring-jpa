@@ -1,15 +1,29 @@
 package com.bigcorp.booking.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 // Import de Serializable pour creer un JavaBean
-import java.io.Serializable;
+
 
 /**
  * JavaBean d'un Utilisateur
  * @author Twixy
  */
-public class Utilisateur implements Serializable {
+
+@Entity // Décrit une entité persistable
+@Table(name = "UTILISATEUR") // Optionnel : explicite la Table en BDD
+public class Utilisateur {
     // Proprietes
-    private static final long serialVersionUID = -1912226135224432621L;
+	
+	@Id
+    // Proprietes
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
+  
     private Integer id;
     private Integer numero;
     private String nom;
