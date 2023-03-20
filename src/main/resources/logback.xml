@@ -2,7 +2,7 @@
 <configuration>
 
 	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
-		<file>logs/application.log</file>
+		<file>c:/dev/logs/application.log</file>
 		<append>true</append>
 		<encoder>
 			<pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n
