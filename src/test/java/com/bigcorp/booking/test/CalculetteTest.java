@@ -14,7 +14,7 @@ public class CalculetteTest {
 	
 	@AfterEach
 	public void init() {
-		System.out.println("coucou");
+		System.out.println("Test terminé");
 	}
 
 	@Test

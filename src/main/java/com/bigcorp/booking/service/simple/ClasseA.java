@@ -13,5 +13,7 @@ public class ClasseA {
 	public ClasseB getClasseB() {
 		return classeB;
 	}
+	
+	
 
 }

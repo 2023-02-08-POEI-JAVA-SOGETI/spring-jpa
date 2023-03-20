@@ -13,7 +13,7 @@ public class ExampleServiceTest {
 	private ExampleService exampleService;
 
 	@Test
-	public void testssd() {
+	public void testFindByNom() {
 		exampleService.findByNom("test");
 	}
 

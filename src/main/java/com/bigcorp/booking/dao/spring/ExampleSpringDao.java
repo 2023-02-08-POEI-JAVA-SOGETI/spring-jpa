@@ -13,7 +13,6 @@ import com.bigcorp.booking.model.Example;
 public interface ExampleSpringDao extends CrudRepository<Example, Long>  {
 	
 	//On veut récupérer une liste de Example dont le nom vaut : un paramètre de la méthode
-	
 	List<Example> findByNom(@Param("nom") String nom); 
 
 	@Query("from Example where nom = :nom and id = 3 order by taille desc, id")
