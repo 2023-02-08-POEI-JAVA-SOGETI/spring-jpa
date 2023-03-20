@@ -11,11 +11,11 @@ public class CalculetteTest {
 	
 	static Calculette calculette;
 	
-	
+	/*
 	@AfterEach
 	public void init() {
 		System.out.println("coucou");
-	}
+	} */
 
 	@Test
 	public void testAdditionne() {
