@@ -119,5 +119,10 @@
 			<artifactId>mysql-connector-j</artifactId>
 			<version>8.0.32</version>
 		</dependency>
+		<dependency>
+			<groupId>fr.entreprise</groupId>
+			<artifactId>poe-java-av-jdbc</artifactId>
+			<version>1.0.23-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 </project>
