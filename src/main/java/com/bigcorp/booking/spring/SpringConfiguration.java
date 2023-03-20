@@ -20,7 +20,12 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 //Scanne les composants trouvés dans le
 //package fourni en paramètre
-@ComponentScan({"com.bigcorp.booking.dao", "com.bigcorp.booking.model", "com.bigcorp.booking.mvc"})
+@ComponentScan({"com.bigcorp.booking.dao", 
+	"com.bigcorp.booking.dao.spring",
+	"com.bigcorp.booking.model",
+	"com.bigcorp.booking.mvc",
+	"com.bigcorp.booking.service"
+})
 public class SpringConfiguration {
 
 	//Définit le nom de l'unité de persistence 

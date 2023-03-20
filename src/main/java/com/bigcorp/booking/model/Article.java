@@ -54,10 +54,10 @@ public class Article implements Serializable {
   * @param nom : nom d'un article
   * @param description : description d'un article
   */
- public Article(Integer numero, String e, String nom, String description) {
+ public Article(Integer numero, String etat, String nom, String description) {
      this.id = 0;
      this.numero = numero;
-     this.etat = e;
+     this.etat = etat;
      this.nom = nom;
      this.description = description;
  }
@@ -70,10 +70,10 @@ public class Article implements Serializable {
   * @param nom : nom d'un article
   * @param description : description d'un article
   */
- public Article(Integer id, Integer numero, String e, String nom, String description) {
+ public Article(Integer id, Integer numero, String etat, String nom, String description) {
      this.id = id;
      this.numero = numero;
-     this.etat = e;
+     this.etat = etat;
      this.nom = nom;
      this.description = description;
  }

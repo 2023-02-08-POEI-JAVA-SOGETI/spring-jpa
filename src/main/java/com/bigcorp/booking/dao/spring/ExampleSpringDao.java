@@ -9,7 +9,7 @@ import com.bigcorp.booking.model.Example;
 @Repository
 public interface ExampleSpringDao extends CrudRepository<Example, Long>  {
 
-	
+	public <List>Example findByNom(String nom);
 	
 	
 }
