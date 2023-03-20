@@ -9,7 +9,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.bigcorp.booking.model.Article;
-import com.bigcorp.booking.model.Fournisseur;
 
 
 @Repository

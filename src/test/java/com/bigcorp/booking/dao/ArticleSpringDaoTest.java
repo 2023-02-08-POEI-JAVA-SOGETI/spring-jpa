@@ -48,7 +48,18 @@ public class ArticleSpringDaoTest {
 		Fournisseur saved = fournisseurService.save(f);
 		
 		Assertions.assertNotNull(saved.getId());
-	}	
+	}		
+	
+	@Test
+	public void testDeleteArticle() {
+		Article a = new Article(2, "etat", "article a supprimer", "description");
+		Article saved = articleService.save(a);
+		
+		articleService.deleteById(saved.getId());
+		
+		Article test = articleService.findById(saved.getId());
+		Assertions.assertNull(test);
+	}
 	
 	@Test
 	public void testArticleFindByFournisseur() {
@@ -70,5 +81,39 @@ public class ArticleSpringDaoTest {
     	List<Article> listArticleSaved = articleService.findByFournisseurId(savedFournisseur.getId());
     	
 		Assertions.assertEquals(3, listArticleSaved.size());
+	}
+	
+	@Test
+	public void testSaveArticleAndFournisseur() {
+
+		Fournisseur f = new Fournisseur(10, "Samsung", "a@a.com", "adresse");
+		Fournisseur savedFournisseur = fournisseurService.save(f);
+		
+    	Article a = new Article(1, Etat.INUTILISABLE.name(), "telephone revolutionnaire", "qui appelle");
+    	Article savedArticleA = articleService.save(a);
+    	
+    	Article updatedArticle = articleService.saveArticleAndFournisseur(savedArticleA.getId(), savedFournisseur.getId());
+
+		Assertions.assertEquals(savedFournisseur.getId(), updatedArticle.getFournisseur().getId());
+	}
+	
+//	@Test
+	public void testSaveArticleAndFournisseurException() {
+		Assertions.assertThrows(NullPointerException.class, () -> articleService.saveArticleAndFournisseur(999, 100));
+	}
+	
+	@Test
+	public void testSaveArticleAndFournisseurError() {
+		// Création du lien entre article et fournisseur
+		Fournisseur f = new Fournisseur(12, "Lenovo", "a@a.com", "adresse");
+		Fournisseur savedFournisseur = fournisseurService.save(f);
+		
+    	Article a = new Article(1, Etat.INUTILISABLE.name(), "Yoga 7", "qui appelle");
+    	Article savedArticleA = articleService.save(a);
+    	
+    	articleService.saveArticleAndFournisseur(savedArticleA.getId(), savedFournisseur.getId());
+    	Article updatedArticle = articleService.saveArticleAndFournisseur(savedArticleA.getId(), 3000);
+    	
+		Assertions.assertNull(updatedArticle.getFournisseur());
 	}
 }

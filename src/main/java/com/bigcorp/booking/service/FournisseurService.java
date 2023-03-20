@@ -1,5 +1,7 @@
 package com.bigcorp.booking.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,6 +23,7 @@ public class FournisseurService {
 
 	@Autowired
 	private FournisseurSpringDao fournisseurSpringDao;
+	private static final Logger LOGGER = LoggerFactory.getLogger(FournisseurService.class);
 
 	/**
 	 * Sauvegarde example
@@ -28,6 +31,7 @@ public class FournisseurService {
 	 */
 	@Transactional
 	public Fournisseur save(Fournisseur fournisseur) {
+		LOGGER.info("save : " + fournisseur.getId() + " - " + fournisseur.getNom());
 		return this.fournisseurSpringDao.save(fournisseur);
 	}
 
@@ -37,7 +41,9 @@ public class FournisseurService {
 	 * @param id
 	 * @return
 	 */
+	@Transactional
 	public Fournisseur findById(Integer id) {
+		LOGGER.info("findById : " + id);
 		return this.fournisseurSpringDao.findById(id).orElse(null);
 	}
 
@@ -62,6 +68,7 @@ public class FournisseurService {
 	 */
 	@Transactional
 	public void deleteById(Integer id) {
+		LOGGER.info("deleteById : " + id);
 		this.fournisseurSpringDao.deleteById(id);
 	}
 
