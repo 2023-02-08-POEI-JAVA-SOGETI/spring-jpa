@@ -20,4 +20,14 @@ public class ClientDao extends AbstractDao<Client> {
 		return laListeDesClientsAvecLeBonNom;
 	}
 	
+	public List<Client> findAll() {
+	    EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
+	    try {
+	        return em.createQuery("SELECT c FROM Client c", Client.class).getResultList();
+	    } finally {
+	        em.close();
+	    }
+	}
+
+	
 }

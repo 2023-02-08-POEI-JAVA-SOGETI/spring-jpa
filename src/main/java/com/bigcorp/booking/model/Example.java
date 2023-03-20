@@ -14,6 +14,7 @@ public class Example {
 	@GeneratedValue(strategy = GenerationType.TABLE) // optionnel
 	// décrit la méthode de génération de l’identifiant
 	private Long id;
+	private String nom = "Test Spring";
 
 	public Long getId() {
 		return id;
@@ -21,6 +22,14 @@ public class Example {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
 
 }

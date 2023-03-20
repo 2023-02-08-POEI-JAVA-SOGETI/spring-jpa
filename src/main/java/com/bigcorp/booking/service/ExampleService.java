@@ -60,5 +60,10 @@ public class ExampleService {
 	public void delete(Long id) {
 		this.exampleSpringDao.deleteById(id);
 	}
+	
+	// Crée dans le cours
+	public void findByNom(String nom) {
+		this.exampleSpringDao.findByNom(nom);
+	}
 
 }

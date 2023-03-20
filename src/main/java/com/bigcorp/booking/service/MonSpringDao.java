@@ -4,11 +4,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 
-public class MonDao {
-	
-	public String getText() {
-        // Code to retrieve text from the Bean
+public class MonSpringDao {
+	// Method pour tester la liaison entre le Controleur, le Servie et le Dao
+	public String getText() {        
         return "MonControleurWeb, MonService and MonDao are linked together using Spring annotations";
-    }	
+    }
 	
 }

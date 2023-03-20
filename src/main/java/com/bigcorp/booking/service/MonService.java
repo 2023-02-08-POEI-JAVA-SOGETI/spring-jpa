@@ -3,19 +3,20 @@ package com.bigcorp.booking.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 @Service
 
 public class MonService {
 
 	@Autowired
-    private MonDao monDao;
-
-	public MonDao getMonDao() {		
-		return monDao;
+    private MonSpringDao monSpringDao;	
+		
+	public MonSpringDao getMonSpringDao() {		
+		return monSpringDao;
 	}
 
-	public void setMonDao(MonDao monDao) {
-		this.monDao = monDao;
+	public void setMonDao(MonSpringDao monDao) {
+		this.monSpringDao = monDao;
 	}
 	
 	
