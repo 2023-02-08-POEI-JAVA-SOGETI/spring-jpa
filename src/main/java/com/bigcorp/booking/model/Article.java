@@ -1,7 +1,5 @@
 package com.bigcorp.booking.model;
 
-import java.util.Random;
-
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -13,8 +11,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.bigcorp.booking.dao.ArticleDao;
-import com.bigcorp.booking.dao.FournisseurDao;
 
 @Entity
 @Table(name = "ARTICLES")
@@ -71,25 +67,6 @@ public class Article {
 	}
 	
 	public static void main(String[] args){
-		FournisseurDao fournisseurDao = new FournisseurDao();
-		Fournisseur evergreen = new Fournisseur();
-		evergreen.setNom("Evergreen");
-		evergreen.setNumero_fournisseur(new Random().nextInt());
-		evergreen.setEmail("contact@evergreen-shipping.com");
-		evergreen.setAdresse("Hong Kong");
-
-	    ArticleDao articleDao = new ArticleDao();
-	    Article article = new Article();
-	    article.setNom("conteneur 20'");
-	    article.setNumero_article(new Random().nextInt());
-	    article.setDescription("petit conteneur");
-	    article.setEtat(Etat.NEUF);
-
-	    
-	    
-	    Fournisseur savedFournisseur = fournisseurDao.merge(evergreen);
-	    article.setFournisseur(savedFournisseur);
-	    articleDao.merge(article); 
 		
 	}
 }
