@@ -1,7 +1,9 @@
 package com.bigcorp.booking.model;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,6 +29,9 @@ public class Fournisseurs {
 	
 	@OneToMany(mappedBy = "fournisseur")
 	private List<Article> articles = new ArrayList<>();
+	
+	@OneToMany(mappedBy = "fournisseur")
+	private Set<Client> clients = new HashSet<>();
 
 	public List<Article> getArticles() {
 		return this.articles;
@@ -77,5 +82,13 @@ public class Fournisseurs {
 
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
+	}
+	
+	public Set<Client> getClients() {
+		return clients;
+	}
+
+	public void setClients(Set<Client> clients) {
+		this.clients = clients;
 	}
 }
