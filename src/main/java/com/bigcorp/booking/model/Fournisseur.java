@@ -1,9 +1,9 @@
 package com.bigcorp.booking.model;
 
 import java.util.ArrayList;
-import java.util.HashSet;
+//import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
+//import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -34,9 +34,8 @@ public class Fournisseur  {
         super();
     }
 
-    public Fournisseur(Integer id, String nom, Integer num, String email, String adresse) {
+    public Fournisseur(String nom, Integer num, String email, String adresse) {
         super();
-        this.id = id;
         this.nom = nom;
         this.num = num;
         this.email = email;

@@ -21,6 +21,9 @@ import org.springframework.transaction.PlatformTransactionManager;
 //Scanne les composants trouvés dans le
 //package fourni en paramètre
 @ComponentScan("com.bigcorp.booking.service")
+//Bonus du tp du 17/03/23 AM -- possible de faire un tableau dans une seule annotation avec 
+//un tableau de packages à injecter dans le contexte
+@ComponentScan("com.bigcorp.booking.tpSpring")
 public class SpringConfiguration {
 
 	//Définit le nom de l'unité de persistence 

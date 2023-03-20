@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="monControlerWebTp"
+		class="com.bigcorp.booking.tpSpring.MonControlerWebTp">
+		<property name="monServiceTp" ref="monServiceTp" />
+	</bean>
+	
+	<bean id="monServiceTp"
+		class="com.bigcorp.booking.tpSpring.MonServiceTp">
+		<property name="monDaoTp" ref="monDaoTp" />
+	</bean>
+	
+	<bean id="monDaoTp"
+		class="com.bigcorp.booking.tpSpring.MonDaoTp">
+	</bean>
+</beans>

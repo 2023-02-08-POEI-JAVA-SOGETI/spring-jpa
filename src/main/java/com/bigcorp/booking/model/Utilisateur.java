@@ -25,8 +25,7 @@ public class Utilisateur {
         super();
     }
     
-    public Utilisateur(Integer id, String nom, String prenom, Integer num, String email, String login, String password) {
-        this.id = id;
+    public Utilisateur(String nom, String prenom, Integer num, String email, String login, String password) {
         this.nom = nom;
         this.prenom = prenom;
         this.num = num;
