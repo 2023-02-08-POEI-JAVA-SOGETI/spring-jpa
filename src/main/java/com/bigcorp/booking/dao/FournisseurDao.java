@@ -12,7 +12,8 @@ public class FournisseurDao extends AbstractDao<Fournisseur> {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
 		List<Fournisseur> fournisseurs = em.createQuery("from Fournisseur fournisseur "
 				+ " left outer join fetch fournisseur.articles "
-				+ " where fournisseur.nom = :nomFournisseur ", Fournisseur.class)
+				+ " where fournisseur.nom = :nomFournisseur "
+				, Fournisseur.class)
 				.setParameter("nomFournisseur", nomFournisseur).getResultList();
 		em.close();
 		return fournisseurs;
