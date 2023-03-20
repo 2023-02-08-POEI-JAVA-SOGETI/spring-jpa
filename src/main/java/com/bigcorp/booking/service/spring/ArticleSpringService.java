@@ -1,13 +1,17 @@
 package com.bigcorp.booking.service.spring;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bigcorp.booking.dao.spring.ArticleSpringDao;
+import com.bigcorp.booking.dao.spring.FournisseurSpringDao;
 import com.bigcorp.booking.model.Article;
+import com.bigcorp.booking.model.Fournisseurs;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,6 +20,8 @@ public class ArticleSpringService {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ArticleSpringService.class);
 	@Autowired
 	private ArticleSpringDao articleSpringDao;
+	@Autowired
+	private FournisseurSpringDao fournisseurSpringDao;
 
 	@Transactional
 	public void save(Article article) {
@@ -28,7 +34,7 @@ public class ArticleSpringService {
 		LOGGER.info("Searching");
 		return this.articleSpringDao.findById(id).orElse(null);
 	}
-	
+
 	public List<Article> findContainingName(String name) {
 		LOGGER.info("Searching");
 		return this.articleSpringDao.findByNomContaining(name);
@@ -40,4 +46,16 @@ public class ArticleSpringService {
 		this.articleSpringDao.deleteById(id);
 		LOGGER.info("Deleted");
 	}
+
+	@Transactional
+	public void saveWithFournisseur(Integer idArticle, Integer idFournisseur) {
+		Article bonArticle = findById(idArticle);
+		if (bonArticle == null) {
+			throw new IllegalArgumentException("L'article n'existe pas");
+		}
+		Fournisseurs bonFournisseur = fournisseurSpringDao.findById(idFournisseur).orElseThrow();
+		bonArticle.setFournisseur(bonFournisseur);
+		save(bonArticle);
+	}
+
 }

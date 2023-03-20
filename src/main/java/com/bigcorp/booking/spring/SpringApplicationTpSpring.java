@@ -14,10 +14,8 @@ public class SpringApplicationTpSpring {
 		try (AnnotationConfigApplicationContext appContext = new AnnotationConfigApplicationContext(SpringConfiguration.class)) {
 			ArticleSpringService articleSpringService 
 			= appContext.getBean("articleSpringService", ArticleSpringService.class);
-			List<Article> result = articleSpringService.findContainingName("jojo");
-			for (Article element : result) {
-			    System.out.println(element.getNom());
-			}
+			articleSpringService.saveWithFournisseur(3, 3);
+			
 		}
 	}
 

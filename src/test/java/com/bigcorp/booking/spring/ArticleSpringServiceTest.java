@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import com.bigcorp.booking.model.Article;
+import com.bigcorp.booking.model.Fournisseurs;
 import com.bigcorp.booking.service.spring.ArticleSpringService;
+import com.bigcorp.booking.service.spring.FournisseurSpringService;
 
 
 @SpringJUnitConfig(SpringConfiguration.class)
@@ -16,6 +18,8 @@ public class ArticleSpringServiceTest {
 	
 	@Autowired
 	private ArticleSpringService articleService;
+	@Autowired
+	private FournisseurSpringService fournisseurService;
 
 	@Test
 	public void test() {
@@ -29,6 +33,22 @@ public class ArticleSpringServiceTest {
 		articleService.save(article1);
 		List<Article> resultTest = articleService.findContainingName("Test");
 		Assertions.assertEquals(2, resultTest.size());
+	}
+	@Test
+	public void test2() {
+		Article article1 = new Article();
+		
+		
+		Fournisseurs fourn2 = new Fournisseurs();
+		article1.setNom("Dark Souls");
+		article1.setNumeroUnique(785);
+		fourn2.setNom("Revo");
+		fourn2.setNumeroUnique(78663);
+		articleService.save(article1);
+		fournisseurService.save(fourn2);
+		articleService.saveWithFournisseur(article1.getiD(), fourn2.getiD());
+		Article nouvelArticle = articleService.findById(article1.getiD());
+		Assertions.assertEquals(nouvelArticle.getFournisseur().getiD(), fourn2.getiD());
 	}
 
 }
