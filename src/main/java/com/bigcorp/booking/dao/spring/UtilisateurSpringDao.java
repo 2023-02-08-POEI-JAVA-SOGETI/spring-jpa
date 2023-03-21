@@ -22,6 +22,6 @@ public interface UtilisateurSpringDao extends CrudRepository<Utilisateur, Intege
 	public List<Utilisateur> findByNom(String nom);
 
 	@Query("from Utilisateur where nom = :nom")
-	List<Utilisateur> MaMethodeDeRechercheAvecUneQueryExplicite(@Param("nom") String nom);
+	List<Utilisateur> maMethodeDeRechercheAvecUneQueryExplicite(@Param("nom") String nom);
 
 }

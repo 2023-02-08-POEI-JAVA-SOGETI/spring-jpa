@@ -23,7 +23,7 @@ public class ArticleService {
 	
 	
 	public List<Article> findByNom(String nom) {
-		return this.articleSpringDao.MaMethodeDeRechercheAvecUneQueryExplicite(nom);
+		return this.articleSpringDao.maMethodeDeRechercheAvecUneQueryExplicite(nom);
 	}
 
 
@@ -44,7 +44,7 @@ public class ArticleService {
 		this.articleSpringDao.deleteById(id);
 	}
 	
-	@Transactional
+	
 	public Article get(Integer id) {
 		return this.articleSpringDao.findById(id).orElse(null);
 	}

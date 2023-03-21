@@ -183,18 +183,15 @@ public class Article {
 	public void setFournisseur(Fournisseur fournisseur) {
 		this.fournisseur = fournisseur;
 	}
-	
-	
+
 	public static void main(String[] args) {
 		Article article = new Article();
 
 	}
-	
+
 	public void associateWith(Fournisseur fournisseur) {
 		this.fournisseur = fournisseur;
 		fournisseur.getArticles().add(this);
 	}
-	
-	
 
 }

@@ -35,6 +35,7 @@ public class Utilisateur {
     /**
      * Constructeur sans param�tre
      */
+    /*
     public Utilisateur() {
         this.id = 0;
         this.numero = 0;
@@ -54,6 +55,8 @@ public class Utilisateur {
      * @param login : login de l'utilisateur
      * @param mdp : mot de passe de l'utilisateur
      */
+    
+    /*
     public Utilisateur(Integer numero, String nom, String prenom, String email, String login, String mdp) {
         this.id = 0;
         this.numero = numero;
@@ -74,6 +77,8 @@ public class Utilisateur {
      * @param login : login de l'utilisateur
      * @param mdp : mot de passe de l'utilisateur
      */
+    
+    /*
     public Utilisateur(Integer id, Integer numero, String nom, String prenom, String email, String login, String mdp) {
         this.id = id;
         this.numero = numero;

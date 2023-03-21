@@ -23,7 +23,7 @@ public class FournisseurService {
 	
 	
 	public List<Fournisseur> findByNom(String nom) {
-		return this.fournisseurSpringDao.MaMethodeDeRechercheAvecUneQueryExplicite(nom);
+		return this.fournisseurSpringDao.maMethodeDeRechercheAvecUneQueryExplicite(nom);
 	}
 
 
@@ -44,7 +44,7 @@ public class FournisseurService {
 		this.fournisseurSpringDao.deleteById(id);
 	}
 	
-	@Transactional
+	
 	public Fournisseur get(Integer id) {
 		return this.fournisseurSpringDao.findById(id).orElse(null);
 	}

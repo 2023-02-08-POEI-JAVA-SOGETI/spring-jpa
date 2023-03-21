@@ -22,6 +22,6 @@ public interface ArticleSpringDao extends CrudRepository<Article, Integer> {
 	public List<Article> findByNom(String nom);
 
 	@Query("from Article where nom = :nom")
-	List<Article> MaMethodeDeRechercheAvecUneQueryExplicite(@Param("nom") String nom);
+	List<Article> maMethodeDeRechercheAvecUneQueryExplicite(@Param("nom") String nom);
 
 }

@@ -23,7 +23,7 @@ public class ClientService {
 	
 	
 	public List<Client> findByNom(String nom) {
-		return this.clientSpringDao.MaMethodeDeRechercheAvecUneQueryExplicite(nom);
+		return this.clientSpringDao.maMethodeDeRechercheAvecUneQueryExplicite(nom);
 	}
 
 
@@ -44,7 +44,7 @@ public class ClientService {
 		this.clientSpringDao.deleteById(id);
 	}
 	
-	@Transactional
+	
 	public Client get(Integer id) {
 		return this.clientSpringDao.findById(id).orElse(null);
 	}

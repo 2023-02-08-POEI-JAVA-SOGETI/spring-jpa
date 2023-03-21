@@ -23,7 +23,7 @@ public class UtilisateurService {
 	
 	
 	public List<Utilisateur> findByNom(String nom) {
-		return this.utilisateurSpringDao.MaMethodeDeRechercheAvecUneQueryExplicite(nom);
+		return this.utilisateurSpringDao.maMethodeDeRechercheAvecUneQueryExplicite(nom);
 	}
 
 
@@ -44,7 +44,7 @@ public class UtilisateurService {
 		this.utilisateurSpringDao.deleteById(id);
 	}
 	
-	@Transactional
+	
 	public Utilisateur get(Integer id) {
 		return this.utilisateurSpringDao.findById(id).orElse(null);
 	}

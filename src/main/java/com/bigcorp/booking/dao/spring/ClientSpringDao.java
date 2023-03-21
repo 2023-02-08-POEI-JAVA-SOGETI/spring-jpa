@@ -22,6 +22,6 @@ public interface ClientSpringDao extends CrudRepository<Client, Integer> {
 	public List<Client> findByNom(String nom);
 
 	@Query("from Client where nom = :nom")
-	List<Client> MaMethodeDeRechercheAvecUneQueryExplicite(@Param("nom") String nom);
+	List<Client> maMethodeDeRechercheAvecUneQueryExplicite(@Param("nom") String nom);
 
 }
