@@ -16,15 +16,19 @@ public class FournisseurServiceTest {
 
 	@Test
 	public void testSaveGet() {
+		// Je prépare mes données
+		// J'enregistre en base un nouveau fournisseur
+		// je récupère son id
 		Fournisseur fournisseur = new Fournisseur();
-		fournisseur.setNom("Jean-Spring");
 		Fournisseur fournisseurSauvegarde = this.fournisseurService.save(fournisseur);
 		
-		Assertions.assertNotNull(fournisseurSauvegarde);
-		Assertions.assertNotNull(fournisseurSauvegarde.getId());
+		//Je lance une méthode à tester
+		// je récupère en base le fournisseur qui a l'id que j'ai récupéré
+		Fournisseur fournisseurLu = this.fournisseurService.findById(fournisseurSauvegarde.getId());
 		
-		Fournisseur fournisseurRecupere = this.fournisseurService.findById(fournisseurSauvegarde.getId());
-		Assertions.assertNotNull(fournisseurRecupere);
+		//Je m'assure que ce que j'ai reçu correspond à ce que j'attends
+		// Je m'assure que ce fournisseur n'est pas null
+		Assertions.assertNotNull(fournisseurLu);
 	}
 
 	@Test
@@ -35,6 +39,32 @@ public class FournisseurServiceTest {
 		
 		Fournisseur fournisseurRecupere = this.fournisseurService.findById(fournisseurSauvegarde.getId());
 		Assertions.assertNull(fournisseurRecupere);
+	}
+
+	@Test
+	public void testUpdate() {
+		// Je prépare mes données
+		// J'enregistre en base un nouveau fournisseur
+		// je récupère son id
+		Fournisseur fournisseur = new Fournisseur();
+		Fournisseur fournisseurSauvegarde = this.fournisseurService.save(fournisseur);
+		String nom = "Jean";
+		fournisseurSauvegarde.setNom(nom);
+		String email = "jean@dupont.fr";
+		fournisseurSauvegarde.setEmail(email);
+		
+		//Act
+		fournisseurSauvegarde = this.fournisseurService.save(fournisseurSauvegarde);
+		
+		//Je lance une méthode à tester
+		// je récupère en base le fournisseur qui a l'id que j'ai récupéré
+		Fournisseur fournisseurLu = this.fournisseurService.findById(fournisseurSauvegarde.getId());
+		
+		//Je m'assure que ce que j'ai reçu correspond à ce que j'attends
+		// Je m'assure que ce fournisseur n'est pas null
+		Assertions.assertNotNull(fournisseurLu);
+		Assertions.assertEquals(nom, fournisseurLu.getNom());
+		Assertions.assertEquals(email, fournisseurLu.getEmail());
 	}
 
 }

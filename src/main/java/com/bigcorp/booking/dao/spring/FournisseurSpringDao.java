@@ -8,5 +8,4 @@ import com.bigcorp.booking.model.Fournisseur;
 @Repository
 public interface FournisseurSpringDao extends CrudRepository<Fournisseur, Integer>  {
 	
-	
 }

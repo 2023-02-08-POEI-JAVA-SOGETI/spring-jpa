@@ -60,7 +60,5 @@ public class FournisseurService {
 		LOGGER.info("Suppression de fournisseur avec l'id : {}" , id);
 		this.fournisseurSpringDao.deleteById(id);
 	}
-	
-	
 
 }
