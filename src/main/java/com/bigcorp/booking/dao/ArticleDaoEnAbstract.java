@@ -1,5 +1,7 @@
 package com.bigcorp.booking.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
@@ -20,6 +22,33 @@ public class ArticleDaoEnAbstract extends AbstractDao<Article> {
 	public Article findById(int id) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
 		return em.find(Article.class, id);
+	}
+	
+	public List<Article> getParNom(String nomArticle){
+		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
+		List<Article> laListeDesArticlesAvecLeBonNom 
+			= em.createQuery("from Article where nom = :nomArticle", Article.class)
+			.setParameter("nomArticle", nomArticle).getResultList();
+		em.close();
+		return laListeDesArticlesAvecLeBonNom;
+	}
+	
+	public List<Article> getParSousChaineNom(String sousChaine){
+		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
+	    List<Article> laListeDesArticlesAvecLeBonNom 
+	        = em.createQuery("from Article where nom like :sousChaine", Article.class)
+	        .setParameter("sousChaine", "%" + sousChaine + "%").getResultList();
+	    em.close();
+	    return laListeDesArticlesAvecLeBonNom;
+	}
+	
+	public List<Article> getParSousChaineNomInsensibleCasse(String sousChaine){
+		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
+	    List<Article> laListeDesArticlesAvecLeBonNom 
+	        = em.createQuery("from Article where lower(nom) LIKE :sousChaine", Article.class)
+	        .setParameter("sousChaine", "%" + sousChaine.toLowerCase() + "%").getResultList();
+	    em.close();
+	    return laListeDesArticlesAvecLeBonNom;
 	}
 	
 }

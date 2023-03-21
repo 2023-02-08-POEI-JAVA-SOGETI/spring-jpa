@@ -16,7 +16,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 //Active les Repositories JPA trouvés
 //dans le package fourni en paramètre
-@EnableJpaRepositories("com.bigcorp.booking.dao.spring")
+ @EnableJpaRepositories("com.bigcorp.booking.dao.spring")
 
 //Scanne les composants trouvés dans le
 //package fourni en paramètre

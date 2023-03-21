@@ -1,43 +1,48 @@
 package com.bigcorp.booking.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "article")
-public class Article {
+@Table(name = "client")
+public class Client {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private Integer numero;
 	private String nom;
-	private String description;
+	private String prenom;
+	private String email;
+	private String adresse;
 
-	@Enumerated(EnumType.STRING)
-	private TypeArticle typeArticle;
-
+	@OneToMany(mappedBy = "client")
+	private Set<Utilisateur> utilisateurs = new HashSet<>();
+	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "FOURNISSEUR_ID")
 	private Fournisseur fournisseur;
+	
+	public Client() {};
 
-	public Article(Integer numero,String nom, String description, TypeArticle typeArticle) {
+	public Client(Integer numero, String nom, String prenom, String email, String adresse) {
 		super();
 		this.numero = numero;
 		this.nom = nom;
-		this.description = description;
-		this.typeArticle = typeArticle;
+		this.prenom = prenom;
+		this.email = email;
+		this.adresse = adresse;
 	}
-	
-	public Article() {}
 
 	public Integer getId() {
 		return id;
@@ -63,22 +68,39 @@ public class Article {
 		this.nom = nom;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getPrenom() {
+		return prenom;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
 	}
 
-	public TypeArticle getTypeArticle() {
-		return typeArticle;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setTypeArticle(TypeArticle typeArticle) {
-		this.typeArticle = typeArticle;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
+	public String getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
+
+	public Set<Utilisateur> getUtilisateurs() {
+		return utilisateurs;
+	}
+
+	public void setUtilisateurs(Set<Utilisateur> utilisateurs) {
+		this.utilisateurs = utilisateurs;
+	}
+
+	
 	public Fournisseur getFournisseur() {
 		return fournisseur;
 	}
@@ -86,16 +108,16 @@ public class Article {
 	public void setFournisseur(Fournisseur fournisseur) {
 		this.fournisseur = fournisseur;
 	}
-	
+
 	/**
 	 * Associe this à fournisseur.
-	 * Modifie fournisseur.articles pour rendre les deux
+	 * Modifie fournisseur.client pour rendre les deux
 	 * relations cohérentes
 	 * @param fournisseur not null
 	 */
 	public void associe(Fournisseur fournisseur) {
 		this.fournisseur = fournisseur;
-		this.fournisseur.getArticles().add(this);
+		this.fournisseur.getClients().add(this);
 	}
 
 }

@@ -1,79 +1,98 @@
 package com.bigcorp.booking.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-@Entity // Décrit une entité persistable, obligatoire si on veut persister
-@Table(name = "fournisseur") // Optionnel : explicite la Table en BDD, par défaut correspond au nom de la classe si on ne spécifie pas, attention à la casse (f minuscule ici).
+@Entity
+@Table(name="fournisseur")
+public class Fournisseur { 
 
-public class Fournisseur {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	private Integer numero;
+	private String nom;
+	private String email;
+	private String adresse;
 	
-	@Id // Décrit l’attribut servant d'identifiant et la clé primaire
-	@GeneratedValue(strategy = GenerationType.IDENTITY) // optionnel
-	// décrit la méthode de génération de l’identifiant
-    private int id;
-    private String nom;
-    private int num;
-    private String email;
-    private String adresse;
+	@OneToMany(mappedBy="fournisseur")
+	private Set<Article> articles = new HashSet<>();
+	
+	@OneToMany(mappedBy = "fournisseur")
+	private Set<Client> clients = new HashSet<>();
+	
+	public Fournisseur(Integer numero, String nom, String email, String adresse) {
+		super();
+		this.numero = numero;
+		this.nom = nom;
+		this.email = email;
+		this.adresse = adresse;
+	}
 
-    public Fournisseur() {
-    }
+	public Fournisseur() {
+	}
 
-    public Fournisseur(String nom, int num, String email, String adresse) {
-        this.nom = nom;
-        this.num = num;
-        this.email = email;
-        this.adresse = adresse;
-    }
+	public Integer getId() {
+		return id;
+	}
 
-    public int getId() {
-        return id;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public Integer getNumero() {
+		return numero;
+	}
 
-    public String getNom() {
-        return nom;
-    }
+	public void setNumero(Integer numero) {
+		this.numero = numero;
+	}
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
+	public String getNom() {
+		return nom;
+	}
 
-    public int getNum() {
-        return num;
-    }
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
 
-    public void setNum(int num) {
-        this.num = num;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public String getAdresse() {
+		return adresse;
+	}
 
-    public String getAdresse() {
-        return adresse;
-    }
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
 
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
-    }
+	public Set<Article> getArticles() {
+		return articles;
+	}
 
-    @Override
-    public String toString() {
-        return "Fournisseur{" + "id=" + id + ", nom=" + nom + ", num=" + num + ", email=" + email + ", adresse=" + adresse + '}';
-    }
-    
+	public void setArticles(Set<Article> articles) {
+		this.articles = articles;
+	}
+
+	public Set<Client> getClients() {
+		return clients;
+	}
+
+	public void setClients(Set<Client> clients) {
+		this.clients = clients;
+	}
 
 }

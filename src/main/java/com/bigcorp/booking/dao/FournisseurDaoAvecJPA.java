@@ -5,7 +5,7 @@ import javax.persistence.EntityTransaction;
 
 import com.bigcorp.booking.model.Fournisseur;
 
-public class FournisseurDao {
+public class FournisseurDaoAvecJPA {
 
 	public Fournisseur merge(Fournisseur fournisseur) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
