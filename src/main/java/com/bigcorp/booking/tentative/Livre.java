@@ -47,7 +47,7 @@ public class Livre {
 	public Integer getAnneeEdition() {
 		return anneeedition;
 	}
-	public void setNumero(Integer anneeedition) {
+	public void setAnneeEdition(Integer anneeedition) {
 		this.anneeedition = anneeedition;
 	}
 
@@ -103,8 +103,10 @@ public class Livre {
 	 */
 	
 	public void associe(Fournisseur fournisseur) {
-		this.fournisseur = fournisseur;
-		this.fournisseur.getLivres().add(this);
+		if (fournisseur != null) {
+			this.fournisseur = fournisseur;
+			this.fournisseur.getLivres().add(this);
+		}
 	}
 
 }

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" >
+
+  <head>
+    <title>Ma première page Thymeleaf !</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+
+    <h1>Salut les gens</h1>
+    <p th:text="${caRoule}">Ça marche pas mal ici !</p>
+    <p th:if="${doitAfficherDiv}">Je m'affiche</p>
+    <p th:if="${!doitAfficherDiv && true}">Je suis là</p>
+
+    <ul>
+		<li     th:each="heros : ${listeHerosDisney}" th:text="${heros.id} + ' : ' + ${heros.nom}  + ' / ' + ${heros.film}">Aurore</li>
+    </ul>
+    
+  </body>
+</html>

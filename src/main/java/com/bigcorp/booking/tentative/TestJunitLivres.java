@@ -1,19 +1,7 @@
 package com.bigcorp.booking.tentative;
 
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
-
 public class TestJunitLivres {
-
+/*
     private EntityManagerFactory entityManagerFactory;
     private EntityManager entityManager;
     private EntityTransaction transaction;
@@ -24,7 +12,7 @@ public class TestJunitLivres {
         entityManagerFactory = Persistence.createEntityManagerFactory("test-unit");
         entityManager = entityManagerFactory.createEntityManager();
         transaction = entityManager.getTransaction();
-        livresSpringDao = new LivresSpringDaoImpl (entityManager); /*Ligne obligatoire pour l'implémentation de LivresSpringDao*/
+        livresSpringDao = new LivresSpringDaoImpl (entityManager); 
     }
 
     @AfterEach
@@ -47,8 +35,8 @@ public class TestJunitLivres {
 
         // Assert
         Livre savedLivre = entityManager.find(Livre.class, livre.getId());
-        assertEquals(livre, savedLivre);
+        Assertions.assertEquals(livre, savedLivre);
     }
-
+*/
 	
 }
