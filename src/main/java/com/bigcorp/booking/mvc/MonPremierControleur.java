@@ -1,5 +1,8 @@
 package com.bigcorp.booking.mvc;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +29,17 @@ public class MonPremierControleur {
 	@ModelAttribute("vraiTexte")
 	public String getVraiTexte() {
 		return "Ceci est le vrai texte !";
+	}
+
+	@ModelAttribute("invites")
+	public List<String> getInvites() {
+		List<String> invites = new ArrayList<>();
+		invites.add("Pablo");
+		invites.add("ElHadji");
+		invites.add("Lucile");
+		invites.add("Khadidja");
+		invites.add("Silvio");
+		return invites;
 	}
 
 }
