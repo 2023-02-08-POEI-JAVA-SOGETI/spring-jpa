@@ -1,5 +1,6 @@
 package com.bigcorp.booking.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ public class FournisseurService {
 	
 	@Autowired
 	private FournisseurSpringDao fournisseurSpringDao;
+	@SuppressWarnings("unused")
 	@Autowired
 	private  ArticleSpringDao articleSpringDao;
 	private static final Logger logger = LoggerFactory.getLogger(FournisseurService.class);
@@ -45,7 +47,7 @@ public class FournisseurService {
 		return fournisseurSpringDao.findAll();
 	}
 	
-	public Fournisseur findByName(String name) {
+	public List<Fournisseur> findByName(String name) {
 		logger.info("Find fournisseur: {}", name);
 		return fournisseurSpringDao.findByNom(name);
 	}

@@ -1,5 +1,6 @@
 package com.bigcorp.booking.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,8 +43,12 @@ public class ClientService {
 			return clientSpringDao.findAll();
 		}
 		
-		public Client findByName(String name) {
+		public List<Client> findByName(String name) {
 			logger.info("find client: {}", name);
 			return clientSpringDao.findByNom(name);
+		}
+
+		public Iterable<Client> findAll() {
+			return clientSpringDao.findAll();
 		}
 }

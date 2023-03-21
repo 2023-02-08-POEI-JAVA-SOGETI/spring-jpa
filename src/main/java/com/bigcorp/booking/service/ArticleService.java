@@ -1,6 +1,7 @@
 package com.bigcorp.booking.service;
 
 
+import java.util.List;
 import java.util.Optional;
 
 import org.slf4j.Logger;
@@ -45,21 +46,21 @@ public class ArticleService {
 		return articleSpringDao.findAll();
 	}
 	
-	public Article findByName(String name) {
+	public List<Article> findByName(String name) {
 		logger.info("Find article: {}", name);
 		return articleSpringDao.findByNom(name);
 	}
 	
 	public Article linkFournisseurToArticle(Long articleId, Long fournisseurId) {
-		
-		Article article = articleSpringDao.findById(articleId).get();
-		Fournisseur fournisseur = fournisseurSpringDao.findById(fournisseurId).get();
-		
 		if (articleId == null) {
 			throw new IllegalArgumentException("id article ne peut etre null");
 		} else if (fournisseurId == null) {
 			throw new IllegalArgumentException("id fournisseur ne peut etre null");		
 		}
+		
+		Article article = articleSpringDao.findById(articleId).get();
+		Fournisseur fournisseur = fournisseurSpringDao.findById(fournisseurId).get();
+		
 		
 		if (article == null) {
 			throw new IllegalArgumentException("l'article n'a pas pu être trouvé" );
@@ -69,5 +70,9 @@ public class ArticleService {
 		
 		article.setFournisseur(fournisseur);
         return articleSpringDao.save(article);
+	}
+
+	public Iterable<Article> findAll() {
+		return articleSpringDao.findAll();
 	}
 }

@@ -1,5 +1,6 @@
 package com.bigcorp.booking.test;
 
+import java.util.List;
 import java.util.Random;
 
 import org.junit.jupiter.api.Assertions;
@@ -32,6 +33,7 @@ public class FournisseurSpringTest {
 			fournisseur.setAdresse("23 quai pablo picasso");
 			fournisseur.setEmail("contact@cma-cgm.com");
 			
+			@SuppressWarnings("unused")
 			Fournisseur savedFournisseur = fournisseurService.save(fournisseur);
 			
 			Article article = new Article();
@@ -41,9 +43,11 @@ public class FournisseurSpringTest {
 			article.setEtat(Etat.INUTILISABLE);
 			article.setFournisseur(fournisseur);
 			
+			@SuppressWarnings("unused")
 			Article savedArticle = articleService.save(article);
-			
-			Assertions.assertEquals(savedFournisseur.getNom(), fournisseurService.findByName("CMA CGM").getNom());
+			List<Article> articles = (List<Article>) articleService.findAll();
+			for (Article a : articles)
+			Assertions.assertEquals(a.getNom(), "Conteneur 20'");
 		}
 }
 

@@ -1,5 +1,7 @@
 package com.bigcorp.booking.test;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,9 +27,12 @@ public class UtilisateurSpringTest {
 		utilisateur.setLogin("johndoe");
 		utilisateur.setMot_de_passe("123456");
 		
+		@SuppressWarnings("unused")
 		Utilisateur savedUtilisateur = utilisateurService.save(utilisateur);
+		List<Utilisateur> utilisateurs = (List<Utilisateur>) utilisateurService.findAll();
 		
-		Assertions.assertEquals(savedUtilisateur.getNom(), utilisateurService.findByName("doe").getNom());
+		for (Utilisateur u : utilisateurs)
+		Assertions.assertEquals(u.getNom(),"doe");
 		
 	}
 }

@@ -33,6 +33,7 @@ public class ArticleSpringTest {
 		fournisseur.setAdresse("23 quai pablo picasso");
 		fournisseur.setEmail("contact@cma-cgm.com");
 		
+		@SuppressWarnings("unused")
 		Fournisseur savedFournisseur = fournisseurService.save(fournisseur);
 		
 		Article article = new Article();
@@ -55,6 +56,7 @@ public class ArticleSpringTest {
 		fournisseur.setAdresse("23 quai pablo picasso");
 		fournisseur.setEmail("contact@cma-cgm.com");
 		
+		@SuppressWarnings("unused")
 		Fournisseur savedFournisseur = fournisseurService.save(fournisseur);
 		
 		Article article = new Article();

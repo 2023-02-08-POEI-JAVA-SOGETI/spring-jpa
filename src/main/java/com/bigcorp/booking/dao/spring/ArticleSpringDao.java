@@ -1,5 +1,6 @@
 package com.bigcorp.booking.dao.spring;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
@@ -11,6 +12,6 @@ import com.bigcorp.booking.model.Fournisseur;
 @Repository
 public interface ArticleSpringDao extends CrudRepository<Article, Long> {
 	 
-	Article findByNom(String name);
+	List<Article>findByNom(String name);
 	
 }

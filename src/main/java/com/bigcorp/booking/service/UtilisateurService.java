@@ -1,5 +1,6 @@
 package com.bigcorp.booking.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.slf4j.Logger;
@@ -38,8 +39,12 @@ public class UtilisateurService {
 		return utilisateurSpringDao.findAll();
 	}
 	
-	public Utilisateur findByName(String name) {
+	public List<Utilisateur> findByName(String name) {
 		logger.info("Find utilisateur: {}", name);
 		return utilisateurSpringDao.findByNom(name);
 	}
+
+	public Iterable<Utilisateur> findAll() {
+		return utilisateurSpringDao.findAll();
+		}
 }

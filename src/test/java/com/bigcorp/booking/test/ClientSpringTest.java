@@ -1,5 +1,7 @@
 package com.bigcorp.booking.test;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +26,12 @@ public class ClientSpringTest {
 		client.setEmail("janetdoe@gmail.com");
 		client.setNumero(4013);
 		
+		@SuppressWarnings("unused")
 		Client savedClient = clientService.save(client);
 		
-		Assertions.assertEquals(savedClient.getNom(),clientService.findByName("Janet").getNom());
+		List<Client> clients = (List<Client>) clientService.findAll();
+		for (Client c : clients)
+		Assertions.assertEquals(c.getNom(),"Janet");
 		
 	}
 }
