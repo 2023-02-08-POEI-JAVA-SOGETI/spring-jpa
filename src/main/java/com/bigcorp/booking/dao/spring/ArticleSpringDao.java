@@ -14,10 +14,6 @@ import com.bigcorp.booking.model.Article;
 @Repository
 public interface ArticleSpringDao extends CrudRepository<Article, Integer>  {
 
-	public Article save (Article article);
-	public Optional<Article> findById(Integer id);
-	public void deleteById(Integer id);
-	
 	@Query("from Article where fournisseur_id = :id")
 	public List<Article> findbyFournisseur(@Param("id") Integer id);	
 }

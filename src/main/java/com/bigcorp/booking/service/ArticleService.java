@@ -81,10 +81,6 @@ public class ArticleService {
 		Article a = this.articleSpringDao.findById(idArticle).orElseThrow(NullPointerException::new);
 		
 		Fournisseur f = this.fournisseurSpringDao.findById(idFournisseur).orElse(null);
-		if (f == null) {
-			a.setFournisseur(null);
-			return this.articleSpringDao.save(a);
-		}
 		
 		// association du fournisseur à l'article
 		LOGGER.info("saveArticleAndFournisseur : association article et fournisseur");

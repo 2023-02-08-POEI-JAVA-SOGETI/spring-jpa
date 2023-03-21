@@ -16,7 +16,7 @@ import com.bigcorp.booking.spring.SpringConfiguration;
 
 
 @SpringJUnitConfig(SpringConfiguration.class)
-public class ArticleSpringDaoTest {
+public class ArticleServiceTest {
 
 	
 	@Autowired
@@ -97,7 +97,7 @@ public class ArticleSpringDaoTest {
 		Assertions.assertEquals(savedFournisseur.getId(), updatedArticle.getFournisseur().getId());
 	}
 	
-//	@Test
+	@Test
 	public void testSaveArticleAndFournisseurException() {
 		Assertions.assertThrows(NullPointerException.class, () -> articleService.saveArticleAndFournisseur(999, 100));
 	}
