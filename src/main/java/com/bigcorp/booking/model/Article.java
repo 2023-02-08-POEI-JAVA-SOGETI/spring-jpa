@@ -45,7 +45,7 @@ public class Article implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private EtatArticle etat;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "fournisseurId")
 	private Fournisseur fournisseur;
 
@@ -58,6 +58,14 @@ public class Article implements Serializable {
 		this.fournisseur = new Fournisseur();
 	}
 
+	public Article(Integer numero, String fc, String nom, String description, EtatArticle etatArticle) {
+		this.numero = numero;
+		this.fc = fc;
+		this.nom = nom;
+		this.description = description;
+		this.etat = etatArticle;
+	}
+	
 	public Article(Integer numero, String fc, String nom, String description, EtatArticle etatArticle,
 			Fournisseur fournisseur) {
 		this.numero = numero;

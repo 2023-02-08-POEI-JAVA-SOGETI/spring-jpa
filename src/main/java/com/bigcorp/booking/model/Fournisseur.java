@@ -43,6 +43,15 @@ public class Fournisseur {
 		this.articles = new HashSet<Article>();
 		this.clients = new HashSet<Client>();
 	}
+	
+	public Fournisseur(Integer numero, String nom, String email, String adresse, HashSet<Client> clients) {
+		this.numero = numero;
+		this.nom = nom;
+		this.email = email;
+		this.adresse = adresse;
+		this.articles = new HashSet<Article>();
+		this.clients = clients;
+	}
 
 	public Fournisseur(Integer id, Integer numero, String nom, String email, String adresse) {
 		this.id = id;
