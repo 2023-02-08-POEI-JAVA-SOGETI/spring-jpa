@@ -61,10 +61,8 @@ public class ArticleService {
 		return this.articleSpringDao.findArticleByName(nom);
 	}
 	
-	public Article persistArticleWithFournisseur(Integer idArticle, Integer idFournisseur) {
-		
-		
-		
-		return Article ;
-	}
+	//METHODE BONUS A COMPLETERE
+//	public Article persistArticleWithFournisseur(Integer idArticle, Integer idFournisseur) {	
+//		return Article ;
+//	}
 }

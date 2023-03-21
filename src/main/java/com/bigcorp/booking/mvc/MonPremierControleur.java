@@ -24,5 +24,4 @@ public class MonPremierControleur {
         return "vue-salut";
     }
     
-    
 }
