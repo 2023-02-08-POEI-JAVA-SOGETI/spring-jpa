@@ -1,14 +1,35 @@
 package com.bigcorp.booking.mvc;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class PojoSpring {
-String nom;
+	private String nom;
+	private Boolean goose = true;
+	private List<String> gooseList = Arrays.asList("oie", "poule", "canard");
 
-public String getNom() {
-	return this.nom;
-}
+	public String getNom() {
+		return this.nom;
+	}
 
-public void setNom(String nom) {
-	this.nom = nom;
-}
+	public Boolean getGoose() {
+		return this.goose;
+	}
+
+	public void setGoose(Boolean goose) {
+		this.goose = goose;
+	}
+
+	public List<String> getGooseList() {
+		return this.gooseList;
+	}
+
+	public void setGooseList(List<String> gooseList) {
+		this.gooseList = gooseList;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
 
 }

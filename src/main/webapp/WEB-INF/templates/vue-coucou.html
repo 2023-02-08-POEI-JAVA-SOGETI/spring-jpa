@@ -41,7 +41,10 @@ img {
 <body>
 	<h1>Bah alors ça dit qu'oie là ?</h1>
 	<p th:text="${monMessage}">Ça marche pas mal ici !</p>
-	<img src="/images/oie.jpg" alt="Oie">
+	<img th:if="${maListe.goose}" src="/images/oie.jpg" alt="Oie">
 	<p th:text="${monPojo.nom}">Ça marche pas mal ici !</p>
+	<ul>
+<li th:each="bird : ${maListe.gooseList}" th:text="${bird}">Terre</li>
+</ul>
 </body>
 </html>

@@ -11,11 +11,15 @@ public class SpringApplicationTpSpring {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		try (AnnotationConfigApplicationContext appContext = new AnnotationConfigApplicationContext(SpringConfiguration.class)) {
-			ArticleSpringService articleSpringService 
-			= appContext.getBean("articleSpringService", ArticleSpringService.class);
-			articleSpringService.saveWithFournisseur(3, 3);
-			
+		try (AnnotationConfigApplicationContext appContext = new AnnotationConfigApplicationContext(
+				SpringConfiguration.class)) {
+			ArticleSpringService articleSpringService = appContext.getBean("articleSpringService",
+					ArticleSpringService.class);
+			Iterable<Article> foundIterable = articleSpringService.findAll();
+			for (Article article : foundIterable) {
+				System.out.println(article.getNom());
+			}
+
 		}
 	}
 
