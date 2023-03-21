@@ -1,7 +1,8 @@
 package com.bigcorp.booking.spring;
 
-
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.bigcorp.booking.service.MonControleurWeb;
 
 
 public class SpringApplication {
@@ -18,11 +19,19 @@ public class SpringApplication {
 				new AnnotationConfigApplicationContext(SpringConfiguration.class)) {
 			MonControleurWeb monControleurWeb = appContext.getBean(MonControleurWeb.class);	
 			
-			System.out.println(monControleurWeb.getMonService().getMonDao());
+//			System.out.println(monControleurWeb.getMonService().getMonDao());
+			monControleurWeb.getMonService().getMonDao().affiche(null);
 			
 		}
-	
-	
+//		try (AnnotationConfigApplicationContext appContext = 
+//				new AnnotationConfigApplicationContext(SpringConfiguration.class)) {
+//			
+//			Role role = appContext.getBean(Role.class);
+////			System.out.println(monControleurWeb.getMonService().getMonDao());
+//			((Role) role.getUsers()).save(new Role());
+//			
+//		}
+//	
 	}
 
 }

@@ -1,6 +1,7 @@
 package com.bigcorp.booking.model;
 
 import java.util.HashSet;
+
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -19,7 +20,7 @@ public class Clients {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
 	private Integer numero;
 	private String nom;
 	private String prenom;
@@ -33,11 +34,11 @@ public class Clients {
 	@JoinColumn(name = "FOURNISSEUR_ID")
 	private Fournisseurs fournisseur;
 	
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

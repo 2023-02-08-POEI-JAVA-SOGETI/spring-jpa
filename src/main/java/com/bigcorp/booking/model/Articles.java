@@ -98,5 +98,4 @@ public class Articles {
 		this.fournisseur = fournisseur;
 		this.fournisseur.getArticles().add(this);
 	}
-
 }
