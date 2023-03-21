@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 import com.bigcorp.booking.model.Client;
 
 
-
 public class ClientDaoTest {
 	  
     @Test
@@ -67,6 +66,8 @@ public class ClientDaoTest {
     	
     	List<Client> clients = clientDao.getParNom(nomDurand);
 
+    	Assertions.assertEquals(2, clients.size());
+
     	
     }
     
@@ -87,6 +88,7 @@ public class ClientDaoTest {
     	
     	List<Client> clients = clientDao.getParNomLikeInsensibleALaCasse("UnNomRigolo");
     
+    	Assertions.assertEquals(3, clients.size());
     	
     }
     
@@ -107,6 +109,7 @@ public class ClientDaoTest {
     	
     	List<Client> clients = clientDao.getParNomLikeSensibleALaCasse("UnNomMarrant");
     	
+    	Assertions.assertEquals(2, clients.size());
     	
     }
 	  
