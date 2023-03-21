@@ -1,14 +1,23 @@
-package com.bigcorp.booking.exercice.model;
+package com.bigcorp.booking.exercice.model.many_to_one;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.bigcorp.booking.exercice.model.many_to_one.Fournisseur;
+import com.bigcorp.booking.exercice.model.many_to_one.Type;
+
+
+// PLUSIEURS Article pour 1 Fournisseur
 
 @Entity
 @Table(name="article")
@@ -27,6 +36,20 @@ public class Article {
 	private String nom;
 	private String description;
 	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="fournisseur_id")
+	private Fournisseur fournisseur;
+	
+	
+	
+	
+	// Possible Méthode d'association.
+	
+	public void associateWith(Fournisseur fournisseur)
+	{
+		this.fournisseur = fournisseur;
+		fournisseur.getArticles().add(this);
+	}
 	
 	
 	
@@ -78,6 +101,20 @@ public class Article {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+
+	public Fournisseur getFournisseur() {
+		return fournisseur;
+	}
+
+
+	public void setFournisseur(Fournisseur fournisseur) {
+		this.fournisseur = fournisseur;
+	}
+
+
+
+
 	@Override
 	public String toString() {
 		return "Article [id=" + id + ", numArticle=" + numArticle + ", type=" + type + ", nom=" + nom + ", description="

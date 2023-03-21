@@ -1,10 +1,22 @@
-package com.bigcorp.booking.exercice.dao;
+package com.bigcorp.booking.exercice.entityManager_jpql;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceContext;
 
 import com.bigcorp.booking.dao.PersistenceSingleton;
+
+/*
+ * Classe abstraite et GENERIQUE avec toutes les méthodes d'EntityManager (crud) qui 
+ * sont aussi GENERIQUE.
+ * 
+ * L'intéret est de pouvoir l'étendre aux classes de DAO afin qu'elles récupèrent toutes les
+ * méthodes génériques qui vont s'appliquer au type du modèle du DAO : 
+ * FournisseurDao => Type générique sera Fournisseur
+ * ArticleDao => Type générique sera Article
+ */
+
+
 
 /**
  * Base Abstract DAO

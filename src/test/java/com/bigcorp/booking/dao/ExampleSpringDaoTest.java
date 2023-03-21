@@ -1,9 +1,11 @@
 package com.bigcorp.booking.dao;
 
 import org.junit.jupiter.api.Assertions;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import com.bigcorp.booking.model.Example;
 import com.bigcorp.booking.service.ExampleService;
+import com.bigcorp.booking.spring.SpringConfiguration;
 
 //@SpringJUnitConfig(SpringConfiguration.class)
 public class ExampleSpringDaoTest {

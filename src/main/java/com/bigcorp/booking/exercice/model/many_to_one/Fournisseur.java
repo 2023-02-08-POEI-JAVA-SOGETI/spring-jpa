@@ -1,10 +1,18 @@
-package com.bigcorp.booking.exercice.model;
+package com.bigcorp.booking.exercice.model.many_to_one;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+
 
 @Entity
 @Table(name="fournisseur")
@@ -20,8 +28,11 @@ public class Fournisseur {
 	private String email;
 	private String adresse;
 	
+	@OneToMany(mappedBy = "fournisseur")
+	private Set<Article> articles = new HashSet<>();
 	
-	
+
+
 	public Fournisseur() {
 		super();
 	}
@@ -78,9 +89,12 @@ public class Fournisseur {
 		this.adresse = adresse;
 	}
 	
+
+	public Set<Article> getArticles() {
+		return articles;
+	}
 	
 	
-	
-	
+
 
 }
