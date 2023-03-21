@@ -34,6 +34,16 @@ public class TestAppSpring {
 
 	}
 	
+	@Test
+	@DisplayName("Testing if service correctly updates a fournisseur")
+	public void testUpdateFournisseur() {
+		Fournisseur fournisseur = new Fournisseur(1, "Mega Supply", "supply@mail.com", "3 rue du moulin");
+		fournisseurService.save(fournisseur);
+		Assertions.assertNotNull(fournisseur);
+		Assertions.assertNotNull(fournisseur.getId());
+
+	}
+	
 	@Autowired
 	private ArticleService articleService;
 

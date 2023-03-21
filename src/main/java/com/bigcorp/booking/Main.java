@@ -29,8 +29,8 @@ public class Main {
     	String description = "Une superbe carte graphique";
     	ArticleDaoEnAbstract articleDao = new ArticleDaoEnAbstract();
     	Article article = new Article();
-		article.setNumArticle(numArticle);
-		article.setType(type);
+		//article.setNumArticle(numArticle);
+		//article.setType(type);
 		article.setNom(nom);
 		article.setDescription(description);
     	
