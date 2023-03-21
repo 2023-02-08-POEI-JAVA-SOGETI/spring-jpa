@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Ma deuxième page Thymeleaf !</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+body {
+	background-color: #f1f1f1;
+	font-family: Arial, sans-serif;
+	color: #333;
+}
+
+h1 {
+	font-size: 3em;
+	text-align: center;
+	margin: 50px auto;
+	text-shadow: 2px 2px #aaa;
+}
+
+p {
+text-align : center;
+margin : 20px auto;
+font-weight: bolder;
+color: #cdcd0d;
+}
+
+img {
+	display: block;
+	margin: auto;
+	margin-top: 50px;
+	border: 5px solid #fff;
+	box-shadow: 5px 5px 5px #888;
+	max-width: 50%;
+	height: auto;
+}
+</style>
+</head>
+
+<body>
+	<h1>Bah alors ça dit qu'oie là ?</h1>
+	<p th:text="${monMessage}">Ça marche pas mal ici !</p>
+	<img src="/images/oie.jpg" alt="Oie">
+	<p th:text="${monPojo.nom}">Ça marche pas mal ici !</p>
+</body>
+</html>
