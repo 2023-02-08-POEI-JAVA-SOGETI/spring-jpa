@@ -4,8 +4,6 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import org.apache.commons.lang.StringUtils;
-
 import com.bigcorp.booking.model.Client;
 
 public class ClientDao extends AbstractDao<Client>{
@@ -51,7 +49,7 @@ public class ClientDao extends AbstractDao<Client>{
 	 */
 	public List<Client> getParNomLikeInsensibleALaCasse(String nomClient){
 		if(nomClient == null) {
-			nomClient = StringUtils.EMPTY;
+			nomClient = "";
 		}
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
 		//Va envoyer une requête comme 'SELECT * FROM CLIENT WHERE UPPER(NOM) LIKE %' + UPPER(nomClient) + '%'

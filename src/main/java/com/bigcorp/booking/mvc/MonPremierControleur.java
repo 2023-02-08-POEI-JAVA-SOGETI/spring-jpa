@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class MonPremierControleur {
-    
+	
     
     /**
      * Intercepte les requêtes /salut , effectue
@@ -19,10 +19,9 @@ public class MonPremierControleur {
      * @return
      */
     @RequestMapping("/salut")
-    public String showSayHello() {
+    public String saveSayHello() {
     	System.out.println("Le contrôleur de salut agit ! ");
         return "vue-salut";
     }
-    
     
 }
