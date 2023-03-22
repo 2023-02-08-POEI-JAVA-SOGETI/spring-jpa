@@ -22,17 +22,17 @@ public class ControleurFournisseurs {
 		System.out.println("Le contrôleur de fournisseurs agit ! ");
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("vue-fournisseurs");
-		Fournisseurs fourn1 = new Fournisseurs();
+		/*Fournisseurs fourn1 = new Fournisseurs();
 		Fournisseurs fourn2 = new Fournisseurs();
 		Fournisseurs fourn3 = new Fournisseurs();
 		fourn3.setNom("Emile");
 		fourn2.setNom("Emule");
-		fourn1.setNom("Emole");
-		List<Fournisseurs> fournisseursList = new ArrayList<Fournisseurs>();
-		fournisseursList.add(fourn1);
+		fourn1.setNom("Emole");*/
+		Iterable<Fournisseurs> fournisseursIterable = fournisseurService.findAll();
+		/*fournisseursList.add(fourn1);
 		fournisseursList.add(fourn2);
-		fournisseursList.add(fourn3);
-		mav.addObject("fournisseursModel", fournisseursList);
+		fournisseursList.add(fourn3);*/
+		mav.addObject("fournisseursModel", fournisseursIterable);
 		System.out.println("Rendu terminé (normalement hein)");
 		return mav;
 		

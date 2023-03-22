@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bigcorp.booking.dao.spring.FournisseurSpringDao;
-
+import com.bigcorp.booking.model.Article;
 import com.bigcorp.booking.model.Fournisseurs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,6 +28,11 @@ public class FournisseurSpringService {
 	public Fournisseurs findById(Integer id) {
 		LOGGER.info("Searching");
 		return this.fournisseurSpringDao.findById(id).orElse(null);
+	}
+	
+	public Iterable<Fournisseurs> findAll() {
+		LOGGER.info("Searching");
+		return this.fournisseurSpringDao.findAll();
 	}
 
 	public List<Fournisseurs> findContainingName(String name) {
