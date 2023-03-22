@@ -60,4 +60,11 @@ public class FournisseurService {
 		LOGGER.info("Appelle méthode findByNom() de ArticleService.java");
 		return this.fournisseurSpringDao.findFournisseurByName(nom);
 	}
+	
+	/**
+	 * Renvoie tous les Fournisseur présents en base
+	 */
+	public Iterable<Fournisseur> findAll(){
+		return this.fournisseurSpringDao.findAll();
+	}
 }

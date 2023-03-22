@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Tp Fournisseurs - Spring MVC</title>
+</head>
+<body>
+	<h1 th:text="'Page du fournisseur : ' + ${fournisseur.nom} + ' qui a pour id : ' + ${fournisseur.id}">Page fournisseur </h1>
+
+	<form action="fournisseur" th:action="@{:fournisseur}" method="post">
+		<div>
+			<label for="id">Id :</label>
+			<input type="text" name="id" id="id" th:value="${fournisseur.id}" readonly="readonly"/>
+		</div>
+		<div>
+			<label for="nom">Nom :</label>
+			<input type="text" name="nom" id="nom" th:value="${fournisseur.nom}"/>
+		</div>
+			<label for="num">Num :</label>
+			<input type="text" name="num" id="num" th:value="${fournisseur.num}"/>
+		<div>
+			<label for="email">Email :</label>
+			<input type="email" name="email" id="email" th:value="${fournisseur.email}"/>
+		</div>
+		<div>
+			<label for="adresse">Adresse :</label>
+			<input type="text" name="adresse" id="adresse" th:value="${fournisseur.adresse}"/>		
+		</div>
+		<input type="submit" value="Sauvegarder"/>
+	</form>	
+</body>
+</html>
