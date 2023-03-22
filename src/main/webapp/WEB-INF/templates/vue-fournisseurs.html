@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Fournisseurs</title>
+</head>
+<body>
+	<ul>
+		<li th:each="fournisseur : ${fournisseursModel}" th:text="${fournisseur.nom}">Default</li>
+	</ul>
+</body>
+</html>
