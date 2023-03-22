@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Editer un fournisseur</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+		<form action="fournisseur" method="POST" th:object="${fournisseur}" th:action="${/save-fournisseur}">
+		<!-- 
+			TODO: Récupérer les données récupérées en paramètres
+				  Ajouter un bouton (input) qui va envoyer la requête POST 
+				  Et sauvegarder les données
+		 -->
+			<label>Id :</label>
+			<input />
+			<label>Numero :</label>
+			<input />
+			<label>Nom :</label>
+			<input />
+			<label>Prénom :</label>
+			<input />
+			<label>Adresse :</label>
+			<input />
+			<label>Email :</label>
+			<input />
+		</form>
+	</body>
+</html>

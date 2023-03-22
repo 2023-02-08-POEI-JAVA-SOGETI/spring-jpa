@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>Coucou ThymeLeaf !</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+    <h1>Coucou is coocooked!</h1>
+    <p th:text="${notSoBad}"></p>
+    <p th:text="${standName}"></p>
+    <h1 th:if="${displayHeader}">STANDS</h1>
+    <ul>
+    	<li th:each="stand : ${stands}" th:text="${stand.name}">Star Platinum</li>
+    </ul>
+    <a href="coucou.html" th:href="@{/stands/1}">Lien vers Silver Chariot</a>
+  </body>
+</html>

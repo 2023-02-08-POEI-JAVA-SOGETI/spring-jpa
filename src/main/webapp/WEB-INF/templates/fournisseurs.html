@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Liste de fournisseurs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Liste de fournisseurs</h1>
+	<ul>
+		<li th:each="fournisseur : ${fournisseurs}">
+			<a href="fournisseurs.html" th:href="@{/fournisseurs/edit?fournisseur_id=(${fournisseur.id})}"  th:text="${'Editer ' + fournisseur.nom}">Editer un fournisseur</a>
+		</li>
+	</ul>
+</body>
+</html>

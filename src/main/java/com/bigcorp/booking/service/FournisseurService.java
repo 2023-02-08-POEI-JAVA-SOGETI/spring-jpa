@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.ArrayList;
+
 
 @Service
 public class FournisseurService {
@@ -50,5 +52,18 @@ public class FournisseurService {
         List<Fournisseur> fournisseurs = this.fournisseurDao.findByName(name);
 
         return fournisseurs.isEmpty() ? null : fournisseurs;
+    }
+    
+    @Transactional
+    public List<Fournisseur> getAllFournisseurs() {
+    	Iterable<Fournisseur> fournisseursIterable = this.fournisseurDao.findAll();
+    	
+    	List<Fournisseur> fournisseurs = new ArrayList<>();
+    	
+    	for(Fournisseur fournisseur: fournisseursIterable) {
+    		fournisseurs.add(fournisseur);
+    	}
+    	
+    	return fournisseurs;
     }
 }
