@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Exo MVC : ma première vue !</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<h1>Fournisseurs</h1>
+	<p>La liste des fournisseurs en base de données :</p>
+
+	<table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Adresse</th>
+                <th>Numero</th>
+                <th>Email</th>
+                <th>Modifier</th>
+            </tr>
+        </thead>
+        <tbody>
+	        <tr th:each="fournisseur : ${fournisseurs}">
+				<td th:text="${fournisseur.nom}"></td>
+				<td th:text="${fournisseur.adresse}"></td>
+				<td th:text="${fournisseur.numero}"></td>
+				<td th:text="${fournisseur.email}"></td>
+				<td><a href="vue-edition-fournisseur.html" th:href="@{/fournisseurs/edit(id=${fournisseur.id})}" th:text="${'Lien vers fournisseur avec id = '+ fournisseur.id}">Lien vers mon fournisseur</a></td>
+			</tr>
+		</tbody>
+   	</table>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Modifier le fournisseur</title>
+</head>
+<body>
+
+	<p>Informations du fournisseur</p>
+	
+	<form action="fournisseur" th:action="@{/fournisseur}" method="post">
+		<p>ID :</p>
+		<p>
+			<input type="text" name="id" th:value="${fournisseur.id}" />
+		</p>
+		<p>Adresse :</p>
+		<p>
+			<input type="text" name="adresse" th:value="${fournisseur.adresse}" />
+		</p>
+		<p>Numero :</p>
+		<p>
+			<input type="text" name="numero" th:value="${fournisseur.numero}" />
+		</p>
+		<p>Email :</p>
+		<p>
+			<input type="text" name="email" th:value="${fournisseur.email}" />
+		</p>
+		<input type="submit" value="Sauvegarder" />
+	</form>
+
+</body>
+</html>

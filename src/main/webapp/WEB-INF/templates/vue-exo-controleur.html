@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Exo MVC : ma première vue !</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<h1>Voici un beau titre</h1>
+	<p th:text="${monMessage}">Ça marche pas mal ici !</p>
+
+	<p>Liste des camions :</p>
+	
+	<ul>
+      <li th:each="camion : ${listeCamion}" th:text="${camion.nom}">Camion</li>
+    </ul>
+	
+	<p>URLs dynamiques :</p>
+	<ul>
+      <li th:each="camion,iterStat : ${listeCamion}"><a href="camion.html" th:href="@{/camions(id=${iterStat.index})}" th:text="${'Lien vers le camion ' + camion.nom }">Lien vers mon camion</a></li>
+    </ul>
+</body>
+</html>
