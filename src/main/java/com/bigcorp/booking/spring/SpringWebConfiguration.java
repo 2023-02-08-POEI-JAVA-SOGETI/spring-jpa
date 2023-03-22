@@ -60,7 +60,7 @@ public class SpringWebConfiguration implements WebMvcConfigurer, ApplicationCont
 		templateResolver.setTemplateMode(TemplateMode.HTML);
 		// Template cache est à true par défaut
 		// Mettez le à false si vous voulez que les templates soient modifiés automatiquement
-		templateResolver.setCacheable(false);
+		templateResolver.setCacheable(true);
 		return templateResolver;
 	}
 
