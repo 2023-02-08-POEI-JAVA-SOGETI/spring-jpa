@@ -27,9 +27,12 @@ public class PlaneteDetailControleur {
      * @return
      */
     @RequestMapping("/planete")
-    public String afficheDetailPlaneteParAttribut(@RequestParam("id") Integer id) {
+    public ModelAndView afficheDetailPlaneteParAttribut(@RequestParam("id") Integer id) {
     	System.out.println("J'affiche le détail de la planète à partir de son attribut : " + id);
-        return "planete";
+    	ModelAndView mav = new ModelAndView();
+    	mav.setViewName("planete");
+    	mav.addObject("planete", PlanetesSingleton.INSTANCE.getPlaneteById(id));
+        return mav;
     }
     
     /**
@@ -45,6 +48,7 @@ public class PlaneteDetailControleur {
     	mav.addObject("planete", PlanetesSingleton.INSTANCE.getPlaneteById(id));
         return mav;
     }
+    
     
     /**
      * Sauvegarde planete
