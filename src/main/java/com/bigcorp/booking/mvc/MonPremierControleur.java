@@ -2,6 +2,7 @@ package com.bigcorp.booking.mvc;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * Annotée par @Controller, cette 
@@ -23,6 +24,7 @@ public class MonPremierControleur {
     	System.out.println("Le contrôleur de salut agit ! ");
         return "vue-salut";
     }
+    
     
     
 }
