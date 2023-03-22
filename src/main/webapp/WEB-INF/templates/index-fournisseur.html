@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Fournissseur Index</title>
+</head>
+<body>
+<style>
+	body {
+	  font-family: Arial, sans-serif;
+	  margin: 0;
+	  padding: 0;
+	  display: flex;
+	  flex-direction: column;
+	}
+	
+	h1 {
+	  font-size: 24px;
+	  font-weight: bold;
+	  margin: 20px 0;
+	}
+	
+	ul {
+	  list-style: none;
+	  padding: 0;
+	  margin: 0;
+	}
+	
+	li {
+	  margin: 1rem;
+	}
+	
+	a {
+	  text-decoration: none;
+	  color: #333;
+	  font-weight: bold;
+	  padding: 2rem;
+	}
+	.btn{
+	  padding: 8px 20px;
+	  background-color: #007bff;
+	  color: #fff;
+	  border: none;
+	  border-radius: 3px;
+	  cursor: pointer;
+	  margin-right: 2rem;
+	}
+	
+	a:hover {
+	  color: #555;
+	}
+</style>
+	<h1>Liste des fournisseurs : </h1>
+	<div th:if="${isFournisseursListEmpty}">Il n'y a pas de fournisseurs pour le moment, veuillez en ajouter depuis votre interface !</div>
+	<div>
+		<ul th:if="${!isFournisseursListEmpty}">
+		  <li th:each="fournisseur : ${listFournisseurs}">
+		   <a th:href="@{/fournisseur/{id}(id=${fournisseur.id})}" th:text="${fournisseur.nom} + ' ' + ${fournisseur.adresse}"></a>
+		   <a class='btn' th:href="@{/fournisseur/{id}/edit(id=${fournisseur.id})}">Modifier</a>
+		  </li>
+		</ul>
+	</div>
+</body>
+</html>

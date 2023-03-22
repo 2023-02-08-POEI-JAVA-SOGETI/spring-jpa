@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Show Fournisseur</title>
+</head>
+<body>
+<style>
+	body {
+	  font-family: Arial, sans-serif;
+	  background-color: #f2f2f2;
+	  color: #333;
+	  margin: 0;
+	}
+	
+	h1 {
+	  font-size: 32px;
+	  font-weight: bold;
+	  margin-top: 20px;
+	}
+	
+	ul {
+	  list-style: none;
+	  padding: 0;
+	  margin: 20px 0;
+	}
+	
+	li {
+	  margin-bottom: 10px;
+	}
+	
+	a {
+	  padding: 8px 20px;
+	  background-color: #007bff;
+	  color: #fff;
+	  border: none;
+	  border-radius: 3px;
+	  cursor: pointer;
+	}
+	
+</style>
+	<a th:href="@{/fournisseurs}">Retour à la liste des fournisseurs</a>
+	<h1 th:text="${fournisseur.nom}"></h1>
+	<ul>
+		<li th:text="'numero fournisseur : ' + ${fournisseur.numero_fournisseur}"></li>
+		<li th:text="'nom : ' + ${fournisseur.nom}"></li>
+		<li th:text="'email : ' + ${fournisseur.email}"></li>
+		<li th:text="'adresse :' + ${fournisseur.adresse}"></li>
+		<a th:href="@{/fournisseur/{id}/edit(id=${fournisseur.id})}">Modifier</a>
+	</ul>
+</body>
+</html>

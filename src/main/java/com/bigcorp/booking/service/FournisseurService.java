@@ -37,12 +37,12 @@ public class FournisseurService {
 		fournisseurSpringDao.deleteById(id);
 	}
 	
-	public Optional<Fournisseur> findById(Long id) {
+	public Fournisseur findById(Integer id) {
 		logger.info("Find fournisseur: {}", id);
 		return fournisseurSpringDao.findById(id);
 	}
 	
-	public Iterable<Fournisseur> ListArticles(){
+	public Iterable<Fournisseur> findAll(){
 		logger.info("list fournisseurs: ");
 		return fournisseurSpringDao.findAll();
 	}
@@ -51,7 +51,5 @@ public class FournisseurService {
 		logger.info("Find fournisseur: {}", name);
 		return fournisseurSpringDao.findByNom(name);
 	}
-	
-	
-	
+
 }

@@ -2,18 +2,13 @@ package com.bigcorp.booking.model;
 
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import org.hibernate.mapping.Array;
 
 
 
@@ -69,7 +64,6 @@ public class Fournisseur {
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
-	
 	
 	public static void main(String[] args){
 		
