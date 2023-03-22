@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>Vue Fournisseurs</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+    <h1>Liste des fournisseurs : </h1>
+    <ul>
+    	<li th:each="elmt : ${listFournisseurs}">
+			<a href="fournisseur.html" th:href="@{/fournisseur/{id}(id=${elmt.id})}" th:text="${elmt.nom}">vue fournisseur</a>
+    	</li>
+    </ul>
+  </body>
+</html>

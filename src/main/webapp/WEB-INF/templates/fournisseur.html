@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>Vue Fournisseur</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+    <h1 th:text="${fournisseur.nom}">Detail fournisseur : </h1>
+    <table style="border-collapse: collapse;" border="1px">
+    	<tr style="background-color: lightcyan;">
+    		<td>Id</td>
+    		<td>Numero</td>
+    		<td>Nom</td>
+    		<td>Email</td>
+    		<td>Adresse</td>
+    	</tr>
+    	<tr>
+    		<td th:text="${fournisseur.id}">default id</td>
+    		<td th:text="${fournisseur.numero}">default numero</td>
+    		<td th:text="${fournisseur.nom}">default nom</td>
+    		<td th:text="${fournisseur.email}">default email</td>
+    		<td th:text="${fournisseur.adresse}">default adresse</td>
+    	</tr>
+   	</table>
+   	
+   	<h2>Mettre à jour le fournisseur :</h2>
+   	<form action="fournisseur" th:object="${fournisseur}" th:action="@{/fournisseur}" method="post">
+   		<p> Id : <input type="text" name="id" th:value="${fournisseur.id}" readonly="readonly"/></p>
+  		<p>Numero : <input type="text" name="numero" th:value="${fournisseur.numero}" /></p>
+   		<p>Nom : <input type="text" name="nom" th:value="${fournisseur.nom}" /></p>
+   		<p>Email : <input type="text" name="email" th:value="${fournisseur.email}" /></p>
+   		<p>Adresse : <input type="text" name="adresse" th:value="${fournisseur.adresse}" /></p>
+   		<p><input type="submit" value="Envoyer le formulaire"></p>
+   		
+   		<!--  affichage des erreurs du formulaire  -->
+   		<ul th:if="${#fields.hasErrors('*')}">
+			<li th:each="err : ${#fields.errors('*')}" th:text="${err}">Erreur</li>
+		</ul>
+   	</form>
+   	
+	<div>
+		<a href="../fournisseurs" th:href="@{/fournisseurs}">Retour liste fournisseurs</a>
+	</div>
+  </body>
+</html>

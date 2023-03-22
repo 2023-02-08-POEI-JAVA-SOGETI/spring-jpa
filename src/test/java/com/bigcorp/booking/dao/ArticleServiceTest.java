@@ -17,7 +17,6 @@ import com.bigcorp.booking.spring.SpringConfiguration;
 
 @SpringJUnitConfig(SpringConfiguration.class)
 public class ArticleServiceTest {
-
 	
 	@Autowired
 	private ArticleService articleService;
@@ -115,5 +114,18 @@ public class ArticleServiceTest {
     	Article updatedArticle = articleService.saveArticleAndFournisseur(savedArticleA.getId(), 3000);
     	
 		Assertions.assertNull(updatedArticle.getFournisseur());
+	}
+	
+	// test du findAll
+	@Test
+	public void testFindAll() {
+		Article a1 = new Article(2, "etat", "raquette", "Belle raquette de tennis");
+		Article a2 = new Article(2, "etat", "club", "club de golf");
+		
+		articleService.save(a1);
+		articleService.save(a2);
+		
+		List<Article> list = articleService.findAll();
+		Assertions.assertEquals(2, list.size());
 	}
 }

@@ -29,22 +29,12 @@ public class ArticleService {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(ArticleService.class);
 
-	/**
-	 * Sauvegarde example
-	 * @param example
-	 */
 	@Transactional
 	public Article save(Article article) {
 		LOGGER.info("save : " + article.getId() + " - " + article.getNom());
 		return this.articleSpringDao.save(article);
 	}
 
-	/**
-	 * Récupère Example par son id, ou null
-	 * si aucune ligne ne correspond en base.
-	 * @param id
-	 * @return
-	 */
 	@Transactional
 	public Article findById(Integer id) {
 		LOGGER.info("findById : " + id);
@@ -56,23 +46,17 @@ public class ArticleService {
 		LOGGER.info("findByFournisseurId : " +id);
 		return this.articleSpringDao.findbyFournisseur(id);
 	}
-	/**
-	 * Renvoie tous les Example présents en base
-	 */
-//	public Iterable<Example> findAll(){
-//		return this.exampleSpringDao.findAll();
-//	}
 	
-	/**
-	 * Supprime un Example par son identifiant.
-	 * @param id
-	 */
+	@Transactional
+	public List<Article> findAll(){
+		return (List<Article>) this.articleSpringDao.findAll();
+	}
+
 	@Transactional
 	public void deleteById(Integer id) {
 		LOGGER.info("deleteById :" +id);
 		this.articleSpringDao.deleteById(id);
 	}
-	
 
 	@Transactional
 	public Article saveArticleAndFournisseur (Integer idArticle, Integer idFournisseur) throws NullPointerException {

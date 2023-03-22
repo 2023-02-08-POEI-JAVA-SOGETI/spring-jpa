@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>A que...</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+    <h1>Coucou</h1>
+    <p th:text="${monTexte}">Mon texte intéressant statique</p>
+    <img src="/images/purfect.jpg" alt="miaou">
+    
+    <h2>Oh mon camion</h2>
+    <div th:text="${camion.nom}">Camion générique</div>
+    
+    <h1 th:if="${condition}">Mon titre conditionnel</h1>
+    
+    <h2>Ma liste de camions</h2>
+    <ul>
+    	<li th:each="elmt : ${liste}" th:text="${elmt.nom}">Mon camion bidon</li>
+    </ul>
+    
+    <h2>Ma liste de liens</h2>
+    <ul>
+		<li>Mon lien version 1 : 
+			<a href="vue-coucou.html" th:href="@{/coucou(id=${identifiant})}">view</a>
+		</li>
+		<li>Mon lien version 2 :
+			<a href="details.html" th:href="@{/coucou/{numero}(numero=${identifiant})}">vue</a>
+		</li>
+    </ul>
+    
+    <h1 th:if="${newCamion.id}" th:text="${newCamion.nom}">Mon camion conditionnel</h1>
+
+  </body>
+</html>

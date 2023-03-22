@@ -23,6 +23,6 @@ public class MonPremierControleur {
     	System.out.println("Le contrôleur de salut agit ! ");
         return "vue-salut";
     }
-    
+  
     
 }

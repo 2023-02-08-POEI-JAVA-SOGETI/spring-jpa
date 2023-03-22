@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>Vue Article</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+    <h1>Detail article : </h1>
+    <ul>
+	    <li th:text="${article.id}">id</li>
+	    <li th:text="${article.numero}">numero</li>
+	    <li th:text="${article.nom}">nom</li>
+	    <li th:text="${article.etat}">etat</li>
+	    <li th:text="${article.description}">description</li>
+    </ul>
+    <div>
+		<a href="../articles" th:href="@{/articles}">Retour</a>
+	</div>
+  </body>
+</html>
