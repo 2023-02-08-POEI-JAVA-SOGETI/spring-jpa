@@ -2,7 +2,6 @@ package com.bigcorp.booking.mvc;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -57,7 +56,7 @@ public class PlaneteDetailControleur {
      * @return
      */
     @PostMapping("/planete")
-    public ModelAndView processSubmit(@Validated @ModelAttribute("planete") Planete planete, 
+    public ModelAndView processSubmit( @ModelAttribute("planete") Planete planete, 
     		BindingResult result) {
     	if(result.hasErrors()) {
     		return new ModelAndView("planete", "planete", planete);

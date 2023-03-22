@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.bigcorp.booking.mvc.bean.Invite;
+
 /**
  * Annotée par @Controller, cette classe va être considérée par Spring MVC pour
  * traiter des requêtes.
@@ -32,13 +34,13 @@ public class MonPremierControleur {
 	}
 
 	@ModelAttribute("invites")
-	public List<String> getInvites() {
-		List<String> invites = new ArrayList<>();
-		invites.add("Pablo");
-		invites.add("ElHadji");
-		invites.add("Lucile");
-		invites.add("Khadidja");
-		invites.add("Silvio");
+	public List<Invite> getInvites() {
+		List<Invite> invites = new ArrayList<>();
+		invites.add(new Invite(1,"Pablo"));
+		invites.add(new Invite(2,"ElHadji"));
+		invites.add(new Invite(3,"Lucile"));
+		invites.add(new Invite(4,"Khadidja"));
+		invites.add(new Invite(5,"Silvio"));
 		return invites;
 	}
 
