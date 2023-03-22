@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>Mon fournisseur sélectionné</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  
+  <link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+  
+  
+  </head>
+
+  <body>
+  
+  <div class="container">
+  
+		<div th:if="${monFournisseur == null}"  > Aucun fournisseur trouvé</div>
+     
+    	<div>
+	    	<form method="post" action="monFournisseur"  th:object="${monFournisseur}" th:action="@{/update-fournisseur(id=${monFournisseur.id})}" >
+			
+			<div>
+		  		<p>
+		   		<input class="form-control mb-4"  type="hidden" name="id" th:value="${monFournisseur.id}" />
+		  		</p>
+			</div>
+	     	
+	  		<div>
+				<p>Nom :</p>
+		  		<p>
+		   		<input class="form-control mb-4"  type="text" name="nom" th:value="${monFournisseur.nom}" />
+		  		</p>
+			</div>
+			
+			<div>
+				<p>Num :</p>
+		  		<p>
+		   		<input class="form-control mb-4"  type="text" name="num" th:value="${monFournisseur.num}" />
+		  		</p>
+			</div>
+			
+			<div>
+				<p>Email :</p>
+		  		<p>
+		   		<input class="form-control mb-4"  type="text" name="email" th:value="${monFournisseur.email}" />
+		  		</p>
+			</div>
+			
+			<div>
+				<p>Adresse :</p>
+		  		<p>
+		   		<input class="form-control mb-4"  type="text" name="adresse" th:value="${monFournisseur.adresse}" />
+		  		</p>
+			</div>
+	  		
+	  		
+			<input class="btn btn-primary mt-4" type="submit" value="Sauvegarder" />
+	 	
+	     	</form>
+    	</div>
+     
+   </div>   	
+     
+  </body>
+</html>

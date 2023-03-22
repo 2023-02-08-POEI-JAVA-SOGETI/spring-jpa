@@ -16,7 +16,23 @@
      	<ul>
      		<li th:each="fournisseur : ${listFournisseur}" th:text="${fournisseur.nom}"> ma liste de fournisseur</li>
      	</ul>
-   
+     </div>
+     
+     <div>
+     	<ul>
+     		<li th:each="fournisseur : ${listFournisseur}">
+     			<a href="coucou.html"
+     				th:href="@{/fournisseur(id=${fournisseur.id})}"
+     				th:text="${'AVEC REQUEST PARAM : Lien vers le fournisseur suivant : ' + fournisseur.nom}"> Liens vers les fournisseurs</a>
+     		
+     		<br>
+     		
+     			<a href="coucou.html"
+     				th:href="@{/fournisseur/{id}(id=${fournisseur.id})}"
+     				th:text="${'AVEC PATH VARIABLE : Lien vers le fournisseur suivant : ' + fournisseur.nom}"> Liens vers les fournisseurs</a>
+     		
+     		</li>
+     	</ul>
      </div>
      
   </body>

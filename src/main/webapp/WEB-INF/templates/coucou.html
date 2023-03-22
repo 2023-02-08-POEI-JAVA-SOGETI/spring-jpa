@@ -3,12 +3,22 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
   <head>
-    <title>Ma première page Thymeleaf !</title>
+    <title>Page COUCOU!</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   </head>
 
   <body>
-    <h1>COUCOU</h1>
+    <h1>Voici la page COUCOU</h1>
+    
+    <h2>Détail de la planète</h2>
+ 	<p th:if="${fournisseur == null}">La fournisseur est nulle</p>
+ 	<div th:if="${fournisseur != null}">
+ 		<p>Id :</p>
+  		<p th:text="${fournisseur.id}">son ID</p>
+  		<p>Nom :</p>
+  		<p th:text="${fournisseur.nom}">son NOM</p>
+ 
+ 	</div>
    
   </body>
 </html>

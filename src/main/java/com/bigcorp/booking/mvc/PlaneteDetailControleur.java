@@ -52,26 +52,47 @@ public class PlaneteDetailControleur {
      * @param result
      * @return
      */
+//    @PostMapping("/planete")
+//    public ModelAndView processSubmit(@Validated @ModelAttribute("planete") Planete planete, 
+//    		BindingResult result) {
+//    	if(result.hasErrors()) {
+//    		return new ModelAndView("planete", "planete", planete);
+//    	}
+//    	
+//    	String view = "planetes";
+//    	if(planete != null && planete.getId() != null) {
+//    		view = "redirect:/planetes/" + planete.getId();
+//    	}
+//    	ModelAndView mav = new ModelAndView(view);
+//    	mav.addObject("planete", planete);
+//
+//    	if (result.hasErrors()) {
+//            return mav;
+//        }
+//        // else
+//        PlanetesSingleton.INSTANCE.savePlanete(planete);
+//        return mav;
+//    }
+    
+    
     @PostMapping("/planete")
     public ModelAndView processSubmit(@Validated @ModelAttribute("planete") Planete planete, 
     		BindingResult result) {
     	if(result.hasErrors()) {
-    		return new ModelAndView("planete", "planete", planete);
+    		ModelAndView mav = new ModelAndView("planete");
+    		mav.addObject("planete", planete);
     	}
     	
-    	String view = "planetes";
-    	if(planete != null && planete.getId() != null) {
-    		view = "redirect:/planetes/" + planete.getId();
-    	}
-    	ModelAndView mav = new ModelAndView(view);
-    	mav.addObject("planete", planete);
-        if (result.hasErrors()) {
-            return mav;
-        }
-        // else
-        PlanetesSingleton.INSTANCE.savePlanete(planete);
+    	
+    	/*
+    	 * Le "redirect:/planetes?id=" permet de relancer la méthode qui se lance avec "/planetes/{id}"
+    	 	Ca modifie la requete en cours qui est Post et la transforme en GET
+    	 	Ca évite de r'envoyer un POST si on appuie sur F5...
+    	 */
+    	
+    	ModelAndView mav = new ModelAndView("redirect:/planetes?id=" + planete.getId());
+    	
         return mav;
     }
-    
     
 }
