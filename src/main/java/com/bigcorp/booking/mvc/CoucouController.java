@@ -1,6 +1,5 @@
 package com.bigcorp.booking.mvc;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,4 +40,18 @@ public class CoucouController {
 		camions.add(man);
 		return camions;
 		}
+	
+	@ModelAttribute("displayDiv")
+	public Boolean displayDiv() {
+		Camion man = new Camion();
+		Camion renault = new Camion();
+		renault.setNom("renault 300 ");
+		man.setNom("man");
+		List<Camion> camions = new ArrayList<>();
+		camions.add(renault);
+		camions.add(man);
+		
+		return camions.isEmpty() ? false : true;
+	}
 }
+
