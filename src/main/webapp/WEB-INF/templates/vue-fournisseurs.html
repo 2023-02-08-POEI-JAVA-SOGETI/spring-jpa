@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title> Liste des fournisseurs </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+  <body>  
+    <h1>Liste des fournisseurs</h1>
+    <p th:text="${connexion}">connexion BDD !</p>
+    
+    <ul>
+	  <li th:each = "fournisseur: ${fournisseurs}">
+	  <a th:href ="@{/formulaireFournisseurs(id=${fournisseur.id})}" href="/fournisseurs/françois/modifier" th:text= "${fournisseur.nom}">Fournisseur françois</a></li>
+	  
+	  
+	  
+	</ul>
+	
+	<!-- Formulaire -->
+	<form action="#" th:action="@{/modifierFournisseur}" method="post">
+	
+	<p>Id : </p>
+	<p><input type="text" name="id" th:value="${fournisseur.id}" /></p>
+	   
+	 <p>Nom : </p>   
+	 <p><input type="text" id="nom" name="nom" th:value="${fournisseur.nom}" /></p>
+	   
+	 <p>Adresse : </p>   
+	 <p><input type="text" id="adresse" name="adresse" th:value="${fournisseur.adresse}" /></p>
+	  
+	 <p>Numero : </p>  
+	 <p><input type="text" id="numero" name="numero" th:value="${fournisseur.numero}" /></p>
+	  
+	 <p>Email : </p>  
+	 <p><input type="text" id="email" name="email" th:value="${fournisseur.email}" /></p>
+	   
+	<input type="submit" value="Sauvegarder" />
+	</form>
+	
+    
+   </body>

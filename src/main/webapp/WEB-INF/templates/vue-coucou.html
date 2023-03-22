@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title> Page Thymeleaf coucou </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+  
+    <h1>Coucou François</h1>
+    
+  
+  	<!-- message dans controller -->
+	<p th:text="${message}"> Salut ! </p>
+	
+	
+	
+	
+	
+	<!--  itérable de String (une liste par exemple) -->
+	<p>La liste des stagiaires Nantes!</p>
+		<ul>
+			<li th:each ="lesStagiaires : ${listeStagiaireNantes}" th:text="${stagiaire}">Ecole m2i</li>
+		</ul>
+	
+	<!-- booleen -->
+	
+		
+	<!-- Ajoutez dans votre page deux URLs dynamiques : une avec un paramètre de requête et une avec un paramètre dans l'URL :
+	Ex : ma-page?id=45 ma-page/45 -->	
+	
+	
+		<p><a href="animaux.html" th:href="@{/animaux(id=${animaux.nom}, id=45)}">Lien avec un paramètre de requête</a></p>
+		
+ 		<p><a href="animaux.html" th:href="@{/animaux/{orderId}/45(orderId=${o.id})}">Lien avec un paramètre dans l'URL</a></p>
+		
+ 		
+		
+  </body>
+  
+</html>

@@ -16,7 +16,7 @@ import com.bigcorp.booking.spring.SpringConfiguration;
 public class UtilisateursTest {
 	@Autowired  
 	private UtilisateursService utilisateurService;
-
+	
 	@Test
 	public void testSaveGet() {
 	 Utilisateurs utilisateur = new Utilisateurs();

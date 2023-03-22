@@ -64,9 +64,4 @@ public class ArticlesService {
 		this.articleSpringDao.deleteById(id);
 	}
 
-//	public Articles update(Integer id) {
-//		// TODO Auto-generated method stub
-//		return this.articleSpringDao.save(articleToUpdate);
-//	}
-
 }
