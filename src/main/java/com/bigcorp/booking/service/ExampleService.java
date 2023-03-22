@@ -78,7 +78,7 @@ public class ExampleService {
 		= this.exampleSpringDao.maMethodeDeRechercheAvecUneQueryExplicite("pablo");
 		pablos.addAll(this.exampleSpringDao.findByNom("francois"));
 		pablos.add(this.findById(434l));
-		for (Example example : pablos) {
+		for (Example example : pablos) { 
 			//ecrit dans le fichier Excel
 		}
 	}

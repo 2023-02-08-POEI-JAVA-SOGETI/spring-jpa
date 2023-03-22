@@ -15,8 +15,18 @@
     <p th:if="${!doitAfficherDiv && true}">Je suis là</p>
 
     <ul>
-		<li     th:each="heros : ${listeHerosDisney}" th:text="${heros.id} + ' : ' + ${heros.nom}  + ' / ' + ${heros.film}">Aurore</li>
+		<li th:each="heros : ${listeHerosDisney}">
+	 		<a 
+	 			href="vue-heros.html" 
+	 			th:href="@{/personnagedisney(id=${heros.id})}" 
+	 			th:text="${heros.id} + ' : ' + ${heros.nom}  + ' / ' + ${heros.film}">
+
+	 		Lien vers la page Heros
+
+		 	</a>
+		</li>
     </ul>
-    
+      
+        
   </body>
 </html>

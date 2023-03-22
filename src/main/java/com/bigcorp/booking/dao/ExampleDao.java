@@ -40,7 +40,7 @@ public class ExampleDao {
     	Example example = new Example();
 		example.setNom(nom);
     	
-		Example savedExample = exampleDao.merge(example);
+      	Example savedExample = exampleDao.merge(example);
 	}
 
 }
