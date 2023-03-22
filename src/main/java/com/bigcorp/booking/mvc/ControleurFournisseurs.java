@@ -33,40 +33,40 @@ public class ControleurFournisseurs {
 		mav.addObject("fournisseursModel", fournisseursIterable);
 		System.out.println("Rendu terminé (normalement hein)");
 		return mav;
-		
+
 	}
-	
+
 	@RequestMapping("/fournisseurs/{id}")
 	private ModelAndView showPageFournisseur(@PathVariable("id") int id) {
-	System.out.println("J'affiche le détail du fournisseur à partir du chemin : " +
-	id);
-	ModelAndView mav = new ModelAndView();
-	mav.setViewName("vue-fournisseur");
-	Fournisseurs fournisseurById = fournisseurService.findById(id);
-	mav.addObject("fournisseurModel", fournisseurById);
-	System.out.println("Rendu terminé (normalement hein)");
-	return mav;
+		System.out.println("J'affiche le détail du fournisseur à partir du chemin : " + id);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("vue-fournisseur");
+		Fournisseurs fournisseurById = fournisseurService.findById(id);
+		mav.addObject("fournisseurModel", fournisseurById);
+		System.out.println("Rendu terminé (normalement hein)");
+		return mav;
 	}
-	
+
+	// not done yet
 	@PostMapping("/fournisseur")
-    public ModelAndView processSubmit(@Validated @ModelAttribute("planete") Planete planete, 
-    		BindingResult result) {
-    	if(result.hasErrors()) {
-    		ModelAndView modelAndView = new ModelAndView("planete");
-    		modelAndView.addObject("planete", planete);
-    	}
-    	
-    	String view = "planetes";
-    	if(planete != null && planete.getId() != null) {
-    		view = "redirect:/planetes/" + planete.getId();
-    	}
-    	ModelAndView mav = new ModelAndView(view);
-    	mav.addObject("planete", planete);
-        if (result.hasErrors()) {
-            return mav;
-        }
-        // else
-        //PlanetesSingleton.INSTANCE.savePlanete(planete);
-        return mav;
-    }
+	public ModelAndView processSubmit(@Validated @ModelAttribute("fournisseurModel") Fournisseurs fournisseur,
+			BindingResult result) {
+		if (result.hasErrors()) {
+			ModelAndView modelAndView = new ModelAndView();
+			modelAndView.setViewName("redirect:/fournisseurs/" + fournisseur.getiD());
+			modelAndView.addObject("fournisseurModel", fournisseur);
+			return modelAndView;
+		}
+
+		String view = "redirect:/fournisseurs/" + fournisseur.getiD();
+
+		ModelAndView mav = new ModelAndView(view);
+		mav.addObject("fournisseur", fournisseur);
+		if (result.hasErrors()) {
+			return mav;
+		} else {
+			fournisseurService.save(fournisseur);
+		}
+		return mav;
+	}
 }
