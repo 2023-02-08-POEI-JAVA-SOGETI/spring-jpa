@@ -19,8 +19,8 @@ public class FournisseurService {
 	}
 	
 	@Transactional
-	public Fournisseur save(Fournisseur User) {
-		return this.fournisseurSDao.save(User);
+	public Fournisseur save(Fournisseur fournisseur) {
+		return this.fournisseurSDao.save(fournisseur);
 	}
 	
 	public Fournisseur findById(Integer id) {

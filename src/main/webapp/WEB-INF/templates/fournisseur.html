@@ -3,31 +3,42 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<title>TP : formulaire et fournisseur </title>
+<style>
+	.list-container {
+	    display: flex;	    
+	}
+	
+	.fournisseurs-list,
+	.formulaires-list {
+	    width: 30%;
+  		
+	}
+</style>
+
+<title>TP : formulaire et fournisseur</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
 <body>
-	<div>
-		<h1>TP : formulaire et fournisseur </h1>
-	</div>	
-	<h2>Liste des Fournisseurs</h2>
-	<div>
-		<ul>
-			<li th:each="fournisseur : ${listeFournisseur}" th:text="${fournisseur.nom}"></li>
-		</ul>		
-	</div>	
-	<div>
-		<h2>Liens d'acces formulaires :</h2>		
-		<ul>
-			<li th:each="fournisseur : ${listeFournisseur}">
-			
-				<a href="formulaire-fournisseur.html"
-				th:href="@{/fournisseur/{id}(id=${fournisseur.id})}"
-				th:text="${'Fournisseur N° ' + fournisseur.id }">Lien vers le formulaire du fournisseru id</a>
-						
-			</li>
-		</ul>		
+	<div class="list-container">
+		<div class="fournisseurs-list">
+			<h2>Liste des Fournisseurs</h2>
+			<ul>
+				<li th:each="fournisseur : ${listeFournisseur}"
+					th:text="${fournisseur.nom}"></li>
+			</ul>
+		</div>
+		<div class="formulaires-list">
+			<h2>Liens d'acces formulaires :</h2>
+			<ul>
+				<li th:each="fournisseur : ${listeFournisseur}"><a
+					href="formulaire-fournisseur.html"
+					th:href="@{/formulaire-fournisseur(id=${fournisseur.id})}"
+					th:text="${'Fournisseur N° ' + fournisseur.id }" 
+					target="_blank">Lien vers le formulaire du fournisseru id</a></li>
+			</ul>
+		</div>
 	</div>
+
 </body>
 </html>
