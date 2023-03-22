@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>La page d'acceuil !</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<h1>voici la page d'acceuil !</h1>
+	<p th:text=${monMessage}></p>
+	<p>Le nom du camion :</p>
+	<p th:text=${camion1.nom}></p>
+	<p>Son identifiant :</p>
+	<p th:text=${camion1.id}></p>
+	<p>Sa description :</p>
+	<p th:if=${toto} th:text=${camion1.description}></p>
+
+	<div>
+		<p>Mon iterable</p>
+		<ol>
+			<li th:each="toto : ${iterable}" th:text="${toto}"></li>
+		</ol>
+
+	</div>
+	
+	<div>
+		<p>Mes Camions</p>
+		<ol>
+			<li th:if=${toto} th:text="${listCamion.camion2.nom}"></li>
+		</ol>
+
+	</div>
+</body>
+</html>
