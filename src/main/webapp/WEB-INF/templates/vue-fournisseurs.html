@@ -3,10 +3,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Fournisseurs</title>
+
 </head>
 <body>
+	<h1>Fournisseurs</h1>
 	<ul>
-		<li th:each="fournisseur : ${fournisseursModel}" th:text="${fournisseur.nom}">Default</li>
+		<li th:each="fournisseur : ${fournisseursModel}"><a
+			href="vue-fournisseurs.html" th:text="${fournisseur.nom}"
+			th:href="@{/fournisseurs/{id}(id=${fournisseur.iD})}">Default</a></li>
 	</ul>
 </body>
 </html>
