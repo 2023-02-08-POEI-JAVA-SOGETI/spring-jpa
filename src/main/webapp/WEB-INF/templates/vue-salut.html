@@ -14,18 +14,21 @@
   <li th:each="invite : ${invites}" th:text="${invite.nom}">Jean-Jacques</li>
  </ul>
  <h2>hyperliens</h2>
-  <ul>
+ <ul>
   <li th:each="invite : ${invites}">
-     <a href="invite.html" th:href="@{/invites(id=${invite.id})}">
-        Lien vers l'invité <span th:text="${invite.nom}">nom</span> avec paramètre de requête
-     </a>
-     <br/>
-     <a href="invite.html" th:href="@{/invites/{inviteId}}](inviteId=${invite.id})}">
-        Lien vers l'invité <span th:text="${invite.nom}">nom</span> avec paramètre d'URL
-     </a>
-   </li>
+   <a href="invite.html" th:href="@{/invites(id=${invite.id})}">
+    Lien vers l'invité
+    <span th:text="${invite.nom}">nom</span>
+    avec paramètre de requête
+   </a>
+   <br />
+   <a href="invite.html" th:href="@{/invites/{inviteId}(inviteId=${invite.id})}">
+    Lien vers l'invité
+    <span th:text="${invite.nom}">nom</span>
+    avec paramètre d'URL
+   </a>
+  </li>
  </ul>
- 
- 
+
 </body>
 </html>
