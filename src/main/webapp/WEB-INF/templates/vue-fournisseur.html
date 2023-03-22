@@ -3,20 +3,60 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Fournisseur</title>
+<style>
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f5f5f5;
+}
+
+h1 {
+	color: #333;
+	text-align: center;
+	margin-top: 20px;
+}
+
+form {
+	max-width: 500px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+input[type="text"] {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+input[type="submit"] {
+	background-color: #333;
+	color: #fff;
+	padding: 10px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+</style>
 </head>
 <body>
 	<h1
-		th:text="'L\'id du fournisseur est bien ' + ${fournisseurModel.iD} + ', le même quand dans l\'URL, son nom est ' + ${fournisseurModel.nom} + '.'">Default</h1>
-	<form action="fournisseur" th:object="${fournisseurModel}" th:action="@{/fournisseur}"
-		method="post">
+		th:text="'L\'id du fournisseur est bien ' + ${fournisseurModel.iD} + ', le même que dans l\'URL, son nom est ' + ${fournisseurModel.nom} + '.'">Default</h1>
+	<form action="fournisseur" th:object="${fournisseurModel}"
+		th:action="@{/fournisseur}" method="post">
 		<p th:text="'ID : ' + ${fournisseurModel.iD}">ID</p>
 		<p>
 			<input type="hidden" name="iD" th:value="${fournisseurModel.iD}" />
 		</p>
-		
+
 		<p th:text="'Numéro Unique : ' + ${fournisseurModel.numeroUnique}">ID</p>
 		<p>
-			<input type="hidden" name="numeroUnique" th:value="${fournisseurModel.numeroUnique}" />
+			<input type="hidden" name="numeroUnique"
+				th:value="${fournisseurModel.numeroUnique}" />
 		</p>
 
 		<p>Nom :</p>
@@ -28,10 +68,11 @@
 		<p>
 			<input type="text" name="mail" th:value="${fournisseurModel.mail}" />
 		</p>
-		
+
 		<p>Adresse :</p>
 		<p>
-			<input type="text" name="adresse" th:value="${fournisseurModel.adresse}" />
+			<input type="text" name="adresse"
+				th:value="${fournisseurModel.adresse}" />
 		</p>
 
 		<input type="submit" value="Modifier" />
