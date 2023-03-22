@@ -28,11 +28,15 @@
 	
 	<div>
 		<h2>Exercice liens avec parametres</h2>
-
 		<!-- Produit '/mon-contexte/liens?orderId=3' -->
 		<a href="ma-page.html" th:href="@{/ma-page(id=${monCamion.nom})}" th:text="${'Url vers /ma-page ' + id}">Lien dynamique 1</a>
 		<!-- Produit '/mon-contexte/3/lien' -->
 		<a href="ma-page.html" th:href="@{/ma-page/{id}(id=${monCamion.nom})}" th:text="${'Url2 vers /ma-page ' + id}">Lien dynamique 2</a>
+		<br/>
+		<a href="ma-page-integer.html" th:href="@{/ma-page-integer(id=${lienId})}" th:text="${'Url vers /ma-page ' + id}">Lien dyn id integer 1</a>
+		<!-- Produit '/mon-contexte/3/lien' -->
+		<a href="ma-page-integer.html" th:href="@{/ma-page-integer/{id}(id=${lienId})}" th:text="${'Url2 vers /ma-page ' + id}">Lien dyn id integer 2</a>
+	
 	</div>
 	
 </body>

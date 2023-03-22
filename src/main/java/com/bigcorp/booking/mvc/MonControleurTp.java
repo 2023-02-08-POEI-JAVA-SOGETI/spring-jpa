@@ -93,8 +93,6 @@ public class MonControleurTp {
     	System.out.println("J'affiche la page /ma-page avec l'id : " + id);
     	return "ma-page";
     }
-    
-    
     /**
     * Intercepte les requêtes /lien/{id} , attend le paramètre "id"
     dans le chemin et
@@ -106,6 +104,24 @@ public class MonControleurTp {
     System.out.println("J'affiche le détail de ma-page à partir du chemin : " +
     id);
     return "ma-page";
+    }
+    
+    @RequestMapping("/ma-page-integer")
+    public String afficheLien(@RequestParam("id") Integer id) {
+    	System.out.println("J'affiche la page /ma-page avec l'id : " + id);
+    	return "ma-page-integer";
+    }
+    /**
+    * Intercepte les requêtes /lien/{id} , attend le paramètre "id"
+    dans le chemin et
+    * le met dans l'argument id de la méthode.
+    * @return
+    */
+    @RequestMapping("/ma-page-integer/{id}")
+    public String afficheLienParChemin(@PathVariable("id") Integer id) {
+    System.out.println("J'affiche le détail de ma-page à partir du chemin : " +
+    id);
+    return "ma-page-integer";
     }
     
 }
