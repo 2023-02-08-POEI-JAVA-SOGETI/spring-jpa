@@ -9,5 +9,15 @@
 
   <body>
     <h1>Salut les gens</h1>
+     <p th:text="${monTexte}" > voici mon texte de base</p>
+     <p th:text="'RE SALUT'" > voici mon texte de base</p>
+     <div th:if="${listFournisseur.size()>5}"> Il y a trop de fournisseurs à afficher</div>
+     <div th:if="${listFournisseur.size()<5}"> 
+     	<ul>
+     		<li th:each="fournisseur : ${listFournisseur}" th:text="${fournisseur.nom}"> ma liste de fournisseur</li>
+     	</ul>
+   
+     </div>
+     
   </body>
 </html>
