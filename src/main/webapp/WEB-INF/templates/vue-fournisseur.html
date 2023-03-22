@@ -7,6 +7,37 @@
 <body>
 	<h1
 		th:text="'L\'id du fournisseur est bien ' + ${fournisseurModel.iD} + ', le même quand dans l\'URL, son nom est ' + ${fournisseurModel.nom} + '.'">Default</h1>
+	<form action="fournisseur" th:object="${fournisseurModel}" th:action="@{/fournisseur}"
+		method="post">
+		<p th:text="'ID : ' + ${fournisseurModel.iD}">ID</p>
+		<p>
+			<input type="hidden" name="iD" th:value="${fournisseurModel.iD}" />
+		</p>
+		
+		<p th:text="'Numéro Unique : ' + ${fournisseurModel.numeroUnique}">ID</p>
+		<p>
+			<input type="hidden" name="numeroUnique" th:value="${fournisseurModel.numeroUnique}" />
+		</p>
 
+		<p>Nom :</p>
+		<p>
+			<input type="text" name="nom" th:value="${fournisseurModel.nom}" />
+		</p>
+
+		<p>Mail :</p>
+		<p>
+			<input type="text" name="mail" th:value="${fournisseurModel.mail}" />
+		</p>
+		
+		<p>Adresse :</p>
+		<p>
+			<input type="text" name="adresse" th:value="${fournisseurModel.adresse}" />
+		</p>
+
+		<input type="submit" value="Modifier" />
+		<ul th:if="${#fields.hasErrors('*')}">
+			<li th:each="err : ${#fields.errors('*')}" th:text="${err}">Erreur</li>
+		</ul>
+	</form>
 </body>
 </html>

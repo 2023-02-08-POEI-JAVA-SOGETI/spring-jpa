@@ -57,6 +57,10 @@ public class Fournisseurs {
 	public String getMail() {
 		return this.email;
 	}
+	
+	public String getEmail() {
+		return this.email;
+	}
 
 	public String getAdresse() {
 		return this.adresse;
@@ -77,6 +81,10 @@ public class Fournisseurs {
 	}
 
 	public void setMail(String email) {
+		this.email = email;
+	}
+	
+	public void setEmail(String email) {
 		this.email = email;
 	}
 
