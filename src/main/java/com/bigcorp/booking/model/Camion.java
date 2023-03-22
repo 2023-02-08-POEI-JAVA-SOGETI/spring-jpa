@@ -1,6 +1,7 @@
 package com.bigcorp.booking.model;
 
 public class Camion {
+	private Integer id;
 	private String nom;
 
 	public String getNom() {
@@ -9,6 +10,14 @@ public class Camion {
 
 	public void setNom(String nom) {
 		this.nom = nom;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	
 }
