@@ -5,7 +5,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 /**
@@ -37,7 +39,7 @@ public class MonControleurTp {
     @ModelAttribute("monCamion")
     public Camion camion() {
     	Camion camion = new Camion(null);
-    	camion.setNom("un camion nommé titi");
+    	camion.setNom("titi");
     	return camion;
     }
 
@@ -73,6 +75,37 @@ public class MonControleurTp {
     	camions.add(cam4);
     	camions.add(cam5);
     	return camions;
+    }
+    
+    @ModelAttribute("lienId")
+    public Integer lienId() {
+    	Integer id = 8;
+    	return id;
+    }
+    
+    /**
+    * Intercepte les requêtes /lien , attend le paramètre de requête "id" et
+    * le met dans l'argument id de la méthode.
+    * @return
+    */    
+    @RequestMapping("/ma-page")
+    public String afficheLien(@RequestParam("id") String id) {
+    	System.out.println("J'affiche la page /ma-page avec l'id : " + id);
+    	return "ma-page";
+    }
+    
+    
+    /**
+    * Intercepte les requêtes /lien/{id} , attend le paramètre "id"
+    dans le chemin et
+    * le met dans l'argument id de la méthode.
+    * @return
+    */
+    @RequestMapping("/ma-page/{id}")
+    public String afficheLienParChemin(@PathVariable("id") String id) {
+    System.out.println("J'affiche le détail de ma-page à partir du chemin : " +
+    id);
+    return "ma-page";
     }
     
 }

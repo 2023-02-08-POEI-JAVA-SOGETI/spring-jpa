@@ -25,5 +25,15 @@
 			<li th:each="camion : ${listeCamions}" th:text="${camion.nom}">camion standard</li>
 		</ul>
 	</div>
+	
+	<div>
+		<h2>Exercice liens avec parametres</h2>
+
+		<!-- Produit '/mon-contexte/liens?orderId=3' -->
+		<a href="ma-page.html" th:href="@{/ma-page(id=${monCamion.nom})}" th:text="${'Url vers /ma-page ' + id}">Lien dynamique 1</a>
+		<!-- Produit '/mon-contexte/3/lien' -->
+		<a href="ma-page.html" th:href="@{/ma-page/{id}(id=${monCamion.nom})}" th:text="${'Url2 vers /ma-page ' + id}">Lien dynamique 2</a>
+	</div>
+	
 </body>
 </html>
