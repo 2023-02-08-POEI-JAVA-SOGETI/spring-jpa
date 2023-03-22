@@ -3,11 +3,15 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
   <head>
-    <title>Ma première page Thymeleaf !</title>
+    <title>LA LISTE DES CAMIONS</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   </head>
 
   <body>
-    <h1>C'est moi Pablo, je suis avec Manon chez Sogetii... so nice !</h1>
+   	<div>      	
+    	<ul>
+    		<li th:each="camion : ${listeCamions}" th:text="${camion.model}"> </li>
+    	</ul>  
+    </div>
   </body>
 </html>

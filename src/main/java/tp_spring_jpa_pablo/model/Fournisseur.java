@@ -18,9 +18,9 @@ public class Fournisseur {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // optionnel
 	// décrit la méthode de génération de l’identifiant
 	private Integer id;	
-	private String nom = "Test";
-    private String email = "test@java_jpa.com";
-    private String adresse = "Anywhere near ORM";
+	private String nom;
+    private String email;
+    private String adresse;
     
     @OneToMany(mappedBy = "fournisseur")
     private Set<Article> articles = new HashSet<>();

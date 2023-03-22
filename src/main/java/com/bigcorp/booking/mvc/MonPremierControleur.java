@@ -18,7 +18,7 @@ public class MonPremierControleur {
      * renvoie vers la vue salut.
      * @return
      */
-    @RequestMapping("/salut")
+    @RequestMapping("/pablo")
     public String showSayHello() {
     	System.out.println("Le contrôleur de salut agit ! ");
         return "vue-salut";

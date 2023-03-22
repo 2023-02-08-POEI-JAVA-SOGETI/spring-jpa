@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>TP : formulaire et fournisseur </title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<div>
+		<h1>TP : formulaire et fournisseur </h1>
+	</div>	
+	<h2>Liste des Fournisseurs</h2>
+	<div>
+		<ul>
+			<li th:each="fournisseur : ${listeFournisseur}" th:text="${fournisseur}"></li>
+		</ul>		
+	</div>	
+	<div>
+		<h2>Liens d'acces formulaires :</h2>		
+		<ul>
+			<li th:each="fournisseur : ${listeFournisseur}">
+			
+				<a href="formulaire.html"
+				th:href="@{/fournisseur/{id}(id=${fournisseur.id})}"
+				th:text="${'Lien vers le fournisseur N° ' + fournisseur.id }">Lien vers le formulaire du fournisseru id</a>
+						
+			</li>
+		</ul>		
+	</div>
+</body>
+</html>

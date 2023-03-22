@@ -19,9 +19,9 @@ public class Article {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // optionnel
 	// décrit la méthode de génération de l’identifiant	
 	private Integer id;	
-	private String nom = "Test";
+	private String nom = "Spring Data";
     private String type = "test@java_jpa.com";
-    private String description = "Anywhere near ORM";    
+    private String description = "Article Sprint Data already!!";    
     
     @Enumerated(EnumType.STRING)
     private EtatArticle etat = EtatArticle.OCCASION;  

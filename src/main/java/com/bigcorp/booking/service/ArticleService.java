@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bigcorp.booking.dao.spring.ArticleSDao;
+import com.bigcorp.booking.dao.spring.FournisseurSDao;
 
 import tp_spring_jpa_pablo.model.Article;
 
@@ -13,6 +14,8 @@ public class ArticleService {
 	
 	@Autowired
 	private ArticleSDao articleSDao;
+	@Autowired
+	private FournisseurSDao fournisseurSDao;
 	
 	public Iterable<Article> findAll(){
 		return this.articleSDao.findAll();
