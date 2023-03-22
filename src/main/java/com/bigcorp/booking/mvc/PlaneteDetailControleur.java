@@ -1,5 +1,6 @@
 package com.bigcorp.booking.mvc;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bigcorp.booking.model.Planete;
+import com.bigcorp.booking.service.FournisseurService;
 import com.bigcorp.booking.service.PlanetesSingleton;
 
 /**
@@ -20,6 +22,9 @@ import com.bigcorp.booking.service.PlanetesSingleton;
 @Controller
 public class PlaneteDetailControleur {
     
+	@Autowired
+	private FournisseurService service;
+	
     /**
      * Intercepte les requêtes /planete , attend le paramètre de requête "id" et
      * le met dans l'argument id de la méthode.
@@ -55,24 +60,21 @@ public class PlaneteDetailControleur {
      * @param result
      * @return
      */
-    @PostMapping("/planete")
+    @PostMapping("/save-planete")
     public ModelAndView processSubmit( @ModelAttribute("planete") Planete planete, 
     		BindingResult result) {
     	if(result.hasErrors()) {
-    		return new ModelAndView("planete", "planete", planete);
+    		//return new ModelAndView("planete", "planete", planete);
+        	ModelAndView mav = new ModelAndView();
+        	mav.setViewName("planete");
+        	mav.addObject("planete", planete);
+            return mav;
     	}
     	
-    	String view = "planetes";
-    	if(planete != null && planete.getId() != null) {
-    		view = "redirect:/planetes/" + planete.getId();
-    	}
-    	ModelAndView mav = new ModelAndView(view);
-    	mav.addObject("planete", planete);
-        if (result.hasErrors()) {
-            return mav;
-        }
-        // else
-        PlanetesSingleton.INSTANCE.savePlanete(planete);
+    	PlanetesSingleton.INSTANCE.savePlanete(planete);
+    	
+    	ModelAndView mav = new ModelAndView();
+    	mav.setViewName("redirect:/planete?id=" + planete.getId());
         return mav;
     }
     

@@ -19,7 +19,7 @@
     </ul>
     
     <ul>
-      <li th:each="planete, iterstat : ${listePlanetes}"><a href="planete.html" th:href="@{/planete(id=${iterStat.index})}" th:text="${'Lien vers la planète' + planete }">Lien vers ma planète</a></li>
+      <li th:each="planete, iterStat : ${listePlanetes}"><a href="planete.html" th:href="@{/planete(id=${iterStat.index})}" th:text="${'Lien vers la planète' + planete }">Lien vers ma planète</a></li>
     </ul>
     
   </body>

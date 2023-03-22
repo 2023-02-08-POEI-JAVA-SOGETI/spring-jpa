@@ -15,6 +15,7 @@ public class Planete {
 	private Integer masse;
 
 	public Planete() {
+		System.out.println("Je construis !");
 
 	}
 

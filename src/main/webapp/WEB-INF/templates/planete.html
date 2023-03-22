@@ -21,11 +21,11 @@
   <p th:text="${planete.masse}">12</p>
  </div>
 
- <form action="planete" th:object="${planete}" th:action="@{/planete}"
+ <form action="planete" th:object="${planete}" th:action="@{/save-planete}"
   method="post">
   <p>Id :</p>
   <p>
-   <input type="text" name="id" th:value="${planete.id}" />
+   <input readonly="true" type="text" name="id" th:value="${planete.id}" />
   </p>
   <p th:if="${#fields.hasErrors('id')}" th:errors="*{id}">Erreur d'id</p>
   <p>Nom :</p>
