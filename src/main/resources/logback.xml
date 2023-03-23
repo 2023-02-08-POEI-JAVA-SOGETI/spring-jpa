@@ -10,8 +10,7 @@
 		</encoder>
 	</appender>
 
-	<!-- Le console appender : il ajoute des lignes 
-		dans la console -->
+	<!-- Le console appender : il ajoute des lignes dans la console -->
 	<appender name="STDOUT"
 		class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>

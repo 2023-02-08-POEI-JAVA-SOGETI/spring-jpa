@@ -48,7 +48,7 @@ public class ArticleSpringService {
 	}
 
 	@Transactional
-	public void saveWithFournisseur(Integer idArticle, Integer idFournisseur) {
+	public Article saveWithFournisseur(Integer idArticle, Integer idFournisseur) {
 		Article bonArticle = findById(idArticle);
 		if (bonArticle == null) {
 			throw new IllegalArgumentException("L'article n'existe pas");
@@ -56,6 +56,7 @@ public class ArticleSpringService {
 		Fournisseurs bonFournisseur = fournisseurSpringDao.findById(idFournisseur).orElseThrow();
 		bonArticle.setFournisseur(bonFournisseur);
 		save(bonArticle);
+		return bonArticle;
 	}
 
 }

@@ -14,7 +14,7 @@ public class SpringApplicationTpSpring {
 		try (AnnotationConfigApplicationContext appContext = new AnnotationConfigApplicationContext(SpringConfiguration.class)) {
 			ArticleSpringService articleSpringService 
 			= appContext.getBean("articleSpringService", ArticleSpringService.class);
-			articleSpringService.saveWithFournisseur(3, 3);
+			articleSpringService.saveWithFournisseur(2, 3);
 			
 		}
 	}
