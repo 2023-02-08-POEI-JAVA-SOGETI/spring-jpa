@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping; 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.bigcorp.booking.model.HerosDisney;
 import com.bigcorp.booking.service.DisneySingleton;
+import com.bigcorp.booking.service.PlanetesSingleton;
 
 /**
  * Annotée par @Controller, cette 
@@ -85,54 +86,48 @@ public class MonQuatriemeControleur {
         return "vue-herosdisney";
     }
 
-    /*@RequestMapping("/personnagedisney")
-    public String afficherHerosParParam(@RequestParam("id") Long id) {
-    	System.out.println("Je t'envoie la page du personnage " + id + " par paramètre.");
-        return "vue-heros";}*/
-
     @RequestMapping("/personnagedisney")
-    public ModelAndView afficherHeros(@RequestParam("id") Integer id) {
-    	
+    public ModelAndView afficherHerosParParam(@RequestParam("id") Integer id) {    	
     	System.out.println("Je t'envoie la page du personnage " + id);
-    	
+    	HerosDisney herosDisney1 = DisneySingleton.INSTANCE.getHerosDisneyById(id);
     	ModelAndView mav = new ModelAndView();
     	mav.setViewName("vue-details");
-    	mav.addObject("personnageTest", new HerosDisney(1, "Stitch", "Lilo et Stitch"));
+    	mav.addObject("heros", herosDisney1);
     	return mav; 
     }
     
  
     @RequestMapping("/personnagedisney/{id}")
     public ModelAndView afficherHerosParChemin(@PathVariable("id") Integer id) {
-    	System.out.println("Je t'envoie la page du personnage " + id + " par chemin.");
+    	System.out.println("Je t'envoie la page du personnage " + id);
+    	HerosDisney herosDisney1 = DisneySingleton.INSTANCE.getHerosDisneyById(id);
     	ModelAndView mav = new ModelAndView();
     	mav.setViewName("vue-details");
-    	mav.addObject("personnageTest", new HerosDisney(12, "Rey", "Star Wars"));
+    	mav.addObject("heros", herosDisney1);
     	return mav; 
     }
 
-    /* Doublon Sécurité
-    @RequestMapping("/personnagedisney/{id}")
-    public String afficherHerosParChemin(@PathVariable("id") Long id) {
-    	System.out.println("Je t'envoie la page du personnage " + id + " par chemin.");
-    	return "details"; 
-    */
- 
 
-    @PostMapping("/personnagedisney/{id}")
-    public ModelAndView processSubmit(@ModelAttribute("vue-details") HerosDisney herosDisney, BindingResult result)
-    	
-    	{ String view = "planetes"; if(herosDisney !=null && herosDisney.getId() != null) 
-    		{view = "redirect:/personnagedisney/" + herosDisney.getId();}
-     	
-    		ModelAndView mav = new ModelAndView("vue-details");
-    		mav.addObject("vue-details", herosDisney);
-    			if(result.hasErrors()) 
-    	   {return mav;}
-    	
-    		//Else
-    			DisneySingleton.INSTANCE.saveHerosDisney(herosDisney);
-    		return mav; }}
-  
 
-    
+    @PostMapping("vue-details")
+    	public ModelAndView processSubmit(@Validated @ModelAttribute("herosD") HerosDisney herosD, 
+    			BindingResult result) {
+    		if(result.hasErrors()) {
+    			return new ModelAndView("vue-herosdisney", "heros", herosD);
+    		}
+	
+    		String view = "vue-herosdisney";
+    			if(herosD != null && herosD.getId() != null) {
+    				view = "redirect:/herosdisney/" + herosD.getId();
+    		}
+
+    		ModelAndView mav = new ModelAndView(view);
+    			mav.addObject("heros", herosD);
+    				if (result.hasErrors()) {
+    					return mav;
+    		}
+    		// else
+    			DisneySingleton.INSTANCE.saveHerosDisney(herosD);
+    				return mav;
+}}
+

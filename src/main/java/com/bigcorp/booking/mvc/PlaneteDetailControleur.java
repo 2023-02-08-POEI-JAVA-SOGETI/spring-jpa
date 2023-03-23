@@ -74,4 +74,26 @@ public class PlaneteDetailControleur {
     }
     
     
+    /*
+    @PostMapping("/personnagedisney/{id}")
+    public ModelAndView processSubmit(@ModelAttribute("vue-details") HerosDisney herosDisney, BindingResult result)
+ {		
+    	//Cree le redirect
+    	String view = "vue-herosdisney"; 
+    		if(herosDisney !=null && herosDisney.getId() != null) {
+    			view = "redirect:/personnagedisney/" + herosDisney.getId();}
+     	
+    		//En cas d'erreur
+    		ModelAndView mav = new ModelAndView(view);
+    		mav.addObject("vue-details", herosDisney);
+    			if(result.hasErrors()) 
+    	   {return mav;}
+    	
+    		//Sauvegarde le personnage
+    			DisneySingleton.INSTANCE.saveHerosDisney(herosDisney);
+    		return mav; }}
+    		*/
+    
+    
+    
 }

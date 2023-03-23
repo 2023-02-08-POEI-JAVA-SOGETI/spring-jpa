@@ -11,18 +11,40 @@
 
 
  <h3>Détail du heros</h3>
+ 
+ <p th:if="${heros==null}">Le héros n'existe pas</p>
+ <div th:if="${heros != null}">
+  <p>Id :</p>
+  <p th:text="${heros.id}">3</p>
+  <p>Nom :</p>
+  <p th:text="${heros.nom}">Flynn Rider</p>
+  <p>Film :</p>
+  <p th:text="${heros.film}">Raiponce</p>
+ </div>
 
- <form action="heros" th:object="${heros}" th:action="@{/personnagedisney}" method="post">
+ 
+ <h3>Une modification ?</h3> 
+
+ <form action="heros" th:object="${heros}" th:action="@{/vue-details}" method="post">
  	<p>Id :</p>
   		<p><input type="text" name="id" th:value="${heros.id}" /></p>
+  		
+  		  <p th:if="${#fields.hasErrors('id')}" th:errors="*{id}">Erreur d'id</p>
   	
     <p>Nom :</p>
   		<p><input type="text" name="nom" th:value="${heros.nom}" /></p>
+  		
+  		  <p th:if="${#fields.hasErrors('nom')}" th:errors="*{nom}">Erreur de nom</p>
 
  	<p>Film :</p>
 	  	<p><input type="text" name="film" th:value="${heros.film}" /></p>
 
+  		  <p th:if="${#fields.hasErrors('film')}" th:errors="*{film}" class="alert-error">Erreur de titre</p>
+
   <input type="submit" value="Sauvegarder" />
+  	
+  		  <ul th:if="${#fields.hasErrors('*')}"><li th:each="err : ${#fields.errors('*')}" th:text="${err}">Erreur</li></ul>
+  		
 	
  </form>
 

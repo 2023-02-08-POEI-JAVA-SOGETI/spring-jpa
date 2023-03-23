@@ -15,6 +15,7 @@
     <p th:if="${!doitAfficherDiv && true}">Je suis là</p>
 
     <ul>
+    	<p>Recherche par attributs de requête</p>
 		<li th:each="heros : ${listeHerosDisney}">
 	 		<a 
 	 			href="vue-heros.html" 
@@ -26,11 +27,13 @@
 		 	</a>
 		 </li>
 		<p> -------------------------------------- </p>
+		
+		<p>Recherche par URL</p>
 		<li th:each="heros : ${listeHerosDisney}">
 		
 	 		<a 
 	 			href="details.html" 
-	 			th:href="@{/personnagedisney/{id}/(id=${heros.id})}" 
+	 			th:href="@{/personnagedisney/{id}(id=${heros.id})}" 
 	 			th:text="${heros.id} + ' : ' + ${heros.nom}  + ' / ' + ${heros.film}">
 
 	 		Lien vers la page Heros
