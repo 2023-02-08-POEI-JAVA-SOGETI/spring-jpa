@@ -32,7 +32,7 @@ public class FournisseurService {
 		return this.fournisseurSpringDao.save(fournisseur);
 	}
 	
-	public void delete(Long  id) {
+	public void delete(Integer  id) {
 		logger.info("Delete fournisseur: {}", id);
 		fournisseurSpringDao.deleteById(id);
 	}

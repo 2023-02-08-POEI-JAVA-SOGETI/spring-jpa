@@ -10,7 +10,7 @@ import com.bigcorp.booking.model.Article;
 import com.bigcorp.booking.model.Fournisseur;
 
 @Repository
-public interface FournisseurSpringDao  extends CrudRepository<Fournisseur, Long>{
+public interface FournisseurSpringDao  extends CrudRepository<Fournisseur, Integer>{
 	List<Fournisseur> findByNom(String name);
 
 	Fournisseur findById(Integer id);

@@ -1,11 +1,13 @@
 package com.bigcorp.booking.mvc;
 
 import java.util.Optional;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -40,11 +42,35 @@ public class FournisseurController {
 	}
 	@GetMapping("/fournisseur/{id}/edit")
 	public String edit(@PathVariable("id") Integer id, Model model) {
+		System.out.println("génération du edit fournisseur ! ");
 	    Fournisseur fournisseur = fournisseurService.findById(id);
 	    model.addAttribute("fournisseur", fournisseur);
 	    return  "edit-fournisseur";
 	}
 	
+	@RequestMapping("/fournisseur/new")
+	public String newFournisseur(Model model) {
+	    model.addAttribute("fournisseur", new Fournisseur());
+	    return  "new-fournisseur";
+	}
+	
+	@PostMapping("/fournisseur/create")
+	public String createFournisseur(@ModelAttribute("fournisseur") Fournisseur fournisseur, BindingResult result) {
+	    if (result.hasErrors()) {
+	        return "new-fournisseur";
+	    }
+	    fournisseur.setNumero_fournisseur(new Random().nextInt());
+	    
+	    fournisseurService.save(fournisseur);
+	    return "redirect:/fournisseur/" + fournisseur.getId();
+	}
+	
+	@PostMapping("/fournisseur/{id}/delete")
+	public String delete(@PathVariable("id") Integer id) {
+	    fournisseurService.delete(id);
+	    return "redirect:/fournisseurs";
+	}
+
 	@PostMapping("/fournisseur/save")
 	public String save(@ModelAttribute("fournisseur") Fournisseur fournisseur, BindingResult bindingResult) {
 		if (bindingResult.hasErrors()) {

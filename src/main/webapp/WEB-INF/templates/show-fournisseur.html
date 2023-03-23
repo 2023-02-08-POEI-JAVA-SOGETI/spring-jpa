@@ -14,7 +14,7 @@
 		</div>
 		<div class='row mb-4'>
 			<div class='col'>
-				<h1 class='text-center' th:text="${fournisseur.nom}"></h1>
+				<h1 th:text="${fournisseur.nom}"></h1>
 			</div>
 		</div>
 		<div class='row'>
@@ -25,8 +25,11 @@
 					<li class='list-group-item' th:text="'Email : ' + ${fournisseur.email}"></li>
 					<li class='list-group-item' th:text="'Adresse : ' + ${fournisseur.adresse}"></li>
 				</ul>
-				<div class='mt-4'>
-					<a class='btn btn-primary' th:href="@{/fournisseur/{id}/edit(id=${fournisseur.id})}">Modifier</a>
+				<div class='mt-4 d-flex'>
+					<a class='btn btn-primary mr-2' th:href="@{/fournisseur/{id}/edit(id=${fournisseur.id})}">Modifier</a>
+					<form method="POST" th:action="@{/fournisseur/{id}/delete(id=${fournisseur.id})}">
+    					<button type="submit" class="btn btn-danger">Supprimer</button>
+					</form>
 				</div>
 			</div>
 		</div>
