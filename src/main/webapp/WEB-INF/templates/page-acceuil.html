@@ -24,12 +24,33 @@
 		</ol>
 
 	</div>
-	
+
 	<div>
-		<p>Mes Camions</p>
+		<h2>Mes Camions</h2>
 		<ol>
-			<li th:if=${toto} th:text="${listCamion.camion2.nom}"></li>
+
+			<li th:if=${toto} th:text="${listCamion.get(0).nom}"></li>
+			<li th:if=${toto} th:text="${listCamion.get(1).nom}"></li>
+			<li th:if=${toto} th:text="${listCamion.get(2).nom}"></li>
+			<li th:if=${toto} th:text="${listCamion.get(3).nom}"></li>
+			<li th:if=${toto} th:text="${listCamion.get(4).nom}"></li>
+
 		</ol>
+
+	</div>
+
+	<div>
+		<h2>Mes deux urls dynamiques</h2>
+
+		<ul>
+			<li><a href="ma-page1.html" th:href="@{/page1}">Voici le
+					lien de l'URL avec un paramètre de requête </a></li>
+			<li><a href="ma-page2.html" th:href="@{/page2}">Voici le
+					lien de l'URL avec un paramètre dans l'URL</a></li>
+
+		</ul>
+
+
 
 	</div>
 </body>

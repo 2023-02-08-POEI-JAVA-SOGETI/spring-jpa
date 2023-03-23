@@ -61,10 +61,8 @@ public class PageAcceuilController {
 	@ModelAttribute("listCamion")
 
 	public List<Camion> mesCamions() {
-		List<Camion> listCamion = new ArrayList<>();
 
-		Camion camion6 = new Camion();
-		camion6.setNom("Volvo");
+		List<Camion> listCamion = new ArrayList<>();
 
 		Camion camion2 = new Camion();
 		camion2.setNom("Scania");
@@ -78,11 +76,15 @@ public class PageAcceuilController {
 		Camion camion5 = new Camion();
 		camion5.setNom("Man");
 
-		listCamion.add(camion6);
+		Camion camion6 = new Camion();
+		camion6.setNom("Volvo");
+
 		listCamion.add(camion2);
 		listCamion.add(camion3);
 		listCamion.add(camion4);
 		listCamion.add(camion5);
+		listCamion.add(camion6);
+
 		return listCamion;
 	}
 
