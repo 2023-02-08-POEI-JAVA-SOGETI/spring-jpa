@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<title>Tp Fournisseurs - Spring MVC</title>
-</head>
-<body>
-	<h1>Page fournisseurs</h1>
-	<div>
-		<p>Liste des fournisseurs en BDD</p>
-		<ul>
-			<li th:each="fournisseur : ${fournisseursList}"><a href="fournisseur.html" th:href="@{/fournisseur/{id}(id=${fournisseur.id})}" th:text="'Acces page fournisseur : ' + ${fournisseur.nom} + ', id : ' + ${fournisseur.id}">Nom du fournisseur</a></li>
-		</ul>
-	</div>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Tp Fournisseurs - Spring MVC</title>
+	</head>
+	<body>
+		<h1>Page fournisseurs</h1>
+		<div>
+			<p>Liste des fournisseurs en BDD</p>
+			<ul>
+				<li th:each="fournisseur : ${fournisseursList}">Accès à la page
+					du fournisseur : <a href="fournisseur.html"
+					th:href="@{/fournisseur/{id}(id=${fournisseur.id})}"
+					th:text="${fournisseur.nom} + ' - id : ' + ${fournisseur.id}">Nom
+						du fournisseur</a>
+				</li>
+			</ul>
+		</div>
+	</body>
 </html>

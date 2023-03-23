@@ -49,7 +49,7 @@ public class ControleurFournisseurs {
     	return mav;
     }
     
-    @PostMapping("/save-fournisseur")
+    @PostMapping("/fournisseur")
     public ModelAndView processSubmit(@ModelAttribute("fournisseur") Fournisseur fournisseur, BindingResult result) {
     	
     	if(result.hasErrors()) {

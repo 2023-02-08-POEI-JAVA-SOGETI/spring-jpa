@@ -56,6 +56,7 @@ public class SpringWebConfiguration implements WebMvcConfigurer, ApplicationCont
 		templateResolver.setApplicationContext(this.applicationContext);
 		templateResolver.setPrefix("/WEB-INF/templates/");
 		templateResolver.setSuffix(".html");
+		templateResolver.setCharacterEncoding("UTF-8");
 		// HTML est la valeur par défaut, mais ajouté ici pour l'expliciter
 		templateResolver.setTemplateMode(TemplateMode.HTML);
 		// Template cache est à true par défaut

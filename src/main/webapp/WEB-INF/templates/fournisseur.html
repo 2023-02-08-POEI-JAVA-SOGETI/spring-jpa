@@ -1,32 +1,58 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Tp Fournisseurs - Spring MVC</title>
-</head>
-<body>
-	<h1 th:text="'Page du fournisseur : ' + ${fournisseur.nom} + ' qui a pour id : ' + ${fournisseur.id}">Page fournisseur </h1>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>TP Fournisseurs - Spring MVC</title>
+		
+		<style>
+			body {
+				font-family: sans-serif;
+				font-size: small;
+			}
+			label, input {
+				margin: 5px;
+			}
+			input[type="submit"]{
+				margin-top : 20px;
+			}
+			label {
+				font-weight: bold;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<h1 th:text="'Page du fournisseur : ' + ${fournisseur.nom} + ' - id : ' + ${fournisseur.id}">Page fournisseur </h1>
+		<a href="fournisseurs.html" th:href="@{/fournisseurs}">Retour à la page des fournisseurs</a>
+		<h2>Détails du fournisseur</h2>
+		 <p th:if="${fournisseur == null}">Le fournisseur est nul</p>
+		 <div th:if="${fournisseur != null}">
+		 	<p><b> Id : </b><span th:text="${fournisseur.id}">id</span></p>
+			<p><b> Nom : </b><span th:text="${fournisseur.nom}">Nom</span></p>
+			<p><b> Numéro du fournisseur : </b><span th:text="${fournisseur.num}">007</span></p>
+			<p><b> Email : </b><span th:text="${fournisseur.email}">nom@nom.com</span></p>
+			<p><b> Adresse : </b><span th:text="${fournisseur.adresse}">adresse du fournisseur</span></p>
+		 </div>
 
-	<form action="fournisseur" th:action="@{:fournisseur}" method="post">
-		<div>
-			<label for="id">Id :</label>
-			<input type="text" name="id" id="id" th:value="${fournisseur.id}" readonly="readonly"/>
-		</div>
-		<div>
-			<label for="nom">Nom :</label>
-			<input type="text" name="nom" id="nom" th:value="${fournisseur.nom}"/>
-		</div>
-			<label for="num">Num :</label>
-			<input type="text" name="num" id="num" th:value="${fournisseur.num}"/>
-		<div>
-			<label for="email">Email :</label>
-			<input type="email" name="email" id="email" th:value="${fournisseur.email}"/>
-		</div>
-		<div>
-			<label for="adresse">Adresse :</label>
-			<input type="text" name="adresse" id="adresse" th:value="${fournisseur.adresse}"/>		
-		</div>
-		<input type="submit" value="Sauvegarder"/>
-	</form>	
-</body>
+		<h2>Formulaire d'édition du fournisseur</h2>
+		<form action="fournisseur" th:action="@{/fournisseur}" method="post"  style="display: flex; flex-direction: column; width: 300px;" >
+
+				<label for="id">Id :</label>
+				<input type="text" name="id" id="id" th:value="${fournisseur.id}" readonly="readonly"/>
+
+				<label for="nom">Nom :</label>
+				<input type="text" name="nom" id="nom" th:value="${fournisseur.nom}"/>
+
+				<label for="num">Num :</label>
+				<input type="text" name="num" id="num" th:value="${fournisseur.num}"/>
+
+				<label for="email">Email :</label>
+				<input type="email" name="email" id="email" th:value="${fournisseur.email}"/>
+
+				<label for="adresse">Adresse :</label>
+				<input type="text" name="adresse" id="adresse" th:value="${fournisseur.adresse}"/>		
+			
+				<input type="submit" value="Sauvegarder les modifications"/>
+		</form>	
+	</body>
 </html>

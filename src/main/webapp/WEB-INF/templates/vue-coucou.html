@@ -9,14 +9,14 @@
 </head>
 
 <body>
-	<h1>Vue affichee par mon premier controller cree en TP, sur l'url
+	<h1>Vue affichée par mon premier controller crée en TP, sur l'url
 		coucou</h1>
 	<p th:text="${monMessage}">Test test</p>
 	<p th:text="${monCamion}">Test test 2</p>
 	<p th:text="${monCamion.nom}">youyou Test test 2</p>
 	<div th:if="${boolean}">
 		<ul>
-			<li th:each="element : ${liste}" th:text="${element}">element standard</li>
+			<li th:each="element : ${liste}" th:text="${element}">élément standard</li>
 		</ul>
 	</div>
 	<div>
@@ -27,7 +27,7 @@
 	</div>
 	
 	<div>
-		<h2>Exercice liens avec parametres</h2>
+		<h2>Exercice liens avec paramètres</h2>
 		<!-- Produit '/mon-contexte/liens?orderId=3' -->
 		<a href="ma-page.html" th:href="@{/ma-page(id=${monCamion.nom})}" th:text="${'Url vers /ma-page ' + id}">Lien dynamique 1</a>
 		<!-- Produit '/mon-contexte/3/lien' -->
