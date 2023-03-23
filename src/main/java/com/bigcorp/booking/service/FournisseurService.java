@@ -48,6 +48,12 @@ public class FournisseurService {
 	public Fournisseur get(Integer id) {
 		return this.fournisseurSpringDao.findById(id).orElse(null);
 	}
+
+
+	public Iterable<Fournisseur> findAll() {
+		
+		return this.fournisseurSpringDao.findAll();
+	}
 	
 	
 

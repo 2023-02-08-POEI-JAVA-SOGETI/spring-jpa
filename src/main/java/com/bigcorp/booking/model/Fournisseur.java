@@ -28,7 +28,6 @@ public class Fournisseur {
     private String nom;
     private String email;
     private String adresse;
-    
     private String titre;
     
     

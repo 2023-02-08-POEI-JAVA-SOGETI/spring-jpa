@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>La page fournisseur1!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<div>
+		<h1>Vous êtes la page fournisseur1</h1>
+
+		<form action="fournisseur1" th:action="@{/fournisseur1}" method="post">
+			<p>Id :</p>
+			<p>
+				<input type="text" name="id" th:value="${fournisseur1.id}" />
+			</p>
+			<p>Nom :</p>
+			<p>
+				<input type="text" name="nom" th:value="${fournisseur1.nom}" />
+			</p>
+			<input type="submit" value="Sauvegarder" />
+		</form>
+
+		<p>Liens</p>
+		<a href="page-acceuil.html" th:href="@{/pageacceuil}">Cliquez ici
+			pour revenir à la page d'acceuil </a>
+	</div>
+</body>
+</html>

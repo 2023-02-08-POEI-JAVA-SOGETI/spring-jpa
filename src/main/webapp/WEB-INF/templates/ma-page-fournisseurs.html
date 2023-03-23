@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>La page des fournisseurs !</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<div>
+		<h1>Vous êtes sur la page des fournisseurs</h1>
+
+		<a href="page-acceuil.html" th:href="@{/pageacceuil}">Cliquez ici
+			pour revenir à la page d'acceuil </a>
+	</div>
+
+	<div>
+		<h2>Mes Fournisseurs</h2>
+		<ol>
+			<li><a href="fournisseur1.html" th:href="@{/fournisseur1}">Fournisseur1
+			</a></li>
+			<li><a href="fournisseur2.html" th:href="@{/fournisseur2}">Fournisseur2
+			</a></li>
+			<li th:each="fournisseur: ${listeFournisseurs}"
+				th:text="${fournisseur.nom}"></li>
+		</ol>
+
+	</div>
+</body>
+</html>
