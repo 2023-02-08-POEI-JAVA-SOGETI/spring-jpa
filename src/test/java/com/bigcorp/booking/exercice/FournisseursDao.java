@@ -4,7 +4,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
 import com.bigcorp.booking.dao.PersistenceSingleton;
-import com.bigcorp.booking.exercice.Fournisseurs;
 
 public class FournisseursDao {
 
