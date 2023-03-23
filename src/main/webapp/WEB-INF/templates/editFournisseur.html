@@ -5,24 +5,23 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	</head>
 	<body>
-		<form action="fournisseur" method="POST" th:object="${fournisseur}" th:action="${/save-fournisseur}">
+		<h1>Editer fournisseur</h1>
+		<form action="fournisseurs" th:object="${fournisseur}" th:action="@{/save-fournisseur}" method="POST">
 		<!-- 
 			TODO: Récupérer les données récupérées en paramètres
 				  Ajouter un bouton (input) qui va envoyer la requête POST 
 				  Et sauvegarder les données
 		 -->
-			<label>Id :</label>
-			<input />
+			<input readonly type="text" th:value="${fournisseur.id}" name="id" />
 			<label>Numero :</label>
-			<input />
+			<input type="text" th:value="${fournisseur.numero}" name="numero" />
 			<label>Nom :</label>
-			<input />
-			<label>Prénom :</label>
-			<input />
+			<input type="text" th:value="${fournisseur.nom}" name="nom"/>
 			<label>Adresse :</label>
-			<input />
+			<input type="text" th:value="${fournisseur.adresse}" name="adresse" />
 			<label>Email :</label>
-			<input />
+			<input type="email" th:value="${fournisseur.email}" name="email" />
+			<input type="submit" value="Save" />
 		</form>
 	</body>
 </html>

@@ -7,8 +7,8 @@
 <body>
 	<h1>Liste de fournisseurs</h1>
 	<ul>
-		<li th:each="fournisseur : ${fournisseurs}">
-			<a href="fournisseurs.html" th:href="@{/fournisseurs/edit?fournisseur_id=(${fournisseur.id})}"  th:text="${'Editer ' + fournisseur.nom}">Editer un fournisseur</a>
+		<li th:each="fournisseur : ${listeFournisseurs}">
+			<a href="editFournisseur.html" th:href="@{/fournisseurs/edit(fournisseurId=${fournisseur.id})}"  th:text="${'Editer ' + fournisseur.nom}">Editer un fournisseur</a>
 		</li>
 	</ul>
 </body>

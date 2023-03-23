@@ -18,29 +18,15 @@ public class FournisseursController {
 	
 	@Autowired
 	FournisseurService fournisseurService;
+
+	@ModelAttribute("listeFournisseurs")
+	public List<Fournisseur> getFournisseurs() {
+		return fournisseurService.getAllFournisseurs();
+	}
 	
 	@RequestMapping("/fournisseurs")
 	public String showFournisseurs() {
-		System.out.println("Works");
-		
 		return "fournisseurs";
 	}
 	
-	@ModelAttribute("fournisseurs")
-	public List<Fournisseur> getFournisseurs() {
-		List<Fournisseur> fournisseurs = fournisseurService.getAllFournisseurs();
-		
-		return fournisseurs;
-	}
-	
-	@RequestMapping("/fournisseurs")
-	public ModelAndView getFournisseurDetails(@RequestParam("id") Long id) {
-
-		ModelAndView mav = new ModelAndView();
-		
-		mav.setViewName("fournisseurs");
-		mav.addObject(this.getFournisseurs().get(id.intValue()));
-		
-		return mav;
-	}
 }

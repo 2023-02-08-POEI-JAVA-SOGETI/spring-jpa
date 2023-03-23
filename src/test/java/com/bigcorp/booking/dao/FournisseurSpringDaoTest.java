@@ -44,4 +44,14 @@ public class FournisseurSpringDaoTest {
 		Assertions.assertNotNull(fournisseur);
 		Assertions.assertNotNull(fournisseur.getId());
 	}
+	
+	@Test
+	@DisplayName("Testing if service correctly fetches all Fournisseurs")
+	void testGetAllFournisseurs() {				
+		
+		List<Fournisseur> fournisseurs = fournisseurService.getAllFournisseurs();
+
+		Assertions.assertNotNull(fournisseurs);
+		Assertions.assertEquals(2, fournisseurs.size());
+	}
 }
