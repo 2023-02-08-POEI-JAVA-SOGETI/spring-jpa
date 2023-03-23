@@ -46,9 +46,13 @@ public class FournisseurController {
 	}
 	
 	@PostMapping("/fournisseur/save")
-	public String save(@ModelAttribute("fournisseur") Fournisseur fournisseur) {
-	    fournisseurService.save(fournisseur);
-	    return "redirect:/fournisseur/" + fournisseur.getId();
+	public String save(@ModelAttribute("fournisseur") Fournisseur fournisseur, BindingResult bindingResult) {
+		if (bindingResult.hasErrors()) {
+			return "edit-fournisseur";
+		} else {
+			fournisseurService.save(fournisseur);
+			return "redirect:/fournisseur/" + fournisseur.getId();			
+		}
 	}
 	
 	@ModelAttribute("listFournisseurs")
