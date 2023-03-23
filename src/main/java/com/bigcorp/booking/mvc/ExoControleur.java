@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bigcorp.booking.model.Camion;
+import com.bigcorp.booking.model.Fournisseur;
 import com.bigcorp.booking.service.FournisseurService;
 
 /**
@@ -21,10 +24,10 @@ import com.bigcorp.booking.service.FournisseurService;
  */
 @Controller
 public class ExoControleur {
-	
+
 	@Autowired
 	private FournisseurService fournisseurService;
-	
+
 	@RequestMapping("/exocontroleur")
 	public String showSayHello() {
 		System.out.println("Le contrôleur de l'exo agit ! ");
@@ -40,7 +43,7 @@ public class ExoControleur {
 		return mav;
 
 	}
-	
+
 	@RequestMapping("/camions")
 	public ModelAndView afficheDetailCamionParCheminRequestParam(@RequestParam("id") int id) {
 		System.out.println("J'affiche le détail du camion à partir du chemin : " + id);
@@ -78,7 +81,7 @@ public class ExoControleur {
 		listeCamion.add(new Camion(2, "Camion Mercedes"));
 		return listeCamion;
 	}
-	
+
 	@RequestMapping("/fournisseurs")
 	public ModelAndView afficheListeFournisseurs() {
 		ModelAndView mav = new ModelAndView("fournisseurs");
@@ -86,9 +89,7 @@ public class ExoControleur {
 		mav.addObject("fournisseurs", fournisseurService.findAll());
 		return mav;
 	}
-	
 
-	
 	@RequestMapping("/fournisseurs/edit")
 	public ModelAndView afficheFormulaireEditionFournisseurParCheminRequestParam(@RequestParam("id") int id) {
 		System.out.println("J'affiche le formulaire d'édition du fournisseur à partir du chemin : " + id);
@@ -96,7 +97,28 @@ public class ExoControleur {
 		mav.setViewName("vue-edition-fournisseur");
 		mav.addObject("fournisseur", fournisseurService.findById(id));
 		return mav;
+	}
 
+	@PostMapping("/fournisseur")
+	public ModelAndView processSubmit(@Validated @ModelAttribute("fournisseur") Fournisseur f, BindingResult result) {
+		
+		if (result.hasErrors()) {
+			ModelAndView mav = new ModelAndView("vue-edition-fournisseur");
+			mav.addObject("fournisseur", f);
+			return mav;
+		}
+		
+		
+		
+		String view = "fournisseur";
+		if (f != null && f.getId() != null) {
+			view = "redirect:/fournisseurs/edit?id=" + f.getId();
+		}
+
+		ModelAndView mav = new ModelAndView(view);
+		
+		fournisseurService.save(f);
+		return mav;
 
 	}
 

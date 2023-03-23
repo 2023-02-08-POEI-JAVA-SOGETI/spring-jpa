@@ -6,27 +6,26 @@
 </head>
 <body>
 
-	<p>Informations du fournisseur</p>
+	<p>Détails du fournisseur</p>
+	<p th:if="${fournisseur==null}">La fournisseur est null</p>
 	
-	<form action="fournisseur" th:action="@{/fournisseur}" method="post">
-		<p>ID :</p>
-		<p>
-			<input type="text" name="id" th:value="${fournisseur.id}" />
-		</p>
-		<p>Adresse :</p>
-		<p>
-			<input type="text" name="adresse" th:value="${fournisseur.adresse}" />
-		</p>
-		<p>Numero :</p>
-		<p>
-			<input type="text" name="numero" th:value="${fournisseur.numero}" />
-		</p>
-		<p>Email :</p>
-		<p>
-			<input type="text" name="email" th:value="${fournisseur.email}" />
-		</p>
-		<input type="submit" value="Sauvegarder" />
-	</form>
+	<form action="fournisseur" th:object="${fournisseur}" th:action="@{/fournisseur}" method="post">
+   		<p> Id : <input type="text" name="id" th:value="${fournisseur.id}" readonly="readonly"/></p>
+  		<p>Numero : <input type="text" name="numero" th:value="${fournisseur.numero}" /></p>
+   		<p>Nom : <input type="text" name="nom" th:value="${fournisseur.nom}" /></p>
+   		<p>Email : <input type="text" name="email" th:value="${fournisseur.email}" /></p>
+   		<p>Adresse : <input type="text" name="adresse" th:value="${fournisseur.adresse}" /></p>
+   		<p><input type="submit" value="Envoyer le formulaire"></p>
+   		
+   		<!--  affichage des erreurs du formulaire  -->
+   		<ul th:if="${#fields.hasErrors('*')}">
+			<li th:each="err : ${#fields.errors('*')}" th:text="${err}">Erreur</li>
+		</ul>
+   	</form>
+   	
+	<div>
+		<a href="../fournisseurs" th:href="@{/fournisseurs}">Retour</a>
+	</div>
 
 </body>
 </html>
