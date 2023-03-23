@@ -29,6 +29,11 @@ public class FournisseurControleur {
 	@PostMapping("/fournisseur")
 	public ModelAndView saveFournisseur(@ModelAttribute("fournisseur") Fournisseur fournisseur,
 			BindingResult result) {
+		
+		if(result.hasErrors()) {
+    		return new ModelAndView("fournisseur", "fournisseur", fournisseur);
+    	}
+		
 	    fournisseurService.save(fournisseur);
 	    ModelAndView mav = new ModelAndView();
     	mav.setViewName("redirect:/formulaire-fournisseur?id=" + fournisseur.getId());
