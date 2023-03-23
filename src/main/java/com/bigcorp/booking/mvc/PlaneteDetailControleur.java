@@ -37,9 +37,9 @@ public class PlaneteDetailControleur {
      * le met dans l'argument id de la méthode.
      * @return
      */
-    @RequestMapping("/planetes/{id}")
-    public ModelAndView afficheDetailPlaneteParChemin(@PathVariable("id") Integer id) {
-    	System.out.println("J'affiche le détail de la planète à partir du chemin  : " + id);
+    @RequestMapping("/planete/{id}")
+    public ModelAndView afficheDetailFournisseursParChemin(@PathVariable("id") Integer id) {
+    	System.out.println("J'affiche le détail de des fournisseur à partir du chemin  : " + id);
     	ModelAndView mav = new ModelAndView();
     	mav.setViewName("planete");
     	mav.addObject("planete", PlanetesSingleton.INSTANCE.getPlaneteById(id));

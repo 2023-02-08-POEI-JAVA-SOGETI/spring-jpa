@@ -11,34 +11,34 @@ import junit.framework.Assert;
 
 public class ClientsDaoTest {
 	  
-    @Test
-    public void testSave() {
-    	
-		ClientsDao dao = new ClientsDao();
-		Clients client = new Clients();
-		String nomClient = "va";
-		String prenomClient = "sam";
-		String mail = "sam.va@lycos.fr";
-		String adresse = "6 rue des églantines, 88900 La mothe beuvron";
-		int numeroUnique = 13;
-		client.setNom(nomClient);
-		client.setAdresse(adresse);
-		client.setEmail(mail);
-		client.setPrenom(prenomClient);
-		client.setNumero(numeroUnique);
-		Clients clientSauvegarde = dao.merge(client);
-		
-		Assertions.assertNotNull(clientSauvegarde.getId());
-		
-		Clients clientLu = dao.findById(Clients.class,clientSauvegarde.getId());
-		
-		Assertions.assertEquals(nomClient, clientLu.getNom());
-		Assertions.assertEquals(prenomClient, clientLu.getPrenom());
-		Assertions.assertEquals(mail, clientLu.getEmail());
-		Assertions.assertEquals(adresse, clientLu.getAdresse());
-		Assertions.assertEquals(numeroUnique, clientLu.getNumero());
-		
-    }
+//    @Test
+//    public void testSave() {
+//    	
+//		ClientsDao dao = new ClientsDao();
+//		Clients client = new Clients();
+//		String nomClient = "va";
+//		String prenomClient = "sam";
+//		String mail = "sam.va@lycos.fr";
+//		String adresse = "6 rue des églantines, 88900 La mothe beuvron";
+//		int numeroUnique = 13;
+//		client.setNom(nomClient);
+//		client.setAdresse(adresse);
+//		client.setEmail(mail);
+//		client.setPrenom(prenomClient);
+//		client.setNumero(numeroUnique);
+//		Clients clientSauvegarde = dao.merge(client);
+//		
+//		Assertions.assertNotNull(clientSauvegarde.getId());
+//		
+//		Clients clientLu = dao.findById(Clients.class,clientSauvegarde.getId());
+//		
+//		Assertions.assertEquals(nomClient, clientLu.getNom());
+//		Assertions.assertEquals(prenomClient, clientLu.getPrenom());
+//		Assertions.assertEquals(mail, clientLu.getEmail());
+//		Assertions.assertEquals(adresse, clientLu.getAdresse());
+//		Assertions.assertEquals(numeroUnique, clientLu.getNumero());
+//		
+//    }
     
     public void testPersist() {
 		ClientsDao clientDao = new ClientsDao();

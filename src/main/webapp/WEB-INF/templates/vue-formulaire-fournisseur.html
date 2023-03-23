@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Détail Formulaire fournisseur</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+ </head>
+ 
+ <body>
+  <a href="/spring-jpa/liste-fournisseurs"> Retour</a>
+  	<h1 th:text="'fournisseur : ' + ${fournisseur.nom}"></h1>
+	 <ul>
+	 	<li th:text="'numero : ' + ${fournisseur.numero}"></li>
+		<li th:text="'nom : ' + ${fournisseur.nom}"></li>
+		<li th:text="'email : ' + ${fournisseur.email}"></li>
+		<li th:text="'adresse : ' + ${fournisseur.adresse}"></li>
+	 </ul>
+  
+    <h1>Modifier le fournisseur </h1> 
+     
+    <!-- Formulaire pour modifier un fournisseur -->
+	<form th:action="@{/formulaire-fournisseur/{id}(id=${fournisseur.id})}" method="post" th:object="${fournisseur}">
+        <p>
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" th:field="*{nom}" required>
+        </p>
+        <p>
+            <label for="adresse">Adresse :</label>
+            <input type="text" id="adresse" name="adresse" th:field="*{adresse}">
+        </p>
+        <p>
+            <label for="numero">Numéro :</label>
+            <input type="text" id="numero" name="numero" th:field="*{numero}" required>
+        </p>
+        <p>
+            <label for="email">E-mail :</label>
+            <input type="email" id="email" name="email" th:field="*{email}">
+        </p>
+        <button type="submit">Sauvegarder</button>
+	</form>
+    
+ </body>
+</html>
+
+
+
+

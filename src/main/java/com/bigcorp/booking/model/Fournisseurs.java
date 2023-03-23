@@ -16,6 +16,10 @@ import javax.persistence.Table;
 public class Fournisseurs { 
 
 	
+	public Fournisseurs() {
+		
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -84,6 +88,11 @@ public class Fournisseurs {
 
 	public void setClients(Set<Clients> clients) {
 		this.clients = clients;
+	}
+
+	public Fournisseurs orElse(Object object) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
