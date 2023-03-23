@@ -34,6 +34,11 @@ public class ArticleSpringService {
 		LOGGER.info("Searching");
 		return this.articleSpringDao.findById(id).orElse(null);
 	}
+	
+	public Iterable<Article> findAll() {
+		LOGGER.info("Searching");
+		return this.articleSpringDao.findAll();
+	}
 
 	public List<Article> findContainingName(String name) {
 		LOGGER.info("Searching");

@@ -26,10 +26,10 @@ public class Fournisseurs {
 	private String nom;
 	private String email;
 	private String adresse;
-	
+
 	@OneToMany(mappedBy = "fournisseur")
 	private List<Article> articles = new ArrayList<>();
-	
+
 	@OneToMany(mappedBy = "fournisseur")
 	private Set<Client> clients = new HashSet<>();
 
@@ -58,6 +58,10 @@ public class Fournisseurs {
 		return this.email;
 	}
 
+	public String getEmail() {
+		return this.email;
+	}
+
 	public String getAdresse() {
 		return this.adresse;
 	}
@@ -80,10 +84,14 @@ public class Fournisseurs {
 		this.email = email;
 	}
 
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
-	
+
 	public Set<Client> getClients() {
 		return clients;
 	}

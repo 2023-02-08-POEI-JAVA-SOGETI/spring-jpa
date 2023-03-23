@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Fournisseurs</title>
+<style>
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f5f5f5;
+}
+
+h1 {
+	color: #333;
+	text-align: center;
+	margin-top: 20px;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+li {
+	display: inline-block;
+	margin: 10px;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+a {
+	display: block;
+	padding: 10px;
+	color: #333;
+	text-decoration: none;
+}
+
+a:hover {
+	background-color: #333;
+	color: #fff;
+}
+</style>
+
+</head>
+<body>
+	<h1>Fournisseurs</h1>
+	<ul>
+		<li th:each="fournisseur : ${fournisseursModel}"><a
+			href="vue-fournisseurs.html" th:text="${fournisseur.nom}"
+			th:href="@{/fournisseurs/{id}(id=${fournisseur.iD})}">Default</a></li>
+	</ul>
+</body>
+</html>

@@ -20,10 +20,10 @@ h1 {
 }
 
 p {
-text-align : center;
-margin : 20px auto;
-font-weight: bolder;
-color: #cdcd0d;
+	text-align: center;
+	margin: 20px auto;
+	font-weight: bolder;
+	color: #cdcd0d;
 }
 
 img {
@@ -41,7 +41,16 @@ img {
 <body>
 	<h1>Bah alors ça dit qu'oie là ?</h1>
 	<p th:text="${monMessage}">Ça marche pas mal ici !</p>
-	<img src="/images/oie.jpg" alt="Oie">
+
+	<img th:if="${maListe.goose}" src="/images/oie.jpg" alt="Oie">
 	<p th:text="${monPojo.nom}">Ça marche pas mal ici !</p>
+	<ul>
+		<li th:each="bird : ${maListe.gooseList}" th:text="${bird}">Terre</li>
+	</ul>
+	<!-- Produit '/mon-contexte/order/details?orderId=3' -->
+	<a href="details.html" th:href="@{/details(iD=${monPojo.iD})}">vue</a>
+	<!-- Produit '/mon-contexte/order/3/details' -->
+	<a href="details.html" th:href="@{/details/{iD}(iD=${monPojo.iD})}">vue</a>
+
 </body>
 </html>
