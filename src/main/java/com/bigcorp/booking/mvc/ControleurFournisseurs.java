@@ -1,6 +1,7 @@
 package com.bigcorp.booking.mvc;
 
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -12,40 +13,39 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.servlet.ModelAndView;
 
-
+import com.bigcorp.booking.service.spring.ArticleSpringService;
 import com.bigcorp.booking.service.spring.FournisseurSpringService;
 import com.bigcorp.booking.model.Fournisseurs;
 
-
 @Controller
 public class ControleurFournisseurs {
+	private static final Logger LOGGER = LoggerFactory.getLogger(ArticleSpringService.class);
 	@Autowired
 	private FournisseurSpringService fournisseurService;
 
 	@RequestMapping("/fournisseurs")
 	private ModelAndView showPageFournisseurs() {
-		System.out.println("Le contrôleur de fournisseurs agit ! ");
+		LOGGER.info("Affichage de la page des fournisseurs");
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("vue-fournisseurs");
 		Iterable<Fournisseurs> fournisseursIterable = fournisseurService.findAll();
 		mav.addObject("fournisseursModel", fournisseursIterable);
-		System.out.println("Rendu terminé (normalement hein)");
+		LOGGER.info("Rendu de la page des fournisseurs terminé");
 		return mav;
 
 	}
 
 	@RequestMapping("/fournisseurs/{id}")
 	private ModelAndView showPageFournisseur(@PathVariable("id") int id) {
-		System.out.println("J'affiche le détail du fournisseur à partir du chemin : " + id);
+		LOGGER.info("Affichage de la page du fournisseur avec l'ID {}", id);
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("vue-fournisseur");
 		Fournisseurs fournisseurById = fournisseurService.findById(id);
 		mav.addObject("fournisseurModel", fournisseurById);
-		System.out.println("Rendu terminé (normalement hein)");
+		LOGGER.info("Rendu de la page du fournisseur avec l'ID {} terminé", id);
 		return mav;
 	}
 
-	// not done yet
 	@PostMapping("/fournisseur")
 	public ModelAndView processSubmit(@Validated @ModelAttribute("fournisseurModel") Fournisseurs fournisseur,
 			BindingResult result) {
@@ -53,6 +53,7 @@ public class ControleurFournisseurs {
 			ModelAndView modelAndView = new ModelAndView();
 			modelAndView.setViewName("redirect:/fournisseurs/" + fournisseur.getiD());
 			modelAndView.addObject("fournisseurModel", fournisseur);
+			LOGGER.warn("Erreur lors de la soumission du fournisseur avec l'ID {}", fournisseur.getiD());
 			return modelAndView;
 		}
 
@@ -60,11 +61,9 @@ public class ControleurFournisseurs {
 
 		ModelAndView mav = new ModelAndView(view);
 		mav.addObject("fournisseur", fournisseur);
-		if (result.hasErrors()) {
-			return mav;
-		} else {
-			fournisseurService.save(fournisseur);
-		}
+
+		fournisseurService.save(fournisseur);
+		LOGGER.info("Modification réussie dans la BDD pour le fournisseur avec l'ID {}", fournisseur.getiD());
 		return mav;
 	}
 }
