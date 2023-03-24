@@ -15,6 +15,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import jakarta.validation.constraints.Email;
+
 @Entity
 @Table(name = "Fournisseurs")
 public class Fournisseurs {
@@ -24,6 +26,7 @@ public class Fournisseurs {
 	@Column(name = "numeroUnique")
 	private Integer numeroUnique;
 	private String nom;
+	@Email
 	private String email;
 	private String adresse;
 

@@ -46,12 +46,13 @@ public class ControleurFournisseurs {
 		return mav;
 	}
 
-	@PostMapping("/fournisseur")
+	@PostMapping("/fournisseurs/{id}")
 	public ModelAndView processSubmit(@Validated @ModelAttribute("fournisseurModel") Fournisseurs fournisseur,
 			BindingResult result) {
 		if (result.hasErrors()) {
 			ModelAndView modelAndView = new ModelAndView();
-			modelAndView.setViewName("redirect:/fournisseurs/" + fournisseur.getiD());
+			//modelAndView.setViewName("redirect:/fournisseurs/" + fournisseur.getiD());
+			modelAndView.setViewName("vue-fournisseur");
 			modelAndView.addObject("fournisseurModel", fournisseur);
 			LOGGER.warn("Erreur lors de la soumission du fournisseur avec l'ID {}", fournisseur.getiD());
 			return modelAndView;
