@@ -1,12 +1,15 @@
-package com.bigcorp.booking.tentative;
+package com.bigcorp.booking.service;
 
 import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.bigcorp.booking.dao.spring.LivresSpringDao;
+import com.bigcorp.booking.model.Livre;
+
 /*@Service*/
-public class ServiceSpringLivresDao {
+public class ServiceSpringLivres {
 
     @Autowired
     private LivresSpringDao livresSpringDao;

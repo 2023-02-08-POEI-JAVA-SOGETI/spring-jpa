@@ -1,8 +1,9 @@
-package com.bigcorp.booking.tentative;
+package com.bigcorp.booking.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
-import com.bigcorp.booking.dao.PersistenceSingleton;
+
+import com.bigcorp.booking.model.Livre;
 
 public class LivresDao {
 	

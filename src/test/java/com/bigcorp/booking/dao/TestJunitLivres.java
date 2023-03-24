@@ -1,4 +1,4 @@
-package com.bigcorp.booking.tentative;
+package com.bigcorp.booking.dao;
 
 public class TestJunitLivres {
 /*

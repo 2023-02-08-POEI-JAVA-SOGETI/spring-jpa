@@ -9,8 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.bigcorp.booking.tentative.Livre;
-
 @Entity
 @Table(name="fournisseurs")
 public class Fournisseur { 
