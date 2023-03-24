@@ -3,7 +3,7 @@ package com.bigcorp.booking.model;
 /**
  * POJO d'un Héros Disney
  */
-public class HerosDisney {
+public class HerosFilms {
 
 	private Integer id;
 	
@@ -11,11 +11,13 @@ public class HerosDisney {
 	
 	private String film;
 
-	public HerosDisney(Integer id, String nom, String film) {
+	public HerosFilms(Integer id, String nom, String film) {
 		this.id = id;
 		this.nom = nom;
 		this.film = film;
 	}
+
+	public HerosFilms() {/*TODO Auto-generated constructor stub*/}
 
 	public Integer getId() {
 		return id;

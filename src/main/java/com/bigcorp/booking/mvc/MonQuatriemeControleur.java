@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.bigcorp.booking.model.HerosDisney;
-import com.bigcorp.booking.service.DisneySingleton;
+import com.bigcorp.booking.model.HerosFilms;
+import com.bigcorp.booking.service.FilmSingleton;
 import com.bigcorp.booking.service.PlanetesSingleton;
 
 /**
@@ -43,21 +43,19 @@ public class MonQuatriemeControleur {
 	 * @return
 	 */    
    
-    
     @ModelAttribute("listeHerosDisney")    
-    public List<HerosDisney> herosDisney() {
-        List<HerosDisney> liste = new ArrayList<>();
+    public List<HerosFilms> herosDisney() {
+        List<HerosFilms> liste = new ArrayList<>();
         int id = 1;
         String[] noms = { "Kuzco", "Simba", "Aurore", "Merida", "Megara", "Quasimodo", "Mirabel", "Tarzan" };
         String[] films = {  "Kuzco, l'empereur mégalo", "Le Roi Lion", "La Belle au bois dormant", "Rebelle", "Hercule",
                 "Le Bossu de Notre-Dame", "Encanto", "Tarzan" };
         for (int i = 0; i < noms.length; i++) {
-            liste.add(new HerosDisney(id++, noms[i], films[i]));
+            liste.add(new HerosFilms(id++, noms[i], films[i]));
         }
         return liste;
     }
 
-    
     /*
      * Crée la liste de héros avec leurs identifiants (2 arguments)
      * 
@@ -80,16 +78,16 @@ public class MonQuatriemeControleur {
      * @return
      */
     
-    @RequestMapping("/herosdisney")
-    public String afficherHerosDisney() {
-    	System.out.println("Le contrôleur de heros disney agit !");
-        return "vue-herosdisney";
+    @RequestMapping("/herosfilm")
+    public String afficherHerosFilm() {
+    	System.out.println("Le contrôleur de heros film agit !");
+        return "vue-herosfilm";
     }
 
-    @RequestMapping("/personnagedisney")
+    @RequestMapping("/personnagefilm")
     public ModelAndView afficherHerosParParam(@RequestParam("id") Integer id) {    	
     	System.out.println("Je t'envoie la page du personnage " + id);
-    	HerosDisney herosDisney1 = DisneySingleton.INSTANCE.getHerosDisneyById(id);
+    	HerosFilms herosDisney1 = FilmSingleton.INSTANCE.getHerosFilmById(id);
     	ModelAndView mav = new ModelAndView();
     	mav.setViewName("vue-details");
     	mav.addObject("heros", herosDisney1);
@@ -97,20 +95,20 @@ public class MonQuatriemeControleur {
     }
     
  
-    @RequestMapping("/personnagedisney/{id}")
+    @RequestMapping("/personnagefilm/{id}")
     public ModelAndView afficherHerosParChemin(@PathVariable("id") Integer id) {
     	System.out.println("Je t'envoie la page du personnage " + id);
-    	HerosDisney herosDisney1 = DisneySingleton.INSTANCE.getHerosDisneyById(id);
+    	HerosFilms herosFilm1 = FilmSingleton.INSTANCE.getHerosFilmById(id);
     	ModelAndView mav = new ModelAndView();
     	mav.setViewName("vue-details");
-    	mav.addObject("heros", herosDisney1);
+    	mav.addObject("heros", herosFilm1);
     	return mav; 
     }
 
 
 
     @PostMapping("vue-details")
-    	public ModelAndView processSubmit(@Validated @ModelAttribute("herosD") HerosDisney herosD, 
+    	public ModelAndView processSubmit(@Validated @ModelAttribute("herosD") HerosFilms herosD, 
     			BindingResult result) {
     		if(result.hasErrors()) {
     			return new ModelAndView("vue-herosdisney", "heros", herosD);
@@ -127,7 +125,7 @@ public class MonQuatriemeControleur {
     					return mav;
     		}
     		// else
-    			DisneySingleton.INSTANCE.saveHerosDisney(herosD);
+    			FilmSingleton.INSTANCE.saveHerosFilm(herosD);
     				return mav;
 }}
 

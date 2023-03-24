@@ -1,4 +1,5 @@
-package com.bigcorp.booking.tentative;
+package com.bigcorp.booking.mainapp;
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
