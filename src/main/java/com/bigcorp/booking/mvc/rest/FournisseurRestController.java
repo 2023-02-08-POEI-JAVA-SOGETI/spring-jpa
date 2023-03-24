@@ -12,16 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bigcorp.booking.model.Fournisseur;
 
 @RestController
-public class FournisseurRestService {
+public class FournisseurRestController {
 
 	@GetMapping("/fournisseurs/{fournisseurId}")
 	public Fournisseur getById(@PathVariable("fournisseurId") Integer fournisseurId) {
-//		if (bean == null) {
-//			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No company found");
-//		}
 		Fournisseur fournisseur = new Fournisseur();
 		fournisseur.setId(fournisseurId);
-		fournisseur.setNom("coucou");
+		fournisseur.setNom("Salut !!!");
 		return fournisseur;
 	}
 

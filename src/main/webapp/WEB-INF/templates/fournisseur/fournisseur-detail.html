@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title th:text="${'Détail du fournisseur ' + fournisseur.nom}">Détail d'un fournisseur</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="../styles.css" />
+</head>
+
+<body>
+
+ <h1>Modification du formulaire</h1>
+
+ <form action="fournisseur-detail" 
+    method="get"
+    th:object="${fournisseur}" 
+    th:action="@{/fournisseur-sauvegarde}"
+    th:method="post" >
+  <p>Id :</p>
+  <p>
+   <input readonly="true" name="id" th:value="${fournisseur.id}" />
+  </p>
+  <p>Nom :</p>
+  <p>
+   <input type="text" name="nom" th:value="${fournisseur.nom}" />
+   <p th:if="${#fields.hasErrors('nom')}">Le champ nom est mauvais</p>
+  </p>
+  <p>Numéro :</p>
+  <p>
+   <input type="text" name="numero" th:value="${fournisseur.numero}" />
+   <p th:if="${#fields.hasErrors('numero')}">Ce champ est mauvais</p>
+  </p>
+  <p>Email :</p>
+  <p>
+   <input type="text" name="email" th:value="${fournisseur.email}" />
+   <p th:if="${#fields.hasErrors('email')}">Ce champ est mauvais</p>
+  </p>
+  <p>Adresse :</p>
+  <p>
+   <input type="text-area" name="adresse" th:value="${fournisseur.adresse}" />
+   <p th:if="${#fields.hasErrors('adresse')}">Ce champ est mauvais</p>
+  </p>
+  <p>Sauvegarder :</p>
+  <p>
+   <input type="submit" value="Sauvegarder" />
+  </p>
+ </form>
+
+</body>
+</html>
