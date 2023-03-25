@@ -18,7 +18,7 @@ public class FournisseurRestDto {
 		this.id = fournisseur.getId();
 		this.numero = fournisseur.getNumero();
 		this.nom = fournisseur.getNom();
-		this.email = fournisseur.getAdresse();
+		this.email = fournisseur.getEmail();
 		this.adresse = fournisseur.getAdresse();
 	}
 
