@@ -1,23 +1,26 @@
 package com.bigcorp.booking.mvc;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bigcorp.booking.model.Fournisseur;
 import com.bigcorp.booking.service.FournisseurService;
 
-@Controller
+@RestController
 public class FournisseurControleur {
 
-	@Autowired
+	
 	private FournisseurService fournisseurService;
 		
+	public FournisseurControleur(FournisseurService fournisseurService) {
+		this.fournisseurService = fournisseurService;
+	}
+	
 	@RequestMapping("/fournisseur/{id}")
 	public ModelAndView displayFournisseur(@PathVariable("id") Integer id) {
 		ModelAndView mav = new ModelAndView();
@@ -41,5 +44,10 @@ public class FournisseurControleur {
 			return mav;
 		fournisseurService.save(f);
 		return mav;
+	}
+	
+	@RequestMapping("/restFournisseur/{id}")
+	public Fournisseur restFournisseur(@PathVariable("id") Integer id) {
+		return new Fournisseur(1,"aaa", "bbb", "ccc");
 	}
 }

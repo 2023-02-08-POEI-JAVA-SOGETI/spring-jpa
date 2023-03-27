@@ -24,6 +24,8 @@ import org.springframework.transaction.PlatformTransactionManager;
 	"com.bigcorp.booking.dao.spring",
 	"com.bigcorp.booking.model",
 	"com.bigcorp.booking.mvc",
+	"com.bigcorp.booking.rest",
+	"com.bigcorp.booking.rest.dto",
 	"com.bigcorp.booking.service"
 })
 public class SpringConfiguration {

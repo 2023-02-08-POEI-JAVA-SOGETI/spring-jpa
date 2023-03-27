@@ -35,13 +35,11 @@ public class ArticleService {
 		return this.articleSpringDao.save(article);
 	}
 
-	@Transactional
 	public Article findById(Integer id) {
 		LOGGER.info("findById : " + id);
 		return this.articleSpringDao.findById(id).orElse(null);
 	}
 
-	@Transactional
 	public List<Article> findByFournisseurId(Integer id){
 		LOGGER.info("findByFournisseurId : " +id);
 		return this.articleSpringDao.findbyFournisseur(id);
@@ -73,5 +71,4 @@ public class ArticleService {
 		LOGGER.info("saveArticleAndFournisseur : persistence de l'article");
 		return this.articleSpringDao.save(a);
 	}
-
 }
