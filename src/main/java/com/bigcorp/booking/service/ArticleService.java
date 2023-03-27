@@ -14,7 +14,7 @@ import com.bigcorp.booking.model.Article;
 @Service
 public class ArticleService {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(ClientService.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ArticleService.class);
 
 	@Autowired
 	private ArticleSpringDao articleSpringDao;
@@ -59,6 +59,11 @@ public class ArticleService {
 	public List<Article> findByNom(String nom) {
 		LOGGER.info("Appelle méthode findByNom() de ArticleService.java");
 		return this.articleSpringDao.findArticleByName(nom);
+	}
+	
+	public Iterable<Article> findAll() {
+		LOGGER.info("Appelle méthode findAll() de ArticleService.java");
+		return this.articleSpringDao.findAll();
 	}
 	
 	//METHODE BONUS A COMPLETERE
