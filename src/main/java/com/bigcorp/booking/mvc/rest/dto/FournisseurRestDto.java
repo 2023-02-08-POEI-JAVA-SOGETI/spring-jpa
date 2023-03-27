@@ -2,6 +2,8 @@ package com.bigcorp.booking.mvc.rest.dto;
 
 import com.bigcorp.booking.model.Fournisseur;
 
+import jakarta.validation.constraints.Email;
+
 public class FournisseurRestDto {
 	
 	private Integer id;
@@ -10,9 +12,14 @@ public class FournisseurRestDto {
 
 	private String nom;
 
+	@Email
 	private String email;
 
 	private String adresse;
+	
+	public FournisseurRestDto() {
+		
+	}
 	
 	public FournisseurRestDto(Fournisseur fournisseur) {
 		this.id = fournisseur.getId();

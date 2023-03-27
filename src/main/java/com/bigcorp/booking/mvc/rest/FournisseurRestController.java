@@ -41,11 +41,17 @@ public class FournisseurRestController {
 	}
 
 	@PostMapping("/fournisseurs")
-	public Fournisseur post(@RequestBody Fournisseur fournisseur) {
+	public FournisseurRestDto save(@RequestBody FournisseurRestDto fournisseurRestDto) {
 		
-		
-		
-		return fournisseur;
+		// Transformer le DTO en entité
+		Fournisseur fournisseur = new Fournisseur();
+		fournisseurRestDto.remplisFournisseur(fournisseur);
+
+		// sauvegarder l'entité
+		fournisseur = fournisseurService.save(fournisseur);
+
+		// transmetttre en réponse le DTO
+		return new FournisseurRestDto(fournisseur);
 	}
 
 }
