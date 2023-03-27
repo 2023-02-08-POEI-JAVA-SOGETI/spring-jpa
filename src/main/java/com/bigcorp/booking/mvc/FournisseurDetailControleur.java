@@ -44,7 +44,7 @@ public class FournisseurDetailControleur {
     	System.out.println("J'affiche le détail du fournisseur à partir du chemin  : " + id);
     	ModelAndView mav = new ModelAndView();
     	mav.setViewName("fournisseur");
-    	mav.addObject("fournisseur", FournisseurService.fournisseurSpringDao.getFournisseurById(id));
+    	//mav.addObject("fournisseur", FournisseurService.save.getFournisseurById(id));
         return mav;
     }
     
@@ -83,7 +83,7 @@ public class FournisseurDetailControleur {
             return mav;
         }
         // else
-        FournisseurService.fournisseurSpringDao.save(fournisseur);
+        //FournisseurService.save(fournisseur);
         return mav;
     }
     

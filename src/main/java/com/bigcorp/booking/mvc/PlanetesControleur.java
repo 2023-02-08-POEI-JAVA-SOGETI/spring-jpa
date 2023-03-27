@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class PlanetesControleur {
 	
-    
 	/**
 	 * Place dans le contexte Spring MVC l'attribut 'caRoule'.
 	 * Cet attribut pourra

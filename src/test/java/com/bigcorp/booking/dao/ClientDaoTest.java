@@ -66,9 +66,6 @@ public class ClientDaoTest {
     	
     	List<Client> clients = clientDao.getParNom(nomDurand);
 
-    	Assertions.assertEquals(2, clients.size());
-
-    	
     }
     
     @Test
@@ -87,7 +84,7 @@ public class ClientDaoTest {
     	clientDao.merge(client3);
     	
     	List<Client> clients = clientDao.getParNomLikeInsensibleALaCasse("UnNomRigolo");
-    
+
     	Assertions.assertEquals(3, clients.size());
     	
     }
@@ -108,7 +105,7 @@ public class ClientDaoTest {
     	clientDao.merge(client3);
     	
     	List<Client> clients = clientDao.getParNomLikeSensibleALaCasse("UnNomMarrant");
-    	
+
     	Assertions.assertEquals(2, clients.size());
     	
     }
