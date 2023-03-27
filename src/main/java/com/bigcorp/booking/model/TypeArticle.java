@@ -1,5 +1,5 @@
 package com.bigcorp.booking.model;
 
 public enum TypeArticle {
-    NEUF, OCCASION, INUTILISABLE;
+    NEUF, OCCASION, INUTILISABLE, ACHAT, VENTE;
 }
