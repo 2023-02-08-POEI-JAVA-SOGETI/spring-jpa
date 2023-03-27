@@ -16,8 +16,8 @@ public class ClientDaoTest {
     	
 		ClientDao dao = new ClientDao();
 		Client client = new Client();
-		String nomClient = "va";
-		String prenomClient = "sam";
+		String nomClient = "Va";
+		String prenomClient = "Sam";
 		String mail = "sam.va@lycos.fr";
 		String adresse = "6 rue des églantines, 88900 La mothe beuvron";
 		int numeroUnique = 13;
@@ -26,8 +26,8 @@ public class ClientDaoTest {
 		client.setEmail(mail);
 		client.setPrenom(prenomClient);
 		client.setNumero(numeroUnique);
-		Client clientSauvegarde = dao.merge(client);
 		
+		Client clientSauvegarde = dao.merge(client);
 		Assertions.assertNotNull(clientSauvegarde.getId());
 		
 		Client clientLu = dao.findById(Client.class,clientSauvegarde.getId());
