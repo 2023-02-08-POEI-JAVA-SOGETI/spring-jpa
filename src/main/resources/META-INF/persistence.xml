@@ -11,6 +11,7 @@
     	<class>com.bigcorp.booking.model.Utilisateur</class>
     	<class>com.bigcorp.booking.model.HerosFilms</class>
     	<class>com.bigcorp.booking.model.Planete</class>
+    	<class>com.bigcorp.booking.model.Livre</class>
         <properties>
 
             <!--<property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />-->
