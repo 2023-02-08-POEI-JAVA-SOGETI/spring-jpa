@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bigcorp.booking.dao.spring.ArticleSDao;
-import com.bigcorp.booking.dao.spring.FournisseurSDao;
 
 import tp_spring_jpa_pablo.model.Article;
 
@@ -14,8 +13,6 @@ public class ArticleService {
 	
 	@Autowired
 	private ArticleSDao articleSDao;
-	@Autowired
-	private FournisseurSDao fournisseurSDao;
 	
 	public Iterable<Article> findAll(){
 		return this.articleSDao.findAll();
@@ -32,7 +29,7 @@ public class ArticleService {
 	}
 	
 	@Transactional
-	public void delete(Integer id) {
+	public void deleteById(Integer id) {
 		this.articleSDao.deleteById(id);
 	}
 	
@@ -40,6 +37,11 @@ public class ArticleService {
 	public void findByNom(String nomArticle) {
 		this.articleSDao.findByNom(nomArticle);
 	}
+	
+	@Transactional
+    public void deleteByFournisseurId(Integer fournisseurId) {
+        this.articleSDao.deleteByFournisseurId(fournisseurId);
+    }
 	
 
 }

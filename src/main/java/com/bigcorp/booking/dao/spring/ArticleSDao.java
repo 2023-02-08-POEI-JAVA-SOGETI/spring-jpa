@@ -12,6 +12,10 @@ import tp_spring_jpa_pablo.model.Article;
 public interface ArticleSDao extends CrudRepository<Article, Integer> {    
 	// JPQL requetes SQL en JPA
 	public List<Article> findByNom(String nomArticle);
+	// Delete articles linked to fournisseur by FK
+	public void deleteByFournisseurId(Integer fournisseurId);
+		
+	
 	
 }		
 	

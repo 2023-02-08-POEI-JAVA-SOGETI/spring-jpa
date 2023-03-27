@@ -20,6 +20,9 @@ import tp_spring_jpa_pablo.model.Fournisseur;
 @Controller
 public class FournisseurControleur {   
     
+	@Autowired
+    private FournisseurService fournisseurService;
+	
 	@RequestMapping("/fournisseur")
     public String showSayHello() {
     	System.out.println("PAGE FOURNISSEUR ");
@@ -40,8 +43,7 @@ public class FournisseurControleur {
 	    return mav;
 	}
 	
-	@Autowired
-    private FournisseurService fournisseurService;
+	
 	
 	@RequestMapping("/formulaire-fournisseur")
     public String showFormulaire(@RequestParam("id") Integer id, Model model) {

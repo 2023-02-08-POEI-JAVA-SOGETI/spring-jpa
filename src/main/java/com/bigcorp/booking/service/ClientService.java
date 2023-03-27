@@ -28,7 +28,7 @@ public class ClientService {
 	}
 	
 	@Transactional
-	public void delete(Integer id) {
+	public void deleteById(Integer id) {
 		this.clientSDao.deleteById(id);
 	}	
 	

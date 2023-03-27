@@ -28,14 +28,15 @@ public class FournisseurService {
 	}
 	
 	@Transactional
-	public void delete(Integer id) {
+	public void deleteById(Integer id) {
 		this.fournisseurSDao.deleteById(id);
 	}
 	
 	// Crée dans le cours
-		public void findByNom(String nomFournisseur) {
-			this.fournisseurSDao.findByNom(nomFournisseur);
-		}
+	public void findByNom(String nomFournisseur) {
+		this.fournisseurSDao.findByNom(nomFournisseur);
+	}	
+
 	
 
 }
