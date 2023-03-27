@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title th:text="#{planet.title}">La page du fournisseur!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+ <h1>Détail du fournisseur</h1>
+ <p th:if="${fournisseur==null}">Le fournisseur est nulle</p>
+ <div th:if="${fournisseur != null}">
+  <p>Id :</p>
+  <p th:text="${fournisseur.id}">9</p>
+  <p>Numero :</p>
+  <p th:text="${fournisseur.numero}">06 47 78 78 99</p>
+  <p>Nom :</p>
+  <p th:text="${fournisseur.nom}">Clement</p>
+  <p>Email :</p>
+  <p th:text="${fournisseur.email}">clement.cl@gmail.com</p>
+  <p>Adresse :</p>
+  <p th:text="${fournisseur.adresse}">1 rue des cocotiers</p>
+ </div>
+
+ <form action="fourrnisseur" th:object="${fourrnisseur}" th:action="@{/fourrnisseur}"
+  method="post">
+  
+  <p>Id :</p>
+  <p>
+   <input type="text" name="id" th:value="${fourrnisseur.id}" />
+  </p>
+  <p th:if="${#fields.hasErrors('id')}" th:errors="*{id}">Erreur d'id</p>
+  
+  <p>Numero :</p>
+  <p>
+   <input type="text" name="numero" th:value="${fourrnisseur.numero}" />
+  </p>
+  <p th:if="${#fields.hasErrors('numero')}" th:errors="*{numero}">Erreur de numero</p>
+  
+  <p>Nom :</p>
+  <p>
+   <input type="text" name="nom" th:value="${fourrnisseur.nom}" />
+  </p>
+  <p th:if="${#fields.hasErrors('nom')}" th:errors="*{nom}">Erreur de nom</p>
+  
+  <p>Email :</p>
+  <p>
+   <input type="text" name="email" th:value="${fournisseur.email}" />
+  </p>
+  <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="alert-error">Erreur d'email</p>
+  
+  <p>Adresse :</p>
+  <p>
+   <input type="text" name="adresse" th:value="${fournisseur.adresse}" />
+  </p>
+  <p th:if="${#fields.hasErrors('adresse')}" th:errors="*{adresse}" class="alert-error">Erreur d'adresse</p>
+  
+  <input type="submit" value="Sauvegarder" />
+  <ul th:if="${#fields.hasErrors('*')}">
+   <li th:each="err : ${#fields.errors('*')}" th:text="${err}">Erreur</li>
+  </ul>
+ </form>
+
+</body>
+</html>

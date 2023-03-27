@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>Ma deuxieme page Thymeleaf !</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+    <h1>Salut les gens</h1>
+    
+    <p th:text="${hey}"> Message de bienvenue par défaut </p>
+    
+     <!-- <h1>Le nom du camion est : <span th:text="${camion.nom}"></span></h1> -->
+       
+    <ul>
+		<li th:each="camion : ${camionListe}" th:text="${camion.nom}">Camion :</li>
+	</ul>
+    
+    <!--  <p>La liste des camion : <span th:text="${camion.}"></span></p>> 
+    
+       <p>La liste des camions :
+    <span th:each="camion : ${listecamion}" th:text="${camion} + ' '"></span>
+	</p> -->
+	
+	
+	
+  </body>
+</html>

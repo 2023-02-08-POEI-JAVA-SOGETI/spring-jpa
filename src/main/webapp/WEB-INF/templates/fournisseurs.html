@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" >
+
+  <head>
+    <title>Ma première page Thymeleaf !</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+
+    <h1>Voici mes fournisseurs</h1>
+
+    <ul>
+      <li th:each="fournisseurs : ${listeFournisseurs}" th:text="${fournisseurs}">fournisseurs</li>
+    </ul>
+    
+    <ul>
+      <li th:each="fournisseurs,iterStat : ${listeFournisseurs}"><a href="fournisseurs.html" th:href="@{/fournisseurs(id=${iterStat.index})}" th:text="${'Lien vers le fournisseur' + fournisseur }">Lien vers mon fournisseur</a></li>
+    </ul>
+
+  </body>
+</html>
