@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
@@ -53,13 +54,12 @@ public class ArticleRestController {
 		System.out.println("J'ai supprimé l'article " + articleId);
 	}
 	
-	/*@PostMapping("/articles}")
-	public ArticleRestDto getById(@PathVariable("articleId") Integer articleId) {
-		Article article = articleService.findById(articleId);
-		if (article == null) {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Aucun article trouvé avec l'id : " + articleId);
-		}
+	@PostMapping("/articles")
+	public ArticleRestDto post(@RequestBody ArticleRestDto articleRestDto) {
+		Article article = new Article();
+		articleRestDto.remplisArticle(article);
+		article = articleService.save(article);
 		return new ArticleRestDto(article);
-	}*/
+	}
 
 }

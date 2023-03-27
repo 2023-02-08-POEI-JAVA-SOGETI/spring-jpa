@@ -24,10 +24,10 @@ public class ArticleSpringService {
 	private FournisseurSpringDao fournisseurSpringDao;
 
 	@Transactional
-	public void save(Article article) {
+	public Article save(Article article) {
 		LOGGER.info("Saving");
-		this.articleSpringDao.save(article);
-		LOGGER.info("Saved");
+		return this.articleSpringDao.save(article);
+		/*LOGGER.info("Saved");*/
 	}
 
 	public Article findById(Integer id) {

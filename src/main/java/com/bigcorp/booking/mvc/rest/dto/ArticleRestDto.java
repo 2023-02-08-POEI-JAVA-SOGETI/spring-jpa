@@ -16,6 +16,10 @@ public class ArticleRestDto {
 		this.nom = article.getNom();
 		this.description = article.getDescription();
 	}
+	
+	public ArticleRestDto() {
+		
+	}
 
 	public Integer getiD() {
 		return iD;
@@ -55,6 +59,15 @@ public class ArticleRestDto {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public Article remplisArticle(Article articleLu) {
+		articleLu.setiD(this.iD);
+		articleLu.setNumeroUnique(this.numeroUnique);
+		articleLu.setNom(this.nom);
+		articleLu.setFournOuClient(this.fournOuClient);
+		articleLu.setDescription(this.description);
+		return articleLu;
 	}
 
 }
