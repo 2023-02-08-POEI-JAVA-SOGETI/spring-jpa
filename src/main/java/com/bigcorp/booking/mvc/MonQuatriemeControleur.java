@@ -87,10 +87,10 @@ public class MonQuatriemeControleur {
     @RequestMapping("/personnagefilm")
     public ModelAndView afficherHerosParParam(@RequestParam("id") Integer id) {    	
     	System.out.println("Je t'envoie la page du personnage " + id);
-    	HerosFilms herosDisney1 = FilmSingleton.INSTANCE.getHerosFilmById(id);
+    	HerosFilms herosFilm1 = FilmSingleton.INSTANCE.getHerosFilmById(id);
     	ModelAndView mav = new ModelAndView();
     	mav.setViewName("vue-details");
-    	mav.addObject("heros", herosDisney1);
+    	mav.addObject("heros", herosFilm1);
     	return mav; 
     }
     

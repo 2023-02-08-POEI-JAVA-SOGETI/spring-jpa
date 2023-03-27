@@ -1,10 +1,19 @@
 package com.bigcorp.booking.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GenerationType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  * POJO d'un Héros Disney
  */
-public class HerosFilms {
 
+@Entity 
+public class HerosFilms {
+	
+	@Id 
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
 	private String nom;

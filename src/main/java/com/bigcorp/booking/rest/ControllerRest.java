@@ -6,19 +6,31 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bigcorp.booking.model.HerosFilms;
+import com.bigcorp.booking.service.FilmSingleton;
 
 @RestController
 public class ControllerRest {
 
-	@GetMapping("/rest/personnagesfilms/{id}")
+	@GetMapping("/rest/personnagesfilms/{id}") /*Simple affichage de données en forçant un ID dans l'URL*/
 	public HerosFilms afficherHerosParChemin(@PathVariable("id") Integer id) {
 		System.out.println("Je t'envoie la page du personnage " + id);
-		HerosFilms herosFilm1 = new HerosFilms();
-		herosFilm1.setId(id);
-		herosFilm1.setNom("Leeloo");
-		herosFilm1.setFilm("Le Cinquieme Element");
-			return herosFilm1;
+    	HerosFilms herosFilm2 = new HerosFilms();
+		herosFilm2.setId(id);
+		herosFilm2.setNom("Leeloo");
+		herosFilm2.setFilm("Le Cinquieme Element");
+			return herosFilm2;
 	}
+	
+	@GetMapping("/rest/personnageFilms/{id}") /*Affichage d'une entitée provenant de la BDD*/
+	public HerosFilms afficherHerosDeLaBDD(@PathVariable("id") Integer id) {
+		System.out.println("Je t'envoie la page du personnage " + id);
+    	HerosFilms herosFilm3 = FilmSingleton.INSTANCE.getHerosFilmById(id);		
+    	herosFilm3.setId(id);
+		herosFilm3.setNom(herosFilm3.getNom());
+		herosFilm3.setFilm(herosFilm3.getFilm());
+			return herosFilm3;
+	}
+	
 	
 	
 	/* Requête par Param : ne fonctionne pas par soucis du à l'id
