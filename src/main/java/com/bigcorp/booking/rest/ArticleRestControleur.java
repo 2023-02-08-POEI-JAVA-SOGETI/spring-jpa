@@ -18,8 +18,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.bigcorp.booking.dto.ArticleRestDto;
+import com.bigcorp.booking.dto.ArticleRestDtoFull;
+import com.bigcorp.booking.dto.FournisseurRestDto;
 import com.bigcorp.booking.model.Article;
-import com.bigcorp.booking.rest.dto.ArticleRestDto;
 import com.bigcorp.booking.service.ArticleService;
 
 import jakarta.validation.Valid;
@@ -42,14 +44,27 @@ public class ArticleRestControleur {
 					"Aucun article trouvé avec l'id " + id);			
 		}
 		LOGGER.info("getARticleById : Article " + article.getId() + " récupéré de la BDD");
-		return new ArticleRestDto(article);
+		ArticleRestDto articleRestDto = new ArticleRestDto(article);
+		
+		return articleRestDto;
 	}
 	
-	//variante de la méthode getArticleById avec un request param
-//	@RequestMapping("/restparam/article")
-//	public Article displayParamArticle(@RequestParam("id") Integer id) {
-//		return articleService.findById(id);
-//	}
+	@GetMapping("/{id}/full")
+	public ArticleRestDto getArticleByIdFull(@PathVariable("id") Integer id) {
+		Article article = articleService.findById(id);
+		if (article == null) {
+			LOGGER.info("getARticleById : Article non trouvé - renvoi 404");	
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND,
+					"Aucun article trouvé avec l'id " + id);			
+		}
+		LOGGER.info("getARticleById : Article " + article.getId() + " récupéré de la BDD");
+		ArticleRestDtoFull articleRestDto = new ArticleRestDtoFull(article);
+		
+		LOGGER.info("getARticleById : Fournisseur " + article.getFournisseur().getId() + " récupéré de la BDD");
+		articleRestDto.setFournisseur(new FournisseurRestDto(article.getFournisseur()));
+		
+		return articleRestDto;
+	}
 	
 	@DeleteMapping("/{id}")
 	public void deleteArticleById(@PathVariable("id") Integer id) {
@@ -77,10 +92,10 @@ public class ArticleRestControleur {
 		articleFromBody.updateArticleWith(article);
 
 		Article savedArticle = articleService.save(article);
-		LOGGER.info("createArticle : Article " + article.getId() + " persisté");
+		LOGGER.info("createArticle : Article " + savedArticle.getId() + " persisté");
 		
 		savedArticle = articleService.saveArticleAndFournisseur(savedArticle.getId(), articleFromBody.getFournisseurId());
-		LOGGER.info("createArticle : Article " + article.getId() + " associé au fournisseur " + articleFromBody.getFournisseurId());
+		LOGGER.info("createArticle : Article " + savedArticle.getId() + " associé au fournisseur " + articleFromBody.getFournisseurId());
 		
 		return new ResponseEntity<>(new ArticleRestDto(savedArticle), HttpStatus.CREATED);
 	}

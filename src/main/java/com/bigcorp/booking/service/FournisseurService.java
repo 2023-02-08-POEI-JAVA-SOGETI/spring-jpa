@@ -40,10 +40,4 @@ public class FournisseurService {
 		this.fournisseurSpringDao.deleteById(id);
 	}
 
-	public Fournisseur findByIdWithArticles(Integer id) {
-		Fournisseur f = this.findById(id);
-		
-		return null;
-	}
-
 }

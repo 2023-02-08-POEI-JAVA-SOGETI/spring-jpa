@@ -1,4 +1,6 @@
-package com.bigcorp.booking.rest.dto;
+package com.bigcorp.booking.dto;
+
+import java.util.List;
 
 import com.bigcorp.booking.model.Fournisseur;
 
@@ -8,6 +10,7 @@ public class FournisseurRestDto {
 	private String nom;
 	private String email;
 	private String adresse;
+	private List<ArticleRestDto> articlesDto;
 	
 	public FournisseurRestDto() {
 		
@@ -50,6 +53,14 @@ public class FournisseurRestDto {
 	}
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
+	}
+
+	public List<ArticleRestDto> getArticlesDto() {
+		return articlesDto;
+	}
+
+	public void setArticlesDto(List<ArticleRestDto> articlesDto) {
+		this.articlesDto = articlesDto;
 	}
 
 	public void remplisFournisseur(Fournisseur f) {

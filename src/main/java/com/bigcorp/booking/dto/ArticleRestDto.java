@@ -1,4 +1,4 @@
-package com.bigcorp.booking.rest.dto;
+package com.bigcorp.booking.dto;
 
 
 import com.bigcorp.booking.model.Article;
@@ -28,8 +28,9 @@ public class ArticleRestDto {
 		 this.nom = a.getNom();
 		 this.etat = a.getEtat();
 		 this.description = a.getDescription();
-		 if (a.getFournisseur() != null)
+		 if (a.getFournisseur() != null) {
 			 this.fournisseurId = a.getFournisseur().getId();
+		 }
 	 }
 
 	public Integer getId() {

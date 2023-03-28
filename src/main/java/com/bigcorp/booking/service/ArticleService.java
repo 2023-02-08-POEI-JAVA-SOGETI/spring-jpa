@@ -45,8 +45,8 @@ public class ArticleService {
 		return this.articleSpringDao.findbyFournisseur(id);
 	}
 	
-	@Transactional
 	public List<Article> findAll(){
+		LOGGER.info("findAll");
 		return (List<Article>) this.articleSpringDao.findAll();
 	}
 

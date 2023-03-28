@@ -12,7 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.bigcorp.booking.rest.dto.ArticleRestDto;
+import com.bigcorp.booking.dto.ArticleRestDto;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;

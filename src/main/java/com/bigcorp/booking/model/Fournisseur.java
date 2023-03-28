@@ -37,7 +37,6 @@ public class Fournisseur implements Serializable {
 	  * Constructeur sans paramètre
 	  */
 	 public Fournisseur() {
-	     this.id = 0;
 	     this.numero = 0;
 	     this.nom = "NOM";
 	     this.email = "EMAIL";
@@ -53,7 +52,6 @@ public class Fournisseur implements Serializable {
 	  * @param adresse : adresse du fournisseur
 	  */
 	 public Fournisseur(Integer numero, String nom, String email, String adresse) {
-	     this.id = 0;
 	     this.numero = numero;
 	     this.nom = nom;
 	     this.email = email;
@@ -167,14 +165,5 @@ public class Fournisseur implements Serializable {
 	
 	public void setArticles(List<Article> articles) {
 		this.articles = articles;
-	}
-	
-	public void updateFournisseur(Fournisseur f) {
-	     this.id = f.getId();
-	     this.numero = f.getNumero();
-	     this.nom = f.getNom();
-	     this.email = f.getEmail();
-	     this.adresse = f.getAdresse();
-	     this.articles = f.getArticles();
 	}
 }
