@@ -27,17 +27,13 @@ public class Restaurant {
 	@JoinColumn(name = "type_restaurant_id")
 	private TypeRestaurant typeRestaurant;
 	
-
-	
-	
 	public void associeAvecType (TypeRestaurant typeRestaurant)
 	{
 		this.typeRestaurant = typeRestaurant;
 		typeRestaurant.getRestaurants().add(this);
 	}
 	
-	
-	
+
 	@Override
 	public String toString() {
 		return "Restaurant [id=" + id + ", nom=" + nom + ", prix=" + prix + ", adresse=" + adresse + ", typeRestaurant="
@@ -54,24 +50,16 @@ public class Restaurant {
 	}
 
 	
-	
 	public Restaurant() {
 		super();
 	}
 
-
-
-	public class Builder {
+	public static class Builder {
 		
-
 		private String nom = "Nom inconnu";
 		private Prix prix = Prix.INCONNU;
 		private String adresse = "Adresse inconnue";
 		private TypeRestaurant typeRestaurant = new TypeRestaurant();
-		
-		
-		
-		
 		
 		public Builder withNom(String nom)
 		{
@@ -97,23 +85,27 @@ public class Restaurant {
 			return this;
 		}
 		
-		public Restaurant build()
-		{
-			return new Restaurant(this);
-		}
-		
 		public Builder() {
 		}
+//		
+//		public Restaurant build()
+//		{
+//			return new Restaurant(this);
+//		}
 		
-		
+		public Restaurant build()
+		{
+			Restaurant restaurant = new Restaurant();
+			restaurant.nom = this.nom;
+			restaurant.adresse = this.adresse;
+			restaurant.prix = this.prix;
+			restaurant.typeRestaurant = this.typeRestaurant;
+			return restaurant;
+			
+		}
 	}
 	
-	
-	
-
 	// GETTER SETTER
-	
-	
 	public Integer getId() {
 		return id;
 	}
@@ -153,8 +145,6 @@ public class Restaurant {
 	public void setTypeRestaurant(TypeRestaurant typeRestaurant) {
 		this.typeRestaurant = typeRestaurant;
 	}
-	
-	
 	
 
 }

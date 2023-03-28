@@ -29,16 +29,14 @@ public class TypeRestaurant {
 	public TypeRestaurant() {
 		super();
 	}
-	public TypeRestaurant(String nom, Set<Restaurant> restaurants) {
+	
+	
+	public TypeRestaurant(String nom) {
 		super();
 		this.nom = nom;
-		this.restaurants = restaurants;
-	
-	
+	}
 	
 	// GETTER / SETTER
-	
-	}
 	public Integer getId() {
 		return id;
 	}

@@ -13,5 +13,6 @@ public class TypeRestaurantService {
 
 	@Autowired
 	private TypeRestaurantDao typeRestaurantDao;
-
+	
+	
 }

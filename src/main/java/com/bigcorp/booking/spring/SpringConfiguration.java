@@ -16,11 +16,11 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 //Active les Repositories JPA trouvés
 //dans le package fourni en paramètre
-@EnableJpaRepositories("com.bigcorp.booking.dao.spring")
+@EnableJpaRepositories("com.bigcorp.booking.repositories")
 
 //Scanne les composants trouvés dans le
 //package fourni en paramètre
-@ComponentScan("com.bigcorp.booking.service")
+@ComponentScan("com.bigcorp.booking.services")
 public class SpringConfiguration {
 
 	//Définit le nom de l'unité de persistence 

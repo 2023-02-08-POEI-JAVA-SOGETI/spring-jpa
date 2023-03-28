@@ -12,9 +12,9 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 
 @Entity
-@Table(name =  "reservation")
+@Table(name = "reservation")
 public class Reservation {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
@@ -27,93 +27,64 @@ public class Reservation {
 	@Column(name = "date_heure_debut")
 	private LocalDateTime dateHeureDebut;
 //	Restaurant restaurant;
-	
-	
-	
-	
+
 	@Override
 	public String toString() {
 		return "Reservation [id=" + id + ", nomReservant=" + nomReservant + ", prenomReservant=" + prenomReservant
 				+ ", telephoneReservant=" + telephoneReservant + ", dateHeureDebut=" + dateHeureDebut + "]";
 	}
-	
-	
-	
-	
-	
-	
-	// CONSTRUCTEURS
-	
-	
-	public Reservation() {
-	super();
-}
-	
-	
 
+	// CONSTRUCTEURS
+
+	public Reservation() {
+		super();
+	}
 
 	public Reservation(Builder builder) {
 		this.nomReservant = builder.nomReservant;
 		this.prenomReservant = builder.prenomReservant;
 		this.telephoneReservant = builder.telephoneReservant;
 		this.dateHeureDebut = builder.dateHeureDebut;
-}
+	}
 
+	public static class Builder {
 
-	public static class Builder
-	{
-		
 		private String nomReservant = "nom inconnu";
-		private String prenomReservant= "prenom inconnu";
+		private String prenomReservant = "prenom inconnu";
 		private String telephoneReservant = "telephone inconnu";
 		private LocalDateTime dateHeureDebut = null;
-		
-		
-		public Builder withNomReservant(String nom)
-		{
+
+		public Builder withNomReservant(String nom) {
 			this.nomReservant = nom;
 			return this;
 		}
-		
-		public Builder withPrenomReservant(String prenom)
-		{
+
+		public Builder withPrenomReservant(String prenom) {
 			this.prenomReservant = prenom;
 			return this;
 		}
-		
-		public Builder withTelephoneReservant(String telephoneReservant)
-		{
+
+		public Builder withTelephoneReservant(String telephoneReservant) {
 			this.telephoneReservant = telephoneReservant;
 			return this;
 		}
-		
-		public Builder withDateHeureDebut(LocalDateTime dateHeureDebut)
-		{
+
+		public Builder withDateHeureDebut(LocalDateTime dateHeureDebut) {
 			this.dateHeureDebut = dateHeureDebut;
 			return this;
 		}
-		
-		public Reservation build()
-		{
+
+		public Reservation build() {
 			return new Reservation(this);
 		}
-		
+
 		public Builder() {
 		}
-		
-		
-		
+
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
 	// GETTER SETTER
-	
+
 	public Integer getId() {
 		return id;
 	}
@@ -121,33 +92,37 @@ public class Reservation {
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	public String getNomReservant() {
 		return nomReservant;
 	}
+
 	public void setNomReservant(String nomReservant) {
 		this.nomReservant = nomReservant;
 	}
+
 	public String getPrenomReservant() {
 		return prenomReservant;
 	}
+
 	public void setPrenomReservant(String prenomReservant) {
 		this.prenomReservant = prenomReservant;
 	}
+
 	public String getTelephoneReservant() {
 		return telephoneReservant;
 	}
+
 	public void setTelephoneReservant(String telephoneReservant) {
 		this.telephoneReservant = telephoneReservant;
 	}
+
 	public LocalDateTime getDateHeureDebut() {
 		return dateHeureDebut;
 	}
+
 	public void setDateHeureDebut(LocalDateTime dateHeureDebut) {
 		this.dateHeureDebut = dateHeureDebut;
 	}
-	
-
-	
-	
 
 }
