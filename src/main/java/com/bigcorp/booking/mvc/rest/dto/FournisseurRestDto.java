@@ -2,7 +2,7 @@ package com.bigcorp.booking.mvc.rest.dto;
 
 import com.bigcorp.booking.model.Fournisseur;
 
-import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Size;
 
 public class FournisseurRestDto {
 	
@@ -10,10 +10,8 @@ public class FournisseurRestDto {
 
 	private Integer numero;
 
+	@Size(min=4)
 	private String nom;
-
-	@Email
-	private String email;
 
 	private String adresse;
 	
@@ -25,7 +23,6 @@ public class FournisseurRestDto {
 		this.id = fournisseur.getId();
 		this.numero = fournisseur.getNumero();
 		this.nom = fournisseur.getNom();
-		this.email = fournisseur.getEmail();
 		this.adresse = fournisseur.getAdresse();
 	}
 
@@ -53,14 +50,6 @@ public class FournisseurRestDto {
 		this.nom = nom;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
 	public String getAdresse() {
 		return adresse;
 	}
@@ -75,8 +64,12 @@ public class FournisseurRestDto {
 		fournisseurLu.setNumero(this.numero);
 		fournisseurLu.setNom(this.nom);
 		fournisseurLu.setAdresse(this.adresse);
-		fournisseurLu.setEmail(this.email);
 		return fournisseurLu;
+	}
+
+	@Override
+	public String toString() {
+		return "FournisseurRestDto [id=" + id + ", nom=" + nom + "]";
 	}
 
 }

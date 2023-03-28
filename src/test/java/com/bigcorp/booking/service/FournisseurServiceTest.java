@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import com.bigcorp.booking.model.Fournisseur;
+import com.bigcorp.booking.service.exception.FournisseurException;
 import com.bigcorp.booking.spring.SpringConfiguration;
 
 @SpringJUnitConfig(SpringConfiguration.class)
@@ -15,7 +16,7 @@ public class FournisseurServiceTest {
 	private FournisseurService fournisseurService;
 
 	@Test
-	public void testSaveGet() {
+	public void testSaveGet() throws FournisseurException {
 		// Je prépare mes données
 		// J'enregistre en base un nouveau fournisseur
 		// je récupère son id
@@ -32,7 +33,7 @@ public class FournisseurServiceTest {
 	}
 
 	@Test
-	public void testDelete() {
+	public void testDelete() throws FournisseurException {
 		Fournisseur fournisseur = new Fournisseur();
 		Fournisseur fournisseurSauvegarde = this.fournisseurService.save(fournisseur);
 		this.fournisseurService.delete(fournisseurSauvegarde.getId());
@@ -42,7 +43,7 @@ public class FournisseurServiceTest {
 	}
 
 	@Test
-	public void testUpdate() {
+	public void testUpdate() throws FournisseurException {
 		// Je prépare mes données
 		// J'enregistre en base un nouveau fournisseur
 		// je récupère son id
