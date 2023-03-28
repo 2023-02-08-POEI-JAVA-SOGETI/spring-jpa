@@ -19,7 +19,7 @@ import com.bigcorp.booking.model.Fournisseurs;
 
 @Controller
 public class ControleurFournisseurs {
-	private static final Logger LOGGER = LoggerFactory.getLogger(ArticleSpringService.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ControleurFournisseurs.class);
 	@Autowired
 	private FournisseurSpringService fournisseurService;
 

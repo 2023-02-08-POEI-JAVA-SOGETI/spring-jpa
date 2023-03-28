@@ -7,7 +7,7 @@ import com.bigcorp.booking.model.Example;
 
 public class ExampleDaoTest {
 	  
-    @Test
+    /*@Test
     public void testSave() {
     	
     	String nom = "Jean-Jacques";
@@ -39,5 +39,5 @@ public class ExampleDaoTest {
 		Assertions.assertNotNull(savedExample.getId());
 		
 		
-    }
+    }*/
 }

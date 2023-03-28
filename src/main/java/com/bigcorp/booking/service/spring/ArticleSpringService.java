@@ -11,6 +11,7 @@ import com.bigcorp.booking.dao.spring.ArticleSpringDao;
 import com.bigcorp.booking.dao.spring.FournisseurSpringDao;
 import com.bigcorp.booking.model.Article;
 import com.bigcorp.booking.model.Fournisseurs;
+import com.bigcorp.booking.model.Utilisateur;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,6 +44,11 @@ public class ArticleSpringService {
 	public List<Article> findContainingName(String name) {
 		LOGGER.info("Searching");
 		return this.articleSpringDao.findByNomContaining(name);
+	}
+	
+	public Article findNumeroUnique(int numeroUnique) {
+		LOGGER.info("Searching");
+		return this.articleSpringDao.findByNumeroUnique(numeroUnique);
 	}
 
 	@Transactional

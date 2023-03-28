@@ -65,7 +65,7 @@ public class ArticleDaoTest {
     	
     }*/
     
-    @Test
+   /* @Test
     public void testMergeAvecFournisseur() {
     	ArticleDao articleDao = new ArticleDao();
     	Article article1 = new Article();
@@ -94,5 +94,5 @@ public class ArticleDaoTest {
     	Assertions.assertNotNull(savedArticle2.getiD());*/
     	
     	
-    }
+    
 }

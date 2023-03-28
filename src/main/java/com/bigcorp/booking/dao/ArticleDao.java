@@ -21,7 +21,7 @@ public class ArticleDao extends AbstractDao<Article> {
 		return laListeDesArticlesAvecLeBonNom;
 	}
 	
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		ArticleDao articleDao = new ArticleDao();
     	Article article1 = new Article();
     	article1.setNom("DS3");
@@ -36,4 +36,4 @@ public class ArticleDao extends AbstractDao<Article> {
     	Article savedArticle = articleDao.merge(article1);
     	
 
-}}
+}*/}

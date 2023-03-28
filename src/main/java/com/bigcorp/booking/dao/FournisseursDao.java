@@ -18,10 +18,10 @@ public class FournisseursDao extends AbstractDao<Fournisseurs> {
 			.setParameter("nomFournisseurs", nomFournisseurs).getResultList();
 		em.close();
 		return Fournisseur;
-	}
+	}}
 	
 	
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		/*String nom = "Jean-Jacques";
 		
     	FournisseursDao fournisseursDao = new FournisseursDao();
@@ -29,7 +29,7 @@ public class FournisseursDao extends AbstractDao<Fournisseurs> {
 		fournisseurs.setNom(nom);
 		fournisseurs.setNumeroUnique(45);
     	
-		Fournisseurs savedFournisseurs = fournisseursDao.merge(fournisseurs);*/
+		Fournisseurs savedFournisseurs = fournisseursDao.merge(fournisseurs);
 		ArticleDao articleDao = new ArticleDao();
     	Article article1 = new Article();
     	article1.setNom("DS3");
@@ -54,4 +54,4 @@ public class FournisseursDao extends AbstractDao<Fournisseurs> {
     	
     	int numberOfArticles = fournisseurFinal.get(0).getArticles().size();
     
-}}
+}}*/

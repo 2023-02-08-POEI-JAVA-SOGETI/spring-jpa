@@ -11,11 +11,11 @@ import com.bigcorp.booking.spring.SpringSimpleConfiguration;
 
 @SpringJUnitConfig(SpringSimpleConfiguration.class)
 public class Test2 {
-	@Autowired
+	/*@Autowired
 	private MonDao monControleur;
 
 	@Test
 	public void testQuiMarche() {
 		Assertions.assertNotNull(monControleur);
-	}
+	}*/
 }

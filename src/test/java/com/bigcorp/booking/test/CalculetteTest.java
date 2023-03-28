@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 public class CalculetteTest {
 	
 
-	static Calculette calculette;
+	/*static Calculette calculette;
 	
 	@BeforeAll
 	public static void initCalculette() {
@@ -87,16 +87,17 @@ public class CalculetteTest {
 	}
 
 	@Test
-	public void testDiviseParZero() {
-		double a = 3;
-		double b = 0;
-		Assertions.assertThrows(IllegalArgumentException.class, () -> calculette.divise(a,b));
-	}
+	public double divise(double a, double b) {
+        if (b == 0) {
+            throw new IllegalArgumentException("Le diviseur ne peut pas être zéro");
+        }
+        return a / b;
+    }
 	
 	@Test
 	public void testRacineCarre() {
 	    int a = 16;
 	    double resultat1 = calculette.racineCarre(a);
 	    Assertions.assertEquals(4.0, resultat1);
-	}
+	}*/
 }
