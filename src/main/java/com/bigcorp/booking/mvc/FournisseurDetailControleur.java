@@ -85,7 +85,7 @@ public class FournisseurDetailControleur {
             return mav;
         }
         // else
-        FournisseurService.fournisseurSpringDao.save(fournisseur);
+        fournisseurService.save(fournisseur);
         return mav;
     }
     
