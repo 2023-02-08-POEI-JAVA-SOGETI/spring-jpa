@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bigcorp.booking.dao.spring.ArticleSpringDao;
+import com.bigcorp.booking.dao.spring.FournisseurSpringDao;
 import com.bigcorp.booking.model.Article;
 import com.bigcorp.booking.model.EtatArticle;
 import com.bigcorp.booking.model.Fournisseur;
@@ -88,6 +89,7 @@ public class ArticleServiceTP {
 	//testée avec un test JUnit.
 
 	/**
+
 	 * Attache l'article avec l'id articleId au fournisseur avec
 	 * l'id fournisseurId. idARticle est non null et correspond à 
 	 * un Article en base,sinon, une Exception est lancée
