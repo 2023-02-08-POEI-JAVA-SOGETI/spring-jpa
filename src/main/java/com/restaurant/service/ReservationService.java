@@ -23,6 +23,7 @@ public class ReservationService {
 	private ReservationDaoSpring reservationDaoSpring;
 	@Autowired
 	private RestaurantDao restaurantDaoSpring;
+
 	
 	private static final Logger logger = LoggerFactory.getLogger(ReservationService.class);
 	
@@ -63,4 +64,5 @@ public class ReservationService {
 		reservation.setRestaurant(restaurant);
         return reservationDaoSpring.save(reservation);
 	}	
+
 }
