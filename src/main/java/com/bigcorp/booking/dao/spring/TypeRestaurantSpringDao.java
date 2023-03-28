@@ -11,6 +11,4 @@ import com.bigcorp.booking.model.TypeRestaurant;
 @Repository
 public interface TypeRestaurantSpringDao extends CrudRepository<TypeRestaurant, Integer>  {
 	
-	
-
 }
