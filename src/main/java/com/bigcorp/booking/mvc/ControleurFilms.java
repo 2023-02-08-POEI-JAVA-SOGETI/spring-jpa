@@ -43,7 +43,7 @@ public class ControleurFilms {
 	 * @return
 	 */    
    
-    @ModelAttribute("listeHerosDisney")    
+    @ModelAttribute("listeHerosFilms")    
     public List<HerosFilms> herosFilm() {
         List<HerosFilms> liste = new ArrayList<>();
         int id = 1;
