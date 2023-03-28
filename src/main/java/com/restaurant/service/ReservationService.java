@@ -21,8 +21,8 @@ public class ReservationService {
 	
 	@Autowired
 	private ReservationDaoSpring reservationDaoSpring;
-	@Autowired
-	private RestaurantDaoSpring restaurantDaoSpring;
+//	@Autowired
+//	private RestaurantDaoSpring restaurantDaoSpring;
 	
 	private static final Logger logger = LoggerFactory.getLogger(ReservationService.class);
 	
@@ -51,16 +51,16 @@ public class ReservationService {
 		return reservationDaoSpring.findAll();
 	}
 	
-	public Reservation linkRestaurantToReservation(Integer reservationId, Integer restaurantId) {
-		if (reservationId == null) {
-			throw new IllegalArgumentException("id reservation ne peut etre null");
-		} else if (restaurantId == null) {
-			throw new IllegalArgumentException("id restaurant ne peut etre null");		
-		}		
-		Reservation reservation = reservationDaoSpring.findById(reservationId).orElseThrow(IllegalArgumentException::new);
-		Restaurant restaurant = restaurantDaoSpring.findById(restaurantId).orElse(null);
-		
-		reservation.setrestaurant(restaurant);
-        return reservationDaoSpring.save(reservation);
-	}	
+//	public Reservation linkRestaurantToReservation(Integer reservationId, Integer restaurantId) {
+//		if (reservationId == null) {
+//			throw new IllegalArgumentException("id reservation ne peut etre null");
+//		} else if (restaurantId == null) {
+//			throw new IllegalArgumentException("id restaurant ne peut etre null");		
+//		}		
+//		Reservation reservation = reservationDaoSpring.findById(reservationId).orElseThrow(IllegalArgumentException::new);
+//		Restaurant restaurant = restaurantDaoSpring.findById(restaurantId).orElse(null);
+//		
+//		reservation.setrestaurant(restaurant);
+//        return reservationDaoSpring.save(reservation);
+//	}	
 }
