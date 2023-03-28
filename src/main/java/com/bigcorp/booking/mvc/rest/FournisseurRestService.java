@@ -14,22 +14,22 @@ import com.bigcorp.booking.model.Fournisseur;
 @RestController
 public class FournisseurRestService {
 
-	@GetMapping("/fournisseurs/{fournisseurId}")
+	@GetMapping("/rest/fournisseurs/{fournisseurId}")
 	public Fournisseur getById(@PathVariable("fournisseurId") Integer fournisseurId) {
 //		if (bean == null) {
 //			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No company found");
 //		}
 		Fournisseur fournisseur = new Fournisseur();
 		fournisseur.setId(fournisseurId);
-		fournisseur.setNom("coucou");
+		fournisseur.setNom("Leroy Merlin");
 		return fournisseur;
 	}
 
-	@DeleteMapping("/fournisseurs/{companyId}")
+	@DeleteMapping("/rest/fournisseurs/{companyId}")
 	public void deleteByCompanyUserId(@PathVariable("companyId") Long id) {
 	}
 
-	@PostMapping("/fournisseurs")
+	@PostMapping("/rest/fournisseurs")
 	public Fournisseur postCompany(@RequestBody Fournisseur fournisseur) {
 		fournisseur.setId(new Random().nextInt());
 		return fournisseur;

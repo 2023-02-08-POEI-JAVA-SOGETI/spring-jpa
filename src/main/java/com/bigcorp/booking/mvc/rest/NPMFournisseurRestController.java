@@ -19,7 +19,7 @@ public class NPMFournisseurRestController {
 	@Autowired
 	private NPMFournisseurService fournisseurService;
 
-	@GetMapping("/fournisseurs/{fournisseurId}")
+	@GetMapping("/rest/fournisseurs/{fournisseurId}")
 	public NPMFournisseurRestDto getById(@PathVariable("fournisseurId") Integer fournisseurId) {
 		Fournisseur fournisseur = fournisseurService.findById(fournisseurId);
 		if (fournisseur == null) {
@@ -29,7 +29,7 @@ public class NPMFournisseurRestController {
 		return new NPMFournisseurRestDto(fournisseur);
 	}
 
-	@DeleteMapping("/fournisseurs/{id}")
+	@DeleteMapping("/rest/fournisseurs/{id}")
 	public void deleteById(@PathVariable("id") Integer id) {
 		Fournisseur fournisseur = fournisseurService.findById(id);
 		if (fournisseur == null) {
@@ -39,7 +39,7 @@ public class NPMFournisseurRestController {
 		fournisseurService.delete(id);
 	}
 
-	@PostMapping("/fournisseurs")
+	@PostMapping("/rest/fournisseurs")
 	public NPMFournisseurRestDto save(@RequestBody NPMFournisseurRestDto fournisseurRestDto) {
 		
 		// Transformer le DTO en entité

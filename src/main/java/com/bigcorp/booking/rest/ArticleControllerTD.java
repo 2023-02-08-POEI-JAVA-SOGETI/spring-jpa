@@ -12,9 +12,16 @@ import com.bigcorp.booking.service.ArticleServiceTP;
 @RestController
 public class ArticleControllerTD {
 
-	@GetMapping("/articles/{articleId}")
+	@GetMapping("/rest/articles/{articleId}")
 	public ArticleControllerTD getById(@PathVariable("articleId") Integer articleId) {
-		Article article1 = ArticleServiceTP.findById(articleId);
+		
+		// J'ai tenté d'écrire "Article article1 = ArticleServiceTP.findById(articleId);" mais Eclipse me le refusait en 
+		// considérant articleService en statique et findById en nn statique, donc j'ai changé artcileService car changer
+		// findById me déclenchait d'autres problèmes. 
+		
+		ArticleServiceTP articleService = new ArticleServiceTP();
+		Article article1 = articleService.findById(articleId); 
+		
 		if (article1 == null) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Aucun article trouvé avec l'id : "
 					+ articleId);
