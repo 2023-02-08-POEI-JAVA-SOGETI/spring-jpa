@@ -20,9 +20,9 @@ import com.bigcorp.booking.model.Fournisseur;
  * Service pour l'entité Article.
  */
 @Service
-public class ArticleService {
+public class ArticleServiceTP {
 	
-	private static final Logger LOGGER = LoggerFactory.getLogger(ArticleService.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ArticleServiceTP.class);
 
 	@Autowired
 	private ArticleSpringDao articleSpringDao;

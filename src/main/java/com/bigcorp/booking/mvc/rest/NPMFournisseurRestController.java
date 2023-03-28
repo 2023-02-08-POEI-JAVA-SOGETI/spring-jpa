@@ -11,23 +11,22 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.bigcorp.booking.model.Fournisseur;
-import com.bigcorp.booking.mvc.rest.FournisseurRestDto;
-import com.bigcorp.booking.service.FournisseurService;
+import com.bigcorp.booking.service.NPMFournisseurService;
 
 @RestController
-public class FournisseurRestController {
+public class NPMFournisseurRestController {
 
 	@Autowired
-	private FournisseurService fournisseurService;
+	private NPMFournisseurService fournisseurService;
 
 	@GetMapping("/fournisseurs/{fournisseurId}")
-	public FournisseurRestDto getById(@PathVariable("fournisseurId") Integer fournisseurId) {
+	public NPMFournisseurRestDto getById(@PathVariable("fournisseurId") Integer fournisseurId) {
 		Fournisseur fournisseur = fournisseurService.findById(fournisseurId);
 		if (fournisseur == null) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Aucun fournisseur trouvé avec l'id : "
 					+ fournisseurId);
 		}
-		return new FournisseurRestDto(fournisseur);
+		return new NPMFournisseurRestDto(fournisseur);
 	}
 
 	@DeleteMapping("/fournisseurs/{id}")
@@ -41,7 +40,7 @@ public class FournisseurRestController {
 	}
 
 	@PostMapping("/fournisseurs")
-	public FournisseurRestDto save(@RequestBody FournisseurRestDto fournisseurRestDto) {
+	public NPMFournisseurRestDto save(@RequestBody NPMFournisseurRestDto fournisseurRestDto) {
 		
 		// Transformer le DTO en entité
 		Fournisseur fournisseur = new Fournisseur();
@@ -51,7 +50,7 @@ public class FournisseurRestController {
 		fournisseur = fournisseurService.save(fournisseur);
 
 		// transmetttre en réponse le DTO
-		return new FournisseurRestDto(fournisseur);
+		return new NPMFournisseurRestDto(fournisseur);
 	}
 
 }

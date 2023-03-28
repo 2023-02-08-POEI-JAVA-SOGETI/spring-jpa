@@ -13,9 +13,9 @@ import com.bigcorp.booking.model.Fournisseur;
  * Service pour l'entité Fournisseur.
  */
 @Service
-public class FournisseurService {
+public class NPMFournisseurService {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(FournisseurService.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(NPMFournisseurService.class);
 	
 	@Autowired
 	private FournisseurSpringDao fournisseurSpringDao;

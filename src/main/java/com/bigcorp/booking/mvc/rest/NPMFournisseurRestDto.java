@@ -4,7 +4,7 @@ import com.bigcorp.booking.model.Fournisseur;
 
 import jakarta.validation.constraints.Email;
 
-public class FournisseurRestDto {
+public class NPMFournisseurRestDto {
 	
 	private Integer id;
 
@@ -17,11 +17,11 @@ public class FournisseurRestDto {
 
 	private String adresse;
 	
-	public FournisseurRestDto() {
+	public NPMFournisseurRestDto() {
 		
 	}
 	
-	public FournisseurRestDto(Fournisseur fournisseur) {
+	public NPMFournisseurRestDto(Fournisseur fournisseur) {
 		this.id = fournisseur.getId();
 		this.numero = fournisseur.getNumero();
 		this.nom = fournisseur.getNom();

@@ -7,18 +7,18 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.bigcorp.booking.model.Article;
-import com.bigcorp.booking.service.ArticleService;
+import com.bigcorp.booking.service.ArticleServiceTP;
 
 @RestController
-public class ArticleRestDTOTP {
+public class ArticleControllerTD {
 
 	@GetMapping("/articles/{articleId}")
-	public ArticleRestDTOTP getById(@PathVariable("articleId") Integer articleId) {
-		Article article1 = ArticleService.findById(articleId);
+	public ArticleControllerTD getById(@PathVariable("articleId") Integer articleId) {
+		Article article1 = ArticleServiceTP.findById(articleId);
 		if (article1 == null) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Aucun article trouvé avec l'id : "
 					+ articleId);
 			}
-		return new ArticleRestDTOTP (article1);
+		return new ArticleControllerTD (article1);
 	}
 }
