@@ -26,6 +26,7 @@ public class ArticleControllerTD {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Aucun article trouvé avec l'id : "
 					+ articleId);
 			}
-		return new ArticleControllerTD (article1);
+		return this;
+		//return new ArticleControllerTD (article1);
 	}
 }

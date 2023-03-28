@@ -12,10 +12,10 @@
     	<class>com.bigcorp.booking.model.HerosFilms</class>
     	<class>com.bigcorp.booking.model.Planete</class>
     	<class>com.bigcorp.booking.model.Livre</class>
+    	<class>com.bigcorp.booking.model.Animal</class>
+        
         <properties>
-
             <!--<property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />-->
-            
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/test_francois" />
             <!-- <property name="javax.persistence.jdbc.url" value="jdbc:h2:file:~/java-dev/h2-data/sample" />  -->
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
@@ -29,5 +29,7 @@
             <property name="hibernate.use_sql_comments" value="true" />
             <property name="hibernate.physical_naming_strategy" value="org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy" />
         </properties>
+        
     </persistence-unit>
+    
 </persistence>
