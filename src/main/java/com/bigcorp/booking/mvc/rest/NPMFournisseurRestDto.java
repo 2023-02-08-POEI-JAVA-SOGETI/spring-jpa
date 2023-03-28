@@ -1,4 +1,4 @@
-package com.bigcorp.booking.mvc.rest;
+/*package com.bigcorp.booking.mvc.rest;
 
 import com.bigcorp.booking.model.Fournisseur;
 
@@ -80,3 +80,4 @@ public class NPMFournisseurRestDto {
 	}
 
 }
+*/

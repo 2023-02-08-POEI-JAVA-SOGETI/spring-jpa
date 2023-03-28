@@ -1,4 +1,4 @@
-package com.bigcorp.booking.mvc.rest;
+/*package com.bigcorp.booking.mvc.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -53,4 +53,4 @@ public class NPMFournisseurRestController {
 		return new NPMFournisseurRestDto(fournisseur);
 	}
 
-}
+}*/
