@@ -2,7 +2,7 @@ package com.bigcorp.booking.service;
 
 
 import java.util.List;
-import java.util.Optional;
+
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,14 +31,14 @@ public class ArticleService {
 		return this.articleSpringDao.save(article);
 	}
 	
-	public void delete(Long  id) {
+	public void delete(Integer  id) {
 		logger.info("Delete article: {}", id);
 		articleSpringDao.deleteById(id);
 	}
 	
-	public Optional<Article> findById(Long id) {
+	public Article findById(Integer id) {
 		logger.info("Find article: {}", id);
-		return articleSpringDao.findById(id);
+		return articleSpringDao.findById(id).orElse(null);
 	}
 	
 	public Iterable<Article> ListArticles(){
@@ -51,22 +51,15 @@ public class ArticleService {
 		return articleSpringDao.findByNom(name);
 	}
 	
-	public Article linkFournisseurToArticle(Long articleId, Long fournisseurId) {
+	public Article linkFournisseurToArticle(Integer articleId, Integer fournisseurId) {
 		if (articleId == null) {
 			throw new IllegalArgumentException("id article ne peut etre null");
 		} else if (fournisseurId == null) {
 			throw new IllegalArgumentException("id fournisseur ne peut etre null");		
 		}
 		
-		Article article = articleSpringDao.findById(articleId).get();
-		Fournisseur fournisseur = fournisseurSpringDao.findById(fournisseurId).get();
-		
-		
-		if (article == null) {
-			throw new IllegalArgumentException("l'article n'a pas pu être trouvé" );
-		} else if (fournisseur == null) {
-			throw new IllegalArgumentException("le fournisseur n'a pas pu être trouvé" );
-		}
+		Article article = articleSpringDao.findById(articleId).orElseThrow(IllegalArgumentException::new);
+		Fournisseur fournisseur = fournisseurSpringDao.findById(fournisseurId).orElse(null);
 		
 		article.setFournisseur(fournisseur);
         return articleSpringDao.save(article);

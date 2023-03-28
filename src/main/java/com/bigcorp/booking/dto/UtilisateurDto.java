@@ -1,19 +1,11 @@
-package com.bigcorp.booking.model;
+package com.bigcorp.booking.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
-import com.bigcorp.booking.dto.UtilisateurDto;
+import com.bigcorp.booking.model.Utilisateur;
 
-@Entity
-@Table(name = "UTILISATEURS")
-public class Utilisateur {
+
+public class UtilisateurDto {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private Integer numero_employe;
 	private String nom;
@@ -22,23 +14,30 @@ public class Utilisateur {
 	private String login;
 	private String mot_de_passe;
 	
-	public Utilisateur() {
+	public UtilisateurDto() {
 		
 	}
-	public Utilisateur(UtilisateurDto utilisateurDto) {
-		// TODO Auto-generated constructor stub
+
+	public UtilisateurDto (Utilisateur utilisateur) {
+		this.id = utilisateur.getId();
+		this.numero_employe = utilisateur.getNumero_employe();
+		this.nom = utilisateur.getNom();
+		this.prenom = utilisateur.getPrenom();
+		this.login = utilisateur.getLogin();
+		this.mot_de_passe = utilisateur.getMot_de_passe();
 	}
+	
 	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public Integer getNumero_employe() {
+	public Integer getNumero_employee() {
 		return numero_employe;
 	}
-	public void setNumero_employe(Integer numero_employe) {
-		this.numero_employe = numero_employe;
+	public void setNumero_employee(Integer numero_employee) {
+		this.numero_employe = numero_employee;
 	}
 	public String getNom() {
 		return nom;
@@ -70,4 +69,6 @@ public class Utilisateur {
 	public void setMot_de_passe(String mot_de_passe) {
 		this.mot_de_passe = mot_de_passe;
 	}
+	
+	
 }

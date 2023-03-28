@@ -1,7 +1,7 @@
 package com.bigcorp.booking.service;
 
 import java.util.List;
-import java.util.Optional;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,14 +28,14 @@ public class ClientService {
 			return this.clientSpringDao.save(client);
 		}
 		
-		public void delete(Long  id) {
+		public void delete(Integer  id) {
 			logger.info("Delete client: {}", id);
 			clientSpringDao.deleteById(id);
 		}
 		
-		public Optional<Client> findById(Long id) {
+		public Client findById(Integer id) {
 			logger.info("find client: {}", id);
-			return clientSpringDao.findById(id);
+			return clientSpringDao.findById(id).orElse(null);
 		}
 		
 		public Iterable<Client> ListArticles(){
@@ -48,7 +48,7 @@ public class ClientService {
 			return clientSpringDao.findByNom(name);
 		}
 
-		public Iterable<Client> findAll() {
-			return clientSpringDao.findAll();
+		public List<Client> findAll() {
+			return (List<Client>) clientSpringDao.findAll();
 		}
 }

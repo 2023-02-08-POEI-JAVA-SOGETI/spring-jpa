@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import com.bigcorp.booking.model.Utilisateur;
 
 @Repository
-public interface UtilisateurSpringDao extends CrudRepository<Utilisateur, Long>{
+public interface UtilisateurSpringDao extends CrudRepository<Utilisateur, Integer>{
 		List<Utilisateur> findByNom(String nom);
 }

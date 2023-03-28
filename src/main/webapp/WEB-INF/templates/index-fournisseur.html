@@ -7,9 +7,16 @@
 </head>
 <body>
 	<div class='container'>
-		<div class='row my-5'>
+		<div class='row mt-5'>
 			<div class='col'>
-				<h1>Liste des fournisseurs :</h1>
+				<a class="btn btn-secondary" href="/spring-jpa/clients">Interface clients</a>
+				<a class="btn btn-secondary" href="/spring-jpa/utilisateurs">Interface utilisateurs</a>
+				<a class="btn btn-secondary" href="/spring-jpa/articles">Interface articles</a>
+			</div>
+		</div>
+		<div class='row mt-5'>
+			<div class='col'>
+				<h1>Liste des fournisseurs</h1>
 			</div>
 		</div>
 		<div class='row my-5'>
@@ -38,7 +45,7 @@
 				      <td><a th:href="@{/fournisseur/{id}(id=${fournisseur.id})}" th:text="${fournisseur.email}"></a></td>
 				      <td><a class='btn btn-primary' th:href="@{/fournisseur/{id}/edit(id=${fournisseur.id})}">Modifier</a></td>
 				      <td>
-				      	<form method="POST" th:action="@{/fournisseur/{id}/delete(id=${fournisseur.id})}">
+				      	<form method="POST" th:action="@{/fournisseur/{id}/delete(id=${fournisseur.id})}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce fournisseur ?');">
     						<button type="submit" class="btn btn-danger">Supprimer</button>
 						</form>
 					  </td>

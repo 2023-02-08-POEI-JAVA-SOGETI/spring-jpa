@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.bigcorp.booking.dto.ArticleDto;
+
 
 @Entity
 @Table(name = "ARTICLES")
@@ -28,6 +30,17 @@ public class Article {
 	@JoinColumn(name = "FOURNISSEUR_ID")
 	private Fournisseur fournisseur;
 	
+	public Article() {
+		
+	}
+	
+	public Article(ArticleDto articleDto) {
+		this.id = articleDto.getId();
+		this.numero_article = articleDto.getNumero_article();
+		this.etat = articleDto.getEtat();
+		this.description = articleDto.getDescription();
+		this.fournisseur = articleDto.getFournisseur();
+	}
 	public Fournisseur getFournisseur() {
 		return fournisseur;
 	}

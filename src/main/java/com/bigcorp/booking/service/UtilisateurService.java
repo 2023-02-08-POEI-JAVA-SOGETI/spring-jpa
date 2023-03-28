@@ -1,7 +1,7 @@
 package com.bigcorp.booking.service;
 
 import java.util.List;
-import java.util.Optional;
+
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,14 +24,14 @@ public class UtilisateurService {
 		return this.utilisateurSpringDao.save(utilisateur);
 	}
 	
-	public void delete(Long  id) {
+	public void delete(Integer  id) {
 		logger.info("Delete utilisateur: {}", id);
 		utilisateurSpringDao.deleteById(id);
 	}
 	
-	public Optional<Utilisateur> findById(Long id) {
+	public Utilisateur findById(Integer id) {
 		logger.info("Find utilisateur: {}", id);
-		return utilisateurSpringDao.findById(id);
+		return utilisateurSpringDao.findById(id).orElse(null);
 	}
 	
 	public Iterable<Utilisateur> ListArticles(){

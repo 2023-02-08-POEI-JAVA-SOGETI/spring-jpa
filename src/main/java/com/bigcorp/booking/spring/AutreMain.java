@@ -2,7 +2,6 @@ package com.bigcorp.booking.spring;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.bigcorp.booking.service.MonControleurWeb;
 
 public class AutreMain {
 	public static void main(String[] args) {
@@ -11,8 +10,8 @@ public class AutreMain {
 			
 //			ExampleService exampleService = appContext.getBean("exampleService", ExampleService.class);
 //			exampleService.save(new Example());
-			MonControleurWeb monControleurWeb = appContext.getBean("monControleurWeb", MonControleurWeb.class);
-			monControleurWeb.getMonService().getMonDao().test();	
+//			MonControleurWeb monControleurWeb = appContext.getBean("monControleurWeb", MonControleurWeb.class);
+//			monControleurWeb.getMonService().getMonDao().test();	
 			
 			}
 	}

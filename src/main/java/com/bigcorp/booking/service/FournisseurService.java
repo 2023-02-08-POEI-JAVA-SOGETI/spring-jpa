@@ -1,7 +1,6 @@
 package com.bigcorp.booking.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,7 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.bigcorp.booking.dao.spring.ArticleSpringDao;
 import com.bigcorp.booking.dao.spring.FournisseurSpringDao;
-import com.bigcorp.booking.model.Article;
 import com.bigcorp.booking.model.Fournisseur;
 
 import org.slf4j.Logger;
@@ -39,7 +37,7 @@ public class FournisseurService {
 	
 	public Fournisseur findById(Integer id) {
 		logger.info("Find fournisseur: {}", id);
-		return fournisseurSpringDao.findById(id);
+		return fournisseurSpringDao.findById(id).orElse(null);
 	}
 	
 	public Iterable<Fournisseur> findAll(){
@@ -50,6 +48,11 @@ public class FournisseurService {
 	public List<Fournisseur> findByName(String name) {
 		logger.info("Find fournisseur: {}", name);
 		return fournisseurSpringDao.findByNom(name);
+	}
+	
+	public Fournisseur findByIdWithArticles(Integer id) {
+		logger.info("Find fournisseur: {}", id);
+		return fournisseurSpringDao.findByIdWithArticles(id);
 	}
 
 }

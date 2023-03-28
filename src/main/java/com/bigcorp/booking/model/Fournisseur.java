@@ -10,6 +10,12 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.bigcorp.booking.dto.FournisseurDto;
+
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+
 
 
 @Entity
@@ -19,15 +25,26 @@ public class Fournisseur {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	@Min(0)
 	private Integer numero_fournisseur;
+	@Size(min=1, max=50)
 	private String nom;
+	@Pattern(regexp = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\\\.[A-Za-z0-9-]+)*(\\\\.[A-Za-z]{2,})$", message="Must be an email address")
 	private String email;
+	@Size(min=1, max=255)
 	private String adresse;
 	
 	@OneToMany(mappedBy = "fournisseur")
 	private List<Article> articles = new ArrayList<>();
 	
 	
+	public Fournisseur(FournisseurDto fournisseurDto) {
+
+	}
+	
+	public Fournisseur() {
+		
+	}
 	public List<Article> getArticles() {
 		return articles;
 	}
