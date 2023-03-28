@@ -24,30 +24,95 @@ public class FournisseurSpringTest {
 		@Autowired
 		public FournisseurService fournisseurService;
 		
-		@Test 
+		@Test
 		public void testSave() {
-					
 			Fournisseur fournisseur = new Fournisseur();
 			fournisseur.setNumero_fournisseur(new Random().nextInt(1000));
-			fournisseur.setNom("CMA CGM");
-			fournisseur.setAdresse("23 quai pablo picasso");
-			fournisseur.setEmail("contact@cma-cgm.com");
-			
-			@SuppressWarnings("unused")
+			fournisseur.setNom("Maersk");
+			fournisseur.setAdresse("Copenhagen, Denmark");
+			fournisseur.setEmail("info@maersk.com");
+
+			Fournisseur savedFournisseur = fournisseurService.save(fournisseur);
+
+			Assertions.assertNotNull(savedFournisseur.getId());
+			Assertions.assertEquals(savedFournisseur.getNom(), "Maersk");
+		}
+
+		@Test
+		public void testDelete() {
+			Fournisseur testFournisseur = new Fournisseur();
+			testFournisseur.setNumero_fournisseur(new Random().nextInt(1000));
+			testFournisseur.setNom("CMA CGM");
+			testFournisseur.setAdresse("23 quai pablo picasso");
+			testFournisseur.setEmail("contact@cma-cgm.com");
+			fournisseurService.save(testFournisseur);
+
+			fournisseurService.delete(testFournisseur.getId());
+
+			Fournisseur deletedFournisseur = fournisseurService.findById(testFournisseur.getId());
+
+			Assertions.assertNull(deletedFournisseur);
+		}
+
+		@Test
+		public void testFindById() {
+			Fournisseur testFournisseur = new Fournisseur();
+			testFournisseur.setNumero_fournisseur(new Random().nextInt(1000));
+			testFournisseur.setNom("CMA CGM");
+			testFournisseur.setAdresse("23 quai pablo picasso");
+			testFournisseur.setEmail("contact@cma-cgm.com");
+			fournisseurService.save(testFournisseur);
+
+			Fournisseur foundFournisseur = fournisseurService.findById(testFournisseur.getId());
+
+			Assertions.assertNotNull(foundFournisseur);
+			Assertions.assertEquals(foundFournisseur.getNom(), "CMA CGM");
+		}
+
+		@Test
+		public void testFindAll() {
+			Fournisseur fournisseur = new Fournisseur();
+			fournisseur.setNumero_fournisseur(new Random().nextInt(1000));
+			fournisseur.setNom("Maersk");
+			fournisseur.setAdresse("Copenhagen, Denmark");
+			fournisseur.setEmail("info@maersk.com");
+
 			Fournisseur savedFournisseur = fournisseurService.save(fournisseur);
 			
-			Article article = new Article();
-			article.setNumero_article(new Random().nextInt(1000));
-			article.setNom("Conteneur 20'");
-			article.setDescription("petit conteneur");
-			article.setEtat(Etat.INUTILISABLE);
-			article.setFournisseur(fournisseur);
-			
-			@SuppressWarnings("unused")
-			Article savedArticle = articleService.save(article);
-			List<Article> articles = (List<Article>) articleService.findAll();
-			for (Article a : articles)
-			Assertions.assertEquals(a.getNom(), "Conteneur 20'");
-		}
-}
+			List<Fournisseur> allFournisseurs = (List<Fournisseur>) fournisseurService.findAll();
 
+			Assertions.assertFalse(allFournisseurs.isEmpty());
+		}
+
+		@Test
+		public void testFindByName() {
+		    Fournisseur fournisseur = new Fournisseur();
+		    fournisseur.setNumero_fournisseur(new Random().nextInt(1000));
+		    fournisseur.setNom("Maersk");
+		    fournisseur.setAdresse("Copenhagen, Denmark");
+		    fournisseur.setEmail("info@maersk.com");
+
+		    Fournisseur savedFournisseur = fournisseurService.save(fournisseur);
+
+		    List<Fournisseur> foundFournisseurs = fournisseurService.findByName("Maersk");
+
+		    Assertions.assertFalse(foundFournisseurs.isEmpty());
+		    Assertions.assertEquals(foundFournisseurs.get(0).getAdresse(), "Copenhagen, Denmark");
+		}
+
+//		@Test
+//		public void testFindByIdWithArticles() {
+//			Fournisseur testFournisseur = new Fournisseur();
+//			testFournisseur.setNumero_fournisseur(new Random().nextInt(1000));
+//			testFournisseur.setNom("CMA CGM");
+//			testFournisseur.setAdresse("23 quai pablo picasso");
+//			testFournisseur.setEmail("contact@cma-cgm.com");
+//			fournisseurService.save(testFournisseur);
+//			
+//			Fournisseur foundFournisseur = fournisseurService.findByIdWithArticles(testFournisseur.getId());
+//
+//			Assertions.assertNotNull(foundFournisseur);
+//			Assertions.assertFalse(foundFournisseur.getArticles().isEmpty());
+//		}
+
+	}

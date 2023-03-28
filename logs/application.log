@@ -7530,3 +7530,944 @@ Caused by: org.springframework.data.mapping.PropertyReferenceException: No prope
 3198 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@d978ab9
 3201 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@37fca349
 3228 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+519  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+626  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 94 ms. Found 4 JPA repository interfaces.
+994  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+999  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+1050 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1234 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1423 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1425 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1426 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1426 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1428 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1766 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2373 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@33751d49] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2385 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2fba0dac] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2425 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2751 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2908 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2922 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2937 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2993 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@7c206b14
+3059 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@323efafe
+3073 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@24068086
+3075 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@6f655dbd
+3088 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+509  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+624  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 105 ms. Found 4 JPA repository interfaces.
+947  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+955  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+1006 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1192 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1378 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1380 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1380 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1380 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1383 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1619 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2244 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5b322873] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2257 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4d0e1a9a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2292 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2632 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2799 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2815 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2831 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2876 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5dacf18d
+2940 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@3359c3f6
+2991 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@2cff5aa3
+2996 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@73234691
+2999 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@7b9c2387
+3001 [main] INFO  c.b.booking.service.ClientService - find client: doe
+3034 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@20a946d9
+3036 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3051 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@470c4229
+3054 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@73b8ab2c
+3055 [main] INFO  c.b.booking.service.ClientService - list clients: 
+3062 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@628bd77e
+3064 [main] INFO  c.b.booking.service.ClientService - Delete client: 1
+3080 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3090 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+499  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+604  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 93 ms. Found 4 JPA repository interfaces.
+942  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+948  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+1000 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1182 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1363 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1365 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1366 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1366 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1368 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1614 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2230 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@35e2b89f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2241 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@25218a4d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2270 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2579 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2729 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2743 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2760 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2806 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5dacf18d
+2871 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@3359c3f6
+2916 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@2cff5aa3
+2922 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@73234691
+2924 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@7b9c2387
+2926 [main] INFO  c.b.booking.service.ClientService - find client: doe
+2958 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@20a946d9
+2960 [main] INFO  c.b.booking.service.ClientService - find client: 1
+2979 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@1e57b783
+2982 [main] INFO  c.b.booking.service.ClientService - Delete client: 1
+2997 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3006 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+496  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+609  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 102 ms. Found 4 JPA repository interfaces.
+925  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+933  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+983  [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1165 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1355 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1357 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1357 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1357 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1360 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1591 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2223 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@35e2b89f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2237 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@25218a4d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2271 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2601 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2779 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2796 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2814 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2859 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5dacf18d
+2928 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@3359c3f6
+2969 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@34bf66af
+2977 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5bf7f15f
+2978 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@4f4d05b3
+2980 [main] INFO  c.b.booking.service.ClientService - find client: doe
+3020 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5a1c7619
+3022 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3039 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@6408be5
+3042 [main] INFO  c.b.booking.service.ClientService - Delete client: 1
+3060 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3071 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+499  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+608  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 98 ms. Found 4 JPA repository interfaces.
+966  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+975  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+1024 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1218 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1394 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1396 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1397 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1397 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1399 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1637 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2249 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@35e2b89f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2261 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@25218a4d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2292 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2592 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2775 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2789 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2803 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2853 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5dacf18d
+2927 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@3359c3f6
+2968 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@34bf66af
+2975 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5bf7f15f
+2977 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@4f4d05b3
+2979 [main] INFO  c.b.booking.service.ClientService - find client: doe
+3018 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5a1c7619
+3020 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3040 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@6408be5
+3041 [main] INFO  c.b.booking.service.ClientService - Delete client: 1
+3056 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3066 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+494  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+596  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 90 ms. Found 4 JPA repository interfaces.
+913  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+919  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+975  [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1164 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1365 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1368 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1368 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1368 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1371 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1618 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2251 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@35e2b89f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2266 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@25218a4d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2296 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2656 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2827 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2844 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2860 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2906 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5dacf18d
+2971 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@3359c3f6
+3012 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@34bf66af
+3018 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5bf7f15f
+3020 [main] INFO  c.b.booking.service.ClientService - find client: janette
+3065 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5a1c7619
+3068 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3086 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@1e57b783
+3088 [main] INFO  c.b.booking.service.ClientService - Delete client: 1
+3103 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3113 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+512  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+627  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 103 ms. Found 4 JPA repository interfaces.
+968  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+974  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+1028 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1238 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1455 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1459 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1459 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1459 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1462 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1712 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2343 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@35e2b89f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2357 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@25218a4d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2388 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2703 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2926 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2942 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2960 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+3013 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5dacf18d
+3079 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@3359c3f6
+3129 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@34bf66af
+3134 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5bf7f15f
+3136 [main] INFO  c.b.booking.service.ClientService - find client: janette
+3171 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@1c135f63
+3176 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3196 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@470c4229
+3199 [main] INFO  c.b.booking.service.ClientService - Delete client: 1
+3214 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3224 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+501  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+627  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 115 ms. Found 4 JPA repository interfaces.
+972  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+979  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+1030 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1211 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1403 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1405 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1406 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1406 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1408 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1645 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2250 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@35e2b89f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2262 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@25218a4d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2290 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2582 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2743 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2756 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2771 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2824 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5dacf18d
+2882 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@3359c3f6
+2937 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@34bf66af
+2942 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5bf7f15f
+2944 [main] INFO  c.b.booking.service.ClientService - find client: janette
+2976 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@1c135f63
+2978 [main] INFO  c.b.booking.service.ClientService - find client: 1
+2992 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@470c4229
+2994 [main] INFO  c.b.booking.service.ClientService - Delete client: 1
+3006 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3015 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+481  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+566  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 74 ms. Found 4 JPA repository interfaces.
+899  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+907  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+961  [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1141 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1331 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1334 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1334 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1334 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1337 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1572 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2213 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@35e2b89f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2226 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@25218a4d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2262 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2597 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2774 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2790 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2809 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2867 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5dacf18d
+2934 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@3359c3f6
+2975 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@34bf66af
+2980 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5bf7f15f
+2982 [main] INFO  c.b.booking.service.ClientService - find client: janette
+3021 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5a1c7619
+3023 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3039 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@6408be5
+3042 [main] INFO  c.b.booking.service.ClientService - Delete client: 1
+3063 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3076 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+485  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+590  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 93 ms. Found 4 JPA repository interfaces.
+925  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+931  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+987  [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1178 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1364 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1367 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1367 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1367 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1371 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1604 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2200 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@35e2b89f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2210 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@25218a4d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2237 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2587 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2791 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2806 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2826 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2874 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5dacf18d
+2939 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@3359c3f6
+2975 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@34bf66af
+2981 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5bf7f15f
+2983 [main] INFO  c.b.booking.service.ClientService - find client: janette
+3026 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5a1c7619
+3028 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3043 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@6408be5
+3046 [main] INFO  c.b.booking.service.ClientService - Delete client: 1
+3063 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3074 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+518  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+616  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 87 ms. Found 4 JPA repository interfaces.
+981  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+987  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+1039 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1231 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1414 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1416 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1416 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1416 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1418 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1659 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2272 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@35e2b89f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2286 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@25218a4d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2315 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2666 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2828 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2842 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2860 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2904 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5dacf18d
+2980 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@3359c3f6
+3021 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@34bf66af
+3025 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5bf7f15f
+3027 [main] INFO  c.b.booking.service.ClientService - find client: janette
+3061 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@1c135f63
+3063 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3082 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@470c4229
+3084 [main] INFO  c.b.booking.service.ClientService - Delete client: 1
+3097 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3107 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+507  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+619  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 99 ms. Found 4 JPA repository interfaces.
+972  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+979  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+1039 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1230 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1426 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1428 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1429 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1429 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1431 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1681 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2311 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@35e2b89f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2323 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@25218a4d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2357 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2699 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2887 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2904 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2920 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2966 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5dacf18d
+3037 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@3359c3f6
+3078 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@34bf66af
+3084 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5bf7f15f
+3087 [main] INFO  c.b.booking.service.ClientService - find client: janette
+3121 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@1c135f63
+3123 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3142 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@470c4229
+3144 [main] INFO  c.b.booking.service.ClientService - Delete client: 1
+3162 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3174 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+518  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+623  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 93 ms. Found 4 JPA repository interfaces.
+976  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+981  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+1030 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1214 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1416 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1418 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1420 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1420 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1423 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1672 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2298 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@35e2b89f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2312 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@25218a4d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2344 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2688 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2861 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2874 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2890 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2937 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5dacf18d
+2997 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@3359c3f6
+3036 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@34bf66af
+3040 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5bf7f15f
+3042 [main] INFO  c.b.booking.service.ClientService - find client: janette
+3074 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@1c135f63
+3076 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3096 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@470c4229
+3097 [main] INFO  c.b.booking.service.ClientService - Delete client: 1
+3112 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3123 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+486  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+613  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 116 ms. Found 4 JPA repository interfaces.
+938  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+944  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+987  [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1173 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1356 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1358 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1358 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1359 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1361 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1598 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2209 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@35e2b89f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2219 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@25218a4d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2248 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2533 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2691 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2705 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2721 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2768 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5dacf18d
+2830 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@3359c3f6
+2866 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@34bf66af
+2870 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5bf7f15f
+2872 [main] INFO  c.b.booking.service.ClientService - find client: janette
+2910 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5a1c7619
+2911 [main] INFO  c.b.booking.service.ClientService - find client: 1
+2928 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@6408be5
+2931 [main] INFO  c.b.booking.service.ClientService - Delete client: 1
+2943 [main] INFO  c.b.booking.service.ClientService - find client: 1
+2953 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+489  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+605  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 103 ms. Found 4 JPA repository interfaces.
+952  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+958  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+1007 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1191 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1384 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1389 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1389 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1389 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1392 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1621 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2216 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@35e2b89f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2227 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@25218a4d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2256 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2565 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2726 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2739 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2757 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2800 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5dacf18d
+2866 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@3359c3f6
+2911 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@34bf66af
+2917 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5bf7f15f
+2918 [main] INFO  c.b.booking.service.ClientService - find client: robert
+2949 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@5dce5c03
+2950 [main] INFO  c.b.booking.service.ClientService - find client: 1
+2974 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@26d7cb0d
+2975 [main] INFO  c.b.booking.service.ClientService - Delete client: 1
+2992 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3004 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+493  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+615  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 111 ms. Found 4 JPA repository interfaces.
+929  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+934  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+985  [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1185 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1368 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1372 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1372 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1372 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1375 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1619 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2250 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@35e2b89f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2262 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@25218a4d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2289 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2586 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2740 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2755 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2771 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2816 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@6f52a229
+2880 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@45b27ad3
+2918 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@3dec79f8
+2923 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@11309dd4
+2925 [main] INFO  c.b.booking.service.ClientService - find client: robert
+2957 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@1c135f63
+2960 [main] INFO  c.b.booking.service.ClientService - find client: 1
+2986 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@470c4229
+2989 [main] INFO  c.b.booking.service.ClientService - Delete client: 1
+3009 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3021 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+510  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+609  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 88 ms. Found 4 JPA repository interfaces.
+940  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+946  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+996  [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1192 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1369 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1371 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1372 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1372 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1374 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1655 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2353 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7ad889be] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2364 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@bf2aa32] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2396 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2693 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2889 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2903 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2921 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2976 [main] INFO  c.b.b.service.FournisseurService - list fournisseurs: 
+3069 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@35a9e665
+3126 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: CMA CGM
+3166 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@23e9dd78
+3169 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: 2
+3201 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@2b62475a
+3203 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: 3
+3219 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@2e8986b6
+3221 [main] INFO  c.b.b.service.FournisseurService - Delete fournisseur: 4
+3238 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: 4
+3250 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+489  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+583  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 83 ms. Found 4 JPA repository interfaces.
+888  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+895  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+943  [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1155 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1340 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1343 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1344 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1344 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1346 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1582 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2238 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7ad889be] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2252 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@bf2aa32] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2284 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2630 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2785 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2799 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2815 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2864 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@1c3d9e28
+2941 [main] INFO  c.b.b.service.FournisseurService - list fournisseurs: 
+2983 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@5fb514c2
+2989 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: CMA CGM
+3031 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@1dbc607d
+3033 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: 3
+3057 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@4c8abec7
+3059 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: 4
+3070 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@651cedfb
+3072 [main] INFO  c.b.b.service.FournisseurService - Delete fournisseur: 5
+3088 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: 5
+3098 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+494  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+600  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 93 ms. Found 4 JPA repository interfaces.
+931  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+937  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+986  [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1167 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1346 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1348 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1348 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1348 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1352 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1597 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2216 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7ad889be] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2229 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@bf2aa32] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2264 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2600 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2806 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2821 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2838 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2887 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@1c3d9e28
+2954 [main] INFO  c.b.b.service.FournisseurService - list fournisseurs: 
+2993 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@2474df51
+2998 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@2419fe6f
+3001 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: CMA CGM
+3039 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@a0e33db
+3040 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: 4
+3063 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@f36f34d
+3065 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: 5
+3081 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@18d22ecf
+3082 [main] INFO  c.b.b.service.FournisseurService - Delete fournisseur: 6
+3098 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: 6
+3109 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+505  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+614  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 98 ms. Found 4 JPA repository interfaces.
+917  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+924  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+973  [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1164 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1362 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1365 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1365 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1365 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1368 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1605 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2213 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7ad889be] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2225 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@bf2aa32] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2251 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2566 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2730 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2744 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2761 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2809 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@1c3d9e28
+2882 [main] INFO  c.b.b.service.FournisseurService - list fournisseurs: 
+2925 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@5fb514c2
+2931 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@398694a6
+2933 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: Maersk
+2970 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@549d14fe
+2972 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: 4
+3000 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@60e67c06
+3001 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: 5
+3015 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@67a38
+3016 [main] INFO  c.b.b.service.FournisseurService - Delete fournisseur: 6
+3032 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: 6
+3054 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+488  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+602  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 96 ms. Found 4 JPA repository interfaces.
+916  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+924  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+978  [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1178 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1357 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1358 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1359 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1359 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1362 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1603 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2299 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@77ccded4] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2312 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@57e4b86c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2342 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2640 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2809 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2822 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2838 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2881 [main] INFO  c.b.b.service.FournisseurService - Save utilisateur: com.bigcorp.booking.model.Utilisateur@6f65aa58
+2997 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@3c97f5e9
+3014 [main] INFO  c.b.b.service.FournisseurService - list fournisseurs: 
+3023 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@86377d5
+3029 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@5dd3727c
+3031 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: Maersk
+3066 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@b267745
+3068 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: 4
+3086 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@1ab9c735
+3088 [main] INFO  c.b.b.service.FournisseurService - Delete fournisseur: 5
+3105 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: 5
+3114 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@4a5b38e6
+3116 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@2d172c7
+3129 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@775edae0
+3133 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@7747cc1b
+3134 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3143 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@688d2a5d
+3145 [main] INFO  c.b.booking.service.ClientService - Delete client: 1
+3150 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3157 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@4f6ff62
+3160 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@70840a5a
+3166 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@6e9f8160
+3168 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@407b41e6
+3180 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+490  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+610  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 108 ms. Found 4 JPA repository interfaces.
+930  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+937  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+982  [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1168 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1339 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1341 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1341 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1341 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1344 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1584 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2197 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@70d3cdbf] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2210 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7cb29ea8] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2240 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2537 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2720 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2736 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2753 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2796 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@432a6a69
+2862 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@3d3b272a
+2909 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@37364634
+2914 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@14b26e90
+2916 [main] INFO  c.b.booking.service.ClientService - Delete client: 1
+2940 [main] INFO  c.b.booking.service.ClientService - find client: 1
+2953 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+455  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+574  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 99 ms. Found 4 JPA repository interfaces.
+871  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+877  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+933  [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1134 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1315 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1318 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1318 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1318 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1321 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1564 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2192 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3302035b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2205 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@38089dae] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2231 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2528 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2695 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2709 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2726 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2771 [main] INFO  c.b.b.service.FournisseurService - Save utilisateur: com.bigcorp.booking.model.Utilisateur@42dd7d82
+2875 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@22a63740
+2892 [main] INFO  c.b.b.service.FournisseurService - list fournisseurs: 
+2900 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@252d8df6
+2906 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@76e9eed8
+2908 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: Maersk
+2939 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@2ebf524
+2942 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: 4
+2961 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@464a3430
+2963 [main] INFO  c.b.b.service.FournisseurService - Delete fournisseur: 5
+2977 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: 5
+2986 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@3e8afc2d
+2990 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@8ce3f27
+3002 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@2567c091
+3007 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@74bfdd66
+3008 [main] INFO  c.b.booking.service.ClientService - Delete client: 1
+3012 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3020 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@1e7d3d87
+3022 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@5c5f12e
+3029 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@1e3566e
+3032 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@f01fc6d
+3043 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+486  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+575  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 76 ms. Found 4 JPA repository interfaces.
+902  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+910  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+964  [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1158 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1347 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1349 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1351 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1351 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1354 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1591 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2208 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@72a7aa4f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2220 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@b5c902] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2248 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2588 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2740 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2753 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2770 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2816 [main] INFO  c.b.b.service.FournisseurService - Save utilisateur: com.bigcorp.booking.model.Utilisateur@432a6a69
+2872 [main] INFO  c.b.b.service.FournisseurService - Save utilisateur: com.bigcorp.booking.model.Utilisateur@3d3b272a
+2903 [main] INFO  c.b.b.service.FournisseurService - Save utilisateur: com.bigcorp.booking.model.Utilisateur@2bd4780c
+2905 [main] INFO  c.b.b.service.FournisseurService - Delete utilisateur: 3
+2929 [main] INFO  c.b.b.service.FournisseurService - Find utilisateur: 3
+2936 [main] INFO  c.b.b.service.FournisseurService - Save utilisateur: com.bigcorp.booking.model.Utilisateur@86377d5
+2938 [main] INFO  c.b.b.service.FournisseurService - Find utilisateur: 4
+2951 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+474  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+580  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 91 ms. Found 4 JPA repository interfaces.
+869  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+874  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+928  [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1104 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1276 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1278 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1279 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1279 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1281 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1534 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2132 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@21733cbe] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2140 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4adf3582] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2164 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2452 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2628 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2643 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2658 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2714 [main] INFO  c.b.b.service.FournisseurService - Save utilisateur: com.bigcorp.booking.model.Utilisateur@45dc7be
+2785 [main] INFO  c.b.b.service.FournisseurService - Save utilisateur: com.bigcorp.booking.model.Utilisateur@55682482
+2830 [main] INFO  c.b.b.service.FournisseurService - Save utilisateur: com.bigcorp.booking.model.Utilisateur@69bca406
+2832 [main] INFO  c.b.b.service.FournisseurService - Delete utilisateur: 3
+2859 [main] INFO  c.b.b.service.FournisseurService - Find utilisateur: 3
+2867 [main] INFO  c.b.b.service.FournisseurService - Save utilisateur: com.bigcorp.booking.model.Utilisateur@1feb586d
+2869 [main] INFO  c.b.b.service.FournisseurService - Find utilisateur: 4
+2882 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@63d0e8d
+2895 [main] INFO  c.b.b.service.FournisseurService - list fournisseurs: 
+2903 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@39ae6408
+2908 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@3c2dda7c
+2910 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: Maersk
+2948 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@1b5af65b
+2950 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: 4
+2956 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@58583a2d
+2958 [main] INFO  c.b.b.service.FournisseurService - Delete fournisseur: 5
+2964 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: 5
+2971 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@1e9d7366
+2974 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@417446d9
+2982 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@1e3566e
+2988 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@14ca88bc
+2990 [main] INFO  c.b.booking.service.ClientService - Delete client: 1
+2994 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3001 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@2507a170
+3003 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@1c62d2ad
+3010 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@70840a5a
+3012 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@3e998033
+3023 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+481  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+564  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 70 ms. Found 4 JPA repository interfaces.
+885  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+892  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+937  [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1121 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1298 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1300 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1301 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1301 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1303 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1545 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2159 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@26bb92e2] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2171 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@426710f0] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2202 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2544 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2714 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2730 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2750 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2798 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@49bb808f
+2868 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@4ffa078d
+2872 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@5627b8eb
+2918 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@3c3cd13a
+2919 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@5b59c3d
+2922 [main] INFO  c.b.b.service.FournisseurService - Delete article: 3
+2938 [main] INFO  c.b.b.service.FournisseurService - Find article: 3
+2943 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@52eca410
+2946 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@2aafa84f
+2953 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@153c6603
+2955 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@13aa54f1
+2957 [main] INFO  c.b.b.service.FournisseurService - Find article: 5
+2972 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+500  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+594  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 82 ms. Found 4 JPA repository interfaces.
+893  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+898  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+946  [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1131 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1315 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1317 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1318 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1318 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1321 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1564 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2178 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@26bb92e2] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2189 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@426710f0] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2219 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2507 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2672 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2688 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2703 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2753 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@49bb808f
+2831 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@4ffa078d
+2834 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@5627b8eb
+2885 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@3c3cd13a
+2887 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@5b59c3d
+2889 [main] INFO  c.b.b.service.FournisseurService - Delete article: 3
+2912 [main] INFO  c.b.b.service.FournisseurService - Find article: 3
+2917 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@52eca410
+2919 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@2aafa84f
+2926 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@153c6603
+2928 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@13aa54f1
+2930 [main] INFO  c.b.b.service.FournisseurService - Find article: 5
+2949 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+483  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+583  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 88 ms. Found 4 JPA repository interfaces.
+882  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+888  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+943  [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1143 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1327 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1330 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1330 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1331 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1333 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1569 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2171 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@26bb92e2] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2182 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@426710f0] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2208 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2519 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2675 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2690 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2707 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2764 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@49bb808f
+2834 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@4ffa078d
+2836 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@5627b8eb
+2882 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@3c3cd13a
+2884 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@5b59c3d
+2886 [main] INFO  c.b.b.service.FournisseurService - Delete article: 3
+2903 [main] INFO  c.b.b.service.FournisseurService - Find article: 3
+2908 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@52eca410
+2909 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@2aafa84f
+2916 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@153c6603
+2917 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@13aa54f1
+2919 [main] INFO  c.b.b.service.FournisseurService - Find article: 5
+2933 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+489  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+603  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 99 ms. Found 4 JPA repository interfaces.
+921  [main] WARN  o.h.j.b.i.PersistenceXmlParser - HHH015018: Encountered multiple persistence-unit stanzas defining same name [persistence-unit]; persistence-unit names must be unique
+929  [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: persistence-unit]
+982  [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+1160 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+1331 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+1333 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
+1334 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=test}
+1334 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+1336 [main] INFO  o.h.e.j.c.i.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+1578 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2200 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@83b0d0f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2211 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@25ae1f80] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2241 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2543 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ArticleSpringDao
+2713 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.FournisseurSpringDao
+2726 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.ClientSpringDao
+2741 [main] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.bigcorp.booking.dao.spring.UtilisateurSpringDao
+2783 [main] INFO  c.b.b.service.FournisseurService - Save utilisateur: com.bigcorp.booking.model.Utilisateur@6ceb11f9
+2840 [main] INFO  c.b.b.service.FournisseurService - Save utilisateur: com.bigcorp.booking.model.Utilisateur@799fb45e
+2879 [main] INFO  c.b.b.service.FournisseurService - Save utilisateur: com.bigcorp.booking.model.Utilisateur@4654e373
+2882 [main] INFO  c.b.b.service.FournisseurService - Delete utilisateur: 3
+2902 [main] INFO  c.b.b.service.FournisseurService - Find utilisateur: 3
+2909 [main] INFO  c.b.b.service.FournisseurService - Save utilisateur: com.bigcorp.booking.model.Utilisateur@2299f6d7
+2911 [main] INFO  c.b.b.service.FournisseurService - Find utilisateur: 4
+2922 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@448892f1
+2937 [main] INFO  c.b.b.service.FournisseurService - list fournisseurs: 
+2945 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@f36f34d
+2950 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@60e67c06
+2952 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: Maersk
+2981 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@38c55a8a
+2985 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: 4
+2991 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@8ce3f27
+2993 [main] INFO  c.b.b.service.FournisseurService - Delete fournisseur: 5
+2998 [main] INFO  c.b.b.service.FournisseurService - Find fournisseur: 5
+3006 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@34070bd2
+3010 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@7e76a66f
+3018 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@f01fc6d
+3023 [main] INFO  c.b.booking.service.ClientService - Saving client: com.bigcorp.booking.model.Client@2842c098
+3025 [main] INFO  c.b.booking.service.ClientService - Delete client: 1
+3029 [main] INFO  c.b.booking.service.ClientService - find client: 1
+3036 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@1c62d2ad
+3039 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@7af9595d
+3043 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@3e998033
+3053 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@3dea1ecc
+3055 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@65a4b9d6
+3057 [main] INFO  c.b.b.service.FournisseurService - Delete article: 3
+3063 [main] INFO  c.b.b.service.FournisseurService - Find article: 3
+3069 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@1280bae3
+3071 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@45790cb
+3077 [main] INFO  c.b.b.service.FournisseurService - Save fournisseur: com.bigcorp.booking.model.Fournisseur@4780341
+3079 [main] INFO  c.b.b.service.FournisseurService - Save article: com.bigcorp.booking.model.Article@4dd4965a
+3080 [main] INFO  c.b.b.service.FournisseurService - Find article: 5
+3093 [SpringContextShutdownHook] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa]
