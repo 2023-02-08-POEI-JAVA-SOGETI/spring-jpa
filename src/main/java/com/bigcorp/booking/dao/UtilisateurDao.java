@@ -22,3 +22,9 @@ public class UtilisateurDao extends AbstractDao<Utilisateur>{
 	}
 
 }
+import com.bigcorp.booking.model.Utilisateur;
+
+public class UtilisateurDao extends AbstractDao<Utilisateur>{
+
+}
+>>>>>>> d1663f37c38975a3267ea5eabf24ce1f1d1ce8a7

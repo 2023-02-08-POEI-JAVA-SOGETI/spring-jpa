@@ -1,4 +1,4 @@
-package com.bigcorp.booking.spring;
+package com.restaurant.spring;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -16,7 +16,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 //Active les Repositories JPA trouvés
 //dans le package fourni en paramètre
-@EnableJpaRepositories("com.bigcorp.booking.dao.spring")
+@EnableJpaRepositories("com.restaurant.dao")
 
 //Scanne les composants trouvés dans le
 //package fourni en paramètre

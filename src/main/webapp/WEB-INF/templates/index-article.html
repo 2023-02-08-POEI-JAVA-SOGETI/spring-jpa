@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Articles Index</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<div class='container'>
+		<div class='row mt-5'>
+			<div class='col'>
+				<a class="btn btn-secondary" href="/spring-jpa/fournisseurs">Interface fournisseurs</a>
+				<a class="btn btn-secondary" href="/spring-jpa/clients">Interface clients</a>
+				<a class="btn btn-secondary" href="/spring-jpa/utilisateurs">Interface utilisateurs</a>
+			</div>
+		</div>
+		<div class='row mt-5'>
+			<div class='col'>
+				<h1>Liste des articles</h1>
+			</div>
+		</div>
+		<div class='row my-5'>
+			<div class='col'>
+				<a class="btn btn-success" th:href="@{/article/new}">Nouvel article</a>
+			</div>
+		</div>
+		<div class='row'>
+			<div class='col'>
+				<table class="table table-striped table-bordered">
+				  <thead>
+				    <tr>
+				      <th scope="col">ID</th>
+				      <th scope="col">Nom</th>
+				      <th scope="col">Description</th>
+				      <th scope="col">Numéro d'article</th>
+				      <th scope="col">Modifier</th>
+				      <th scope="col">Supprimer</th>
+				    </tr>
+				  </thead>
+				  <tbody th:if="${!isArticlesListEmpty}">
+				    <tr th:each="article : ${listArticles}">
+				      <td><a th:href="@{/article/{id}(id=${article.id})}" th:text="${article.id}"></a></td>
+				      <td><a th:href="@{/article/{id}(id=${article.id})}" th:text="${article.nom}"></a></td>
+				      <td><a th:href="@{/article/{id}(id=${article.id})}" th:text="${article.description}"></a></td>
+				      <td><a th:href="@{/article/{id}(id=${article.id})}" th:text="${article.numero_article}"></a></td>
+				      <td><a class='btn btn-primary' th:href="@{/article/{id}/edit(id=${article.id})}">Modifier</a></td>
+				      <td>
+				      	<form method="POST" th:action="@{/article/{id}/delete(id=${article.id})}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?');">
+    						<button type="submit" class="btn btn-danger">Supprimer</button>
+						</form>
+					  </td>
+				    </tr>
+				  </tbody>
+				  <tbody th:if="${isArticlesListEmpty}">
+				    <tr>
+				      <td colspan="7"><div class="alert alert-danger" role="alert">Il n'y a pas d'articles pour le moment, veuillez en ajouter depuis votre interface !</div></td>
+				    </tr>
+				  </tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
