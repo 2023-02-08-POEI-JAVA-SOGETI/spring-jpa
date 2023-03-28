@@ -63,6 +63,10 @@ public class ArticleService {
 		this.articleDao.deleteById(id);
 	}
 
+	public boolean existsById(Integer id) {
+		return this.articleDao.existsById(id);
+	}
+
 	/**
 	 * Récupère Article par son id, ou null
 	 * si aucune ligne ne correspond en base.

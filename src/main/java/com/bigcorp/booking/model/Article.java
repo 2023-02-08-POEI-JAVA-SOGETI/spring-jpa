@@ -1,5 +1,6 @@
 package com.bigcorp.booking.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -18,18 +19,21 @@ public class Article {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	
+	@Column(name = "num_article")
 	private Integer numero;
 	private String nom;
 	private String description;
-
+	
 	@Enumerated(EnumType.STRING)
+	@Column(name = "type")
 	private TypeArticle typeArticle;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "FOURNISSEUR_ID")
 	private Fournisseur fournisseur;
 
-	public Article(Integer numero,String nom, String description, TypeArticle typeArticle) {
+	public Article(Integer numero, String nom, String description, TypeArticle typeArticle) {
 		super();
 		this.numero = numero;
 		this.nom = nom;
