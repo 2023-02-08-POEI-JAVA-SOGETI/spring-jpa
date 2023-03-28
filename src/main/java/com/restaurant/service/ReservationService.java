@@ -16,7 +16,7 @@ import com.restaurant.model.Restaurant;
 public class ReservationService {
 	
 	@Autowired
-	private ReservationDaoSpring reservationDaoSpring;
+	private ReservationDao reservationDaoSpring;
 	@Autowired
 	private RestaurantDao restaurantDaoSpring;
 	
@@ -59,4 +59,5 @@ public class ReservationService {
 		reservation.setRestaurant(restaurant);
         return reservationDaoSpring.save(reservation);
 	}	
+
 }
