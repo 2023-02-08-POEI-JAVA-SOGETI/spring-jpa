@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.restaurant.model.Reservation;
 
 @Repository
-public interface ReservationDaoSpring extends CrudRepository<Reservation, Integer> {
+public interface ReservationDao extends CrudRepository<Reservation, Integer> {
 
 	
 
