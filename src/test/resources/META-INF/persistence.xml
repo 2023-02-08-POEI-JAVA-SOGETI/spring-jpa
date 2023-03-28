@@ -8,6 +8,9 @@
     	<class>com.bigcorp.booking.model.Client</class>
     	<class>com.bigcorp.booking.model.Fournisseur</class>
     	<class>com.bigcorp.booking.model.Utilisateur</class>
+    	<class>com.bigcorp.booking.model.Restaurant</class>
+    	<class>com.bigcorp.booking.model.Reservation</class>
+    	<class>com.bigcorp.booking.model.TypeRestaurant</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:h2:file:C:/dev/h2-data/formation-spring-jpa" />

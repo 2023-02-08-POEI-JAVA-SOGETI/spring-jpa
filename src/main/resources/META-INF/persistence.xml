@@ -8,16 +8,18 @@
     	<class>com.bigcorp.booking.model.Article</class>
     	<class>com.bigcorp.booking.model.Client</class>
     	<class>com.bigcorp.booking.model.Fournisseur</class>
-    	<class>com.bigcorp.booking.model.Utilisateur</class>
+    	<class>com.bigcorp.booking.model.Restaurant</class>
+    	<class>com.bigcorp.booking.model.Reservation</class>
+    	<class>com.bigcorp.booking.model.TypeRestaurant</class>
         <properties>
 
             <!--<property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />-->
             
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/formation" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/poei" />
             <!--property name="javax.persistence.jdbc.url" value="jdbc:h2:file:~/java-dev/h2-data/sample" /-->
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
-            <property name="javax.persistence.jdbc.user" value="admin" />
-            <property name="javax.persistence.jdbc.password" value="admin" />
+            <property name="javax.persistence.jdbc.user" value="root" />
+            <property name="javax.persistence.jdbc.password" value="root" />
             <!--<property name="javax.persistence.schema-generation.database.action" value="update" />-->
             <!--<property name="javax.persistence.schema-generation.sql-load-script-source" value="sql/create-script.sql" />-->
 
