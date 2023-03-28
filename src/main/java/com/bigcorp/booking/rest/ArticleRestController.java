@@ -1,5 +1,6 @@
 package com.bigcorp.booking.rest;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -75,19 +76,25 @@ public class ArticleRestController {
 		articleRestDto.remplisArticle(article);
 		//Sauvegarder l'entité
 		article = articleService.save(article);
-		
+		//Attacher l'entité au fournisseur
+		articleService.persistArticleWithFournisseur(article.getId(), articleRestDto.getFournisseurId());
 		//Transmettre en réponse le DTO
 		return new ArticleRestDto(article);
 	}
 	
-//	@GetMapping
-//	public List<ArticleRestDto> findAll() {
-//		LOGGER.info("Appel méthode findAll() de ArticleRestController.java <=> request HTTP GET sur tous les articles");
-//		List<Article> articles = articleService.findAll();
-//		if(articles == null) {
-//			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Aucun article trouvé avec l'id : " + articleId);
-//		}
-//		MANQUE BOUCLE SUR ARTICLES TROUVES POUR 
-//		return new ArticleRestDto(article);
-//	}
+	@GetMapping
+	public List<ArticleRestDto> findAll() {
+		LOGGER.info("Appel méthode findAll() de ArticleRestController.java <=> request HTTP GET sur tous les articles");
+		List<Article> articles = (List<Article>) articleService.findAll();
+		if(articles == null) {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Aucun article trouvé avec l'id");
+		}
+		List<ArticleRestDto> articlesDto = new ArrayList<>();
+		for(Article art : articles) {
+			ArticleRestDto article = new ArticleRestDto(art);
+			articlesDto.add(article);
+		}
+
+		return articlesDto;
+	}
 }

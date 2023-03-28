@@ -1,6 +1,7 @@
 package com.bigcorp.booking.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,7 +10,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bigcorp.booking.dao.spring.ArticleSpringDao;
+import com.bigcorp.booking.dao.spring.FournisseurSpringDao;
 import com.bigcorp.booking.model.Article;
+import com.bigcorp.booking.model.Fournisseur;
 
 @Service
 public class ArticleService {
@@ -18,6 +21,10 @@ public class ArticleService {
 
 	@Autowired
 	private ArticleSpringDao articleSpringDao;
+	
+	@Autowired
+	private FournisseurSpringDao fournisseurSpringDao;
+	
 	
 	/**
 	 * Sauvegarde example
@@ -66,18 +73,6 @@ public class ArticleService {
 		return this.articleSpringDao.findAll();
 	}
 	
-	
-	/**
-	 * Récupère des articles selon leur état.
-	 * La liste des articles est triée par nom.
-	 * @param etat
-	 * @return la liste des articles triée par nom
-	 */
-//	public List<Article> findByEtat(EtatArticle etat) {
-//		LOGGER.info("Récupération des articles avec l'état: {}" , etat);
-//		return this.articleSpringDao.findByEtatArticleOrderByNom(etat);
-//	}
-	
 
 	//doit être persisté en base. Si l'identifiant d'article est null : 
 	//une exception est lancée. Si l'identifiant du fournisseur est null,
@@ -95,29 +90,21 @@ public class ArticleService {
 	 * @throws IllegalArgumentException si articleId est null
 	 * @throws NoSuchElementException si articleId ne correspond à rien en base de données
 	 */
-//	public Article attache(Integer articleId, Integer fournisseurId) {
-//		LOGGER.info("Rattachement de l'article : {} avec le fournisseur : {} " , articleId, fournisseurId);
-//		if(articleId == null) {
-//			throw new IllegalArgumentException("articleId ne peut être null");
-//		}
-//		Optional<Article> optionalArticle = this.articleSpringDao.findById(articleId);
-//		Article article = optionalArticle.orElse(null);
-//		
-//		Fournisseur fournisseur = null;
-//		if(fournisseurId != null) {
-//			fournisseur = fournisseurSpringDao.findById(fournisseurId).orElse(null);			
-//		}
-//		article.setFournisseur(fournisseur);
-//		
-//		return this.articleSpringDao.save(article);
-//		
-//	}
-	
-	
-	//METHODE BONUS A COMPLETERE
-//	public Article persistArticleWithFournisseur(Integer idArticle, Integer idFournisseur) {	
-//		return Article ;
-//	}
-	
-	
+	public Article persistArticleWithFournisseur(Integer articleId, Integer fournisseurId) {
+		LOGGER.info("Rattachement de l'article : {} avec le fournisseur : {} " , articleId, fournisseurId);
+		if(articleId == null) {
+			throw new IllegalArgumentException("articleId ne peut être null");
+		}
+		Optional<Article> optionalArticle = this.articleSpringDao.findById(articleId);
+		Article article = optionalArticle.orElse(null);
+		
+		Fournisseur fournisseur = null;
+		if(fournisseurId != null) {
+			fournisseur = fournisseurSpringDao.findById(fournisseurId).orElse(null);			
+		}
+		article.setFournisseur(fournisseur);
+		
+		return this.articleSpringDao.save(article);
+	}
+
 }

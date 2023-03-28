@@ -19,7 +19,7 @@ public class FournisseurServiceTest {
 		Fournisseur fournisseur = new Fournisseur("Fournisseur d'écrans", 46, "fournisseur@ecrans.com", "EcransStreet EcranVille");
 		fournisseurService.save(fournisseur);
 		
-		Assertions.assertNotNull(fournisseur);
+		Assertions.assertNotNull(fournisseurService.findById(fournisseur.getId()));
 	}
 	
 	@Test

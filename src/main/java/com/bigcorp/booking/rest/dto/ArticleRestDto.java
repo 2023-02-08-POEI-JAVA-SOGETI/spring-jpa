@@ -11,14 +11,8 @@ public class ArticleRestDto {
 	private String description;
 	private TypeArticle type;
 	
-	public TypeArticle getType() {
-		return type;
-	}
-
-	public void setType(TypeArticle type) {
-		this.type = type;
-	}
-
+	private Integer fournisseurId;
+	
 	public ArticleRestDto() {
 		
 	}
@@ -29,6 +23,9 @@ public class ArticleRestDto {
 		this.nom = article.getNom();
 		this.description = article.getDescription();
 		this.type = article.getType();
+		if(article.getFournisseur() != null) {
+			this.fournisseurId = article.getFournisseur().getId();
+		}
 	}
 
 	public Integer getId() {
@@ -63,6 +60,22 @@ public class ArticleRestDto {
 		this.description = description;
 	}
 
+	public TypeArticle getType() {
+		return type;
+	}
+
+	public void setType(TypeArticle type) {
+		this.type = type;
+	}
+	
+	public Integer getFournisseurId() {
+		return fournisseurId;
+	}
+
+	public void setFournisseurId(Integer fournisseurId) {
+		this.fournisseurId = fournisseurId;
+	}
+	
 	public Article remplisArticle(Article articleLu) {
 		articleLu.setId(this.id);
 		articleLu.setNumArticle(this.numArticle);
