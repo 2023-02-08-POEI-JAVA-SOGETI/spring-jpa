@@ -10,9 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
-
 @Entity
 @Table(name="fournisseurs")
 public class Fournisseur { 
@@ -20,15 +17,9 @@ public class Fournisseur {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
 	private Integer numero;
-	
-	@NotEmpty
 	private String nom;
-	
-	@Email
 	private String email;
-	
 	private String adresse;
 	
 	@OneToMany(mappedBy="fournisseur")
@@ -78,7 +69,11 @@ public class Fournisseur {
 	}
 
 	public Set<Article> getArticles() {
-		return this.articles;
+		return articles;
+	}
+
+	public void setArticles(Set<Article> articles) {
+		this.articles = articles;
 	}
 
 	public Set<Client> getClients() {

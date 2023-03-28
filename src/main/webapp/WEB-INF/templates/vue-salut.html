@@ -2,33 +2,12 @@
 
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head>
-<title>Ma première page Thymeleaf !</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
+  <head>
+    <title>Ma première page Thymeleaf !</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
 
-<body>
- <h1 th:text="${vraiTexte}">Salut les gens</h1>
- <p>La liste des invités !
- <ul>
-  <li th:each="invite : ${invites}" th:text="${invite.nom}">Jean-Jacques</li>
- </ul>
- <h2>hyperliens</h2>
- <ul>
-  <li th:each="invite : ${invites}">
-   <a href="invite.html" th:href="@{/invites(id=${invite.id})}">
-    Lien vers l'invité
-    <span th:text="${invite.nom}">nom</span>
-    avec paramètre de requête
-   </a>
-   <br />
-   <a href="invite.html" th:href="@{/invites/{inviteId}(inviteId=${invite.id})}">
-    Lien vers l'invité
-    <span th:text="${invite.nom}">nom</span>
-    avec paramètre d'URL
-   </a>
-  </li>
- </ul>
-
-</body>
+  <body>
+    <h1>Salut les gens</h1>
+  </body>
 </html>
