@@ -4,6 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,6 +25,7 @@ public class Restaurant {
 	private String nom;
 	private String adresse;
 	
+	@Enumerated(EnumType.STRING)
 	private PrixRestaurant prix;
 	
 	@OneToMany(mappedBy = "restaurant")
