@@ -23,7 +23,7 @@ import com.bigcorp.booking.service.PlanetesSingleton;
  * MVC pour traiter des requêtes.
  */
 @Controller
-public class MonQuatriemeControleur {
+public class ControleurFilms {
     
 
 	@ModelAttribute("caRoule")
@@ -44,7 +44,7 @@ public class MonQuatriemeControleur {
 	 */    
    
     @ModelAttribute("listeHerosDisney")    
-    public List<HerosFilms> herosDisney() {
+    public List<HerosFilms> herosFilm() {
         List<HerosFilms> liste = new ArrayList<>();
         int id = 1;
         String[] noms = { "Kuzco", "Simba", "Aurore", "Merida", "Megara", "Quasimodo", "Mirabel", "Tarzan" };
@@ -111,12 +111,12 @@ public class MonQuatriemeControleur {
     	public ModelAndView processSubmit(@Validated @ModelAttribute("herosD") HerosFilms herosD, 
     			BindingResult result) {
     		if(result.hasErrors()) {
-    			return new ModelAndView("vue-herosdisney", "heros", herosD);
+    			return new ModelAndView("vue-herosfilm", "heros", herosD);
     		}
 	
-    		String view = "vue-herosdisney";
+    		String view = "vue-herosfilm";
     			if(herosD != null && herosD.getId() != null) {
-    				view = "redirect:/herosdisney/" + herosD.getId();
+    				view = "redirect:/herosfilm/" + herosD.getId();
     		}
 
     		ModelAndView mav = new ModelAndView(view);

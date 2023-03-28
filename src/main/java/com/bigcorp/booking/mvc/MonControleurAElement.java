@@ -1,7 +1,10 @@
 package com.bigcorp.booking.mvc;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.bigcorp.booking.model.Disney;
 
 /**
  * Annotée par @Controller, cette 
@@ -9,8 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * MVC pour traiter des requêtes.
  */
 @Controller
-public class MonPremierControleur {
-    
+public class MonControleurAElement {
     
     /**
      * Intercepte les requêtes /salut , effectue
@@ -18,11 +20,14 @@ public class MonPremierControleur {
      * renvoie vers la vue salut.
      * @return
      */
-    @RequestMapping("/salut")
-    public String showSayHello() {
-    	System.out.println("Le contrôleur de salut agit ! ");
-        return "vue-salut";
+    @RequestMapping("/disney")
+    public String afficherDisney(Model model) {
+        Disney laBelleAuBoisDormant = new Disney();
+        laBelleAuBoisDormant.setNom("Aurore");
+        model.addAttribute("laBelleAuBoisDormant", laBelleAuBoisDormant);
+        return "vue-disney";
     }
+
     
     
 }
