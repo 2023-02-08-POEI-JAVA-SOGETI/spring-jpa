@@ -28,16 +28,16 @@
 					th:text="${restaurant.nom}"></li>
 			</ul>
 		</div>
-		<!--<div class="formulaires-list">
+		<div class="formulaires-list">
 			<h2>Liens d'acces reservations :</h2>
 			<ul>
-				<li th:each="restaurant : ${listeFournisseur}"><a
+				<li th:each="restaurant : ${restaurantIterable}"><a
 					href="formulaire-restaurant.html"
-					th:href="@{/formulaire-restaurant(id=${restaurant.id})}"
+					th:href="@{/formulaire-restaurant/(id=${restaurant.id})}"
 					th:text="${'Restaurant N° ' + restaurant.id }" 
 					target="_blank">Lien vers le formulaire des reservations</a></li>
 			</ul>
-		</div>-->
+		</div>
 	</div>
 
 </body>

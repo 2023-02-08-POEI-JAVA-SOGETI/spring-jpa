@@ -20,7 +20,7 @@
 <h2>Modifier les informations</h2>
 
 
- <form action="restaurant" th:object="${restaurant}" th:action="@{/restaurant}" method="post">
+ <form action="restaurant" th:object="${restaurant}" th:action="@{/restaurants}" method="post">
   <p><label><b>Id :</b></label>
     <input readonly type="text" name="id" th:value="${restaurant.id}" />
   </p>
