@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Show Article</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 	crossorigin="anonymous">
+</head>
+<body>
+	<div class='container'>
+		<div class='row my-5'>
+			<div class='col'>
+				<a class='btn btn-secondary' href="/spring-jpa/typeRestaurant">Retour à la liste des types de restaurant</a>
+			</div>
+		</div>
+		<div class='row mb-4'>
+			<div class='col'>
+				<h1 th:text="${typeRestaurant.nom}"></h1>
+			</div>
+		</div>
+		<div class='row'>
+			<div class='col'>
+				<ul class='list-group'>
+					<li class='list-group-item' th:text="'Id : ' + ${typeRestaurant.id}"></li>
+					<li class='list-group-item' th:text="'Nom : ' + ${typeRestaurant.nom}"></li>
+				</ul>
+				<div class='mt-4 d-flex'>
+					<a class='btn btn-primary mr-2' th:href="@{/typeRestaurant/{id}/edit(id=${typeRestaurant.id})}">Modifier</a>
+
+
+					<form method="POST" th:action="@{/article/{id}/delete(id=${typeRestaurant.id})}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce type restaurant ?');">
+    						<button type="submit" class="btn btn-danger">Supprimer</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+

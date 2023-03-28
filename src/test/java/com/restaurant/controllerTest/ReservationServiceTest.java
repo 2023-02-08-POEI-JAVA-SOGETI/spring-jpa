@@ -11,9 +11,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-import com.bigcorp.booking.spring.SpringConfiguration;
+
 import com.restaurant.model.Reservation;
 import com.restaurant.service.ReservationService;
+import com.restaurant.spring.SpringConfiguration;
 
 @SpringJUnitConfig(SpringConfiguration.class)
 class ReservationServiceTest {

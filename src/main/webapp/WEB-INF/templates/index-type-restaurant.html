@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Articles Index</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<div class='container'>
+		<div class='row mt-5'>
+			<div class='col'>
+				<a class="btn btn-secondary" href="/spring-jpa/fournisseurs">Interface Restaurants</a>
+				<a class="btn btn-secondary" href="/spring-jpa/clients">Interface Reservations</a>
+				<a class="btn btn-secondary" href="/spring-jpa/utilisateurs">Interface utilisateurs</a>
+			</div>
+		</div>
+		<div class='row mt-5'>
+			<div class='col'>
+				<h1>Liste des types de restaurant</h1>
+			</div>
+		</div>
+		<div class='row my-5'>
+			<div class='col'>
+				<a class="btn btn-success" th:href="@{/typeRestaurant/new}">Nouveau type de restaurant</a>
+			</div>
+		</div>
+		<div class='row'>
+			<div class='col'>
+				<table class="table table-striped table-bordered">
+				  <thead>
+				    <tr>
+				      <th scope="col">ID</th>
+				      <th scope="col">Nom</th>
+				    </tr>
+				  </thead>
+				  <tbody th:if="${!isTypeRestaurantListEmpty}">
+				    <tr th:each="typeRestaurant : ${listTypeRestaurant}">
+				      <td><a th:href="@{/typeRestaurant/{id}(id=${typeRestaurant.id})}" th:text="${typeRestaurant.id}"></a></td>
+				      <td><a th:href="@{/typeRestaurant/{id}(id=${typeRestaurant.id})}" th:text="${typeRestaurant.nom}"></a></td>
+				      <td><a class='btn btn-primary' th:href="@{/typeRestaurant/{id}/edit(id=${typeRestaurant.id})}">Modifier</a></td>
+				      <td>
+				      	<form method="POST" th:action="@{/typeRestaurant/{id}/delete(id=${typeRestaurant.id})}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce type ?');">
+    						<button type="submit" class="btn btn-danger">Supprimer</button>
+						</form>
+					  </td>
+				    </tr>
+				  </tbody>
+				  <tbody th:if="${isTypeRestaurantListEmpty}">
+				    <tr>
+				      <td colspan="7"><div class="alert alert-danger" role="alert">Il n'y a pas de types de restaurant pour le moment, veuillez en ajouter depuis votre interface !</div></td>
+				    </tr>
+				  </tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+

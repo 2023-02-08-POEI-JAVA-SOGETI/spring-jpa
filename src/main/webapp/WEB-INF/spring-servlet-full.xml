@@ -12,9 +12,14 @@
     http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 	<context:component-scan
+<<<<<<< HEAD
 		base-package="com.bigcorp" />
 	<context:component-scan
 		base-package="com.restaurant" />
+=======
+		base-package="com.restaurant" />
+		
+>>>>>>> 1b92c64ff84c6aea06884f9dbacdb491e1d022f4
 	<mvc:annotation-driven />
 	
 	<mvc:default-servlet-handler />

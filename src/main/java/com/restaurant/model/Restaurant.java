@@ -51,6 +51,14 @@ public class Restaurant{
 		this.adresse = adresse;
 	}
 
+	public Restaurant(@NotNull String nom, Prix prix, String adresse, TypeRestaurant type) {
+		super();
+		this.nom = nom;
+		this.prix = prix;
+		this.adresse = adresse;
+		this.type= type;
+	}
+
 	public Integer getId() {
 		return id;
 	}
