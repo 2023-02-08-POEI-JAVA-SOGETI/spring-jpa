@@ -88,8 +88,7 @@ public class Restaurant {
 		
 		
 		
-		public Builder() {
-		}
+		
 		
 		public Builder withNom(String nom)
 		{
@@ -118,6 +117,9 @@ public class Restaurant {
 		public Restaurant build()
 		{
 			return new Restaurant(this);
+		}
+		
+		public Builder() {
 		}
 		
 		
