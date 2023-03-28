@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bigcorp.booking.dao.spring.ArticleSpringDao;
-import com.bigcorp.booking.dao.spring.FournisseurSpringDao;
 import com.bigcorp.booking.model.Article;
 import com.bigcorp.booking.model.EtatArticle;
 import com.bigcorp.booking.model.Fournisseur;
@@ -26,9 +25,6 @@ public class ArticleServiceTP {
 
 	@Autowired
 	private ArticleSpringDao articleSpringDao;
-	
-	@Autowired
-	private FournisseurSpringDao fournisseurSpringDao;
 
 	/**
 	 * Sauvegarde article

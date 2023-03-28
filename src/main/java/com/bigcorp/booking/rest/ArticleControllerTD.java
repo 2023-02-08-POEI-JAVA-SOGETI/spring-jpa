@@ -1,8 +1,12 @@
 package com.bigcorp.booking.rest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -11,6 +15,9 @@ import com.bigcorp.booking.service.ArticleServiceTP;
 
 @RestController
 public class ArticleControllerTD {
+	
+	@Autowired 
+	private ArticleControllerTD articleController;
 
 	@GetMapping("/rest/articles/{articleId}")
 	public ArticleControllerTD getById(@PathVariable("articleId") Integer articleId) {
@@ -29,4 +36,35 @@ public class ArticleControllerTD {
 		return this;
 		//return new ArticleControllerTD (article1);
 	}
+	
+
+	@DeleteMapping("/rest/articles/{articleId}")
+     public void deleteById(@PathVariable("id") Integer id) {
+		ArticleServiceTP articleService = new ArticleServiceTP();
+		Article article1 = articleService.findById(id);
+		if (article1 == null) {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Pas d'article trouvé avec l'id : "
+				+ id);
+		}
+		articleService.delete(id);
+	
+	}
+	
+
+	@PostMapping("/rest/articles")
+	public ArticleControllerTD save(@RequestBody ArticleControllerTD articleRestDto) {
+		
+		// Transformer le DTO en entité
+		Article article1 = new Article();
+		articleRestDto.remplisArticles(article1);
+		
+		// Sauvegarder l'entité
+		article1 = ArticleServiceTP.save(article1);
+
+		// transmetttre en réponse le DTO
+		return this;
+		// return new ArticleControllerTD(article1);
+	}
+
+
 }

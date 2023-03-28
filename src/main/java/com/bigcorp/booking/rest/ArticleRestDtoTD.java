@@ -2,7 +2,7 @@ package com.bigcorp.booking.rest;
 
 import com.bigcorp.booking.model.Article;
 
-public class ArticleRestDtoTP {
+public class ArticleRestDtoTD {
 	
 	private Integer id;
 	private Integer numero;
@@ -10,7 +10,7 @@ public class ArticleRestDtoTP {
 	private String nom;
 	private String description;
 		
-	public ArticleRestDtoTP(Article article) {
+	public ArticleRestDtoTD(Article article) {
 		this.id = article.getId();
 		this.numero = article.getNumero();
 		this.nom = article.getNom();
