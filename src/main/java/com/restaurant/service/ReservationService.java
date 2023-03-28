@@ -23,8 +23,6 @@ public class ReservationService {
 	private ReservationDao reservationDaoSpring;
 	@Autowired
 	private RestaurantDao restaurantDaoSpring;
-
-
 	
 	private static final Logger logger = LoggerFactory.getLogger(ReservationService.class);
 	
@@ -53,7 +51,6 @@ public class ReservationService {
 		return reservationDaoSpring.findAll();
 	}
 	
-<<<<<<< HEAD
 	public Reservation linkRestaurantToReservation(Integer reservationId, Integer restaurantId) {
 		if (reservationId == null) {
 			throw new IllegalArgumentException("id reservation ne peut etre null");
@@ -66,18 +63,5 @@ public class ReservationService {
 		reservation.setRestaurant(restaurant);
         return reservationDaoSpring.save(reservation);
 	}	
-=======
-//	public Reservation linkRestaurantToReservation(Integer reservationId, Integer restaurantId) {
-//		if (reservationId == null) {
-//			throw new IllegalArgumentException("id reservation ne peut etre null");
-//		} else if (restaurantId == null) {
-//			throw new IllegalArgumentException("id restaurant ne peut etre null");		
-//		}		
-//		Reservation reservation = reservationDaoSpring.findById(reservationId).orElseThrow(IllegalArgumentException::new);
-//		Restaurant restaurant = restaurantDaoSpring.findById(restaurantId).orElse(null);
-//		
-//		reservation.setrestaurant(restaurant);
-//        return reservationDaoSpring.save(reservation);
-//	}	
->>>>>>> 3c1eec5ab21619bc2bb2895963568d30d3e51010
+
 }
