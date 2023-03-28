@@ -45,15 +45,6 @@ public class Restaurant {
 	}
 	
 	
-	
-	
-	// CONTRUCTEURS
-	
-
-	
-	
-	
-	
 	public Restaurant(Builder builder) {
 		this.nom = builder.nom;
 		this.prix = builder.prix;
