@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" >
+
+  <head>
+    <title th:text="#{planet.title}">La page des fournisseurs</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+
+    <h1>Liste de fournisseurs</h1>
+    <table>
+     <tr>
+      <th>Nom</th>
+      <th th:text="#{page-fournisseur.numero}">Numero</th>
+      <th th:text="#{page-fournisseur.lien}">Lien</th>
+     </tr>
+     <tr th:each="fournisseur : ${fournisseurs}">
+      <td th:text="${fournisseur.nom}">Cogip</td>
+      <td th:text="${fournisseur.numero}">782</td>
+      <td>
+        <a href="fournisseur-detail.html" 
+          th:href="@{/fournisseur-detail(id=${fournisseur.id})}">
+          Cliquez ici pour afficher le fournisseur
+        </a>
+      </td>
+     </tr>
+    </table>
+    
+  </body>
+</html>

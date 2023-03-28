@@ -1,10 +1,13 @@
 package com.bigcorp.booking.dao;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import com.bigcorp.booking.model.Article;
 import com.bigcorp.booking.model.EtatArticle;
+import com.bigcorp.booking.model.Fournisseur;
 
 public class ArticleDaoTest {
 	  
@@ -48,5 +51,52 @@ public class ArticleDaoTest {
 		Assertions.assertNotNull(article.getId());
     }
 	  
-   
+    @Test
+    public void testMergeAvecFournisseur() {
+    	
+    	//Sauvegarde fournisseur
+    	FournisseurDao fournisseurDao = new FournisseurDao();
+    	Fournisseur fournisseur = new Fournisseur();
+    	fournisseur.setNom("Chez Rosalie");
+    	Fournisseur fournisseurSauvegarde = fournisseurDao.merge(fournisseur);
+    	
+    	//Sauvegarde article
+		ArticleDao articleDao = new ArticleDao();
+		Article article = new Article();
+		
+		//Rattachement
+		article.setFournisseur(fournisseurSauvegarde);
+		
+		Article articleSauvegarde = articleDao.merge(article);
+		
+		Assertions.assertNotNull(articleSauvegarde.getId());
+		
+    }
+	  
+    @Test
+    public void testGetParNomAvecFournisseur(){//Sauvegarde fournisseur
+    	FournisseurDao fournisseurDao = new FournisseurDao();
+    	Fournisseur fournisseur = new Fournisseur();
+		String nomFournisseur = "Gentil fournisseur";
+		fournisseur.setNom(nomFournisseur);
+    	Fournisseur fournisseurSauvegarde = fournisseurDao.merge(fournisseur);
+    	
+    	//Sauvegarde article
+		ArticleDao articleDao = new ArticleDao();
+		Article nouvelArticle = new Article();
+		String nomArticle = "Bel article, bel ouvrage !";
+		nouvelArticle.setNom(nomArticle);
+
+		//Rattachement
+		nouvelArticle.setFournisseur(fournisseurSauvegarde);
+		
+		Article articleSauvegarde = articleDao.merge(nouvelArticle);
+		
+		List<Article> articles = articleDao.getParNomAvecFournisseur(nomArticle);
+    	for(Article articleLu : articles) {
+    		Assertions.assertEquals(nomFournisseur, articleLu.getFournisseur().getNom());
+    	}
+    	
+    }
+	
 }

@@ -3,15 +3,18 @@ package com.bigcorp.booking.model;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Articles")
-public class Article { 
-	
+@Table(name = "Articles")
+public class Article {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -19,9 +22,13 @@ public class Article {
 	private String fc;
 	private String nom;
 	private String description;
-	
+
 	@Enumerated(EnumType.STRING)
 	private EtatArticle etatArticle;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "FOURNISSEUR_ID")
+	private Fournisseur fournisseur;
 
 	public Integer getId() {
 		return id;
@@ -71,6 +78,23 @@ public class Article {
 		this.etatArticle = etatArticle;
 	}
 
+	public Fournisseur getFournisseur() {
+		return fournisseur;
+	}
+
+	public void setFournisseur(Fournisseur fournisseur) {
+		this.fournisseur = fournisseur;
+	}
 	
+	/**
+	 * Associe this à fournisseur.
+	 * Modifie fournisseur.articles pour rendre les deux
+	 * relations cohérentes
+	 * @param fournisseur not null
+	 */
+	public void associe(Fournisseur fournisseur) {
+		this.fournisseur = fournisseur;
+		this.fournisseur.getArticles().add(this);
+	}
 
 }

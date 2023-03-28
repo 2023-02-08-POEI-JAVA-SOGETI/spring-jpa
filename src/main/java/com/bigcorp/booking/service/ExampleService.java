@@ -1,5 +1,7 @@
 package com.bigcorp.booking.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -59,6 +61,26 @@ public class ExampleService {
 	@Transactional
 	public void delete(Long id) {
 		this.exampleSpringDao.deleteById(id);
+	}
+
+	/**
+	 * Récupère Example par son id, ou null
+	 * si aucune ligne ne correspond en base.
+	 * @param id
+	 * @return
+	 */
+	public List<Example> findByNom(String nom) {
+		return this.exampleSpringDao.maMethodeDeRechercheAvecUneQueryExplicite(nom);
+	}
+	
+	public void ecritDansUnFichierExcel() {
+		List<Example> pablos 
+		= this.exampleSpringDao.maMethodeDeRechercheAvecUneQueryExplicite("pablo");
+		pablos.addAll(this.exampleSpringDao.findByNom("francois"));
+		pablos.add(this.findById(434l));
+		for (Example example : pablos) {
+			//ecrit dans le fichier Excel
+		}
 	}
 
 }

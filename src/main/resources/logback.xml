@@ -2,7 +2,7 @@
 <configuration>
 
 	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
-		<file>logs/application.log</file>
+		<file>c:/dev/logs/application.log</file>
 		<append>true</append>
 		<encoder>
 			<pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n
@@ -10,8 +10,7 @@
 		</encoder>
 	</appender>
 
-	<!-- Le console appender : il ajoute des lignes 
-		dans la console -->
+	<!-- Le console appender : il ajoute des lignes dans la console -->
 	<appender name="STDOUT"
 		class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>

@@ -7,8 +7,6 @@ import org.junit.jupiter.api.Test;
 
 import com.bigcorp.booking.model.Client;
 
-import junit.framework.Assert;
-
 public class ClientDaoTest {
 	  
     @Test
@@ -66,7 +64,7 @@ public class ClientDaoTest {
     	clientDao.merge(client2);
     	
     	List<Client> clients = clientDao.getParNom(nomDurand);
-    	Assert.assertEquals(2, clients.size());
+    	Assertions.assertEquals(2, clients.size());
     	
     }
     
@@ -86,7 +84,7 @@ public class ClientDaoTest {
     	clientDao.merge(client3);
     	
     	List<Client> clients = clientDao.getParNomLikeInsensibleALaCasse("UnNomRigolo");
-    	Assert.assertEquals(3, clients.size());
+    	Assertions.assertEquals(3, clients.size());
     	
     }
     
@@ -106,7 +104,7 @@ public class ClientDaoTest {
     	clientDao.merge(client3);
     	
     	List<Client> clients = clientDao.getParNomLikeSensibleALaCasse("UnNomMarrant");
-    	Assert.assertEquals(2, clients.size());
+    	Assertions.assertEquals(2, clients.size());
     	
     }
 	  

@@ -1,10 +1,17 @@
 package com.bigcorp.booking.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name="fournisseurs")
@@ -13,10 +20,22 @@ public class Fournisseur {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	
 	private Integer numero;
+	
+	@NotEmpty
 	private String nom;
+	
+	@Email
 	private String email;
+	
 	private String adresse;
+	
+	@OneToMany(mappedBy="fournisseur")
+	private Set<Article> articles = new HashSet<>();
+	
+	@OneToMany(mappedBy = "fournisseur")
+	private Set<Client> clients = new HashSet<>();
 	
 	public Integer getId() {
 		return id;
@@ -56,6 +75,18 @@ public class Fournisseur {
 
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
+	}
+
+	public Set<Article> getArticles() {
+		return this.articles;
+	}
+
+	public Set<Client> getClients() {
+		return clients;
+	}
+
+	public void setClients(Set<Client> clients) {
+		this.clients = clients;
 	}
 
 }
