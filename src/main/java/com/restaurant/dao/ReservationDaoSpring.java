@@ -8,4 +8,5 @@ import com.restaurant.model.Reservation;
 @Repository
 public interface ReservationDaoSpring extends CrudRepository<Reservation, Integer> {
 
+
 }
