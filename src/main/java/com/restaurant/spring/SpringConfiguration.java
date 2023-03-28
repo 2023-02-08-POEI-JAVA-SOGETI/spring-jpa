@@ -20,7 +20,9 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 //Scanne les composants trouvés dans le
 //package fourni en paramètre
-@ComponentScan("com.restaurant.dao")  
+@ComponentScan({"com.restaurant.dao", 
+	"com.restaurant.mvc",
+	"com.restaurant.service"})  
 public class SpringConfiguration {
 
 	//Définit le nom de l'unité de persistence 

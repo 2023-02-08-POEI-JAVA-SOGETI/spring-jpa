@@ -22,8 +22,14 @@ public class TypeRestaurant {
 	@OneToMany (mappedBy="type")
 	private List<Restaurant> restaurants;
 	
+	public TypeRestaurant() {
+		
+	}
 	
-	//getters et setters
+	public TypeRestaurant(@NotNull String nom) {
+		super();
+		this.nom = nom;
+	}
 	
 	public Integer getId() {	
 		return id;
@@ -43,8 +49,4 @@ public class TypeRestaurant {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-	
-	
-	
-
 }
