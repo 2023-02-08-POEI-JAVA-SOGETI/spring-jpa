@@ -17,10 +17,10 @@ public class Reservation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	private String nom_reservant;
-	private String prenom_reservant;
-	private String telephone_reservant;
-	private LocalDateTime date_heure;
+	private String nomReservant;
+	private String prenomReservant;
+	private String telephoneReservant;
+	private LocalDateTime dateHeure;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "restaurant_id")
@@ -39,35 +39,35 @@ public class Reservation {
 	}
 
 	
-	public String getNom_reservant() {
-		return this.nom_reservant;
+	public String getNomReservant() {
+		return this.nomReservant;
 	}
-	public void setNom_reservant(String nom_reservant) {
-		this.nom_reservant = nom_reservant;
-	}
-
-	
-	public String getPrenom_reservant() {
-		return this.prenom_reservant;
-	}
-	public void setPrenom_reservant(String prenom_reservant) {
-		this.prenom_reservant = prenom_reservant;
+	public void setNomReservant(String nomReservant) {
+		this.nomReservant = nomReservant;
 	}
 
 	
-	public String getTelephone_reservant() {
-		return this.telephone_reservant;
+	public String getPrenomReservant() {
+		return this.prenomReservant;
 	}
-	public void setTelephone_reservant(String telephone_reservant) {
-		this.telephone_reservant = telephone_reservant;
+	public void setPrenomReservant(String prenomReservant) {
+		this.prenomReservant = prenomReservant;
 	}
 
 	
-	public LocalDateTime getDate_heure() {
-		return this.date_heure;
+	public String getTelephoneReservant() {
+		return this.telephoneReservant;
 	}
-	public void setDate_heure(LocalDateTime date_heure) {
-		this.date_heure = date_heure;
+	public void setTelephoneReservant(String telephoneReservant) {
+		this.telephoneReservant = telephoneReservant;
+	}
+
+	
+	public LocalDateTime getDateHeure() {
+		return this.dateHeure;
+	}
+	public void setDateHeure(LocalDateTime dateHeure) {
+		this.dateHeure = dateHeure;
 	}
 
 	public Restaurant getRestaurant() {
