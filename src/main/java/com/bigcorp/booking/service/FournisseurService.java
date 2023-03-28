@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.bigcorp.booking.dao.spring.FournisseurSpringDao;
 import com.bigcorp.booking.model.Fournisseur;
-import com.bigcorp.booking.service.exception.FournisseurException;
+import com.bigcorp.booking.service.exception.FournisseurInvalideException;
 
 /**
  * Service pour l'entité Fournisseur.
@@ -28,15 +28,15 @@ public class FournisseurService {
 	 * @param fournisseur
 	 * @return le fournisseur sauvegardé : instance à utiliser car
 	 * potentiellement différente de l'argument fournisseur
-	 * @throws FournisseurException 
+	 * @throws FournisseurInvalideException 
 	 */
 	@Transactional
-	public Fournisseur save(Fournisseur fournisseur) throws FournisseurException {
+	public Fournisseur save(Fournisseur fournisseur) throws FournisseurInvalideException {
 		LOGGER.info("Sauvegarde de : {}" , fournisseur);
 		try {
 			return this.fournisseurSpringDao.save(fournisseur);
 		}catch(PersistenceException exception) {
-			throw new FournisseurException(exception);
+			throw new FournisseurInvalideException(exception);
 		}
 	}
 

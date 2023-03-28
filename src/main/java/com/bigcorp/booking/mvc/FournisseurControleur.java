@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.bigcorp.booking.model.Fournisseur;
 import com.bigcorp.booking.service.FournisseurService;
-import com.bigcorp.booking.service.exception.FournisseurException;
+import com.bigcorp.booking.service.exception.FournisseurInvalideException;
 
 /**
  * Annotée par @Controller, cette 
@@ -60,7 +60,7 @@ public class FournisseurControleur {
     @PostMapping("/fournisseur-sauvegarde")
     public ModelAndView processSubmit( 
     		@Validated @ModelAttribute("fournisseur") Fournisseur fournisseur, 
-    		BindingResult result) throws FournisseurException {
+    		BindingResult result) throws FournisseurInvalideException {
     	if(result.hasErrors()) {
     		//return new ModelAndView("fournisseur", "fournisseur", fournisseur);
         	ModelAndView mav = new ModelAndView();
@@ -68,7 +68,8 @@ public class FournisseurControleur {
         	mav.addObject("fournisseur", fournisseur);
             return mav;
     	}
-    	Fournisseur fournisseurSauvegarde = fournisseurService.save(fournisseur);
+    	
+    	Fournisseur fournisseurSauvegarde = fournisseurService.save(fournisseur);    		
     	
     	ModelAndView mav = new ModelAndView();
     	mav.setViewName("redirect:/fournisseur-detail?id=" + fournisseurSauvegarde.getId());

@@ -18,8 +18,11 @@ import org.springframework.web.server.ResponseStatusException;
 import com.bigcorp.booking.model.Fournisseur;
 import com.bigcorp.booking.mvc.rest.dto.FournisseurRestDto;
 import com.bigcorp.booking.service.FournisseurService;
-import com.bigcorp.booking.service.exception.FournisseurException;
+import com.bigcorp.booking.service.exception.FournisseurInvalideException;
 
+/**
+ * Contrôleur REST pour le fournisseur
+ */
 @RestController
 public class FournisseurRestController {
 
@@ -28,6 +31,12 @@ public class FournisseurRestController {
 	@Autowired
 	private FournisseurService fournisseurService;
 
+	/**
+	 * Récupère le fournisseur avec l'id passé en paramètre
+	 * 
+	 * @param fournisseurId
+	 * @return
+	 */
 	@GetMapping("/fournisseurs/{fournisseurId}")
 	public FournisseurRestDto getById(@PathVariable("fournisseurId") Integer fournisseurId) {
 		Fournisseur fournisseur = fournisseurService.findById(fournisseurId);
@@ -38,6 +47,11 @@ public class FournisseurRestController {
 		return new FournisseurRestDto(fournisseur);
 	}
 
+	/**
+	 * Supprime le fournisseur avec l'identifiant passé en paramètre
+	 * 
+	 * @param id
+	 */
 	@DeleteMapping("/fournisseurs/{id}")
 	public void deleteById(@PathVariable("id") Integer id) {
 		Fournisseur fournisseur = fournisseurService.findById(id);
@@ -48,34 +62,50 @@ public class FournisseurRestController {
 		fournisseurService.delete(id);
 	}
 
+	/**
+	 * Sauvegarde un fournisseur passé dans le corps de la réponse. Renvoie le
+	 * fournisseur créé dans le corps de la réponse.
+	 * 
+	 * @param fournisseurRestDto
+	 * @param bindingResult
+	 * @return
+	 */
 	@PostMapping("/fournisseurs")
 	public FournisseurRestDto save(@Validated @RequestBody FournisseurRestDto fournisseurRestDto,
 			BindingResult bindingResult) {
-		// Transformer le DTO en entité
 		LOGGER.info("Appel de la méthode save pour le fournisseur : {}", fournisseurRestDto);
-		if(bindingResult.hasErrors()) {
-			ObjectError objectError = bindingResult.getAllErrors().get(0);
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, objectError.getDefaultMessage());			
+		// Validation du FournisseurRestDto
+		if (bindingResult.hasErrors()) {
+			StringBuilder sb = new StringBuilder();
+			for (ObjectError objectError : bindingResult.getAllErrors()) {
+				sb.append(objectError.getObjectName()).append("-").append(objectError.getDefaultMessage());
+			}
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, sb.toString());
 		}
-		
+
+		// Ici, le FournisseurRestDto est bon,
+		// On prépare le fournisseur que l'on va créer ou que l'on va mettre à jour
 		Fournisseur fournisseur = new Fournisseur();
 		if (fournisseurRestDto.getId() != null) {
 			fournisseur = fournisseurService.findById(fournisseurRestDto.getId());
-			if(fournisseur == null) {
-				throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Aucun fournisseur trouvé avec l'id : " + fournisseurRestDto.getId());
+			if (fournisseur == null) {
+				throw new ResponseStatusException(HttpStatus.NOT_FOUND,
+						"Aucun fournisseur trouvé avec l'id : " + fournisseurRestDto.getId());
 			}
 		}
 		fournisseurRestDto.remplisFournisseur(fournisseur);
 
-		// sauvegarder l'entité
+		// On sauvegarde l'entité, en cas de problème de fournisseur invalide
+		// on renvoie une BAD_REQUEST (erreur 400)
 		try {
 			fournisseur = fournisseurService.save(fournisseur);
-		} catch (FournisseurException e) {
+		} catch (FournisseurInvalideException e) {
 			LOGGER.error("Erreur lors de la sauvegarde du fournisseur", e);
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Le fournisseur de la requête est incorrect");
 		}
 
-		// transmetttre en réponse le DTO
+		// La sauvegarde s'est bien déroulée, le fournisseur est retransformé en 
+		// DTO pour être renvoyé dans le corps de la réponse HTTP
 		return new FournisseurRestDto(fournisseur);
 	}
 

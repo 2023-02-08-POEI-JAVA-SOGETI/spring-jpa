@@ -10,7 +10,7 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import com.bigcorp.booking.model.Article;
 import com.bigcorp.booking.model.EtatArticle;
 import com.bigcorp.booking.model.Fournisseur;
-import com.bigcorp.booking.service.exception.FournisseurException;
+import com.bigcorp.booking.service.exception.FournisseurInvalideException;
 import com.bigcorp.booking.spring.SpringConfiguration;
 
 @SpringJUnitConfig(SpringConfiguration.class)
@@ -61,7 +61,7 @@ public class ArticleServiceTest {
 	}
 
 	@Test
-	public void testAttache() throws FournisseurException {
+	public void testAttache() throws FournisseurInvalideException {
 		Article article = new Article();
 		Article articleSauvegarde = this.articleService.save(article);
 
