@@ -8,13 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.bigcorp.booking.dao.spring.ArticleSpringDao;
-import com.bigcorp.booking.dao.spring.FournisseurSpringDao;
+
 import com.bigcorp.booking.model.Article;
 import com.bigcorp.booking.model.Fournisseur;
-import com.bigcorp.booking.service.FournisseurService;
 import com.restaurant.dao.ReservationDaoSpring;
+import com.restaurant.dao.RestaurantDao;
 import com.restaurant.model.Reservation;
+import com.restaurant.model.Restaurant;
 
 @Service
 public class ReservationService {
@@ -22,7 +22,7 @@ public class ReservationService {
 	@Autowired
 	private ReservationDaoSpring reservationDaoSpring;
 	@Autowired
-	private RestaurantDaoSpring restaurantDaoSpring;
+	private RestaurantDao restaurantDaoSpring;
 	
 	private static final Logger logger = LoggerFactory.getLogger(ReservationService.class);
 	
@@ -60,7 +60,7 @@ public class ReservationService {
 		Reservation reservation = reservationDaoSpring.findById(reservationId).orElseThrow(IllegalArgumentException::new);
 		Restaurant restaurant = restaurantDaoSpring.findById(restaurantId).orElse(null);
 		
-		reservation.setrestaurant(restaurant);
+		reservation.setRestaurant(restaurant);
         return reservationDaoSpring.save(reservation);
 	}	
 }
