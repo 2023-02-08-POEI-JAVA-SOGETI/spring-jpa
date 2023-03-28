@@ -1,0 +1,184 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Spring JPA",
+    "description": "Un fichier généré avec Swagger : [https://swagger.io](https://swagger.io). Il obéit à la norme openAPI qui permet de décrire des WebServices REST.",
+    "contact": {
+      "email": "francois.caremoli@wanadoo.fr"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0.0"
+  },
+  "externalDocs": {
+    "description": "Swagger",
+    "url": "http://swagger.io"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080/spring-jpa"
+    }
+  ],
+  "tags": [
+    {
+      "name": "article",
+      "description": "A propos des articles"
+    },
+    {
+      "name": "fournisseur",
+      "description": "A propos des fournisseurs"
+    }
+  ],
+  "paths": {
+    "/fournisseurs": {
+      "post": {
+        "tags": [
+          "fournisseur"
+        ],
+        "summary": "Met à jour un fournisseur",
+        "description": "Sert pour la création et la mise à jour",
+        "requestBody": {
+          "description": "Le fournisseur à mettre à jour",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Fournisseur"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Fournisseur créé",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fournisseur"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Fournisseur invalide"
+          }
+        }
+      }
+    },
+    "/fournisseurs/{id}": {
+      "get": {
+        "tags": [
+          "fournisseur"
+        ],
+        "summary": "Renvoie un fournisseur à partir de son id",
+        "description": "Renvoie le fournisseur",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID du fournisseur",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Fournisseur"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "L'id est invalide"
+          },
+          "404": {
+            "description": "Aucun fournisseur trouvé"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "fournisseur"
+        ],
+        "summary": "Supprime un fournisseur",
+        "description": "Renvoie le fournisseur",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID du fournisseur à supprimer",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Fournisseur non trouvé"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Fournisseur": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "example": 10
+          },
+          "numero": {
+            "type": "integer",
+            "format": "int64",
+            "example": 198772
+          },
+          "nom": {
+            "type": "string",
+            "example": "jean rené"
+          },
+          "email": {
+            "type": "string",
+            "example": "jean.rene@wanadoo.fr"
+          },
+          "adresse": {
+            "type": "string",
+            "example": "rue des dahlias"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "petstore_auth": {
+        "type": "oauth2",
+        "flows": {
+          "implicit": {
+            "authorizationUrl": "https://petstore3.swagger.io/oauth/authorize",
+            "scopes": {
+              "write:pets": "modify pets in your account",
+              "read:pets": "read your pets"
+            }
+          }
+        }
+      },
+      "api_key": {
+        "type": "apiKey",
+        "name": "api_key",
+        "in": "header"
+      }
+    }
+  }
+}
