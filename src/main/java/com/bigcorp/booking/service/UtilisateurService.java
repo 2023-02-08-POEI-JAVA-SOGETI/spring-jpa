@@ -5,10 +5,12 @@ import com.bigcorp.booking.model.Utilisateur;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Service
 public class UtilisateurService {
     private static final Logger LOGGER = LoggerFactory.getLogger(UtilisateurService.class);
 
@@ -16,12 +18,13 @@ public class UtilisateurService {
     private UtilisateurDao utilisateurDao;
 
     @Transactional
-    public void save(Utilisateur utilisateur) {
+    public Utilisateur save(Utilisateur utilisateur) {
         if (utilisateur.getNom() != "NOM") {
-            this.utilisateurDao.save(utilisateur);
             LOGGER.info("User successfully saved!");
-        } else LOGGER.info("User couldn't be saved.");
-
+            return this.utilisateurDao.save(utilisateur);
+        }
+        
+        return null;
     }
 
     @Transactional
