@@ -1,5 +1,7 @@
 package com.restaurant.model;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -26,6 +28,12 @@ public class Reservation {
 	private Restaurant restaurant;
 	
 	
+	
+	public Reservation() {
+	}
+	public Reservation(String string, String string2, String string3, LocalDateTime now) {
+		// TODO Auto-generated constructor stub
+	}
 	public Integer getId() {
 		return id;
 	}
