@@ -23,5 +23,7 @@ public interface FournisseurSpringDao extends CrudRepository<Fournisseur, Intege
 
 	@Query("from Fournisseur where nom = :nom")
 	List<Fournisseur> maMethodeDeRechercheAvecUneQueryExplicite(@Param("nom") String nom);
+	
+	
 
 }

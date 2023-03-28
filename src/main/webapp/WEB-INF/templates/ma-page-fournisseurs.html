@@ -5,6 +5,7 @@
 <head>
 <title>La page des fournisseurs !</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
 </head>
 
 <body>
@@ -15,16 +16,36 @@
 			pour revenir à la page d'acceuil </a>
 	</div>
 
+	<!-- 	<div> -->
+	<!-- 		<h2>Mes Fournisseurs afichés sans le ModelAndView</h2> -->
+	<!-- 		<ol> -->
+	<!-- 			<!--<li><a href="fournisseur1.html" th:href="@{/fournisseur1}">Fournisseur1 -->
+	<!-- 			</a></li> -->
+	<!-- 			<li><a href="fournisseur2.html" th:href="@{/fournisseur2}">Fournisseur2 -->
+	<!-- 			</a></li>-->
+	<!-- 			<li th:each="tata: ${listeFournisseurs}" th:text="${tata.nom}"></li> -->
+	<!-- 		</ol> -->
+	<!-- 	</div> -->
+
 	<div>
-		<h2>Mes Fournisseurs</h2>
-		<ol>
-			<li><a href="fournisseur1.html" th:href="@{/fournisseur1}">Fournisseur1
-			</a></li>
-			<li><a href="fournisseur2.html" th:href="@{/fournisseur2}">Fournisseur2
-			</a></li>
-			<li th:each="fournisseur: ${listeFournisseurs}"
-				th:text="${fournisseur.nom}"></li>
-		</ol>
+		<h2>Mes Fournisseurs afichés avec le ModelAndView</h2>
+
+		<table>
+			<thead>
+				<tr>
+					<th>id</th>
+					<th>nom</th>
+					<th>liens pour les details</th>
+				</tr>
+			</thead>
+			<tr th:each="liste : ${listefournisseurs}">
+				<td th:text=${liste.id}></td>
+				<td th:text=${liste.nom}></td>
+				<td><a href="ma-page-detail-fournisseurs.html"
+					th:href="@{/pageDetailFournisseurs(id=${liste.id})}">Cliquez
+						ici pour avoir le detail des fournisseurs</a></td>
+			</tr>
+		</table>
 
 	</div>
 </body>

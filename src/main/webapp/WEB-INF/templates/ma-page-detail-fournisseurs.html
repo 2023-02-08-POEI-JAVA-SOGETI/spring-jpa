@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Le detail des fournisseurs !</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+
+<body>
+
+	<div>
+		<h1>Vous êtes sur la page du detail des fournisseurs</h1>
+
+		<a href="page-acceuil.html" th:href="@{/pageacceuil}">Cliquez ici
+			pour revenir à la page d'acceuil </a> <br> <a
+			href="ma-page-fournisseurs.html" th:href="@{/pagefournisseurs}">Cliquez
+			ici pour revenir à la page des fournisseurs</a>
+	</div>
+
+	<form action="pageDetailFournisseurs" method="get"
+		th:object="${fournisseur}" th:action="@{/pageSauvegardeFournisseurs}"
+		th:method="post">
+		<fieldset>
+
+			<p>Id :</p>
+			<p>
+				<input readonly type="text" name="id" th:value="${fournisseur.id}" />
+			</p>
+			<p th:if="${#fields.hasErrors('id')}" th:errors="*{id}">Erreur
+				d'id</p>
+
+
+			<p>Nom :</p>
+			<p>
+				<input type="text" name="nom" th:value="${fournisseur.nom}" />
+			</p>
+			<p th:if="${#fields.hasErrors('nom')}" th:errors="*{nom}">Erreur
+				de nom</p>
+
+
+			<p>Numero :</p>
+			<p>
+				<input type="text" name="numero" th:value="${fournisseur.numero}" />
+			</p>
+			<p th:if="${#fields.hasErrors('numero')}" th:errors="*{numero}">Erreur
+				de numero</p>
+
+
+			<p>Email :</p>
+			<p>
+				<input type="text" name="email" th:value="${fournisseur.email}" />
+			</p>
+			<p th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Erreur
+				de email</p>
+
+
+			<p>Adresse :</p>
+			<p>
+				<input type="text-area" name="adresse"
+					th:value="${fournisseur.adresse}" />
+			</p>
+			<p th:if="${#fields.hasErrors('adresse')}" th:errors="*{adresse}">Erreur
+				de adresse</p>
+
+
+			<p>Titre :</p>
+			<p>
+				<input type="text" name="titre" th:value="${fournisseur.titre}" />
+			</p>
+			<p th:if="${#fields.hasErrors('titre')}" th:errors="*{titre}">Erreur
+				de titre</p>
+
+			<p>Sauvegarder :</p>
+			<p>
+				<input type="submit" value="Sauvegarde" />
+			</p>
+		</fieldset>
+	</form>
+</body>
+</html>

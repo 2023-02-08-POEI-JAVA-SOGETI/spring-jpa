@@ -22,8 +22,16 @@ public class FournisseurService {
 	
 	
 	
+	public FournisseurService() {
+		super();
+	}
+
 	public List<Fournisseur> findByNom(String nom) {
 		return this.fournisseurSpringDao.maMethodeDeRechercheAvecUneQueryExplicite(nom);
+	}
+	
+	public Fournisseur findById(Integer id) {
+		return this.fournisseurSpringDao.findById(id).orElse(null);
 	}
 
 

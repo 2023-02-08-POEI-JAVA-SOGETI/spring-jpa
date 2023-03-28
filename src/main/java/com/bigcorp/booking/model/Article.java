@@ -1,5 +1,6 @@
 package com.bigcorp.booking.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -25,6 +26,7 @@ public class Article {
 	private String nom;
 	private String description;
 
+	//@Column(name="etat")
 	@Enumerated(EnumType.STRING)
 	private EtatArticle etatArticle;
 

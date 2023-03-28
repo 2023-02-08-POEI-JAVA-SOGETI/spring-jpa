@@ -9,7 +9,11 @@
 
 <body>
 	<div>
-		<h1>Vous êtes sur ma-page1</h1>
+		<h1>Vous êtes sur ma-page1 qui est chargée par une URL dynamiques avec un paramètre de requête</h1>
+		
+<!-- 		Affichage du contenu des objet ModelAndView avec Thymeleaf  -->
+		<p th:text=${message}></p>
+		<p th:text=${date}></p>
 		
 		<p>Liens</p>
 		<a href="page-acceuil.html" th:href="@{/pageacceuil}">Cliquez ici pour revenir à la page d'acceuil </a>

@@ -25,6 +25,10 @@ public class ArticleService {
 	public List<Article> findByNom(String nom) {
 		return this.articleSpringDao.maMethodeDeRechercheAvecUneQueryExplicite(nom);
 	}
+	
+	public Article findById(Integer id) {
+		return this.articleSpringDao.findById(id).orElse(null);
+	}
 
 
 	/**

@@ -17,12 +17,17 @@ import javax.persistence.Table;
 @Table(name = "FOURNISSEUR") // Optionnel : explicite la Table en BDD
 public class Fournisseur {
 
+	public Fournisseur() {
+		super();
+	}
+
 	@Id // Décrit l’attribut servant d'identifiant et la clé primaire
 	
 	//@GeneratedValue(strategy = GenerationType.TABLE) // optionnel
 	// décrit la méthode de génération de l’identifiant
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
+	//Les propriétés
 	private Integer id;
     private Integer numero;
     private String nom;
@@ -30,11 +35,11 @@ public class Fournisseur {
     private String adresse;
     private String titre;
     
-    
+    //Relation avec la table Article
     @OneToMany(mappedBy = "fournisseur")
     private Set<Article> articles = new HashSet();
     
- 
+    //Les geters et seters
 	public Integer getId() {
 		return id;
 	}
@@ -81,13 +86,12 @@ public class Fournisseur {
 	public void setArticles(Set<Article> articles) {
 		this.articles = articles;
 	}
-
+	
+	//Le constructeur de l'association des deux tables
 	public void associateWith(Article article) {
 		this.articles.add(article);
 		article.setFournisseur(this);
 	}
 	
-    
-
 }
 

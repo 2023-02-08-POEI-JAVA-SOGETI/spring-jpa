@@ -102,6 +102,7 @@ public class SpringWebConfiguration implements WebMvcConfigurer, ApplicationCont
 		WebMvcConfigurer.super.addResourceHandlers(registry);
 		registry.addResourceHandler("/images/**").addResourceLocations("/images/");
 		registry.addResourceHandler("/css/**").addResourceLocations("/css/");
+		registry.addResourceHandler("/css/**").addResourceLocations("classpath:/static/css/");
 		registry.addResourceHandler("/js/**").addResourceLocations("/js/");
 	}
 
