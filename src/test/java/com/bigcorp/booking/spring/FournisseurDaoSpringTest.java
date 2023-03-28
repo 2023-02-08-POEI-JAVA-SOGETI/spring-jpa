@@ -55,5 +55,53 @@ public class FournisseurDaoSpringTest {
 		Fournisseur fournisseur = service.getFournisseurById(1);
 		Assertions.assertNotNull(fournisseur.getNom());
 	}
+	
+	
+	
+	public void getFournisseurWithArticlesTest()
+	{
+		
+	}
+	
+	
+	public void updateFournisseurTest()
+	{
+		
+	}
+	
+	
+	public void deleteFournisseurByIdTest()
+	{
+		
+	}
+	
+	
+	
+	
+	
+	// DTO
+	
+	
+	
+	public void createFournisseurWithDtoTest()
+	{
+		
+	}
+	
+	
+	
+	public void getFournisseurByIdWithDTOTest()
+	{
+		
+	}
+	
+	
+	
+	public void updateFournisseurWithDTOTest()
+	{
+		
+	}
+	
+	
 
 }

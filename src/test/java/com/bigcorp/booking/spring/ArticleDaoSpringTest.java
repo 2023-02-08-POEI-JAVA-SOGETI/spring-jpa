@@ -85,4 +85,36 @@ public class ArticleDaoSpringTest {
 		
 	}
 	
+	
+	
+	
+	public void deleteArticleByIdTest()
+	{
+		
+	}
+	
+	
+	
+	public void getArticleByTypeTest()
+	{
+		
+	}
+	
+	
+	
+	
+	// DTO
+	
+	
+	
+	public void getArticleByIdWithDTO()
+	{
+		
+	}
+	
+	public void createArticleWithDTO()
+	{
+		
+	}
+	
 }

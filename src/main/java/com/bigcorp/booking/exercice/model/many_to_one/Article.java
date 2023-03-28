@@ -63,14 +63,32 @@ public class Article {
 	
 	
 	
-	
 	public Article() {
 		super();
 	}
 	
 	
 	
+///// CONSTRUCTEUR utilisé uniquement dans la méthode fillFournisseurWithDto de FournisseurDTO
 	
+	public Article(Integer id, Integer numArticle, Type type, String nom, String description) {
+		super();
+		this.id = id;
+		this.numArticle = numArticle;
+		this.type = type;
+		this.nom = nom;
+		this.description = description;
+
+	}
+
+///////////////////////////////////
+
+	
+	
+	
+
+
+
 	public Integer getId() {
 		return id;
 	}

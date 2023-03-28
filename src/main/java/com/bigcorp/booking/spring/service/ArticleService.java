@@ -10,6 +10,8 @@ import com.bigcorp.booking.dao.spring.ArticleDao;
 import com.bigcorp.booking.dao.spring.FournisseurDao;
 import com.bigcorp.booking.exercice.model.many_to_one.Article;
 import com.bigcorp.booking.exercice.model.many_to_one.Fournisseur;
+import com.bigcorp.booking.mvc.rest.ArticleDto;
+import com.bigcorp.booking.mvc.rest.FournisseurDto;
 
 @Service
 public class ArticleService {
@@ -19,6 +21,10 @@ public class ArticleService {
 	
 	@Autowired
 	private FournisseurDao fourDao;
+	
+	
+	
+	// WITHOUT DTO
 	
 	
 	public Article getArticleById(Integer id)
@@ -51,12 +57,6 @@ public class ArticleService {
 		
 	}
 	
-	@Transactional
-	public Article createArticleInRelationWithFournisseur(Article newArticle, Integer idFournisseur)
-	{
-		return dao.save(newArticle);
-	}
-	
 	
 	@Transactional
 	public void deleteArticleById (Integer id)
@@ -73,6 +73,35 @@ public class ArticleService {
 		return list;
 		
 	}
+
+	
+	
+	// WITH DTO
+	
+	
+	
+	public ArticleDto getArticleByIdWithDTO(Integer id) {
+		
+		Article article = dao.findById(id).get();
+		
+		ArticleDto dto = new ArticleDto(article);
+		
+		return dto;
+	}
+
+	
+	
+	@Transactional
+	public ArticleDto createArticleWithDto(ArticleDto articleDto) {
+		
+		Article article = new Article();
+		articleDto.fillArticleWithDto(article);
+		dao.save(article);
+		ArticleDto newArticleDto = new ArticleDto(article);
+		return newArticleDto;
+	}
+	
+	
 	
 	
 	
