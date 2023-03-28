@@ -1,9 +1,7 @@
 package com.restaurant.controllerTest;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,9 +9,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-import com.bigcorp.booking.spring.SpringConfiguration;
 import com.restaurant.model.Reservation;
 import com.restaurant.service.ReservationService;
+import com.restaurant.spring.SpringConfiguration;
 
 @SpringJUnitConfig(SpringConfiguration.class)
 class ReservationServiceTest {

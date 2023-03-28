@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.restaurant.dao.ReservationDaoSpring;
+import com.restaurant.dao.ReservationDao;
 import com.restaurant.dao.RestaurantDao;
 import com.restaurant.model.Reservation;
 import com.restaurant.model.Restaurant;
