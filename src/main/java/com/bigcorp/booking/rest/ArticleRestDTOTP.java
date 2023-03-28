@@ -12,7 +12,6 @@ import com.bigcorp.booking.service.ArticleService;
 @RestController
 public class ArticleRestDTOTP {
 
-	/*
 	@GetMapping("/articles/{articleId}")
 	public ArticleRestDTOTP getById(@PathVariable("articleId") Integer articleId) {
 		Article article1 = ArticleService.findById(articleId);
@@ -22,4 +21,4 @@ public class ArticleRestDTOTP {
 			}
 		return new ArticleRestDTOTP (article1);
 	}
-}*/
+}

@@ -48,7 +48,7 @@ public class ArticleService {
 	 * @param id
 	 * @return
 	 */
-	public static Article findById(Integer id) {
+	public Article findById(Integer id) {
 		LOGGER.info("Récupération de article avec l'id : {}" , id);
 		return this.articleSpringDao.findById(id).orElse(null);
 	}
