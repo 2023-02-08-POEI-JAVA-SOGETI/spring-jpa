@@ -6,6 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import jakarta.validation.constraints.NotNull;
 
 
 @Entity
@@ -14,7 +17,9 @@ public class TypeRestaurant {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	@NotNull
 	private String nom;
+	@OneToMany (mappedBy="type")
 	private List<Restaurant> restaurants;
 	
 	

@@ -1,7 +1,10 @@
 package com.restaurant.model;
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 16bc3db67027bee976ffc603c81bcebb20b37d25
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
