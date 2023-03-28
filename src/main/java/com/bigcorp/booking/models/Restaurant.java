@@ -61,7 +61,7 @@ public class Restaurant {
 
 
 
-	public class Builder {
+	public static class Builder {
 		
 
 		private String nom = "Nom inconnu";

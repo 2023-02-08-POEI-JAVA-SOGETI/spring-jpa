@@ -8,7 +8,14 @@
   </head>
 
   <body>
+  
+  	<h1>Liste de nos restaurants lyonnais</h1>
 
+	<ul>
+		<li th:each="restaurant : ${listeRestaurants}" th:text="${restaurant.nom}">
+		Restaurants
+		</li>
+	</ul>
 
   </body>
 </html>
