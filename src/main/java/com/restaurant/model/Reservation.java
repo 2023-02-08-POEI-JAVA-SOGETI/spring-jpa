@@ -1,6 +1,6 @@
 package com.restaurant.model;
 
-import com.restaurant.model.restaurant;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
