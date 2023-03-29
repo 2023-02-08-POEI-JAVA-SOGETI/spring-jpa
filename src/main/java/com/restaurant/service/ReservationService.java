@@ -13,14 +13,14 @@ import com.bigcorp.booking.dao.spring.FournisseurSpringDao;
 import com.bigcorp.booking.model.Article;
 import com.bigcorp.booking.model.Fournisseur;
 import com.bigcorp.booking.service.FournisseurService;
-import com.restaurant.dao.ReservationDaoSpring;
+import com.restaurant.dao.ReservationDao;
 import com.restaurant.model.Reservation;
 
 @Service
 public class ReservationService {
 	
 	@Autowired
-	private ReservationDaoSpring reservationDaoSpring;
+	private ReservationDao reservationDaoSpring;
 //	@Autowired
 //	private RestaurantDaoSpring restaurantDaoSpring;
 	
