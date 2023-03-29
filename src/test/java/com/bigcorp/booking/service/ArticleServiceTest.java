@@ -1,9 +1,11 @@
-package com.bigcorp.booking.dao;
+package com.bigcorp.booking.service;
 
 import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
@@ -24,12 +26,15 @@ public class ArticleServiceTest {
 	@Autowired
 	private FournisseurService fournisseurService;
 	
+	private static final Logger LOGGER = LoggerFactory.getLogger(ArticleServiceTest.class);
+
 	@Test
 	public void testSaveArticle() {
 		Article a = new Article(1, "etat", "nom", "description");
 		Article saved = articleService.save(a);
-		
+
 		Assertions.assertNotNull(saved.getId());
+		LOGGER.info("testSaveArticle : " + saved.getId() + " - " + saved.getNom());
 	}
 	
 	@Test
@@ -39,6 +44,7 @@ public class ArticleServiceTest {
 		
 		Article saved2 = articleService.findById(saved.getId());
 		Assertions.assertNotNull(saved2.getId());
+		LOGGER.info("testFindArticle : " + saved2.getId());
 	}
 	
 	@Test
@@ -47,6 +53,7 @@ public class ArticleServiceTest {
 		Fournisseur saved = fournisseurService.save(f);
 		
 		Assertions.assertNotNull(saved.getId());
+		LOGGER.info("testSaveFournisseur : " + saved.getId());
 	}		
 	
 	@Test
@@ -58,6 +65,7 @@ public class ArticleServiceTest {
 		
 		Article test = articleService.findById(saved.getId());
 		Assertions.assertNull(test);
+		LOGGER.info("testDeleteArticle : article supprimé : " + saved.getId());
 	}
 	
 	@Test
@@ -76,6 +84,7 @@ public class ArticleServiceTest {
     	Article savedArticleA1 = articleService.save(a1);
     	Article savedArticleA2 = articleService.save(a2);
     	Article savedArticleA3 = articleService.save(a3);
+		LOGGER.info("testArticleFindByFournisseur : articles sauvegardés");
     	
     	List<Article> listArticleSaved = articleService.findByFournisseurId(savedFournisseur.getId());
     	
@@ -90,7 +99,8 @@ public class ArticleServiceTest {
 		
     	Article a = new Article(1, Etat.INUTILISABLE.name(), "telephone revolutionnaire", "qui appelle");
     	Article savedArticleA = articleService.save(a);
-    	
+
+		LOGGER.info("saveArticleAndFournisseur : idArticle=" + savedArticleA.getId() + " - idFournisseur=" + savedFournisseur.getId());
     	Article updatedArticle = articleService.saveArticleAndFournisseur(savedArticleA.getId(), savedFournisseur.getId());
 
 		Assertions.assertEquals(savedFournisseur.getId(), updatedArticle.getFournisseur().getId());
@@ -98,6 +108,7 @@ public class ArticleServiceTest {
 	
 	@Test
 	public void testSaveArticleAndFournisseurException() {
+		LOGGER.info("testSaveArticleAndFournisseurException");
 		Assertions.assertThrows(NullPointerException.class, () -> articleService.saveArticleAndFournisseur(999, 100));
 	}
 	
@@ -112,11 +123,11 @@ public class ArticleServiceTest {
     	
     	articleService.saveArticleAndFournisseur(savedArticleA.getId(), savedFournisseur.getId());
     	Article updatedArticle = articleService.saveArticleAndFournisseur(savedArticleA.getId(), 3000);
-    	
+		LOGGER.info("testSaveArticleAndFournisseurError : " + updatedArticle.getId());
+		
 		Assertions.assertNull(updatedArticle.getFournisseur());
 	}
 	
-	// test du findAll
 	@Test
 	public void testFindAll() {
 		Article a1 = new Article(2, "etat", "raquette", "Belle raquette de tennis");
@@ -124,6 +135,7 @@ public class ArticleServiceTest {
 		
 		articleService.save(a1);
 		articleService.save(a2);
+		LOGGER.info("testFindAll");
 		
 		List<Article> list = articleService.findAll();
 		Assertions.assertEquals(2, list.size());
