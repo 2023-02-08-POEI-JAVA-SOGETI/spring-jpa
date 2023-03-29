@@ -21,6 +21,7 @@ import com.restaurant.service.RestaurantService;
 
 @Controller
 @RequestMapping("/reservation")
+@Controller
 public class ReservationController {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ReservationController.class);
 	

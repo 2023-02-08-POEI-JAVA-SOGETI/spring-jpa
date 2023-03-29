@@ -8,7 +8,4 @@ import com.restaurant.model.Reservation;
 @Repository
 public interface ReservationDao extends CrudRepository<Reservation, Integer> {
 
-	
-
-
 }
