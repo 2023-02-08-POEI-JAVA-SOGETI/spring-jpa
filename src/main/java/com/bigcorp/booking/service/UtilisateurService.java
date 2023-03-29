@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.bigcorp.booking.dao.spring.UtilisateurSDao;
+import com.bigcorp.booking.dao.spring.UtilisateurSpringDao;
 
 import tp_spring_jpa_pablo.model.Utilisateur;
 
@@ -17,24 +17,24 @@ import tp_spring_jpa_pablo.model.Utilisateur;
 public class UtilisateurService {
 	
 	@Autowired
-	private UtilisateurSDao utilisateurSDao;
+	private UtilisateurSpringDao utilisateurSpringDao;
 	
 	public Iterable<Utilisateur> findAll(){
-		return this.utilisateurSDao.findAll();
+		return this.utilisateurSpringDao.findAll();
 	}
 	
 	@Transactional
 	public Utilisateur save(Utilisateur User) {
-		return this.utilisateurSDao.save(User);
+		return this.utilisateurSpringDao.save(User);
 	}
 	
 	public Utilisateur findById(Integer id) {
-		return this.utilisateurSDao.findById(id).orElse(null);
+		return this.utilisateurSpringDao.findById(id).orElse(null);
 	}
 	
 	@Transactional
 	public void deleteById(Integer id) {
-		this.utilisateurSDao.deleteById(id);
+		this.utilisateurSpringDao.deleteById(id);
 	}	
 	
 	@PersistenceUnit
@@ -57,15 +57,6 @@ public class UtilisateurService {
 	        entityManager.close();
 	    }
 	}
-	
-	
-//	@Transactional
-//	@Modifying
-//	@Query("DELETE FROM Utilisateur u WHERE u.id = :id")
-//	public void deleteById3(@Param("id") Integer id) {
-//		
-//	}
-
 
 
 }

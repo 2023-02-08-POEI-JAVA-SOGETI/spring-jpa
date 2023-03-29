@@ -3,6 +3,7 @@ package com.bigcorp.booking.mvc.rest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -47,7 +48,7 @@ public class FournisseurRestControleur {
 	}
 	
 	@PostMapping("/fournisseur/save")
-	public FournisseurRestDto saveFournisseur(@RequestBody FournisseurRestDto fournisseurRestDto) {
+	public FournisseurRestDto saveFournisseur(@Validated @RequestBody FournisseurRestDto fournisseurRestDto) {
 		Fournisseur fournisseur = new Fournisseur();
 		fournisseur = fournisseurRestDto.remplisFournisseur(fournisseur);
 		fournisseur = fournisseurService.save(fournisseur);
@@ -66,4 +67,6 @@ public class FournisseurRestControleur {
 		fournisseurService.deleteById(fournisseurid);
 	}	
     
+	
+	
 }

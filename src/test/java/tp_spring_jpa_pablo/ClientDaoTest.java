@@ -1,18 +1,12 @@
 package tp_spring_jpa_pablo;
 
-import java.util.HashSet;
-import java.util.Set;
 import java.util.List;
-import java.util.Arrays;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import junit.framework.Assert;
 import tp_spring_jpa_pablo.dao.ClientDao;
-import tp_spring_jpa_pablo.dao.UtilisateurDao;
 import tp_spring_jpa_pablo.model.Client;
-import tp_spring_jpa_pablo.model.Utilisateur;
 
 public class ClientDaoTest {
 	@Test
@@ -32,11 +26,11 @@ public class ClientDaoTest {
 		clientDao.merge(client1);
 
 		Client client2 = new Client();
-		client2.setNom("Jaime");
+		client2.setNom(nomDurand);
 		clientDao.merge(client2);
-
+		
 		List<Client> clients = clientDao.getParNom(nomDurand);
-		Assert.assertEquals(1, clients.size());
+    	Assertions.assertEquals(2, clients.size());
 	}	
 
 }

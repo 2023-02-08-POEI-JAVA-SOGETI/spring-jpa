@@ -5,24 +5,23 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-import com.bigcorp.booking.service.ClientService;
+import com.bigcorp.booking.service.UtilisateurService;
 import com.bigcorp.booking.spring.SpringConfiguration;
 
-import tp_spring_jpa_pablo.model.Client;
+import tp_spring_jpa_pablo.model.Utilisateur;
 
 @SpringJUnitConfig(SpringConfiguration.class)
-public class ClientSDaoTest {
+public class UtilisateurSpringDaoTest {
 
 	@Autowired
-	private ClientService clientService;
+	private UtilisateurService utilisateurService;
 
 	@Test
 	public void testSave() {
-		Client client = new Client();
-		clientService.save(client);
-		Assertions.assertNotNull(client);
-		Assertions.assertNotNull(client.getId());
-	}
-	  
+		Utilisateur utilisateur = new Utilisateur();
+		utilisateurService.save(utilisateur);
+		Assertions.assertNotNull(utilisateur);
+		Assertions.assertNotNull(utilisateur.getId());
+	}	  
 
 }

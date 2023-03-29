@@ -1,11 +1,8 @@
 package tp_spring_jpa_pablo;
 
-import java.util.List;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import junit.framework.Assert;
 import tp_spring_jpa_pablo.dao.ArticleDao;
 import tp_spring_jpa_pablo.dao.FournisseurDao;
 import tp_spring_jpa_pablo.model.Article;
@@ -18,26 +15,8 @@ public class ArticleDaoTest {
 		Article article = new Article();
 		Article savedArticle = articleDao.merge(article);
 		Assertions.assertNotNull(savedArticle.getId());		
-    }
-	
-	@Test
-	public void testGetParNom() {
-		ArticleDao ArticleDao = new ArticleDao();
-		Article article1 = new Article();
-		String nomArticle1 = "Banana";
-		article1.setNom(nomArticle1);
-		ArticleDao.merge(article1);
-		
-		Article Article2 = new Article();
-		Article2.setNom("Chocolat");
-		ArticleDao.merge(Article2);
-		
-		List<Article> Articles = ArticleDao.getParNom(nomArticle1);
-		Assert.assertEquals(1, Articles.size());
-		
-		/*List<Article> Articles2 = ArticleDao.getParNom2(nomArticle1);
-		Assert.assertEquals(1, Articles2.size());*/
-	}
+    }	
+
 	
 	@Test
     public void testMergeAvecFournisseur() {

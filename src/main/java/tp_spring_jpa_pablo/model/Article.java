@@ -28,7 +28,7 @@ public class Article {
     
     @ManyToOne
     @JoinColumn(name="fournisseur")
-    private Fournisseur fournisseur;
+    private Fournisseur fournisseur;	
     
 	public EtatArticle getEtat() {
 		return etat;
@@ -65,7 +65,8 @@ public class Article {
 	}
 	public void setDescription(String description) {
 		this.description = description;
-	} 
+	}	
+	
 	
 	
 	

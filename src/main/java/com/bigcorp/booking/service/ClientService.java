@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.bigcorp.booking.dao.spring.ClientSDao;
+import com.bigcorp.booking.dao.spring.ClientSpringDao;
 
 import tp_spring_jpa_pablo.model.Client;
 
@@ -12,29 +12,30 @@ import tp_spring_jpa_pablo.model.Client;
 public class ClientService {
 	
 	@Autowired
-	private ClientSDao clientSDao;
+	private ClientSpringDao clientSpringDao;
 	
 	public Iterable<Client> findAll(){
-		return this.clientSDao.findAll();
+		return this.clientSpringDao.findAll();
 	}
 	
 	@Transactional
 	public Client save(Client client) {
-		return this.clientSDao.save(client);
+		return this.clientSpringDao.save(client);
 	}
 	
 	public Client findById(Integer id) {
-		return this.clientSDao.findById(id).orElse(null);
+		return this.clientSpringDao.findById(id).orElse(null);
 	}
 	
 	@Transactional
 	public void deleteById(Integer id) {
-		this.clientSDao.deleteById(id);
+		this.clientSpringDao.deleteById(id);
 	}	
 	
 	// Crée dans le cours
-	public void findByNom(String nomClient) {
-		this.clientSDao.findByNom(nomClient);
+	public Iterable<Client> findByNom(String nomClient) {
+	    return clientSpringDao.findByNom(nomClient);
 	}
+
 
 }

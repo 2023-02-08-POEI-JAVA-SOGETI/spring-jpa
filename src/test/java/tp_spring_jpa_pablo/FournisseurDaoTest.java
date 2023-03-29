@@ -1,10 +1,10 @@
 package tp_spring_jpa_pablo;
 
 import java.util.List;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import junit.framework.Assert;
 import tp_spring_jpa_pablo.dao.ArticleDao;
 import tp_spring_jpa_pablo.dao.FournisseurDao;
 import tp_spring_jpa_pablo.model.Article;
@@ -30,8 +30,8 @@ public class FournisseurDaoTest {
 		Fournisseur2.setNom("Tropical");
 		FournisseurDao.merge(Fournisseur2);
 		
-		List<Fournisseur> Fournisseurs = FournisseurDao.getParNom("EDF");
-		Assert.assertEquals(1, Fournisseurs.size());
+		List<Fournisseur> fournisseurs = FournisseurDao.getParNom(Fournisseur2.getNom());
+		Assertions.assertEquals(1, fournisseurs.size());
 	}	
 	
 	@Test

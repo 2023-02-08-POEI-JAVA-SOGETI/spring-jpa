@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.bigcorp.booking.dao.spring.FournisseurSDao;
+import com.bigcorp.booking.dao.spring.FournisseurSpringDao;
 
 import tp_spring_jpa_pablo.model.Fournisseur;
 
@@ -12,29 +12,29 @@ import tp_spring_jpa_pablo.model.Fournisseur;
 public class FournisseurService {
 	
 	@Autowired
-	private FournisseurSDao fournisseurSDao;
+	private FournisseurSpringDao fournisseurSpringDao;
 	
 	public Iterable<Fournisseur> findAll(){
-		return this.fournisseurSDao.findAll();
+		return this.fournisseurSpringDao.findAll();
 	}
 	
 	@Transactional
 	public Fournisseur save(Fournisseur fournisseur) {
-		return this.fournisseurSDao.save(fournisseur);
+		return this.fournisseurSpringDao.save(fournisseur);
 	}
 	
 	public Fournisseur findById(Integer id) {
-		return this.fournisseurSDao.findById(id).orElse(null);
+		return this.fournisseurSpringDao.findById(id).orElse(null);
 	}
 	
 	@Transactional
 	public void deleteById(Integer id) {
-		this.fournisseurSDao.deleteById(id);
+		this.fournisseurSpringDao.deleteById(id);
 	}
 	
 	// Crée dans le cours
 	public void findByNom(String nomFournisseur) {
-		this.fournisseurSDao.findByNom(nomFournisseur);
+		this.fournisseurSpringDao.findByNom(nomFournisseur);
 	}	
 
 	

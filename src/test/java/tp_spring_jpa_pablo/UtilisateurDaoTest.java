@@ -11,6 +11,8 @@ public class UtilisateurDaoTest {
     public void testSave() {
 		UtilisateurDao utilisateurDao = new UtilisateurDao();
 		Utilisateur utilisateur = new Utilisateur();
+		String nomUtilisateur = "Test Save method";
+		utilisateur.setNom(nomUtilisateur);
 		Utilisateur savedUtilisateur = utilisateurDao.merge(utilisateur);
 		Assertions.assertNotNull(savedUtilisateur.getId());
     }

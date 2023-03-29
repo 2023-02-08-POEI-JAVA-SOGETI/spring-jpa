@@ -5,11 +5,11 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import tp_spring_jpa_pablo.model.Client;
+import tp_spring_jpa_pablo.model.Fournisseur;
 
 @Repository
-public interface ClientSDao extends CrudRepository<Client, Integer> {    
+public interface FournisseurSpringDao extends CrudRepository<Fournisseur, Integer> {    
 	// JPQL requetes SQL en JPA
-	public List<Client> findByNom(String nomClient);
+	public List<Fournisseur> findByNom(String nomFournisseur);
 	
 }

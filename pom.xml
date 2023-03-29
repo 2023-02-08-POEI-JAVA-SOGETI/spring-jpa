@@ -117,11 +117,6 @@
 			<artifactId>spring-test</artifactId>
 			<version>6.0.5</version>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>fr.entreprise</groupId>
-			<artifactId>Pablo_jdbc-http</artifactId>
-			<version>1.0.23-SNAPSHOT</version>
-		</dependency>
+		</dependency>		
 	</dependencies>
 </project>

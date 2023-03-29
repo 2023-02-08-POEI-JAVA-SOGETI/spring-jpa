@@ -3,6 +3,8 @@ package com.bigcorp.booking.mvc;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,13 +21,15 @@ import tp_spring_jpa_pablo.model.Fournisseur;
 
 @Controller
 public class FournisseurControleur {   
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(FournisseurControleur.class);
     
 	@Autowired
     private FournisseurService fournisseurService;
 	
 	@RequestMapping("/fournisseur")
     public String showSayHello() {
-    	System.out.println("PAGE FOURNISSEUR ");
+		LOGGER.info("PAGE FOURNISSEUR ");
         return "fournisseur";
     }
 	
@@ -41,15 +45,13 @@ public class FournisseurControleur {
 	    ModelAndView mav = new ModelAndView();
     	mav.setViewName("redirect:/formulaire-fournisseur?id=" + fournisseur.getId());
 	    return mav;
-	}
-	
-	
+	}	
 	
 	@RequestMapping("/formulaire-fournisseur")
     public String showFormulaire(@RequestParam("id") Integer id, Model model) {
         Fournisseur fournisseur = fournisseurService.findById(id);
         model.addAttribute("fournisseur", fournisseur);
-        System.out.println("FORMULAIRE DU FOURNISSEIR N " + id);
+        LOGGER.info("FORMULAIRE DU FOURNISSEIR N {}", id);
         return "formulaire-fournisseur";
     }
 	

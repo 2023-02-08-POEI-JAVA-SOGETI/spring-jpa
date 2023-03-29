@@ -1,10 +1,12 @@
 package com.bigcorp.booking.mvc.rest.dto;
 
+import jakarta.validation.constraints.Size;
 import tp_spring_jpa_pablo.model.Fournisseur;
 
 public class FournisseurRestDto {
 	
 	private Integer id;
+	@Size(min=4)
 	private String nom;
 	private String email;
 	private String adresse;
