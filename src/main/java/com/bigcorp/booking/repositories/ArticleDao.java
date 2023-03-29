@@ -1,4 +1,4 @@
-package com.bigcorp.booking.dao.spring;
+package com.bigcorp.booking.repositories;
 
 import java.util.List;
 

@@ -6,8 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.bigcorp.booking.dao.spring.FournisseurDao;
 import com.bigcorp.booking.model.Fournisseur;
+import com.bigcorp.booking.repositories.FournisseurDao;
+
 
 /**
  * Service pour l'entité Fournisseur.

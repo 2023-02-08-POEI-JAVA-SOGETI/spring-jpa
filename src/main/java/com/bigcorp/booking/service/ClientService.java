@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.bigcorp.booking.dao.spring.ClientDao;
 import com.bigcorp.booking.model.Client;
+import com.bigcorp.booking.repositories.ClientDao;
+
+
 
 
 // Service pour l'entité Client.
