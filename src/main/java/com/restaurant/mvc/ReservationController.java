@@ -19,7 +19,7 @@ import com.restaurant.model.Restaurant;
 import com.restaurant.service.ReservationService;
 import com.restaurant.service.RestaurantService;
 
-@Controller
+
 @RequestMapping("/reservation")
 @Controller
 public class ReservationController {
