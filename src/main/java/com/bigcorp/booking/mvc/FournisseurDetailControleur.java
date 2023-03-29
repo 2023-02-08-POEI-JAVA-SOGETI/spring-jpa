@@ -1,5 +1,6 @@
 package com.bigcorp.booking.mvc;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -11,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bigcorp.booking.model.Fournisseur;
-import com.bigcorp.booking.model.Planete;
 import com.bigcorp.booking.service.FournisseurService;
 //import com.bigcorp.booking.service.PlanetesSingleton;
 
@@ -22,6 +22,9 @@ import com.bigcorp.booking.service.FournisseurService;
  */
 @Controller
 public class FournisseurDetailControleur {
+	
+	@Autowired
+	private FournisseurService fournisseurService;
     
     /**
      * Intercepte les requêtes /planete , attend le paramètre de requête "id" et
@@ -44,7 +47,7 @@ public class FournisseurDetailControleur {
     	System.out.println("J'affiche le détail du fournisseur à partir du chemin  : " + id);
     	ModelAndView mav = new ModelAndView();
     	mav.setViewName("fournisseur");
-    	//mav.addObject("fournisseur", FournisseurService.save.getFournisseurById(id));
+    	mav.addObject("fournisseur", fournisseurService.findById(id));
         return mav;
     }
     
@@ -83,7 +86,7 @@ public class FournisseurDetailControleur {
             return mav;
         }
         // else
-        //FournisseurService.save(fournisseur);
+        fournisseurService.save(fournisseur);
         return mav;
     }
     

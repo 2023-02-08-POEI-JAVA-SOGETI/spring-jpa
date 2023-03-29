@@ -45,10 +45,10 @@ public class ClientService {
 			return clientSpringDao.findAll();
 		}
 		
-		public List<Client> findByName(String name) {
+		/*public List<Client> findByName(String name) {
 			logger.info("find client: {}", name);
 			return ClientDao.findByNom(name);
-		}
+		}*/
 
 		public List<Client> findAll() {
 			return (List<Client>) clientSpringDao.findAll();

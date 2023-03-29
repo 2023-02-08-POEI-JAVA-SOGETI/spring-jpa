@@ -15,9 +15,8 @@ import javax.persistence.Table;
 
 import com.bigcorp.booking.dto.FournisseurDto;
 
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotEmpty;
+
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
@@ -39,6 +38,7 @@ public class Fournisseur {
 	@Pattern(regexp = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\\\.[A-Za-z0-9-]+)*(\\\\.[A-Za-z]{2,})$", message="Must be an email address")
 	private String email;
 	@Size(min=1, max=255)
+	private Integer numero;
 	private String adresse;
 	
 	@OneToMany(mappedBy = "fournisseur")
@@ -89,9 +89,18 @@ public class Fournisseur {
 		this.adresse = adresse;
 	}
 	
-	public static void main(String[] args){
-		
+
+	/*public void setArticles(Set<Article> articles) {
+		this.articles = articles;
 	}
+
+	public Set<Client> getClients() {
+		return clients;
+	}
+
+	public void setClients(Set<Client> clients) {
+		this.clients = clients;
+	}*/
 
 }
 
