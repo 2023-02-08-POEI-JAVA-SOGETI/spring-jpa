@@ -27,7 +27,6 @@ class ReservationServiceTest {
 	
 	@BeforeEach
     public void setUp() throws Exception {
-        // Ajouter des réservations pour tester les méthodes
         Reservation r1 = new Reservation("nom1", "prenom1", "1234567890", LocalDateTime.now());
         Reservation r2 = new Reservation("nom2", "prenom2", "0987654321", LocalDateTime.now());
         reservationService.save(r1);
