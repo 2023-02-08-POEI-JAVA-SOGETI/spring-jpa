@@ -4,15 +4,13 @@
 
 <head>
 <style>
-	.list-container {
-	    display: flex;	    
-	}
-	
-	.fournisseurs-list,
-	.formulaires-list {
-	    width: 30%;
-  		
-	}
+.list-container {
+	display: flex;
+}
+
+.fournisseurs-list, .formulaires-list {
+	width: 30%;
+}
 </style>
 
 <title>TP : Restaurants</title>
@@ -34,8 +32,8 @@
 				<li th:each="restaurant : ${restaurantIterable}"><a
 					href="formulaire-restaurant.html"
 					th:href="@{/formulaire-restaurant(id=${restaurant.id})}"
-					th:text="${'Restaurant N° ' + restaurant.id }" 
-					target="_blank">Lien vers le formulaire des reservations</a></li>
+					th:text="${'Restaurant N° ' + restaurant.id }" target="_blank">Lien
+						vers le formulaire des reservations</a></li>
 			</ul>
 		</div>
 	</div>
