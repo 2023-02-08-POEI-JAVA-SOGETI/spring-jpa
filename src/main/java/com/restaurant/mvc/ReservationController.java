@@ -43,7 +43,7 @@ public class ReservationController {
         return show;
     }
 	
-	@GetMapping("/new")
+	@GetMapping("/new/{id}")
     public String newReservation(Model model) {
     	LOGGER.info("Affichage du formulaire de création d'une nouvelle reservation");
         model.addAttribute("reservation", new Reservation());

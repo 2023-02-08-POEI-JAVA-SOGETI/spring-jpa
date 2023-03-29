@@ -7,11 +7,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import jakarta.validation.constraints.NotNull;
 
 
 @Entity
+@Table(name = "type_restaurant")
 public class TypeRestaurant {
 	
 	@Id
