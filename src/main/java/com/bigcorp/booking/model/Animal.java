@@ -64,4 +64,5 @@ public class Animal {
 	public void setEtatSante(EtatSante etatSante) {
 		this.etatSante = etatSante;
 	}
+	
 }

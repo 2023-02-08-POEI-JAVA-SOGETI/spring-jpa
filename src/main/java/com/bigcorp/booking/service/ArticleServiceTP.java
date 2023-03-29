@@ -88,34 +88,5 @@ public class ArticleServiceTP {
 	//La méthode renvoie l'article modifié en base. La méthode doit être 
 	//testée avec un test JUnit.
 
-	/**
-
-	 * Attache l'article avec l'id articleId au fournisseur avec
-	 * l'id fournisseurId. idARticle est non null et correspond à 
-	 * un Article en base,sinon, une Exception est lancée
-	 * @param articleId
-	 * @param fournisseurId
-	 * @return
-	 * @throws IllegalArgumentException si articleId est null
-	 * @throws NoSuchElementException si articleId ne correspond à rien en base de données
-	 */
-	public Article attache(Integer articleId, Integer fournisseurId) {
-		LOGGER.info("Rattachement de l'article : {} avec le fournisseur : {} " , articleId, fournisseurId);
-		if(articleId == null) {
-			throw new IllegalArgumentException("articleId ne peut être null");
-		}
-		Optional<Article> optionalArticle = this.articleSpringDao.findById(articleId);
-		Article article = optionalArticle.orElse(null);
-		
-		Fournisseur fournisseur = null;
-		if(fournisseurId != null) {
-			fournisseur = fournisseurSpringDao.findById(fournisseurId).orElse(null);			
-		}
-		article.setFournisseur(fournisseur);
-		
-		return this.articleSpringDao.save(article);
-		
 	}
-	
 
-}

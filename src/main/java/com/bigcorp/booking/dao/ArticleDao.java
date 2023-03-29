@@ -16,9 +16,7 @@ public class ArticleDao extends AbstractDao<Article>{
 		// LEFT OUTER JOIN FOURNISSEUR ON ARTICLE.FOURNISSEUR_ID = FOURNISSEUR.ID
 		// WHERE ARTICLE.NOM = ' + nomArticle
 		List<Article> articles 
-			= em.createQuery("from Article article "
-					+ " left outer join fetch article.fournisseur "
-					+ " where article.nom = :nomArticle ", Article.class)
+			= em.createQuery("from Article article where article.nom = :nomArticle ", Article.class)
 				.setParameter("nomArticle", nomArticle).getResultList();
 		em.close();
 		return articles;
