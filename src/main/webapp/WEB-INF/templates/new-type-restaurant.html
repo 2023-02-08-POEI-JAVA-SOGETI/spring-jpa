@@ -24,11 +24,7 @@
 					<input type="hidden" th:field="*{nom}">
 					<div class='form-group'>
 					    <label for="nom">Nom :</label>
-					    <input type="text" class='form-control' id="nom" th:field="*{nom}"
-					        th:classappend="${#fields.hasErrors('nom')} ? 'is-invalid' : ''">
-					    <div th:if="${#fields.hasErrors('nom')}" class="invalid-feedback">
-					        <p th:each="err : ${#fields.errors('nom')}" th:text="${err}"></p>
-					    </div>
+					    <input type="text" class='form-control' id="nom" th:field="*{nom}">
 					</div>
 					<button type="submit" class='btn btn-primary'>Sauvegarder</button>
 				</form>
