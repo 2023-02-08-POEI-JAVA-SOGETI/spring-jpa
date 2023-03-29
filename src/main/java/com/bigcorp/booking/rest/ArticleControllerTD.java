@@ -17,7 +17,7 @@ import com.bigcorp.booking.service.ArticleServiceTP;
 public class ArticleControllerTD {
 	
 	@Autowired 
-	private ArticleControllerTD articleController;
+	private ArticleServiceTP articleServiceTP;
 
 	@GetMapping("/rest/articles/{articleId}")
 	public ArticleControllerTD getById(@PathVariable("articleId") Integer articleId) {
@@ -52,7 +52,7 @@ public class ArticleControllerTD {
 	
 
 	@PostMapping("/rest/articles")
-	public ArticleControllerTD save(@RequestBody ArticleControllerTD articleRestDto) {
+	public ArticleRestDtoTD save(@RequestBody ArticleRestDtoTD articleRestDto) {
 		
 		// Transformer le DTO en entité
 		Article article1 = new Article();
@@ -62,8 +62,7 @@ public class ArticleControllerTD {
 		article1 = ArticleServiceTP.save(article1);
 
 		// transmetttre en réponse le DTO
-		return this;
-		// return new ArticleControllerTD(article1);
+		return new ArticleRestDtoTD(article1);
 	}
 
 

@@ -97,7 +97,4 @@ public class Article {
 		this.fournisseur.getArticles().add(this);
 	}
 	
-	INSERT INTO articles (titre, contenu, date_creation) VALUES ('Nouvel article', 'Contenu de l\'article', NOW());
-
-
 }
