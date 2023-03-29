@@ -31,11 +31,13 @@ public class RestaurantService {
 		RestaurantDto savedDto = new RestaurantDto(savedRestaurant);
 		return savedDto;
 
+
 	}
 
 	@Transactional
 	public RestaurantDto findById(Integer id) {
 		Restaurant restaurant = restaurantDao.findById(id)
+
 				.orElse(null);
 		
 		if (restaurant == null)
@@ -48,6 +50,7 @@ public class RestaurantService {
 	}
 
 	@Transactional
+
 	public RestaurantDto update(RestaurantDto restaurantDto) {
 	
 			Restaurant restaurant = restaurantDto.rempliRestaurant(new Restaurant());
@@ -60,6 +63,7 @@ public class RestaurantService {
 	@Transactional
 	public void deleteById(Integer id){
 			restaurantDao.deleteById(id);
+
 	}
 
 }
