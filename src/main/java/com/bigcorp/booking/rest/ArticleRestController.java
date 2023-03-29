@@ -66,6 +66,7 @@ public class ArticleRestController {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Aucun article n'est présent en BDD avec l'id : " + articleId);
 		}
 		articleService.delete(articleId);
+		LOGGER.info("Restaurant avec id : {} supprimé", articleId);
 	}
 	
 	@PostMapping
@@ -73,6 +74,13 @@ public class ArticleRestController {
 		LOGGER.info("Appel méthode save() de ArticleRestController.java <=> request HTTP POST");
 		//Transformer le DTO en entité
 		Article article = new Article();
+		if(articleRestDto.getId() != null) {
+			article = articleService.findById(articleRestDto.getId());
+			if(article == null) {
+				throw new ResponseStatusException(HttpStatus.NOT_FOUND, 
+						"Aucun article trouvé avec l'id " + articleRestDto.getId()+ ", vous ne pouvez créer un article en reseignant un id.");
+			}
+		}
 		articleRestDto.remplisArticle(article);
 		//Sauvegarder l'entité
 		article = articleService.save(article);
