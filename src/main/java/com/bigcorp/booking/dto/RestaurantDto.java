@@ -10,11 +10,17 @@ import com.bigcorp.booking.models.Prix;
 import com.bigcorp.booking.models.Restaurant;
 import com.bigcorp.booking.models.TypeRestaurant;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+
 public class RestaurantDto {
 
+	
 	private Integer id;
+	@NotEmpty
 	private String nom;
 	private Prix prix;
+	@NotEmpty
 	private String adresse;
 	
 //	private TypeRestaurant typeRestaurant;

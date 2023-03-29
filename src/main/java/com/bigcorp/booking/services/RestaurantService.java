@@ -24,34 +24,41 @@ public class RestaurantService {
 	}
 
 	@Transactional
-	public Restaurant save(RestaurantDto restaurantDto) {
+	public RestaurantDto save(RestaurantDto restaurantDto) {
 		Restaurant restaurant = new Restaurant();
 		restaurant = restaurantDto.rempliRestaurant(restaurant);
-		return this.restaurantDao.save(restaurant);
+		Restaurant savedRestaurant = restaurantDao.save(restaurant);
+		RestaurantDto savedDto = new RestaurantDto(savedRestaurant);
+		return savedDto;
 	}
 
 	@Transactional
 	public RestaurantDto findById(Integer id) {
 		Restaurant restaurant = restaurantDao.findById(id)
-				.orElseThrow(() -> new IllegalArgumentException("Aucun restaurant avec l'id" + id));
+				.orElse(null);
+		
+		if (restaurant == null)
+		{
+			return null;
+		}
+		
 		RestaurantDto restaurantDto = new RestaurantDto(restaurant);
 		return restaurantDto;
 	}
 
 	@Transactional
-	public Restaurant update(RestaurantDto restaurantDto) {
-		if(restaurantDto.getId() == null) {
-			throw new IllegalArgumentException("Mise à jour impossible, le restaurant n'existe pas");
-		} else {
+	public RestaurantDto update(RestaurantDto restaurantDto) {
+	
 			Restaurant restaurant = restaurantDto.rempliRestaurant(new Restaurant());
 			Restaurant savedRestaurant = restaurantDao.save(restaurant);
-			return savedRestaurant;
-		}
+			RestaurantDto dto = new RestaurantDto(savedRestaurant);
+			return dto;
+		
 	}
 
 	@Transactional
-	public void deleteById(Integer id) {
-		restaurantDao.deleteById(id);
+	public void deleteById(Integer id){
+			restaurantDao.deleteById(id);
 	}
 
 }
