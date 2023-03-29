@@ -4,13 +4,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bigcorp.booking.model.Restaurant;
 import com.bigcorp.booking.service.RestaurantService;
+
+
 
 
 @Controller
@@ -31,6 +33,14 @@ public class RestaurantController {
 		return mav;
 
 	}
+	
+	@RequestMapping("/formulaire-restaurant")
+    public String showFormulaire(@RequestParam("id") Integer id, Model model) {
+        Restaurant restaurant = restaurantService.findById(id);
+        model.addAttribute("restaurant", restaurant);
+        LOGGER.info("FORMULAIRE DU RESTAURANT N {}", id);
+        return "formulaire-restaurant";
+    }
 
 	/*@RequestMapping("/fournisseurs/{id}")
 	private ModelAndView showPageFournisseur(@PathVariable("id") int id) {
