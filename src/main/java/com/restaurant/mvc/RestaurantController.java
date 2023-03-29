@@ -18,8 +18,8 @@ import com.restaurant.model.Restaurant;
 import com.restaurant.service.RestaurantService;
 
 @RequestMapping("/restaurant")
-public class RestaurantControler {
-	private static final Logger LOGGER = LoggerFactory.getLogger(RestaurantControler.class);
+public class RestaurantController {
+	private static final Logger LOGGER = LoggerFactory.getLogger(RestaurantController.class);
 	
 	@Autowired
 	private RestaurantService restaurantService;
@@ -35,7 +35,7 @@ public class RestaurantControler {
 	@GetMapping("/{id}")
     public ModelAndView show(@PathVariable("id") Integer id) {
     	LOGGER.info("Affichage de la restaurant avec l'ID : {}", id);
-       Restaurant restaurant = restaurantService.findById(id);
+        Restaurant restaurant = restaurantService.findById(id);
        	LOGGER.debug("restaurant trouvé : {}", restaurant);
         ModelAndView show = new ModelAndView("show-restaurant");
         show.addObject("restaurant", restaurant);
