@@ -29,7 +29,7 @@ public class RestaurantService {
 	}
 	
 	public Iterable<Restaurant> findAll() {
-		return restaurantDao.findAll();
+		return restaurantDao.findAllWithType();
 	}
 	
 	public Restaurant findById(Integer id) {
