@@ -37,12 +37,6 @@
 				    <tr th:each="typeRestaurant : ${listTypeRestaurant}">
 				      <td><a th:href="@{/typeRestaurant/{id}(id=${typeRestaurant.id})}" th:text="${typeRestaurant.id}"></a></td>
 				      <td><a th:href="@{/typeRestaurant/{id}(id=${typeRestaurant.id})}" th:text="${typeRestaurant.nom}"></a></td>
-				      <td><a class='btn btn-primary' th:href="@{/typeRestaurant/{id}/edit(id=${typeRestaurant.id})}">Modifier</a></td>
-				      <td>
-				      	<form method="POST" th:action="@{/typeRestaurant/{id}/delete(id=${typeRestaurant.id})}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce type ?');">
-    						<button type="submit" class="btn btn-danger">Supprimer</button>
-						</form>
-					  </td>
 				    </tr>
 				  </tbody>
 				  <tbody th:if="${isTypeRestaurantListEmpty}">

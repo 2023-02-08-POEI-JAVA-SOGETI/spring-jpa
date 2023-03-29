@@ -59,7 +59,6 @@ public class RestaurantRestController {
 		@PostMapping("")
 		public RestaurantDto createRestaurant(@Valid @RequestBody RestaurantDto restaurantDto, BindingResult result) {
 			if (result.hasErrors()) {
-				//concaténation des erreurs liées aux champs non valides
 				String reason = "Erreur : " + result.getFieldErrors().stream().map(FieldError::getDefaultMessage).collect(Collectors.joining(" "));
 				LOGGER.info("createArticle : " + reason);
 				throw new ResponseStatusException(HttpStatus.BAD_REQUEST, reason);

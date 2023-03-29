@@ -74,33 +74,6 @@ public class ReservationController {
         return "redirect:/reservation/" + reservation.getId();
     }
 	
-	@GetMapping("/{id}/edit")
-    public String edit(@PathVariable("id") Integer id, Model model) {
-    	LOGGER.info("Affichage du formulaire de modification de la reservation {}", id);
-        Reservation reservation = reservationService.findById(id);
-        model.addAttribute("reservation", reservation);
-        return "edit-reservation";
-    }
-
-    @PutMapping("/{id}/update")
-    public String updateArticle(@PathVariable("id") Integer id, @ModelAttribute("reservation") Reservation reservation,
-                                BindingResult result) {
-        if (result.hasErrors()) {
-        	LOGGER.warn("Erreur de validation lors de la modification de la reservation {}", reservation);
-            return "reservation/edit";
-        }
-        LOGGER.info("Modification de la reservation {}", reservation);
-        reservationService.save(reservation);
-        return "redirect:/reservation/" + reservation.getId();
-    }
-
-    @PostMapping("/{id}/delete")
-    public String deleteReservation(@PathVariable("id") Integer id) {
-    	LOGGER.info("Suppression de la reservation {}", id);
-        reservationService.delete(id);
-        return "redirect:/reservation";
-    }
-
     @ModelAttribute("listReservation")
     public Iterable<Reservation> listReservation() {
         return reservationService.findAll();

@@ -60,26 +60,6 @@ public class TypeRestaurantController {
         return "redirect:/typeRestaurant/" + typeRestaurant.getId();
     }
 
-	@GetMapping("/{id}/edit")
-    public String edit(@PathVariable("id") Integer id, Model model) {
-    	LOGGER.info("Affichage du formulaire de modification du type de restaurant {}", id);
-        TypeRestaurant typeRestaurant = typeRestaurantService.findById(id);
-        model.addAttribute("typeRestaurant", typeRestaurant);
-        return "edit-type-restaurant";
-    }
-
-    @PostMapping("/{id}/update")
-    public String updateTypeRestaurant(@PathVariable("id") Integer id, @ModelAttribute("typeRestaurant") TypeRestaurant typeRestaurant,
-                                BindingResult result) {
-        if (result.hasErrors()) {
-        	LOGGER.warn("Erreur de validation lors de la modification du type de restaurant {}", typeRestaurant);
-            return "typeRestaurant/edit";
-        }
-        LOGGER.info("Modification du type {}", typeRestaurant);
-        typeRestaurantService.save(typeRestaurant);
-        return "redirect:/typeRestaurant/" + typeRestaurant.getId();
-    }
-
     @PostMapping("/{id}/delete")
     public String deleteTypeRestaurant(@PathVariable("id") Integer id) {
     	LOGGER.info("Suppression du type {}", id);

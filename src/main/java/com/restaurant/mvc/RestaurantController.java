@@ -62,33 +62,6 @@ public class RestaurantController {
         LOGGER.info("Reservation créée avec succès {}", restaurant);
         return "redirect:/restaurant/" + restaurant.getId();
     }
-	
-	@GetMapping("/{id}/edit")
-    public String edit(@PathVariable("id") Integer id, Model model) {
-    	LOGGER.info("Affichage du formulaire de modification d'un restaurant {}", id);
-        Restaurant restaurant = restaurantService.findById(id);
-        model.addAttribute("restaurant", restaurant);
-        return "edit-restaurant";
-    }
-
-    @PutMapping("/{id}/update")
-    public String updateArticle(@PathVariable("id") Integer id, @ModelAttribute("restaurant") Restaurant restaurant,
-                                BindingResult result) {
-        if (result.hasErrors()) {
-        	LOGGER.warn("Erreur de validation lors de la modification du restaurant{}", restaurant);
-            return "restaurant/edit";
-        }
-        LOGGER.info("Modification d'un restaurant {}", restaurant);
-        restaurantService.save(restaurant);
-        return "redirect:/restaurant/" + restaurant.getId();
-    }
-
-    @PostMapping("/{id}/delete")
-    public String deleteRestaurant(@PathVariable("id") Integer id) {
-    	LOGGER.info("Suppression d'un restaurant {}", id);
-    	restaurantService.delete(id);
-        return "redirect:/restaurant";
-    }
 
     @ModelAttribute("listRestaurant")
     public Iterable<Restaurant> listRestaurant() {
