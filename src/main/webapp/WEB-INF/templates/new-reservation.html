@@ -9,21 +9,19 @@
 	<div class="container">
 		<div class="row my-5">
 			<div class="col">
-	    		<a class="btn btn-secondary" href="/spring-jpa/clients">Retour à la liste des clients</a>
+	    		<a class="btn btn-secondary" href="/spring-jpa/restaurant">Retour à la liste des restaurants</a>
 			</div>
 		</div>
 		<div class="row mb-4">
 			<div class="col">
-	    		<h1>Nouveau client</h1>
+	    		<h1 th:text="'Nouvelle reservation chez ' + *{restaurant.nom}"></h1>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-			
-			    <form action="#" th:action="@{/client/create}" th:object="${client}" method="post">
-			    	<input type="hidden" th:field="*{id}">
-					<input type="hidden" th:field="*{numero}">
-			        <div class="form-group">
+								
+			    <form action="#" th:action="@{/reservation/save/{id}(id=${restaurant.id})}" th:object="${reservation}" method="post">
+					<div class="form-group">
 			            <label for="nom">Nom :</label>
 			            <input type="text" class="form-control" id="nom" th:field="*{nom}"
 			                   th:classappend="${#fields.hasErrors('nom')} ? 'is-invalid' : ''">
@@ -40,21 +38,17 @@
 			            </div>
 			        </div>
 			        <div class="form-group">
-			            <label for="email">Email :</label>
-			            <input type="email" class="form-control" id="email" th:field="*{email}"
-			                   th:classappend="${#fields.hasErrors('email')} ? 'is-invalid' : ''">
-			            <div th:if="${#fields.hasErrors('email')}" class="invalid-feedback">
-			                <p th:each="err : ${#fields.errors('email')}" th:text="${err}"></p>
+			            <label for="telephone">Téléphone :</label>
+			            <input type="text" class="form-control" id="telephone" th:field="*{telephone}"
+			                   th:classappend="${#fields.hasErrors('telephone')} ? 'is-invalid' : ''">
+			            <div th:if="${#fields.hasErrors('telephone')}" class="invalid-feedback">
+			                <p th:each="err : ${#fields.errors('telephone')}" th:text="${err}"></p>
 			            </div>
 			        </div>
 			        <div class="form-group">
-			            <label for="adresse">adresse :</label>
-			            <input type="text" class="form-control" id="adresse" th:field="*{adresse}"
-			                   th:classappend="${#fields.hasErrors('adresse')} ? 'is-invalid' : ''">
-			            <div th:if="${#fields.hasErrors('adresse')}" class="invalid-feedback">
-			                <p th:each="err : ${#fields.errors('adresse')}" th:text="${err}"></p>
-			            </div>
-			        </div>
+			            <label for="date">Date et heure de début :</label>
+			            <input type="datetime-local" class="form-control" id="date" th:field="*{dateHeureDebut}">
+			        </div>			        
 			        <button type="submit" class="btn btn-primary">Enregistrer</button>
 			    </form>
 			</div>

@@ -22,7 +22,7 @@ public class Reservation {
 	private String telephone;
 	@Column(name = "date_heure_debut")
 	private String dateHeureDebut;
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "RESTAURANT_ID")
 	private Restaurant restaurant;
 	

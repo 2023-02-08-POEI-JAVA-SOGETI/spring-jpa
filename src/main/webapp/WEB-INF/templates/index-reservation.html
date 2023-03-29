@@ -30,8 +30,9 @@
 				      <td><a th:href="@{/reservation/{id}(id=${reservation.id})}" th:text="${reservation.id}"></a></td>
 				      <td><a th:href="@{/reservation/{id}(id=${reservation.id})}" th:text="${reservation.nom}"></a></td>
 				      <td><a th:href="@{/reservation/{id}(id=${reservation.id})}" th:text="${reservation.prenom}"></a></td>
-				      <td><a th:href="@{/reservation/{id}(id=${reservation.id})}" th:text="${reservation.email}"></a></td>
-				      <td><a th:href="@{/reservation/{id}(id=${reservation.id})}" th:text="${reservation.login}"></a></td>
+				      <td><a th:href="@{/reservation/{id}(id=${reservation.id})}" th:text="${reservation.telephone}"></a></td>
+				      <td><a th:href="@{/reservation/{id}(id=${reservation.id})}" th:text="${reservation.dateHeureDebut}"></a></td>
+				      <td><a th:href="@{/reservation/{id}(id=${reservation.id})}" th:text="${reservation.restaurant.nom}"></a></td>
 				    </tr>
 				  </tbody>
 				  <tbody th:if="${isUtilisateursListEmpty}">

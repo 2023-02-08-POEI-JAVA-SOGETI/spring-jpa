@@ -38,7 +38,7 @@
 				      <td><a th:href="@{/restaurant/{id}(id=${restaurant.id})}" th:text="${restaurant.prix}"></a></td>
 				      <td><a th:href="@{/restaurant/{id}(id=${restaurant.id})}" th:text="${restaurant.adresse}"></a></td>
 				      <td><a th:href="@{/restaurant/{id}(id=${restaurant.id})}" th:text="${restaurant.type.nom}"></a></td>
-				      <td><a class='btn btn-primary' th:href="@{/reservation/{id}(id=${restaurant.id})}">Réserver</a></td>
+				      <td><a class='btn btn-primary' th:href="@{/reservation/new/{id}(id=${restaurant.id})}">Réserver</a></td>
 				    </tr>
 				  </tbody>
 				  <tbody th:if="${isRestaurantListEmpty}">
