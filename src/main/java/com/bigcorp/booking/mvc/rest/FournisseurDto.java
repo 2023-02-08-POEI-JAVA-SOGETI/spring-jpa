@@ -1,14 +1,6 @@
 package com.bigcorp.booking.mvc.rest;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.function.Function;
-import java.util.stream.Collectors;
-
-import javax.persistence.OneToMany;
-
-import com.bigcorp.booking.exercice.model.many_to_one.Article;
 import com.bigcorp.booking.exercice.model.many_to_one.Fournisseur;
 
 import jakarta.validation.constraints.Email;

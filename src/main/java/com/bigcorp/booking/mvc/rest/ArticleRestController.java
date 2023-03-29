@@ -4,7 +4,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -60,6 +63,44 @@ public class ArticleRestController {
 			
 			return service.createArticleWithDto(articleDto);
 
+		}
+		
+		
+		@PostMapping("/update")
+		public ArticleDto updateArticle(@Validated @RequestBody ArticleDto articleDto,
+												BindingResult result)
+		{
+			if(result.hasErrors())
+			{
+				ObjectError error = result.getAllErrors().get(0);
+				throw new ResponseStatusException(HttpStatus.BAD_REQUEST, error.getDefaultMessage());
+			}
+			
+			if(articleDto == null )
+		 	{
+		 		throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Aucun article mis à jour");
+		 	}
+			
+			LOGGER.info("M.A.J de l'article n° " + articleDto.getId());
+			
+			return service.updateArticleWithDTO(articleDto);
+		}
+		
+
+		
+		@DeleteMapping("/delete/{id}")
+		public String supprimeArticle(@PathVariable("id") Integer id)
+		{
+			LOGGER.info("Suppression de l'Article n° " + id);
+			
+			if(id == null || id <=0)
+		 	{
+		 		throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Aucun article trouvé");
+		 	}
+			
+			service.deleteArticleById(id);
+			
+			return "Article n° " + id + " supprimé";
 		}
 
 }

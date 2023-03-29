@@ -5,14 +5,13 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import com.bigcorp.booking.dao.PersistenceSingleton;
-import com.bigcorp.booking.exercice.entityManager_jpql.AbstractDaoClass;
 import com.bigcorp.booking.exercice.model.many_to_one.Fournisseur;
 
 
 
 public class FournisseurDao extends AbstractDaoClass<Fournisseur>{
 	
-
+	
 	/*
 	 *  METHODE REQUETE JPQL avec la méthode .createQuery
 	 *  

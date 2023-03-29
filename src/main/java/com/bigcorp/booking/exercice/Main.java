@@ -21,6 +21,7 @@ public class Main {
 		
 		Article article = new Article(0505, Type.ACHAT, "Article Test", "Description Test" );
 		
+	
 		
 	/*
 	 * Ici on peut appeler les méthodes de AbstractDaoClass car elle est étendu par les classes de DAO.

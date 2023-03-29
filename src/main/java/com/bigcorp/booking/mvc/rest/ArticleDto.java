@@ -2,16 +2,13 @@ package com.bigcorp.booking.mvc.rest;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
 import com.bigcorp.booking.exercice.model.many_to_one.Article;
-import com.bigcorp.booking.exercice.model.many_to_one.Fournisseur;
 import com.bigcorp.booking.exercice.model.many_to_one.Type;
+
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 public class ArticleDto implements Serializable{
 
@@ -20,10 +17,14 @@ public class ArticleDto implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	@NotNull
 	private Integer id;
+	@Min(0)
 	private Integer numArticle;
 	private Type type;
+	@NotEmpty
 	private String nom;
+	@NotEmpty
 	private String description;
 
 	

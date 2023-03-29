@@ -10,11 +10,12 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import com.bigcorp.booking.exercice.model.many_to_one.Article;
 import com.bigcorp.booking.exercice.model.many_to_one.Fournisseur;
 import com.bigcorp.booking.exercice.model.many_to_one.Type;
+import com.bigcorp.booking.mvc.rest.ArticleDto;
 import com.bigcorp.booking.spring.service.ArticleService;
 import com.bigcorp.booking.spring.service.FournisseurService;
 
 @SpringJUnitConfig(SpringConfiguration.class)
-public class ArticleDaoSpringTest {
+public class ArticleServiceSpringTest {
 	
 	@Autowired
 	private ArticleService service;
@@ -40,6 +41,7 @@ public class ArticleDaoSpringTest {
 		Assertions.assertEquals("SPRING Artcile", testArticle.getNom());
 		
 	}
+
 	
 	
 	
@@ -53,11 +55,6 @@ public class ArticleDaoSpringTest {
 	}
 	
 	
-	public void getArticleByType()
-	{
-		List<Article> articles = service.getArticlesByType("ACHAT");
-		Assertions.assertTrue(!articles.isEmpty());
-	}
 	
 	
 	@Test
@@ -80,41 +77,31 @@ public class ArticleDaoSpringTest {
 		Article articleTest = service.getArticleById(article1.getId());
 		
 		Assertions.assertEquals(fournisseur1.getId(),articleTest.getFournisseur().getId());
-		
-		
-		
+				
 	}
 	
 	
 	
-	
-	public void deleteArticleByIdTest()
-	{
-		
-	}
-	
-	
-	
-	public void getArticleByTypeTest()
-	{
-		
-	}
-	
-	
-	
-	
+
 	// DTO
 	
 	
-	
+	@Test
 	public void getArticleByIdWithDTO()
 	{
+		Article article = new Article();
+		article.setNom("ArticleDTOtest");
+		Article articleTest = service.createArticle(article);
+		ArticleDto dtoTest = service.getArticleByIdWithDTO(articleTest.getId());
+		
+		Assertions.assertEquals("ArticleDTOtest", dtoTest.getNom());
 		
 	}
 	
 	public void createArticleWithDTO()
 	{
-		
+		ArticleDto dto = new ArticleDto();
+		dto.setNom("ArticleDTOtest");
 	}
 	
 }

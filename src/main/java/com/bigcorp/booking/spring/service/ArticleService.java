@@ -1,6 +1,5 @@
 package com.bigcorp.booking.spring.service;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +10,6 @@ import com.bigcorp.booking.dao.spring.FournisseurDao;
 import com.bigcorp.booking.exercice.model.many_to_one.Article;
 import com.bigcorp.booking.exercice.model.many_to_one.Fournisseur;
 import com.bigcorp.booking.mvc.rest.ArticleDto;
-import com.bigcorp.booking.mvc.rest.FournisseurDto;
 
 @Service
 public class ArticleService {
@@ -66,13 +64,7 @@ public class ArticleService {
 		
 	}
 	
-	public List<Article> getArticlesByType (String type)
-	{
-		List<Article> list = dao.getArticleByType(type);
-		
-		return list;
-		
-	}
+
 
 	
 	
@@ -81,11 +73,8 @@ public class ArticleService {
 	
 	
 	public ArticleDto getArticleByIdWithDTO(Integer id) {
-		
 		Article article = dao.findById(id).get();
-		
 		ArticleDto dto = new ArticleDto(article);
-		
 		return dto;
 	}
 
@@ -93,7 +82,6 @@ public class ArticleService {
 	
 	@Transactional
 	public ArticleDto createArticleWithDto(ArticleDto articleDto) {
-		
 		Article article = new Article();
 		articleDto.fillArticleWithDto(article);
 		dao.save(article);
@@ -102,8 +90,20 @@ public class ArticleService {
 	}
 	
 	
-	
-	
-	
+	@Transactional
+	public ArticleDto updateArticleWithDTO(ArticleDto articleDto)
+	{
+		 if (articleDto == null || articleDto.getId() == null) 
+		 {
+	        throw new IllegalArgumentException("ArticleDto ou l'ID ne peuvent pas être null.");
+		 }
+		 
+		 Article article = dao.findById(articleDto.getId()).get();
+		 articleDto.fillArticleWithDto(article);
+		 Article articleUpdated = dao.save(article);
+		 ArticleDto update = new ArticleDto(articleUpdated);
+		 
+		 return update;
+	}
 
 }
