@@ -54,6 +54,7 @@ public class Restaurant {
 		super();
 	}
 
+
 	public static class Builder {
 		
 		private String nom = "Nom inconnu";

@@ -7,8 +7,18 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   </head>
 
-  <body>
-
-
-  </body>
+  	<body>
+	  	<h1>Liste de nos restaurants lyonnais</h1>
+		<ul>
+			<li th:each="restaurant : ${listeRestaurants}" th:text="${restaurant.nom}">
+				Restaurants
+			</li>
+		</ul>
+		
+		
+		<form action="localhost:8080/spring-jpa/rest/reservation/save" th:object="${reservation}" method="POST">
+			<button>Créer une réservation</button>
+		</form>
+			
+   </body>
 </html>
