@@ -30,8 +30,6 @@ public class RestaurantService {
 		Restaurant savedRestaurant = restaurantDao.save(restaurant);
 		RestaurantDto savedDto = new RestaurantDto(savedRestaurant);
 		return savedDto;
-
-
 	}
 
 	@Transactional
