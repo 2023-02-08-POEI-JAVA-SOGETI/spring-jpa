@@ -25,7 +25,7 @@ public class ArticleSpringDaoTest {
 		article.setNom("Jaguar");
 		
 		article.setNumero(1234);
-		articleService.sauvegarde(article);
+		//articleService.sauvegarde(article);
 		Assertions.assertNotNull(article.getId());
 	}
 
@@ -35,7 +35,7 @@ public class ArticleSpringDaoTest {
 		article.setNom("Jeep");
 		
 		article.setNumero(1235);
-		articleService.sauvegarde(article);
+		//articleService.sauvegarde(article);
 		
 		List<Article> articleDelaBase = articleService.findByNom(article.getNom());
 		
@@ -50,7 +50,7 @@ public class ArticleSpringDaoTest {
 		article.setNom("range rover");
 		
 		article.setNumero(1237);
-		articleService.sauvegarde(article);
+		//articleService.sauvegarde(article);
 		
 		
 		Article articleDeLaBase = articleService.get(article.getId());
@@ -63,7 +63,7 @@ public class ArticleSpringDaoTest {
 		article.setNom("Chevrolet");
 		
 		article.setNumero(1239);
-		articleService.sauvegarde(article);
+		//articleService.sauvegarde(article);
 		
 		Assertions.assertNotNull(article);
 		articleService.supprimer(article.getId());

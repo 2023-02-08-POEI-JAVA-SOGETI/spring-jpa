@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import com.bigcorp.booking.dao.PersistenceSingleton;
 import com.bigcorp.booking.model.Article;
+import com.bigcorp.booking.model.EtatArticle;
 import com.bigcorp.booking.model.Example;
 import com.bigcorp.booking.model.Fournisseur;
 
@@ -23,5 +24,12 @@ public interface ArticleSpringDao extends CrudRepository<Article, Integer> {
 
 	@Query("from Article where nom = :nom")
 	List<Article> maMethodeDeRechercheAvecUneQueryExplicite(@Param("nom") String nom);
+	
+	
+
+	public List<Article> findByEtatArticle(EtatArticle etatArticle);
+
+	@Query("from Article where etatArticle = :etatArticle")
+	List<Article> maMethodeDeRechercheAvecUneQueryExplicite2(@Param("etatArticle") EtatArticle etatArticle);
 
 }

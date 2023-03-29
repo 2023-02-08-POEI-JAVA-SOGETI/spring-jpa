@@ -2,12 +2,17 @@ package com.bigcorp.booking.service;
 
 import java.util.List;
 
+import javax.persistence.PersistenceException;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bigcorp.booking.dao.spring.FournisseurSpringDao;
 import com.bigcorp.booking.model.Fournisseur;
+import com.bigcorp.booking.service.exception.FournisseurException;
 
 /**
  * Service pour l'entité Fournisseur.
@@ -16,6 +21,8 @@ import com.bigcorp.booking.model.Fournisseur;
  */
 @Service
 public class FournisseurService {
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(FournisseurService.class);
 
 	@Autowired
 	private FournisseurSpringDao fournisseurSpringDao;
@@ -43,9 +50,15 @@ public class FournisseurService {
 	
 	
 	@Transactional
-	public Fournisseur sauvegarde(Fournisseur fournisseur) {
-		return this.fournisseurSpringDao.save(fournisseur);
+	public Fournisseur sauvegarde(Fournisseur fournisseur) throws FournisseurException {
+		LOGGER.info("Sauvegarde de : {}" , fournisseur);
+		try {
+			return this.fournisseurSpringDao.save(fournisseur);
+		}catch(PersistenceException exception) {
+			throw new FournisseurException(exception);
+		}
 	}
+	
 	
 	@Transactional
 	public void supprimer(Integer id) {

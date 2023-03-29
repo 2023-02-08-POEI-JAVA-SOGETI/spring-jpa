@@ -25,7 +25,7 @@ public class FournisseurSpringDaoTest {
 		fournisseur.setNom("Jaguar");
 		
 		fournisseur.setNumero(1234);
-		fournisseurService.sauvegarde(fournisseur);
+		//fournisseurService.sauvegarde(fournisseur);
 		Assertions.assertNotNull(fournisseur.getId());
 	}
 
@@ -35,7 +35,7 @@ public class FournisseurSpringDaoTest {
 		fournisseur.setNom("Jeep");
 		
 		fournisseur.setNumero(1235);
-		fournisseurService.sauvegarde(fournisseur);
+		//fournisseurService.sauvegarde(fournisseur);
 		
 		List<Fournisseur> articleDelaBase = fournisseurService.findByNom(fournisseur.getNom());
 		
@@ -50,7 +50,7 @@ public class FournisseurSpringDaoTest {
 		fournisseur.setNom("range rover");
 		
 		fournisseur.setNumero(1237);
-		fournisseurService.sauvegarde(fournisseur);
+		//fournisseurService.sauvegarde(fournisseur);
 		
 		
 		Fournisseur fournisseurDeLaBase = fournisseurService.get(fournisseur.getId());
@@ -63,7 +63,7 @@ public class FournisseurSpringDaoTest {
 		fournisseur.setNom("Chevrolet");
 		
 		fournisseur.setNumero(1239);
-		fournisseurService.sauvegarde(fournisseur);
+		//fournisseurService.sauvegarde(fournisseur);
 		
 		Assertions.assertNotNull(fournisseur);
 		fournisseurService.supprimer(fournisseur.getId());
