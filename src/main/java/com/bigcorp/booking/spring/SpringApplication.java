@@ -2,7 +2,6 @@ package com.bigcorp.booking.spring;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.bigcorp.booking.model.Article;
 import com.bigcorp.booking.service.ArticleService;
 import com.bigcorp.booking.service.ClientService;
 import com.bigcorp.booking.service.FournisseurService;
@@ -42,20 +41,16 @@ public class SpringApplication {
 				SpringConfiguration.class)) {
 			ArticleService articleService = appContext.getBean("articleService", ArticleService.class);
 			articleService.findByNom("article");
-			
-			
+
 			FournisseurService fournisseurService = appContext.getBean("fournisseurService", FournisseurService.class);
 			fournisseurService.findByNom("fournisseur");
-			
-			
+
 			ClientService clientService = appContext.getBean("clientService", ClientService.class);
 			clientService.findByNom("client");
-			
-			
+
 			UtilisateurService utilisateurService = appContext.getBean("utilisateurService", UtilisateurService.class);
 			utilisateurService.findByNom("utilisateur");
-			
-			
+
 		}
 	}
 

@@ -1,6 +1,7 @@
 package com.bigcorp.booking.mvc.rest.dto;
 
 import com.bigcorp.booking.model.Fournisseur;
+
 import jakarta.validation.constraints.Size;
 
 //La class FournisseurrestDto

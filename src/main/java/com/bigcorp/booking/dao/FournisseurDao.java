@@ -3,7 +3,6 @@ package com.bigcorp.booking.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
 
 import com.bigcorp.booking.model.Fournisseur;
 

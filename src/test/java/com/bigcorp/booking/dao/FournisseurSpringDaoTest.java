@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import com.bigcorp.booking.model.Fournisseur;
-import com.bigcorp.booking.model.Fournisseur;
 import com.bigcorp.booking.service.FournisseurService;
 import com.bigcorp.booking.spring.SpringConfiguration;
 

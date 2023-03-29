@@ -84,7 +84,7 @@ public class ArticleRestDto {
 	}
 
 	public Integer getFournisseurId() {
-		
+
 		return fournisseurId;
 	}
 
@@ -104,7 +104,7 @@ public class ArticleRestDto {
 
 		return articleLu;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "ArticleRestDto [id=" + id + ", nom=" + nom + "]";

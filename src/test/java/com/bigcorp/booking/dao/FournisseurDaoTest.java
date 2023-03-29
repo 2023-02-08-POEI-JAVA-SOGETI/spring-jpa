@@ -1,10 +1,5 @@
 package com.bigcorp.booking.dao;
 
-import java.util.List;
-
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

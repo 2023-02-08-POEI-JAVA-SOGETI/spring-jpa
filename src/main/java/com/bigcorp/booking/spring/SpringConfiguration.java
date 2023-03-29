@@ -36,6 +36,7 @@ public class SpringConfiguration {
 	public EntityManagerFactory entityManagerFactory() {
 		return Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
 	}
+
 //
 //	/**
 //	 * Crée un transactionManager, utilisé par Spring Data pour gérer les
@@ -44,11 +45,11 @@ public class SpringConfiguration {
 //	 * @param emf
 //	 * @return
 //	 */
-@Bean(name = "transactionManager")
-public PlatformTransactionManager dbTransactionManager(EntityManagerFactory emf) {
-	JpaTransactionManager transactionManager = new JpaTransactionManager();
-	transactionManager.setEntityManagerFactory(emf);
-	return transactionManager;
+	@Bean(name = "transactionManager")
+	public PlatformTransactionManager dbTransactionManager(EntityManagerFactory emf) {
+		JpaTransactionManager transactionManager = new JpaTransactionManager();
+		transactionManager.setEntityManagerFactory(emf);
+		return transactionManager;
 	}
 
 }

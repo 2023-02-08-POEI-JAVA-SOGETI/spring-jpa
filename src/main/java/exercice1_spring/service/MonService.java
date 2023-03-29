@@ -1,11 +1,7 @@
 package exercice1_spring.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import com.bigcorp.booking.model.Example;
 
 @Service //permet de préciser que le bean est un service sans état,
 //demander à Spring de gérer son cycle de vie.

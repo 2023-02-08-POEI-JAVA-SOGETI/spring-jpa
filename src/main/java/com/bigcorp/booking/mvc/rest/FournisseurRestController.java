@@ -20,7 +20,6 @@ import com.bigcorp.booking.model.Fournisseur;
 import com.bigcorp.booking.mvc.rest.dto.FournisseurRestDto;
 import com.bigcorp.booking.service.FournisseurService;
 import com.bigcorp.booking.service.exception.FournisseurException;
-import com.bigcorp.booking.service.exception.FournisseurInvalideException;
 
 @RestController
 @RequestMapping("/fournisseurs")
@@ -41,6 +40,8 @@ public class FournisseurRestController {
 	// Get
 	@GetMapping("/{fournisseurId}")
 	public FournisseurRestDto getById(@PathVariable("fournisseurId") Integer fournisseurId) {
+		
+	
 		// Trouve le fournisseur par son id et le stock dans la variable fournisseur
 		Fournisseur fournisseur = fournisseurService.findById(fournisseurId);
 		// Pour générer une erreur 404 lors que l'id du fournisseur n'existe pas

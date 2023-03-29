@@ -2,10 +2,6 @@ package exercice1_spring.config;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.bigcorp.booking.model.Example;
-import com.bigcorp.booking.service.ExampleService;
-
-
 //import com.bigcorp.booking.service.MonControleurWeb;
 //import com.bigcorp.booking.service.MonService;
 import exercice1_spring.service.MonControleurWeb;

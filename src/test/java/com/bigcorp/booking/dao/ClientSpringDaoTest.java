@@ -7,9 +7,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-import com.bigcorp.booking.model.Article;
-import com.bigcorp.booking.model.Client;
-import com.bigcorp.booking.model.Fournisseur;
 import com.bigcorp.booking.model.Client;
 import com.bigcorp.booking.service.ClientService;
 import com.bigcorp.booking.spring.SpringConfiguration;

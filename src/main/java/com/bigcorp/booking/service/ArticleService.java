@@ -16,7 +16,6 @@ import com.bigcorp.booking.model.Article;
 import com.bigcorp.booking.model.EtatArticle;
 import com.bigcorp.booking.model.Fournisseur;
 import com.bigcorp.booking.service.exception.ArticleException;
-import com.bigcorp.booking.service.exception.FournisseurException;
 
 /**
  * Service pour l'entité Article. Contient de nombreux appels passés au DAO pour
@@ -26,10 +25,10 @@ import com.bigcorp.booking.service.exception.FournisseurException;
 public class ArticleService {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(ArticleService.class);
+
 	@Autowired
 	private ArticleSpringDao articleSpringDao;
 	private FournisseurSpringDao fournisseurSpringDao;
-	
 
 	public List<Article> findByNom(String nom) {
 		return this.articleSpringDao.maMethodeDeRechercheAvecUneQueryExplicite(nom);
@@ -38,10 +37,10 @@ public class ArticleService {
 	public Article findById(Integer id) {
 		return this.articleSpringDao.findById(id).orElse(null);
 	}
-	
+
 	public List<Article> findByEtatArticle(EtatArticle etatArticle) {
-        return this.articleSpringDao.maMethodeDeRechercheAvecUneQueryExplicite2(etatArticle);
-    }
+		return this.articleSpringDao.maMethodeDeRechercheAvecUneQueryExplicite2(etatArticle);
+	}
 
 	@Transactional
 	public void attache(Integer articleId, Integer fournisseurId) {
@@ -69,10 +68,10 @@ public class ArticleService {
 
 	@Transactional
 	public Article sauvegarde(Article article) throws ArticleException {
-		LOGGER.info("Sauvegarde de : {}" , article);
+		LOGGER.info("Sauvegarde de : {}", article);
 		try {
 			return this.articleSpringDao.save(article);
-		}catch(PersistenceException exception) {
+		} catch (PersistenceException exception) {
 			throw new ArticleException(exception);
 		}
 	}
