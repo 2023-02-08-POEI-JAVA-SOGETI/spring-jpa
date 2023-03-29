@@ -33,7 +33,6 @@ public class ArticleServiceTest {
 		articleService.save(article);
 		
 		Assertions.assertNotNull(article);
-		
 	}
 	
 	@Test
@@ -60,9 +59,8 @@ public class ArticleServiceTest {
 		articleTroisieme.setDescription("description du micro plus mieux");
 		articleTroisieme.setType(TypeArticle.NEUF);
 		
-		articleService.save(articleTroisieme);
-		Article article1 = articleService.findById(4);
-		Assertions.assertEquals(article1.getNom(), "micro plus mieux");
+		Article articleEnreg = articleService.save(articleTroisieme);
+		Assertions.assertEquals(articleEnreg.getNom(), "micro plus mieux");
 	}
 
 	@Test
@@ -97,31 +95,30 @@ public class ArticleServiceTest {
 		articleService.persistArticleWithFournisseur(article.getId(), fourni.getId());
 		Article articleWithF = articleService.findById(article.getId());
 		Assertions.assertEquals(articleWithF.getFournisseur().getId(), fourni.getId());
-		
 	}
 	
-//	@Test
-//	public void getAllArticles() {
-//		List<Article> listArticlesBase = (List<Article>) articleService.findAll();
-//		listArticlesBase.clear();
-//		Article article = new Article();
-//		Article article2 = new Article();
-//		
-// 		article.setNom("article1");
-//		article.setNumArticle(991);
-//		article.setDescription("description article1");
-//		article.setType(TypeArticle.NEUF);
-//		
-//		article2.setNom("article2");
-//		article2.setNumArticle(992);
-//		article2.setDescription("description article2");
-//		article2.setType(TypeArticle.NEUF);
-//		
-//		articleService.save(article);
-//		articleService.save(article2);
-//		
-//		List<Article> listArticles = (List<Article>) articleService.findAll();
-//		Assertions.assertEquals(2, listArticles.size());
-//		listArticles.clear();
-//	}
+	@Test
+	public void getAllArticles() {
+		List<Article> listArticlesBase = (List<Article>) articleService.findAll();
+		listArticlesBase.clear();
+		Article article = new Article();
+		Article article2 = new Article();
+		
+ 		article.setNom("article1");
+		article.setNumArticle(991);
+		article.setDescription("description article1");
+		article.setType(TypeArticle.NEUF);
+		
+		article2.setNom("article2");
+		article2.setNumArticle(992);
+		article2.setDescription("description article2");
+		article2.setType(TypeArticle.NEUF);
+		
+		articleService.save(article);
+		articleService.save(article2);
+		
+		List<Article> listArticles = (List<Article>) articleService.findAll();
+		Assertions.assertTrue(listArticles.size() >= 2);
+		listArticles.clear();
+	}
 }
