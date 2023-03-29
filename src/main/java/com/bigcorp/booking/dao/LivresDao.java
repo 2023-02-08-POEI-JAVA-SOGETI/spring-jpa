@@ -14,10 +14,10 @@ public class LivresDao {
 	@PersistenceContext
 	protected EntityManager entityManager;
 	
-	public Livre findById(Long id) {
+	/*public Livre findById(Long id) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();
 		return em.find(Livre.class, id);
-	}
+	}*/
 	
 	public Livre findByTitre(String titre) {
 		EntityManager em = PersistenceSingleton.INSTANCE.createEntityManager();

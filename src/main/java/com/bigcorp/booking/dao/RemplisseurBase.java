@@ -3,9 +3,11 @@ package com.bigcorp.booking.dao;
 import java.util.List;
 import java.util.Random;
 
+import com.bigcorp.booking.model.Animal;
 import com.bigcorp.booking.model.Article;
 import com.bigcorp.booking.model.Client;
 import com.bigcorp.booking.model.EtatArticle;
+import com.bigcorp.booking.model.EtatSante;
 import com.bigcorp.booking.model.Fournisseur;
 import com.bigcorp.booking.model.Utilisateur;
 
@@ -46,6 +48,18 @@ public class RemplisseurBase {
 		client.associe(fournisseurSauvegarde);
 		ClientDao clientDao = new ClientDao();
 		Client clientSauvegarde = clientDao.merge(client);
+		
+		//Création et sauvegarde d'un animal
+		Animal animal = new Animal();
+		animal.setId(1);
+		animal.setSurnom("Loulou");
+		animal.setEtatSante(EtatSante.SURPOIDS);
+		animal.setEspece("Chat");
+		animal.setPoids(4);
+		animal.setProprietaire("Ellie");
+		
+		AnimalDao animalDao = new AnimalDao();
+		Animal animalSauvegarde = animalDao.merge(animal);
 		
 		//Création et sauvegarde d'un utilisateur
 		Utilisateur utilisateur = new Utilisateur();
