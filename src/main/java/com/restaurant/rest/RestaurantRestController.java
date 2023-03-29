@@ -1,5 +1,6 @@
 package com.restaurant.rest;
 
+import java.util.List;
 import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
@@ -36,6 +37,12 @@ public class RestaurantRestController {
 		private TypeRestaurantService typeRestaurantService;
 		
 		private static final Logger LOGGER = LoggerFactory.getLogger(RestaurantRestController.class);
+		
+		@GetMapping("/list-restaurants")
+	    public List<RestaurantDto> getAllRestaurants() {
+	        List<Restaurant> restaurants = (List<Restaurant>) restaurantService.findAll();
+	        return restaurants.stream().map(RestaurantDto::new).collect(Collectors.toList());
+	    }
 		
 		@GetMapping("/{id}")
 		public RestaurantDto getRestaurantById(@PathVariable("id") Integer id) {

@@ -9,10 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 3562726b4d6133ec333e3d1fe7b200929e028621
 import com.restaurant.model.Reservation;
 import com.restaurant.service.ReservationService;
 import com.restaurant.spring.SpringConfiguration;
