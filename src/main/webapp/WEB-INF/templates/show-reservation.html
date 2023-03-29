@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Afficher Reservation</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 	crossorigin="anonymous">
+</head>
+<body>
+	<div class='container'>
+		<div class='row my-5'>
+			<div class='col'>
+				<a class='btn btn-secondary' href="/spring-jpa/restaurant">Retour à la liste des restaurants</a>
+			</div>
+		</div>
+		<div class='row mb-4'>
+			<div class='col'>
+				<h1 th:text="${reservation.nom}"></h1>
+			</div>
+		</div>
+		<div class='row'>
+			<div class='col'>
+				<ul class='list-group'>
+					<li class='list-group-item' th:text="'Nom : ' + ${reservation.nom}"></li>
+					<li class='list-group-item' th:text="'Prénom : ' + ${reservation.prenom}"></li>
+					<li class='list-group-item' th:text="'Téléphone : ' + ${reservation.telephone}"></li>
+					<li class='list-group-item' th:text="'Restaurant : ' + ${reservation.restaurant.nom}"></li>
+					<li class='list-group-item' th:text="'Date et heure de début : ' + ${reservation.dateHeureDebut}"></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
