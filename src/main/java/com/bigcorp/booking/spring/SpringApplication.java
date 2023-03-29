@@ -2,15 +2,11 @@ package com.bigcorp.booking.spring;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-<<<<<<< HEAD
 import com.bigcorp.booking.service.ExampleService;
-=======
->>>>>>> d1663f37c38975a3267ea5eabf24ce1f1d1ce8a7
 
 public class SpringApplication {
 
 	public static void main(String[] args) {
-<<<<<<< HEAD
 		try (AnnotationConfigApplicationContext appContext 
 				= new AnnotationConfigApplicationContext(SpringConfiguration.class)) {
 			ExampleService exampleService 
@@ -30,7 +26,6 @@ public class SpringApplication {
 //		}
 	
 	
-=======
 		try (AnnotationConfigApplicationContext appContext = new AnnotationConfigApplicationContext(SpringConfiguration.class)) {
 			
 //			ExampleService exampleService = appContext.getBean("exampleService", ExampleService.class);
@@ -39,7 +34,6 @@ public class SpringApplication {
 //			monControleurWeb.getMonService().getMonDao().test();	
 			
 			}
->>>>>>> d1663f37c38975a3267ea5eabf24ce1f1d1ce8a7
 	}
 
 }

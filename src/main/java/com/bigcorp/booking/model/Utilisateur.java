@@ -1,7 +1,6 @@
 package com.bigcorp.booking.model;
 
 import javax.persistence.Entity;
-<<<<<<< HEAD
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,19 +9,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="utilisateurs")
-public class Utilisateur {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-	private Integer numero;
-=======
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 import com.bigcorp.booking.dto.UtilisateurDto;
 
@@ -34,64 +20,23 @@ public class Utilisateur {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private Integer numero_employe;
->>>>>>> d1663f37c38975a3267ea5eabf24ce1f1d1ce8a7
 	private String nom;
 	private String prenom;
 	private String email;
 	private String login;
-<<<<<<< HEAD
 	private String mdp;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "CLIENT_ID")
 	private Client client;
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
 	public Integer getNumero() {
-		return numero;
+		return numero_employe;
 	}
 
 	public void setNumero(Integer numero) {
-		this.numero = numero;
-	}
-
-	public String getNom() {
-		return nom;
-	}
-
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-
-	public String getPrenom() {
-		return prenom;
-	}
-
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
+		this.numero_employe = numero;
 	}
 
 	public String getMdp() {
@@ -121,8 +66,7 @@ public class Utilisateur {
 		this.client.getUtilisateurs().add(this);
 	}
 
-}
-=======
+
 	private String mot_de_passe;
 	
 	public Utilisateur() {
@@ -174,4 +118,3 @@ public class Utilisateur {
 		this.mot_de_passe = mot_de_passe;
 	}
 }
->>>>>>> d1663f37c38975a3267ea5eabf24ce1f1d1ce8a7

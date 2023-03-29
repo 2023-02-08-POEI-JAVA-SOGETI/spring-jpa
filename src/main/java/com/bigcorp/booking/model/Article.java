@@ -11,52 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "Articles")
-public class Article {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-	private Integer numero;
-	private String fc;
-	private String nom;
-	private String description;
-
-	@Enumerated(EnumType.STRING)
-	private EtatArticle etatArticle;
-
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "FOURNISSEUR_ID")
-	private Fournisseur fournisseur;
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public Integer getNumero() {
-		return numero;
-	}
-
-	public void setNumero(Integer numero) {
-		this.numero = numero;
-	}
-
-	public String getFc() {
-		return fc;
-	}
-
-	public void setFc(String fc) {
-		this.fc = fc;
-	}
-
-	public String getNom() {
-		return nom;
-	}
 
 import com.bigcorp.booking.dto.ArticleDto;
 
@@ -117,26 +72,17 @@ public class Article {
 		return description;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+
+	public Etat getEtatArticle() {
+	    return etat;
 	}
 
-	public EtatArticle getEtatArticle() {
-		return etatArticle;
+
+	public void setEtatArticle(Etat etat) {
+	    this.etat = etat;
 	}
 
-	public void setEtatArticle(EtatArticle etatArticle) {
-		this.etatArticle = etatArticle;
-	}
 
-	public Fournisseur getFournisseur() {
-		return fournisseur;
-	}
-
-	public void setFournisseur(Fournisseur fournisseur) {
-		this.fournisseur = fournisseur;
-	}
-	
 	/**
 	 * Associe this à fournisseur.
 	 * Modifie fournisseur.articles pour rendre les deux
@@ -148,7 +94,7 @@ public class Article {
 		this.fournisseur.getArticles().add(this);
 	}
 
-}
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
@@ -162,4 +108,7 @@ public class Article {
 	public static void main(String[] args){
 		
 	}
+
+
+
 }

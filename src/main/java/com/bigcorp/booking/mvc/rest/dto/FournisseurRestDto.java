@@ -23,7 +23,7 @@ public class FournisseurRestDto {
 	
 	public FournisseurRestDto(Fournisseur fournisseur) {
 		this.id = fournisseur.getId();
-		this.numero = fournisseur.getNumero();
+		this.numero = fournisseur.getNumero_fournisseur();
 		this.nom = fournisseur.getNom();
 		this.email = fournisseur.getEmail();
 		this.adresse = fournisseur.getAdresse();
@@ -72,7 +72,7 @@ public class FournisseurRestDto {
 
 	public Fournisseur remplisFournisseur(Fournisseur fournisseurLu) {
 		fournisseurLu.setId(this.id);
-		fournisseurLu.setNumero(this.numero);
+		fournisseurLu.setNumero_fournisseur(this.numero);
 		fournisseurLu.setNom(this.nom);
 		fournisseurLu.setAdresse(this.adresse);
 		fournisseurLu.setEmail(this.email);

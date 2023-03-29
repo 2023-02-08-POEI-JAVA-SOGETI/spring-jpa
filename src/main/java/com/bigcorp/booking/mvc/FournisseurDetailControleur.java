@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.bigcorp.booking.model.Fournisseur;
 import com.bigcorp.booking.model.Planete;
 import com.bigcorp.booking.service.FournisseurService;
-import com.bigcorp.booking.service.PlanetesSingleton;
+//import com.bigcorp.booking.service.PlanetesSingleton;
 
 /**
  * Annotée par @Controller, cette 
@@ -65,8 +65,8 @@ public class FournisseurDetailControleur {
     	if(fournisseur != null && fournisseur.getId() != null) {
     		view = "redirect:/fournisseurs/" + fournisseur.getId();
     	}
-    	else if(fournisseur != null && fournisseur.getNumero() != null) {
-    		view = "redirect:/fournisseurs/" + fournisseur.getNumero();
+    	else if(fournisseur != null && fournisseur.getNumero_fournisseur() != null) {
+    		view = "redirect:/fournisseurs/" + fournisseur.getNumero_fournisseur();
     	}
     	else if(fournisseur != null && fournisseur.getNom() != null) {
     		view = "redirect:/fournisseurs/" + fournisseur.getNom();

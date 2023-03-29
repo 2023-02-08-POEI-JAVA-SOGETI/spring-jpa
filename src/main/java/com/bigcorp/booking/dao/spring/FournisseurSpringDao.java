@@ -1,26 +1,19 @@
 package com.bigcorp.booking.dao.spring;
 
-<<<<<<< HEAD
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.bigcorp.booking.model.Fournisseur;
 
-@Repository
-public interface FournisseurSpringDao extends CrudRepository<Fournisseur, Integer>  {
-	
-}
-=======
+
 import java.util.List;
 
 
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Repository;
 
 
-import com.bigcorp.booking.model.Fournisseur;
 
 @Repository
 public interface FournisseurSpringDao  extends CrudRepository<Fournisseur, Integer>{
@@ -28,4 +21,3 @@ public interface FournisseurSpringDao  extends CrudRepository<Fournisseur, Integ
 	@Query("FROM Fournisseur  fourn left outer join fetch fourn.articles where fourn.id = :id")
 	Fournisseur findByIdWithArticles(@Param("id") Integer id);
 }
->>>>>>> d1663f37c38975a3267ea5eabf24ce1f1d1ce8a7

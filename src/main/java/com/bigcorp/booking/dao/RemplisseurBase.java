@@ -14,22 +14,23 @@ public class RemplisseurBase {
 	public static void main(String[] args) {
 
 		//Création et sauvegarde d'un fournisseur
+		
 		Fournisseur fournisseur = new Fournisseur();
 		fournisseur.setAdresse("13 rue tabaga");
 		fournisseur.setEmail("roberto@gmail.com");
 		fournisseur.setNom("Roberto");
-		fournisseur.setNumero(new Random().nextInt());
+		fournisseur.setNumero_fournisseur(new Random().nextInt());
 
 		FournisseurDao fournisseurDao = new FournisseurDao();
 		Fournisseur fournisseurSauvegarde = fournisseurDao.merge(fournisseur);
 		
 		//Création et sauvegarde d'un article
+		
 		Article article = new Article();
 		article.setDescription("Joli");
-		article.setEtatArticle(EtatArticle.INUTILISABLE);
+		article.setEtatArticle(null);;
 		article.setNom("Arbre");
-		article.setFc("F");
-		article.setNumero(new Random().nextInt());
+		article.setNumero_article(new Random().nextInt());
 		article.associe(fournisseurSauvegarde);
 
 		ArticleDao articleDao = new ArticleDao();
@@ -37,6 +38,7 @@ public class RemplisseurBase {
 
 
 		//Création et sauvegarde d'un client
+		
 		Client client = new Client();
 		client.setAdresse("5 rue du commerce");
 		client.setEmail("el.cliento@user.br");

@@ -18,11 +18,10 @@ public class ArticleDaoTest {
 		Article article = new Article();
 		String nomArticle = "mon article";
 		EtatArticle etatArticle = EtatArticle.OCCASION;
-		String fc = "f";
+
 		
-		article.setEtatArticle(etatArticle);
+		article.setEtatArticle(null);;
 		article.setNom(nomArticle);
-		article.setFc(fc);
 		//Faire de même pour les autres attributs...
 		Article articleSauvegarde = articleDao.merge(article);
 		
@@ -32,7 +31,7 @@ public class ArticleDaoTest {
 		
 		Assertions.assertEquals(nomArticle, articleLu.getNom());
 		Assertions.assertEquals(etatArticle, articleLu.getEtatArticle());
-		Assertions.assertEquals(fc, articleLu.getFc());
+
 		//Faire de même pour les autres attributs...
 		
 		
@@ -44,7 +43,7 @@ public class ArticleDaoTest {
 		String nomArticle = "Un autre article";
 		EtatArticle etatArticle = EtatArticle.OCCASION;
 		
-		article.setEtatArticle(etatArticle);
+		article.setEtatArticle(null);;
 		article.setNom(nomArticle);
 		articleDao.persist(article);
 		

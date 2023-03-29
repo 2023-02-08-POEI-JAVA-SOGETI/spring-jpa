@@ -49,7 +49,7 @@ public class ArticleServiceTest {
 		Article article = new Article();
 		article.setNom("Jean-Spring");
 		EtatArticle etatArticle = EtatArticle.NEUF;
-		article.setEtatArticle(etatArticle);
+		article.setEtatArticle(null);;
 		Article articleSauvegarde = this.articleService.save(article);
 
 		Assertions.assertNotNull(articleSauvegarde);

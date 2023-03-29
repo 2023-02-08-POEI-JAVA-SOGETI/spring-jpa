@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.bigcorp.booking.model.Planete;
 import com.bigcorp.booking.service.FournisseurService;
-import com.bigcorp.booking.service.PlanetesSingleton;
+//import com.bigcorp.booking.service.PlanetesSingleton;
 
 /**
  * Annotée par @Controller, cette 
