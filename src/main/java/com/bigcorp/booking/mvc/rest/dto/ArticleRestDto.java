@@ -3,6 +3,8 @@ package com.bigcorp.booking.mvc.rest.dto;
 import com.bigcorp.booking.model.Article;
 import com.bigcorp.booking.model.EtatArticle;
 
+import jakarta.validation.constraints.NotEmpty;
+
 public class ArticleRestDto {
 
 	private Integer id;
@@ -10,6 +12,8 @@ public class ArticleRestDto {
 	private String fc;
 	private String nom;
 	private String description;
+	
+	@NotEmpty
 	private EtatArticle etatArticle;
 	private Integer fournisseurId;
 	
