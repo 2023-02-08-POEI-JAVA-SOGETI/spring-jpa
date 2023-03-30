@@ -26,7 +26,7 @@ public class HerosFilms {
 		this.film = film;
 	}
 
-	public HerosFilms() {/*TODO Auto-generated constructor stub*/}
+	public HerosFilms() {}
 
 	public Integer getId() {
 		return id;

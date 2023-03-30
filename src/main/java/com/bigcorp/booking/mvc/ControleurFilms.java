@@ -15,7 +15,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.bigcorp.booking.model.HerosFilms;
 import com.bigcorp.booking.service.FilmSingleton;
-import com.bigcorp.booking.service.PlanetesSingleton;
 
 /**
  * Annotée par @Controller, cette 

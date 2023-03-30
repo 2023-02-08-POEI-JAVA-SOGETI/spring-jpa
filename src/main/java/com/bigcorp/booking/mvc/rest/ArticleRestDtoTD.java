@@ -1,4 +1,4 @@
-package com.bigcorp.booking.rest;
+package com.bigcorp.booking.mvc.rest;
 
 import com.bigcorp.booking.model.Article;
 

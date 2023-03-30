@@ -1,4 +1,4 @@
-package com.bigcorp.booking.exercice;
+package com.bigcorp.booking.tp;
 
 // Creation d'un JavaBean
 import java.io.Serializable;
@@ -10,8 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity // Décrit une entité persistable
-@Table(name = "Fournisseurs") // Optionnel : explicite la Table en BDD
-public class Fournisseurs implements Serializable {
+@Table(name = "Articles") // Optionnel : explicite la Table en BDD
+public class Articles implements Serializable {
 
     /**
 	 * 
@@ -25,23 +25,23 @@ public class Fournisseurs implements Serializable {
     private Integer iD;
     private Integer numeroUnique;
     private String nom;
-    private String mail;
-    private String adresse;
+    private String description;
+    private String fournisseur;
  
     // Constructeur sans parametres
-    public Fournisseurs() {
+    public Articles() {
         this.iD = 0;
         this.numeroUnique = 0;
         this.nom = "";
-        this.mail = "";
-        this.adresse = "";
+        this.description = "";
+        this.fournisseur = "";
     }
 
-    public Fournisseurs(Integer numeroUnique, String nom, String mail, String adresse) {
+    public Articles(Integer numeroUnique, String nom, String mail, String adresse) {
         this.numeroUnique = numeroUnique;
         this.nom = nom;
-        this.mail = mail;
-        this.adresse = adresse;
+        this.description = description;
+        this.fournisseur = fournisseur;
     }
 
     // Getters
@@ -57,12 +57,12 @@ public class Fournisseurs implements Serializable {
         return this.nom;
     }
 
-    public String getMail() {
-        return this.mail;
+    public String getDescription() {
+        return this.description;
     }
 
-    public String getAdresse() {
-        return this.adresse;
+    public String getFournisseur() {
+        return this.fournisseur;
     }
 
     // Setters
@@ -79,17 +79,12 @@ public class Fournisseurs implements Serializable {
         this.nom = nom;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
+    public void setFournisseur(String fournisseur) {
+        this.fournisseur = fournisseur;
     }
-
-	public void setTaille(float f) {}
-
-    
-
     
 }

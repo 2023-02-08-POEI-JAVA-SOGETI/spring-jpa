@@ -1,8 +1,6 @@
 package com.bigcorp.booking.service;
 
 import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,22 +8,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.bigcorp.booking.dao.spring.ArticleSpringDao;
-import com.bigcorp.booking.dao.spring.FournisseurSpringDao;
+import com.bigcorp.booking.dao.spring.ArticleSpringDaoTD;
 import com.bigcorp.booking.model.Article;
 import com.bigcorp.booking.model.EtatArticle;
-import com.bigcorp.booking.model.Fournisseur;
 
 /**
  * Service pour l'entité Article.
  */
 @Service
-public class ArticleServiceTP {
+public class ArticleServiceTD {
 	
-	private static final Logger LOGGER = LoggerFactory.getLogger(ArticleServiceTP.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ArticleServiceTD.class);
 
 	@Autowired
-	private ArticleSpringDao articleSpringDao;
+	private ArticleSpringDaoTD articleSpringDaoTD;
 
 	/**
 	 * Sauvegarde article
@@ -36,7 +32,7 @@ public class ArticleServiceTP {
 	@Transactional
 	public Article save(Article article) {
 		LOGGER.info("Sauvegarde de : {}" , article);
-		return this.articleSpringDao.save(article);
+		return this.articleSpringDaoTD.save(article);
 	}
 
 	/**
@@ -47,7 +43,7 @@ public class ArticleServiceTP {
 	 */
 	public Article findById(Integer id) {
 		LOGGER.info("Récupération de article avec l'id : {}" , id);
-		return this.articleSpringDao.findById(id).orElse(null);
+		return this.articleSpringDaoTD.findById(id).orElse(null);
 	}
 
 	/**
@@ -55,7 +51,7 @@ public class ArticleServiceTP {
 	 */
 	public Iterable<Article> findAll(){
 		LOGGER.info("Récupération de tous les articles");
-		return this.articleSpringDao.findAll();
+		return this.articleSpringDaoTD.findAll();
 	}
 	
 
@@ -66,7 +62,7 @@ public class ArticleServiceTP {
 	@Transactional
 	public void delete(Integer id) {
 		LOGGER.info("Suppression de article avec l'id : {}" , id);
-		this.articleSpringDao.deleteById(id);
+		this.articleSpringDaoTD.deleteById(id);
 	}
 
 
@@ -78,7 +74,7 @@ public class ArticleServiceTP {
 	 */
 	public List<Article> findByEtat(EtatArticle etat) {
 		LOGGER.info("Récupération des articles avec l'état: {}" , etat);
-		return this.articleSpringDao.findByEtatArticleOrderByNom(etat);
+		return this.articleSpringDaoTD.findByEtatArticleOrderByNom(etat);
 	}
 	
 

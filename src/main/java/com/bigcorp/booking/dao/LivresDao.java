@@ -6,7 +6,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceContext;
 
-import com.bigcorp.booking.model.Client;
 import com.bigcorp.booking.model.Livre;
 
 public class LivresDao {

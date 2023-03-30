@@ -10,12 +10,12 @@
   <body>
 
     <h1>Salut les gens</h1>
-    <p th:text="${caRoule}">Ça marche pas mal ici !</p>
-    <p th:if="${doitAfficherDiv}">Je m'affiche</p>
+    <h3 th:text="${caRoule}">Ça marche pas mal ici !</h3>
+    <h3 th:if="${doitAfficherDiv}">Je m'affiche</h3>
     <p th:if="${!doitAfficherDiv && true}">Je suis là</p>
 
     <ul>
-    	<p>Recherche par attributs de requête</p>
+    	<h3>Recherche par attributs de requête</h3>
 		<li th:each="heros : ${listeHerosDisney}">
 	 		<a 
 	 			href="vue-heros.html" 
@@ -26,9 +26,8 @@
 
 		 	</a>
 		 </li>
-		<p> -------------------------------------- </p>
 		
-		<p>Recherche par URL</p>
+		<h3>Recherche par URL</h3>
 		<li th:each="heros : ${listeHerosDisney}">
 		
 	 		<a 
