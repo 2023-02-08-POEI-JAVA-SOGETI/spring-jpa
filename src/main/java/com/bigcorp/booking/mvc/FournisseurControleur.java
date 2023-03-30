@@ -1,21 +1,15 @@
 package com.bigcorp.booking.mvc;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Controller;
-
 import org.springframework.validation.BindingResult;
-
-
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bigcorp.booking.model.Fournisseurs;
-
 import com.bigcorp.booking.service.FournisseursService;
 
 @Controller
@@ -60,5 +54,4 @@ public class FournisseurControleur {
         fournisseurService.save(fournisseur);
         return "redirect:/formulaire-fournisseur/{id}";
     }
-
 }

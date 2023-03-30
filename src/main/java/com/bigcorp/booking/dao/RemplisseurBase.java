@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Random;
 
 import com.bigcorp.booking.model.Articles;
-
 import com.bigcorp.booking.model.Clients;
 import com.bigcorp.booking.model.EtatArticles;
 import com.bigcorp.booking.model.Fournisseurs;
@@ -29,7 +28,7 @@ public class RemplisseurBase {
 		article.setDescription("Joli");
 		article.setEtatArticle(EtatArticles.INUTILISABLE);
 		article.setNom("Arbre");
-		article.setFc("F");
+//		article.setFc("F");
 		article.setNumero(new Random().nextInt());
 		article.associe(fournisseurSauvegarde);
 

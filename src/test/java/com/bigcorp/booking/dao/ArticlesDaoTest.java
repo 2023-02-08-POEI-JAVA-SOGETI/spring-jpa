@@ -22,7 +22,7 @@ public class ArticlesDaoTest {
 		
 		article.setEtatArticle(etatArticle);
 		article.setNom(nomArticle);
-		article.setFc(fc);
+//		article.setFc(fc);
 		//Faire de même pour les autres attributs...
 		Articles articleSauvegarde = articleDao.merge(article);
 		
@@ -32,7 +32,7 @@ public class ArticlesDaoTest {
 		
 		Assertions.assertEquals(nomArticle, articleLu.getNom());
 		Assertions.assertEquals(etatArticle, articleLu.getEtatArticle());
-		Assertions.assertEquals(fc, articleLu.getFc());
+//		Assertions.assertEquals(fc, articleLu.getFc());
 		//Faire de même pour les autres attributs...
 		
 		

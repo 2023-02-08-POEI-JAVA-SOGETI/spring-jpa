@@ -16,7 +16,6 @@ import com.bigcorp.booking.model.Articles;
 @Service
 public class ArticlesService {
 
-
 	@Autowired
 
 	private ArticlesSpringDao articleSpringDao;

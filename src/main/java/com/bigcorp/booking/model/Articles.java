@@ -9,28 +9,41 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
 import javax.persistence.Table;
 
-@Entity   //@Entity": j'indique à JPA que cette classe = entité persistante
-@Table(name = "Articles")    //Je lui dis aussi que la table que j'utise c'est Articles
+@Entity   
+@Table(name = "Articles")
 
 public class Articles {  
-	@Id //Je dit JPA que cette variable est la PK de l'entité
-	@GeneratedValue(strategy = GenerationType.IDENTITY)  //et je lui dit comment la PK sera générée lors d'insertion d'un nouvel element dans la table. 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
 	private Integer id;
 	private Integer numero;
-	private String fc;
+//	private String fc;
 	private String nom;
-	private String description;
-
+	private String description;	
+	
 	@Enumerated(EnumType.STRING)
 	private EtatArticles etatArticle;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "FOURNISSEUR_ID")
-	private Fournisseurs fournisseur;
+	private Fournisseurs fournisseur;	
+	
+	public Articles() {
+		
+	}
+
+//	public Articles(Integer id, Integer numero, String nom, String description, EtatArticles etatArticle,
+//			Fournisseurs fournisseur) {
+//		this.id = id;
+//		this.numero = numero;
+//		this.nom = nom;
+//		this.description = description;
+//		this.etatArticle = etatArticle;
+//		this.fournisseur = fournisseur;
+//	}
 
 	public Integer getId() {
 		return id;
@@ -48,13 +61,13 @@ public class Articles {
 		this.numero = numero;
 	}
 
-	public String getFc() {
-		return fc;
-	}
-
-	public void setFc(String fc) {
-		this.fc = fc;
-	}
+//	public String getFc() {
+//		return fc;
+//	}
+//
+//	public void setFc(String fc) {
+//		this.fc = fc;
+//	}
 
 	public String getNom() {
 		return nom;
@@ -98,4 +111,13 @@ public class Articles {
 		this.fournisseur = fournisseur;
 		this.fournisseur.getArticles().add(this);
 	}
+
+	public Articles(Integer id, Integer numero, String nom, String description, EtatArticles etatArticle) {		
+		this.id = id;
+		this.numero = numero;
+		this.nom = nom;
+		this.description = description;
+		this.etatArticle = etatArticle;
+	}
+	
 }

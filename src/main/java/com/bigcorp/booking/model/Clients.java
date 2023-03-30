@@ -1,7 +1,6 @@
 package com.bigcorp.booking.model;
 
 import java.util.HashSet;
-
 import java.util.Set;
 
 import javax.persistence.Entity;
