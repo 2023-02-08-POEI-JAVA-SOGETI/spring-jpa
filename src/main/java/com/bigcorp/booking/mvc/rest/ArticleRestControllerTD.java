@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -14,12 +15,13 @@ import com.bigcorp.booking.model.Article;
 import com.bigcorp.booking.service.ArticleServiceTD;
 
 @RestController
+@RequestMapping("/rest/")
 public class ArticleRestControllerTD {
 	
 	@Autowired 
 	private ArticleServiceTD articleServiceTP;
 
-	@GetMapping("/rest/get_articles/{articleId}")
+	@GetMapping("/get_articles/{articleId}")
 	public ArticleRestDtoTD getById(@PathVariable("articleId") Integer articleId) {
 		
 // J'ai tenté d'écrire "Article article1 = ArticleServiceTP.findById(articleId);" mais Eclipse me le refusait en 
@@ -37,7 +39,7 @@ public class ArticleRestControllerTD {
 	}
 	
 
-	@DeleteMapping("/rest/delete_articles/{articleId}")
+	@DeleteMapping("/delete_articles/{articleId}")
      public void deleteById(@PathVariable("id") Integer id) {
 		ArticleServiceTD articleService = new ArticleServiceTD();
 		Article article1 = articleService.findById(id);
@@ -50,7 +52,7 @@ public class ArticleRestControllerTD {
 	}
 	
 
-	@PostMapping("/rest/save_articles")
+	@PostMapping("/save_articles")
 	public ArticleRestDtoTD save(@RequestBody ArticleRestDtoTD articleRestDto) {
 		
 		// Transformer le DTO en entité
