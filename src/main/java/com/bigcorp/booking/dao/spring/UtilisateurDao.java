@@ -1,7 +1,5 @@
 package com.bigcorp.booking.dao.spring;
 
-import com.bigcorp.booking.model.Article;
-import com.bigcorp.booking.model.Fournisseur;
 import com.bigcorp.booking.model.Utilisateur;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

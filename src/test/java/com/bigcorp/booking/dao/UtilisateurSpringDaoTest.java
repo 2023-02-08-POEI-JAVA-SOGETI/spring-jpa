@@ -10,20 +10,40 @@ import com.bigcorp.booking.model.Utilisateur;
 import com.bigcorp.booking.service.UtilisateurService;
 import com.bigcorp.booking.spring.SpringConfiguration;
 
+
 @SpringJUnitConfig(SpringConfiguration.class)
 public class UtilisateurSpringDaoTest {
-	
+
 	@Autowired
-	private UtilisateurService UtilisateurService;
+	private UtilisateurService utilisateurService;
 
 	@Test
-	@DisplayName("Testing if service correctly saves a Utilisateur")
+	@DisplayName("service saves a user correctly")
 	void testSave() {
-		Utilisateur Utilisateur = new Utilisateur(456, "Joestar", "Johnny", "johnny@joestar.com", "jojo", "oraoraoraora");
+		Utilisateur utilisateur = new Utilisateur(456, "Joestar", "Johnny", "johnny@joestar.com", "jojo",
+				"oraoraoraora");
 
-		UtilisateurService.save(Utilisateur);
+		utilisateur = utilisateurService.save(utilisateur);
 
-		Assertions.assertNotNull(Utilisateur);
-		Assertions.assertNotNull(Utilisateur.getId());
+		Assertions.assertNotNull(utilisateur);
+		Assertions.assertNotNull(utilisateur.getId());
+	}
+
+	@Test
+	@DisplayName("service deletes a user correctly")
+	void testDelete() {
+		Utilisateur utilisateur = utilisateurService.getById(1);
+
+		utilisateurService.delete(utilisateur.getId());
+
+		Assertions.assertNull(utilisateurService.getById(1));
+	}
+
+	@Test
+	@DisplayName("service finds a user by its id correctly")
+	void testFindById() {
+		Utilisateur utilisateur = utilisateurService.getById(1);
+
+		Assertions.assertNotNull(utilisateur);
 	}
 }

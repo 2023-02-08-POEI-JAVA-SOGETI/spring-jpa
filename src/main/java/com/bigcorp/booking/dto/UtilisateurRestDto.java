@@ -3,6 +3,7 @@ package com.bigcorp.booking.dto;
 import com.bigcorp.booking.model.Utilisateur;
 
 public class UtilisateurRestDto {
+
 	private int id;
 	private String nom;
 	private String prenom;
@@ -47,6 +48,11 @@ public class UtilisateurRestDto {
 		utilisateur.setPrenom(prenom);
 		
 		return utilisateur;
+	}
+	
+	@Override
+	public String toString() {
+		return "UtilisateurRestDto [id=" + id + ", nom=" + nom + ", prenom=" + prenom + "]";
 	}
 
 }

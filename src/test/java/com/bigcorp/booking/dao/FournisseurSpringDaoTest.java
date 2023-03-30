@@ -1,8 +1,6 @@
 package com.bigcorp.booking.dao;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -11,10 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import com.bigcorp.booking.model.Fournisseur;
-import com.bigcorp.booking.model.Client;
-import com.bigcorp.booking.service.ClientService;
 import com.bigcorp.booking.service.FournisseurService;
 import com.bigcorp.booking.spring.SpringConfiguration;
+
 
 @SpringJUnitConfig(SpringConfiguration.class)
 public class FournisseurSpringDaoTest {
