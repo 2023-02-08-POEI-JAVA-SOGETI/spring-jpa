@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Reservations</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+
+ <h1>Reservations</h1> 
+
+ <form action="reservation" th:object="${reservation}" th:action="@{/reservation}" method="post"> 
+  <p><label><b>Nom :</b></label>
+    <input type="text" name="nomReservant"/>
+  </p>
+<!--   <p th:if="${#fields.hasErrors('nomReservant')}" th:errors="*{nomReservant}" class="alert-error">Erreur de nom</p> -->
+  <p><label><b>Prenom :</b></label>
+    <input type="text" name="prenomReservant"/>
+  </p>
+<!--   <p th:if="${#fields.hasErrors('prenomReservant')}" th:errors="*{prenomReservant}" class="alert-error">Erreur</p> -->
+  <p><label><b>Prix :</b></label>
+    <input type="text" name="prix" >
+  </p>
+<!--   <p th:if="${#fields.hasErrors('prix')}" th:errors="*{prix}" class="alert-error">Erreur de prix</p> -->
+  <input type="submit" value="Sauvegarder" />
+  <ul th:if="${#fields.hasErrors('*')}">
+    <li th:each="err : ${#fields.errors('*')}" th:text="${err}" class="alert-error">Erreur</li>
+  </ul>
+</form>
+
+</body>
+</html>

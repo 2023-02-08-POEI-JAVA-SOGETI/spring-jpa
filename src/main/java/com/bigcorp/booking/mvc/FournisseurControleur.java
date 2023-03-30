@@ -43,16 +43,24 @@ public class FournisseurControleur {
 		
 	    fournisseurService.save(fournisseur);
 	    ModelAndView mav = new ModelAndView();
-    	mav.setViewName("redirect:/formulaire-fournisseur?id=" + fournisseur.getId());
+    	mav.setViewName("redirect:/info-fournisseur?id=" + fournisseur.getId());
 	    return mav;
 	}	
 	
-	@RequestMapping("/formulaire-fournisseur")
-    public String showFormulaire(@RequestParam("id") Integer id, Model model) {
+	@RequestMapping("/info-fournisseur")
+    public String showInfo(@RequestParam("id") Integer id, Model model) {
         Fournisseur fournisseur = fournisseurService.findById(id);
         model.addAttribute("fournisseur", fournisseur);
-        LOGGER.info("FORMULAIRE DU FOURNISSEIR N {}", id);
-        return "formulaire-fournisseur";
+        LOGGER.info("INFO DU FOURNISSEIR N {}", id);
+        return "info-fournisseur";
+    }
+	
+	@RequestMapping("/edit-fournisseur")
+    public String showEdit(@RequestParam("id") Integer id, Model model) {
+        Fournisseur fournisseur = fournisseurService.findById(id);
+        model.addAttribute("fournisseur", fournisseur);
+        LOGGER.info("MODIFICATION DU FOURNISSEIR N {}", id);
+        return "edit-fournisseur";
     }
 	
 	@ModelAttribute("listeFournisseur")

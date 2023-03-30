@@ -12,7 +12,14 @@ import tp_spring_jpa_pablo.model.Article;
 public interface ArticleSpringDao extends CrudRepository<Article, Integer> {    
 	// JPQL requetes SQL en JPA
 	public List<Article> findByNom(String nomArticle);
-	// Find the articles linked to fournisseur by FK
+	
+	/**
+
+	Returns a list of articles associated with a given fournisseur ID.
+	@param fournisseurId the ID of the fournisseur whose articles are to be retrieved
+	@return a list of articles associated with the given fournisseur ID
+	@throws SomeException if there is an error while retrieving the articles
+	*/
 	public List<Article> findByFournisseurId(Integer fournisseurId);
 		
 	

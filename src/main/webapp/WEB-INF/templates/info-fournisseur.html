@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Information sur le fournisseur</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<style>
+		body {
+			margin: 50px 0 0 0; /* Add 50px margin from the top */
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		h3, div {
+			border: 2px solid black; /* Add border to h1 and div */
+			padding: 20px; /* Add padding to h1 and div */
+			box-shadow: 5px 5px 5px grey; /* Add shadow effect */
+		}
+	</style>
+</head>
+<body>	
+	<div>
+		<h3><span th:text="${fournisseur.nom}"></span></h3>
+		<p><span><b>Id :</b></span> <span th:text="${fournisseur.id}"></span></p>
+		<p><span><b>Nom :</b></span> <span th:text="${fournisseur.nom}"></span></p>
+		<p><span><b>Email :</b></span> <span th:text="${fournisseur.email}"></span></p>
+		<p><span><b>Adresse :</b></span> <span th:text="${fournisseur.adresse}"></span></p>
+	</div> 
+</body>
+</html>

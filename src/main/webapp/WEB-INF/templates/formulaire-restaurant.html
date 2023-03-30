@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Reservations</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+
+ <h1>Reservations</h1>
+ <div>
+  	<p><span><b>Id :</b></span> <span th:text="${restaurant.id}"></span></p>
+	<p><span><b>Nom :</b></span> <span th:text="${restaurant.nom}"></span></p>
+	<p><span><b>Adresse :</b></span> <span th:text="${restaurant.adresse}"></span></p>
+	<p><span><b>Prix :</b></span> <span th:text="${restaurant.prix}"></span></p>
+ </div>
+<h2>Modifier les informations</h2>
+
+<a href="formulaire-reservation.html" th:href="@{/formulaire-reservation}"> <button class="favorite styled" type="button">Cliquez ici pour faire votre reservation </button> </a>
+<br>
+<a href="restaurants.html" th:href="@{/restaurants}">Cliquez ici pour revenir liste des restaurants </a>
+
+<!--  <form action="restaurant" th:object="${restaurant}" th:action="@{/restaurant}" method="post"> -->
+<!--   <p><label><b>Id :</b></label> -->
+<!--     <input readonly type="text" name="id" th:value="${restaurant.id}" /> -->
+<!--   </p> -->
+<!--   <p th:if="${#fields.hasErrors('id')}" th:errors="*{id}" class="alert-error">Erreur d'id</p> -->
+<!--   <p><label><b>Nom :</b></label> -->
+<!--     <input readonly type="text" name="nom" th:value="${restaurant.nom}" /> -->
+<!--   </p> -->
+<!--   <p th:if="${#fields.hasErrors('nom')}" th:errors="*{nom}" class="alert-error">Erreur de nom</p> -->
+<!--   <p><label><b>Adresse :</b></label> -->
+<!--     <input type="text" name="adresse" th:value="${restaurant.adresse}" /> -->
+<!--   </p> -->
+<!--   <p th:if="${#fields.hasErrors('adresse')}" th:errors="*{adresse}" class="alert-error">Erreur d'adresse</p> -->
+<!--   <p><label><b>Prix :</b></label> -->
+<!--     <input type="text" name="prix" th:value="${restaurant.prix}" /> -->
+<!--   </p> -->
+<!--   <p th:if="${#fields.hasErrors('prix')}" th:errors="*{prix}" class="alert-error">Erreur de prix</p> -->
+<!--   <input type="submit" value="Sauvegarder" /> -->
+<!--   <ul th:if="${#fields.hasErrors('*')}"> -->
+<!--     <li th:each="err : ${#fields.errors('*')}" th:text="${err}" class="alert-error">Erreur</li> -->
+<!--   </ul> -->
+<!-- </form> -->
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Formulaire modification fournisseur</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+body {
+	margin: 50px 0 0 0; /* Add 50px margin from the top */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+format {
+	border: 2px solid black; /* Add border to h1 and div */
+	padding: 20px; /* Add padding to h1 and div */
+	box-shadow: 5px 5px 5px grey; /* Add shadow effect */
+}
+</style>
+</head>
+
+<body>
+	<div class="format">
+		<h1>
+			<span th:text="${fournisseur.nom}"></span>
+		</h1>
+
+		<form action="/fournisseur" method="post" th:object="${fournisseur}"
+			th:action="@{/fournisseur}" th:method="post">
+			<p>
+				<label><b>Id :</b></label> <input type="text" th:field="*{id}"
+					readonly />
+			</p>
+			<p th:if="${#fields.hasErrors('id')}" th:errors="*{id}"
+				class="alert-error">Erreur d'ID</p>
+			<p>
+				<label><b>Nom :</b></label> <input type="text" th:field="*{nom}" />
+			</p>
+			<p th:if="${#fields.hasErrors('nom')}" th:errors="*{nom}"
+				class="alert-error">Erreur de nom</p>
+			<p>
+				<label><b>Email :</b></label> <input type="text" th:field="*{email}" />
+			</p>
+			<p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+				class="alert-error">Erreur d'email</p>
+			<p>
+				<label><b>Adresse :</b></label> <input type="text"
+					th:field="*{adresse}" />
+			</p>
+			<p th:if="${#fields.hasErrors('adresse')}" th:errors="*{adresse}"
+				class="alert-error">Erreur d'adresse</p>
+
+			<input type="submit" value="Sauvegarder" />
+			<ul th:if="${#fields.hasErrors('*')}">
+				<li th:each="err : ${#fields.errors('*')}" th:text="${err}"
+					class="alert-error">Erreur</li>
+			</ul>
+		</form>
+
+	</div>
+</body>
+</html>

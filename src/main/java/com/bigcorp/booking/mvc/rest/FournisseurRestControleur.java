@@ -54,7 +54,21 @@ public class FournisseurRestControleur {
 		fournisseur = fournisseurService.save(fournisseur);
 	    return new FournisseurRestDto(fournisseur);
 	}
+	
+	/**
 
+	This method deletes a fournisseur with the given ID and all of its associated articles
+	by calling the corresponding services. It first checks if the fournisseur exists,
+	throwing a NOT_FOUND response status exception if not. It then uses the
+	deleteByFournisseurId method from the articleService to delete all articles associated
+	with the fournisseur, and the deleteById method from the fournisseurService to delete
+	the fournisseur itself.
+	@param fournisseurid the ID of the fournisseur to be deleted
+	@throws ResponseStatusException if no fournisseur is found with the given ID
+	@see FournisseurService#findById(Integer)
+	@see ArticleService#deleteByFournisseurId(Integer)
+	@see FournisseurService#deleteById(Integer)
+	*/
 	@Transactional
 	@DeleteMapping("/fournisseur/delete/{fournisseurid}")
 	public void deleteFournisseur(@PathVariable("fournisseurid") Integer fournisseurid) {
