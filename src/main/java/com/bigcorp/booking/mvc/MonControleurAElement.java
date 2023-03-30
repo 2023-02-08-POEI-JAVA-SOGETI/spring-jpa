@@ -15,7 +15,7 @@ import com.bigcorp.booking.model.Disney;
 public class MonControleurAElement {
     
     /**
-     * Intercepte les requêtes /salut , effectue
+     * Intercepte les requêtes /disney , effectue
      * des instructions (ici un simple System.out) puis
      * renvoie vers la vue salut.
      * @return

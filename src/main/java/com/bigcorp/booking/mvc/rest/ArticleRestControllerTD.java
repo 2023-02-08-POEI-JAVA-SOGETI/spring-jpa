@@ -14,12 +14,12 @@ import com.bigcorp.booking.model.Article;
 import com.bigcorp.booking.service.ArticleServiceTD;
 
 @RestController
-public class ArticleControllerTD {
+public class ArticleRestControllerTD {
 	
 	@Autowired 
 	private ArticleServiceTD articleServiceTP;
 
-	@GetMapping("/rest/getarticles/{articleId}")
+	@GetMapping("/rest/get_articles/{articleId}")
 	public ArticleRestDtoTD getById(@PathVariable("articleId") Integer articleId) {
 		
 // J'ai tenté d'écrire "Article article1 = ArticleServiceTP.findById(articleId);" mais Eclipse me le refusait en 
@@ -37,7 +37,7 @@ public class ArticleControllerTD {
 	}
 	
 
-	@DeleteMapping("/rest/deletearticles/{articleId}")
+	@DeleteMapping("/rest/delete_articles/{articleId}")
      public void deleteById(@PathVariable("id") Integer id) {
 		ArticleServiceTD articleService = new ArticleServiceTD();
 		Article article1 = articleService.findById(id);
@@ -50,7 +50,7 @@ public class ArticleControllerTD {
 	}
 	
 
-	@PostMapping("/rest/savearticles")
+	@PostMapping("/rest/save_articles")
 	public ArticleRestDtoTD save(@RequestBody ArticleRestDtoTD articleRestDto) {
 		
 		// Transformer le DTO en entité
