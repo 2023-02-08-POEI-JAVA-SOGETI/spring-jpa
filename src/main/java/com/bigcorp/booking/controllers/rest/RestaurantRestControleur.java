@@ -1,5 +1,7 @@
 package com.bigcorp.booking.controllers.rest;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.bigcorp.booking.dto.RestaurantDto;
+import com.bigcorp.booking.models.Restaurant;
 import com.bigcorp.booking.services.RestaurantService;
 
 @RestController
@@ -27,6 +30,14 @@ public class RestaurantRestControleur {
 	
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(RestaurantRestControleur.class);
+	
+	
+	@GetMapping("/")
+	public List<Restaurant> getAllRestaurant()
+	{
+		List<Restaurant> list = restaurantService.findAll();
+		return list;
+	}
 	
 	
 	@PostMapping("/")
