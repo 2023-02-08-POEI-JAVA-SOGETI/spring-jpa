@@ -33,7 +33,6 @@ public class FournisseurController {
     public String fournisseurList() {
     	System.out.println("Le contrôleur du fournisseur agit ! ");
         return "liste-fournisseurs";
-	
 	}
 	
 	
