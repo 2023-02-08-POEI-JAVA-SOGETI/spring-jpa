@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -38,12 +39,14 @@ public class RestaurantRestController {
 		
 		private static final Logger LOGGER = LoggerFactory.getLogger(RestaurantRestController.class);
 		
+		@CrossOrigin(origins = "http://localhost:4200")
 		@GetMapping("/list-restaurants")
 	    public List<RestaurantDto> getAllRestaurants() {
 	        List<Restaurant> restaurants = (List<Restaurant>) restaurantService.findAll();
 	        return restaurants.stream().map(RestaurantDto::new).collect(Collectors.toList());
 	    }
-		
+
+		@CrossOrigin(origins = "http://localhost:4200")
 		@GetMapping("/{id}")
 		public RestaurantDto getRestaurantById(@PathVariable("id") Integer id) {
 			Restaurant r = restaurantService.findById(id);
@@ -55,7 +58,8 @@ public class RestaurantRestController {
 			LOGGER.info("getRestaurantById : Restaurant " + r.getId() + " - " + r.getNom());
 			return new RestaurantDto(r);
 		}
-		
+
+		@CrossOrigin(origins = "http://localhost:4200")
 		@PostMapping("")
 		public RestaurantDto createRestaurant(@Valid @RequestBody RestaurantDto restaurantDto, BindingResult result) {
 			if (result.hasErrors()) {
@@ -77,7 +81,8 @@ public class RestaurantRestController {
 			
 			return new RestaurantDto(restaurantService.save(restaurant));
 		}
-		
+
+		@CrossOrigin(origins = "http://localhost:4200")
 		@DeleteMapping("/{id}")
 		public void deleteRestaurant(@PathVariable("id") Integer id) {
 			Restaurant restaurant = restaurantService.findById(id);
