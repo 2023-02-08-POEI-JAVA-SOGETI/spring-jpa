@@ -30,18 +30,6 @@ public class RestaurantVueControleur {
         
         return restaurants ;
     }
-
-/*	@ModelAttribute("listeRestaurants")
-    public List<Restaurant> getRestaurants() {
-        List<Restaurant> restaurants = new ArrayList<>();
-        for (String nom : Arrays.asList(
-                "Les bons copains", "La bonne fourchette", "Le bon appétit"
-        )) {
-            restaurants.add(new Restaurant.Builder().withNom(nom).build());
-        }
-        return restaurants ;
-    }
-*/
     
     @GetMapping("/vue/restaurants")
     public String afficherRestaurants() {
