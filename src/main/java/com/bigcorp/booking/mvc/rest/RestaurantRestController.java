@@ -1,8 +1,12 @@
 package com.bigcorp.booking.mvc.rest;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +20,7 @@ import com.bigcorp.booking.model.Restaurant;
 import com.bigcorp.booking.mvc.rest.dto.RestaurantRestDto;
 import com.bigcorp.booking.service.RestaurantService;
 @RestController
+@CrossOrigin(origins = "htpp//localhost:4200")
 @RequestMapping("/restaurantsrest")
 public class RestaurantRestController {
 	private static final Logger LOGGER = LoggerFactory.getLogger(RestaurantRestController.class);
@@ -31,6 +36,15 @@ public class RestaurantRestController {
  }
  return new RestaurantRestDto(restaurant);
 	}
+	 @GetMapping
+	    public List<RestaurantRestDto> getAll() {
+	        Iterable<Restaurant> restaurants = restaurantService.findAll();
+	        List<RestaurantRestDto> restaurantDtos = new ArrayList<>();
+	        for (Restaurant restaurant : restaurants) {
+	            restaurantDtos.add(new RestaurantRestDto(restaurant));
+	        }
+	        return restaurantDtos;
+	    }
 	/*
  * @GetMapping public RestaurantRestDto getByIdParamsEdition(@RequestParam("id")
  * Integer restaurantId) { Restaurant restaurant =
