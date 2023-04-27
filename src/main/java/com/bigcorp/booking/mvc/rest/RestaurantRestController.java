@@ -3,6 +3,8 @@ package com.bigcorp.booking.mvc.rest;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.PersistenceException;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -92,4 +95,50 @@ public class RestaurantRestController {
 		LOGGER.info("Restaurant créé ou modifié avec succès : {}", restaurant.getNom());
 		return new RestaurantRestDto(restaurant);
 	}
+	
+	
+
+
+
+
+	@PutMapping("/{restaurantId}")
+
+	public RestaurantRestDto update(@PathVariable("restaurantId") Integer restaurantId,
+
+	@RequestBody RestaurantRestDto restaurantRestDto) {
+
+	LOGGER.info("Mise à jour du restaurant avec l'id : {}", restaurantId);
+
+	Restaurant restaurant = restaurantService.findById(restaurantId);
+
+	if (restaurant == null) {
+
+	throw new ResponseStatusException(HttpStatus.NOT_FOUND,
+
+	"Aucun restaurant trouvé avec l'id : " + restaurantId);
+
+	}
+
+	restaurant.setNom(restaurantRestDto.getNom());
+
+	restaurant.setAdresse(restaurantRestDto.getAdresse());
+
+	restaurant.setPrix(restaurantRestDto.getPrix());
+
+	try {
+
+	restaurantService.save(restaurant);
+
+	} catch (PersistenceException e) {
+
+	throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+
+	"Erreur lors de la mise à jour du restaurant avec l'id : " + restaurantId, e);
+
+	}
+
+	return new RestaurantRestDto(restaurant);
+
+	}	
+	
 }
