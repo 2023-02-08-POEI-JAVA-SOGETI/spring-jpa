@@ -37,6 +37,7 @@ public class TypeRestaurantRestController {
 		 return restaurantsTypes.stream().map(TypeRestaurantDto::new).collect(Collectors.toList());
 	}
 	
+
 	@CrossOrigin(origins = "http://localhost:4200")
 	 @GetMapping("/{id}")
 	    public TypeRestaurantDto getTypeRestaurantById(@PathVariable("id") Integer id) {
@@ -49,13 +50,16 @@ public class TypeRestaurantRestController {
 	        LOGGER.info("getTypeRestaurantById : TypeRestaurant " + tr.getId() + " - " + tr.getNom());
 	        return new TypeRestaurantDto(tr);
 	    }
-	@CrossOrigin(origins = "http://localhost:4200")
+
+
+	 @CrossOrigin(origins = "http://localhost:4200")
 	 @PostMapping
 	    public TypeRestaurantDto createTypeRestaurant(@RequestBody TypeRestaurantDto typeRestaurantDto) {
 	        TypeRestaurant typeRestaurant = new TypeRestaurant();
 	        typeRestaurant.setNom(typeRestaurantDto.getNom());
 	        return new TypeRestaurantDto(typeRestaurantService.save(typeRestaurant));
 	    }
+
 	@CrossOrigin(origins = "http://localhost:4200")
 	@DeleteMapping("/{id}")
 	public void deleteTypeRestaurant(@PathVariable("id") Integer id) {

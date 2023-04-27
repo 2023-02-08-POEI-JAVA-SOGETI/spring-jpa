@@ -41,6 +41,11 @@ public class RestaurantService {
 		logger.info("List restaurant : ");
 		return restaurantDao.findAll();
 	}
+	
+	public Iterable<Restaurant> findRestaurantsByType(Integer id) {
+		logger.info("List restaurant  by categories: ");
+		return restaurantDao.findRestaurantsByType(id);
+	}
 
 
 	
